@@ -1,0 +1,365 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		81715B701D30C7B800DCF3CA /* UnityiOSPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81715B6C1D30C7B800DCF3CA /* UnityiOSPlugin.mm */; };
+		81B5FB981D8D263100C06399 /* Identifier.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB881D8D263100C06399 /* Identifier.meta */; };
+		81B5FB991D8D263100C06399 /* NotifierPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5FB8B1D8D263100C06399 /* NotifierPlugin.swift */; };
+		81B5FB9A1D8D263100C06399 /* NotifierPlugin.swift.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB8C1D8D263100C06399 /* NotifierPlugin.swift.meta */; };
+		81B5FB9B1D8D263100C06399 /* Notify.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB8D1D8D263100C06399 /* Notify.meta */; };
+		81B5FB9C1D8D263100C06399 /* ReviewViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5FB8F1D8D263100C06399 /* ReviewViewPlugin.swift */; };
+		81B5FB9D1D8D263100C06399 /* ReviewViewPlugin.swift.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB901D8D263100C06399 /* ReviewViewPlugin.swift.meta */; };
+		81B5FB9E1D8D263100C06399 /* WebViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5FB911D8D263100C06399 /* WebViewPlugin.swift */; };
+		81B5FB9F1D8D263100C06399 /* WebViewPlugin.swift.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB921D8D263100C06399 /* WebViewPlugin.swift.meta */; };
+		81B5FBA01D8D263100C06399 /* View.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB931D8D263100C06399 /* View.meta */; };
+		81B5FBA11D8D263100C06399 /* ViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5FB951D8D263100C06399 /* ViewControllerPlugin.swift */; };
+		81B5FBA21D8D263100C06399 /* ViewControllerPlugin.swift.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB961D8D263100C06399 /* ViewControllerPlugin.swift.meta */; };
+		81B5FBA31D8D263100C06399 /* ViewController.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB971D8D263100C06399 /* ViewController.meta */; };
+		81B5FBA51D8D264700C06399 /* TagPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5FBA41D8D264700C06399 /* TagPlugin.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		81715B531D30AAFC00DCF3CA /* UnityiOSPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnityiOSPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		81715B561D30AAFC00DCF3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81715B6C1D30C7B800DCF3CA /* UnityiOSPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = UnityiOSPlugin.mm; path = ../../Assets/Plugins/iOS/UnityiOSPlugin.mm; sourceTree = "<group>"; };
+		81715B6D1D30C7B800DCF3CA /* UnityiOSPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnityiOSPlugin.h; path = ../../Assets/Plugins/iOS/UnityiOSPlugin.h; sourceTree = "<group>"; };
+		81B5FB881D8D263100C06399 /* Identifier.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Identifier.meta; sourceTree = "<group>"; };
+		81B5FB8B1D8D263100C06399 /* NotifierPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifierPlugin.swift; sourceTree = "<group>"; };
+		81B5FB8C1D8D263100C06399 /* NotifierPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NotifierPlugin.swift.meta; sourceTree = "<group>"; };
+		81B5FB8D1D8D263100C06399 /* Notify.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notify.meta; sourceTree = "<group>"; };
+		81B5FB8F1D8D263100C06399 /* ReviewViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewPlugin.swift; sourceTree = "<group>"; };
+		81B5FB901D8D263100C06399 /* ReviewViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReviewViewPlugin.swift.meta; sourceTree = "<group>"; };
+		81B5FB911D8D263100C06399 /* WebViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewPlugin.swift; sourceTree = "<group>"; };
+		81B5FB921D8D263100C06399 /* WebViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewPlugin.swift.meta; sourceTree = "<group>"; };
+		81B5FB931D8D263100C06399 /* View.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = View.meta; sourceTree = "<group>"; };
+		81B5FB951D8D263100C06399 /* ViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81B5FB961D8D263100C06399 /* ViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
+		81B5FB971D8D263100C06399 /* ViewController.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewController.meta; sourceTree = "<group>"; };
+		81B5FBA41D8D264700C06399 /* TagPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagPlugin.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81715B501D30AAFC00DCF3CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81715B4A1D30AAFC00DCF3CA = {
+			isa = PBXGroup;
+			children = (
+				81715B551D30AAFC00DCF3CA /* UnityiOSPlugin */,
+				81715B541D30AAFC00DCF3CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81715B541D30AAFC00DCF3CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81715B531D30AAFC00DCF3CA /* UnityiOSPlugin.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81715B551D30AAFC00DCF3CA /* UnityiOSPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				81B5FB861D8D263100C06399 /* System */,
+				81B5FB891D8D263100C06399 /* Frontend */,
+				81715B6C1D30C7B800DCF3CA /* UnityiOSPlugin.mm */,
+				81715B6D1D30C7B800DCF3CA /* UnityiOSPlugin.h */,
+				81715B561D30AAFC00DCF3CA /* Info.plist */,
+			);
+			path = UnityiOSPlugin;
+			sourceTree = "<group>";
+		};
+		81B5FB861D8D263100C06399 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				81B5FB871D8D263100C06399 /* Identifier */,
+				81B5FB881D8D263100C06399 /* Identifier.meta */,
+			);
+			name = System;
+			path = ../../Assets/Plugins/iOS/System;
+			sourceTree = "<group>";
+		};
+		81B5FB871D8D263100C06399 /* Identifier */ = {
+			isa = PBXGroup;
+			children = (
+				81B5FBA41D8D264700C06399 /* TagPlugin.swift */,
+			);
+			path = Identifier;
+			sourceTree = "<group>";
+		};
+		81B5FB891D8D263100C06399 /* Frontend */ = {
+			isa = PBXGroup;
+			children = (
+				81B5FB8A1D8D263100C06399 /* Notify */,
+				81B5FB8D1D8D263100C06399 /* Notify.meta */,
+				81B5FB8E1D8D263100C06399 /* View */,
+				81B5FB931D8D263100C06399 /* View.meta */,
+				81B5FB941D8D263100C06399 /* ViewController */,
+				81B5FB971D8D263100C06399 /* ViewController.meta */,
+			);
+			name = Frontend;
+			path = ../../Assets/Plugins/iOS/Frontend;
+			sourceTree = "<group>";
+		};
+		81B5FB8A1D8D263100C06399 /* Notify */ = {
+			isa = PBXGroup;
+			children = (
+				81B5FB8B1D8D263100C06399 /* NotifierPlugin.swift */,
+				81B5FB8C1D8D263100C06399 /* NotifierPlugin.swift.meta */,
+			);
+			path = Notify;
+			sourceTree = "<group>";
+		};
+		81B5FB8E1D8D263100C06399 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81B5FB8F1D8D263100C06399 /* ReviewViewPlugin.swift */,
+				81B5FB901D8D263100C06399 /* ReviewViewPlugin.swift.meta */,
+				81B5FB911D8D263100C06399 /* WebViewPlugin.swift */,
+				81B5FB921D8D263100C06399 /* WebViewPlugin.swift.meta */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		81B5FB941D8D263100C06399 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				81B5FB951D8D263100C06399 /* ViewControllerPlugin.swift */,
+				81B5FB961D8D263100C06399 /* ViewControllerPlugin.swift.meta */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81715B521D30AAFC00DCF3CA /* UnityiOSPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81715B591D30AAFC00DCF3CA /* Build configuration list for PBXNativeTarget "UnityiOSPlugin" */;
+			buildPhases = (
+				81715B4F1D30AAFC00DCF3CA /* Sources */,
+				81715B501D30AAFC00DCF3CA /* Frameworks */,
+				81715B511D30AAFC00DCF3CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnityiOSPlugin;
+			productName = UnityiOSPlugin;
+			productReference = 81715B531D30AAFC00DCF3CA /* UnityiOSPlugin.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81715B4B1D30AAFC00DCF3CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "柾本 耕太郎";
+				TargetAttributes = {
+					81715B521D30AAFC00DCF3CA = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 81715B4E1D30AAFC00DCF3CA /* Build configuration list for PBXProject "UnityiOSPlugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 81715B4A1D30AAFC00DCF3CA;
+			productRefGroup = 81715B541D30AAFC00DCF3CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81715B521D30AAFC00DCF3CA /* UnityiOSPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81715B511D30AAFC00DCF3CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81B5FBA21D8D263100C06399 /* ViewControllerPlugin.swift.meta in Resources */,
+				81B5FB9F1D8D263100C06399 /* WebViewPlugin.swift.meta in Resources */,
+				81B5FB9A1D8D263100C06399 /* NotifierPlugin.swift.meta in Resources */,
+				81B5FB981D8D263100C06399 /* Identifier.meta in Resources */,
+				81B5FB9B1D8D263100C06399 /* Notify.meta in Resources */,
+				81B5FB9D1D8D263100C06399 /* ReviewViewPlugin.swift.meta in Resources */,
+				81B5FBA01D8D263100C06399 /* View.meta in Resources */,
+				81B5FBA31D8D263100C06399 /* ViewController.meta in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81715B4F1D30AAFC00DCF3CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81B5FB991D8D263100C06399 /* NotifierPlugin.swift in Sources */,
+				81B5FB9C1D8D263100C06399 /* ReviewViewPlugin.swift in Sources */,
+				81B5FB9E1D8D263100C06399 /* WebViewPlugin.swift in Sources */,
+				81715B701D30C7B800DCF3CA /* UnityiOSPlugin.mm in Sources */,
+				81B5FBA11D8D263100C06399 /* ViewControllerPlugin.swift in Sources */,
+				81B5FBA51D8D264700C06399 /* TagPlugin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		81715B571D30AAFC00DCF3CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		81715B581D30AAFC00DCF3CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		81715B5A1D30AAFC00DCF3CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = UnityiOSPlugin/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ucreates.unity.ios.plugin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/../Assets/Plugins/iOS/UnityiOSPlugin.h";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		81715B5B1D30AAFC00DCF3CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = UnityiOSPlugin/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ucreates.unity.ios.plugin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/../Assets/Plugins/iOS/UnityiOSPlugin.h";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81715B4E1D30AAFC00DCF3CA /* Build configuration list for PBXProject "UnityiOSPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81715B571D30AAFC00DCF3CA /* Debug */,
+				81715B581D30AAFC00DCF3CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81715B591D30AAFC00DCF3CA /* Build configuration list for PBXNativeTarget "UnityiOSPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81715B5A1D30AAFC00DCF3CA /* Debug */,
+				81715B5B1D30AAFC00DCF3CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 81715B4B1D30AAFC00DCF3CA /* Project object */;
+}
