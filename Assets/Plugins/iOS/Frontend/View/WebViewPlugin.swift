@@ -13,9 +13,9 @@ public class WebViewPlugin: NSObject, UIWebViewDelegate {
     var view: UIWebView!
     public func create(url: String, left: CGFloat, top: CGFloat, right: CGFloat, bottom: CGFloat) {
         let req: NSURLRequest = NSURLRequest(URL: NSURL(string: url)!)
-        let controller = ViewControllerPlugin.getInstance()
-        let width = controller.view.frame.width
-        let height = controller.view.frame.height
+        let controller: UIViewController = ViewControllerPlugin.getInstance()
+        let width: CGFloat = controller.view.frame.width
+        let height: CGFloat = controller.view.frame.height
         self.view = UIWebView()
         self.view.frame = CGRectMake(left, top, width - left - right, height - top - bottom)
         self.view.backgroundColor = UIColor.clearColor()
