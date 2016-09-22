@@ -1,4 +1,4 @@
-//======================================================================
+// ======================================================================
 // Project Name    : unity plugin
 //
 // Copyright © 2016 U-CREATES. All rights reserved.
@@ -13,14 +13,15 @@ public class ReviewViewPlugin: NSObject {
     public class func show(appStoreUrl: String) {
         let alert: UIAlertController = UIAlertController(title: "Review", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         func evalCallBack (action: UIAlertAction) -> Void {
-            let url = NSURL(string: appStoreUrl)
-            UIApplication.sharedApplication().openURL(url!)
+            let url: NSURL = NSURL(string: appStoreUrl)!
+            let app: UIApplication = UIApplication.sharedApplication()
+            app.openURL(url)
         }
         let evalAction: UIAlertAction = UIAlertAction(title: "このアプリを評価する", style: UIAlertActionStyle.Default, handler: evalCallBack)
         let noAction: UIAlertAction = UIAlertAction(title: "いいえ、結構です", style: UIAlertActionStyle.Default, handler: nil)
         alert.addAction(evalAction)
         alert.addAction(noAction)
-        let controller = ViewControllerPlugin.getInstance()
+        let controller: UIViewController = ViewControllerPlugin.getInstance()
         controller.presentViewController(alert, animated: true, completion: nil)
     }
 }

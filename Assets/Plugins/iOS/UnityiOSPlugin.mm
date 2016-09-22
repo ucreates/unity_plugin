@@ -24,9 +24,10 @@ extern "C" void showWebViewPlugin(char* url, CGFloat left, CGFloat top, CGFloat 
     [webViewPlugin show];
 }
 extern "C" void hideWebViewPlugin() {
-    if (nil != webViewPlugin) {
-        [webViewPlugin hide];
-        [webViewPlugin destroy];
-        webViewPlugin = nil;
+    if (nil == webViewPlugin) {
+        return;
     }
+    [webViewPlugin hide];
+    [webViewPlugin destroy];
+    webViewPlugin = nil;
 }
