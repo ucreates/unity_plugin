@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <UnityPlugin-Swift.h>
 static WebViewPlugin* webViewPlugin;
+static IndicatorViewPlugin* activityIndicatorViewPlugin;
 extern "C" void showReviewViewPlugin(char* appStoreUrl) {
     NSString* url = [NSString stringWithCString: appStoreUrl encoding:NSUTF8StringEncoding];
     [ReviewViewPlugin show:url];
@@ -30,4 +31,20 @@ extern "C" void hideWebViewPlugin() {
     [webViewPlugin hide];
     [webViewPlugin destroy];
     webViewPlugin = nil;
+}
+extern "C" void showIndicatorViewPlugin() {
+    if (nil != activityIndicatorViewPlugin) {
+        return;
+    }
+    activityIndicatorViewPlugin = [IndicatorViewPlugin alloc];
+    [activityIndicatorViewPlugin create];
+    [activityIndicatorViewPlugin show];
+}
+extern "C" void hideIndicatorViewPlugin() {
+    if (nil == activityIndicatorViewPlugin) {
+        return;
+    }
+    [activityIndicatorViewPlugin hide];
+    [activityIndicatorViewPlugin destroy];
+    activityIndicatorViewPlugin = nil;
 }

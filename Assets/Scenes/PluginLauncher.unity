@@ -680,6 +680,8 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: ReviewViewPlugin
       m_Image: {fileID: 0}
+    - m_Text: IndicatorViewPlugin
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
