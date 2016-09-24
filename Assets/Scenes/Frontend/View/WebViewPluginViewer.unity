@@ -639,7 +639,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HideWebView
+  m_Text: Hide
 --- !u!222 &1531210743
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -753,7 +753,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ShowWebView
+  m_Text: Show
 --- !u!222 &1990216957
 CanvasRenderer:
   m_ObjectHideFlags: 0
