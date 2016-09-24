@@ -36,7 +36,7 @@ public class WebViewPlugin: NSObject, UIWebViewDelegate {
         }
         self.view.hidden = !visible
     }
-    public func webView(webView: UIWebView!, shouldStartLoadWithRequest request: NSURLRequest!, navigationType: UIWebViewNavigationType) -> Bool {
+    public func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + (request.URL?.absoluteString)!)
         return true
     }
