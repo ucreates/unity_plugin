@@ -11,5 +11,10 @@ using UnityEngine;
 using System.Collections;
 namespace UnityPlugin {
 public abstract class BasePlugin {
+    public virtual int id {
+        get {
+            return 0;
+        }
+    }
 }
 }

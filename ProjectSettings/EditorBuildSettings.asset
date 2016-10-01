@@ -11,3 +11,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Frontend/View/ReviewViewPluginViewer.unity
   - enabled: 1
     path: Assets/Scenes/Frontend/View/WebViewPluginViewer.unity
+  - enabled: 1
+    path: Assets/Scenes/Frontend/View/IndicatorViewPluginViewer.unity
+  - enabled: 1
+    path: Assets/Scenes/Frontend/Controller/PreferenceControllerPluginViewer.unity

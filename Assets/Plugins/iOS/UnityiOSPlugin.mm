@@ -48,3 +48,10 @@ extern "C" void hideIndicatorViewPlugin() {
     [activityIndicatorViewPlugin destroy];
     activityIndicatorViewPlugin = nil;
 }
+extern "C" void transitionViewControllerPlugin(int viewControllerId) {
+    [TransitionPlugin execute:viewControllerId];
+}
+extern "C" bool getSwitchPreference(char* keyName) {
+    NSString* requestKeyName = [NSString stringWithCString: keyName encoding:NSUTF8StringEncoding];
+    return [PreferencePlugin getSwitchPreference:requestKeyName];
+}

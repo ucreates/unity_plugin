@@ -11,7 +11,11 @@ dependencies {
 }
 
 task copy(type: Sync) {
-    from '../../Assets/Plugins/Android/libs/'
+    from  ('../../Assets/Plugins/Android/libs/') {
+        include '**/*.jar'
+    }
+    from  ('./resource/') {
+        include '**/*.xml'
+    }
     into '../../Assets/Plugins/Android/'
-    include '**/*.jar'
 }

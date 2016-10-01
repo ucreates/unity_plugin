@@ -11,6 +11,7 @@ package com.frontend.activity;
 import android.app.Activity;
 import com.unity3d.player.UnityPlayer;
 public class ActivityPlugin {
+    public static final int ACTIVITY_ID = 1;
     public static Activity getInstance() {
         return UnityPlayer.currentActivity;
     }

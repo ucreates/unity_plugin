@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		81715B701D30C7B800DCF3CA /* UnityiOSPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81715B6C1D30C7B800DCF3CA /* UnityiOSPlugin.mm */; };
+		81AD34D31D97F43800326262 /* ViewControllerFactoryPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD34D21D97F43800326262 /* ViewControllerFactoryPlugin.swift */; };
+		81AD34D51D97F44400326262 /* PreferenceViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD34D41D97F44400326262 /* PreferenceViewControllerPlugin.swift */; };
+		81AD34D81D97F4FE00326262 /* TransitionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD34D71D97F4FE00326262 /* TransitionPlugin.swift */; };
 		81B5FB981D8D263100C06399 /* Identifier.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB881D8D263100C06399 /* Identifier.meta */; };
 		81B5FB991D8D263100C06399 /* NotifierPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5FB8B1D8D263100C06399 /* NotifierPlugin.swift */; };
 		81B5FB9A1D8D263100C06399 /* NotifierPlugin.swift.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB8C1D8D263100C06399 /* NotifierPlugin.swift.meta */; };
@@ -28,6 +31,9 @@
 		81715B561D30AAFC00DCF3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81715B6C1D30C7B800DCF3CA /* UnityiOSPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = UnityiOSPlugin.mm; path = ../../Assets/Plugins/iOS/UnityiOSPlugin.mm; sourceTree = "<group>"; };
 		81715B6D1D30C7B800DCF3CA /* UnityiOSPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnityiOSPlugin.h; path = ../../Assets/Plugins/iOS/UnityiOSPlugin.h; sourceTree = "<group>"; };
+		81AD34D21D97F43800326262 /* ViewControllerFactoryPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactoryPlugin.swift; sourceTree = "<group>"; };
+		81AD34D41D97F44400326262 /* PreferenceViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81AD34D71D97F4FE00326262 /* TransitionPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPlugin.swift; sourceTree = "<group>"; };
 		81B5FB881D8D263100C06399 /* Identifier.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Identifier.meta; sourceTree = "<group>"; };
 		81B5FB8B1D8D263100C06399 /* NotifierPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifierPlugin.swift; sourceTree = "<group>"; };
 		81B5FB8C1D8D263100C06399 /* NotifierPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NotifierPlugin.swift.meta; sourceTree = "<group>"; };
@@ -82,9 +88,18 @@
 			path = UnityiOSPlugin;
 			sourceTree = "<group>";
 		};
+		81AD34D61D97F4EF00326262 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				81AD34D71D97F4FE00326262 /* TransitionPlugin.swift */,
+			);
+			path = scene;
+			sourceTree = "<group>";
+		};
 		81B5FB861D8D263100C06399 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				81AD34D61D97F4EF00326262 /* scene */,
 				81B5FB871D8D263100C06399 /* Identifier */,
 				81B5FB881D8D263100C06399 /* Identifier.meta */,
 			);
@@ -137,8 +152,10 @@
 		81B5FB941D8D263100C06399 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				81AD34D41D97F44400326262 /* PreferenceViewControllerPlugin.swift */,
 				81B5FB951D8D263100C06399 /* ViewControllerPlugin.swift */,
 				81B5FB961D8D263100C06399 /* ViewControllerPlugin.swift.meta */,
+				81AD34D21D97F43800326262 /* ViewControllerFactoryPlugin.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -220,6 +237,9 @@
 				81B5FB991D8D263100C06399 /* NotifierPlugin.swift in Sources */,
 				81B5FB9C1D8D263100C06399 /* ReviewViewPlugin.swift in Sources */,
 				81B5FB9E1D8D263100C06399 /* WebViewPlugin.swift in Sources */,
+				81AD34D31D97F43800326262 /* ViewControllerFactoryPlugin.swift in Sources */,
+				81AD34D81D97F4FE00326262 /* TransitionPlugin.swift in Sources */,
+				81AD34D51D97F44400326262 /* PreferenceViewControllerPlugin.swift in Sources */,
 				81715B701D30C7B800DCF3CA /* UnityiOSPlugin.mm in Sources */,
 				81B5FBA11D8D263100C06399 /* ViewControllerPlugin.swift in Sources */,
 				81B5FBA51D8D264700C06399 /* TagPlugin.swift in Sources */,
