@@ -35,7 +35,9 @@ public class ReviewViewPlugin {
                     }
                 })
                 .show();
+                return;
             }
         });
+        return;
     }
 }

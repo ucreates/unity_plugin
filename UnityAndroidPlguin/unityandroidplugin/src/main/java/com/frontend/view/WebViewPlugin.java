@@ -53,14 +53,18 @@ public class WebViewPlugin {
                 layout.setFocusableInTouchMode(true);
                 layout.addView(view, frameLayoutParams);
                 activity.addContentView(layout, viewLayoutParams);
+                return;
             }
         });
+        return;
     }
     public void show() {
         this.setVisible(true);
+        return;
     }
     public void hide() {
         this.setVisible(false);
+        return;
     }
     public void setVisible(boolean visible) {
         final Activity activity = ActivityPlugin.getInstance();
@@ -76,8 +80,10 @@ public class WebViewPlugin {
                 } else {
                     view.setVisibility(View.GONE);
                 }
+                return;
             }
         });
+        return;
     }
     public void destroy() {
         final Activity activity = ActivityPlugin.getInstance();
@@ -89,7 +95,9 @@ public class WebViewPlugin {
                 }
                 layout.removeView(view);
                 view = null;
+                return;
             }
         });
+        return;
     }
 }

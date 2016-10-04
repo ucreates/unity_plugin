@@ -22,7 +22,9 @@ public class TransitionPlugin {
                 Activity toActiviry = ActivityFactoryPlugin.factoryMethod(id);
                 Intent intent = new Intent(fromActivity, toActiviry.getClass());
                 fromActivity.startActivity(intent);
+                return;
             }
         });
+        return;
     }
 }

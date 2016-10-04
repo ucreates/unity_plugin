@@ -12,5 +12,6 @@ import com.unity3d.player.UnityPlayer;
 public class NotifierPlugin {
     public static void notify(String gameObjectName, String method, String msg) {
         UnityPlayer.UnitySendMessage(gameObjectName, method, msg);
+        return;
     }
 }

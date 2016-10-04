@@ -39,8 +39,10 @@ public class IndicatorViewPlugin {
                 dialog.setCancelable(false);
                 dialog.setContentView(relativeLayout);
                 dialog.show();
+                return;
             }
         });
+        return;
     }
     public void hide() {
         final Activity activity = ActivityPlugin.getInstance();
@@ -52,7 +54,9 @@ public class IndicatorViewPlugin {
                 }
                 dialog.dismiss();
                 dialog = null;
+                return;
             }
         });
+        return;
     }
 }
