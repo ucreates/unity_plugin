@@ -9,7 +9,7 @@
 //======================================================================
 import UIKit
 public class ViewControllerPlugin: NSObject {
-    public static let VIEWCONTROLLER_ID: Int = 2
+    public static let VIEWCONTROLLER_ID: Int = 1
     public class func getInstance() -> UIViewController {
         return UnityGetGLViewController()
     }
