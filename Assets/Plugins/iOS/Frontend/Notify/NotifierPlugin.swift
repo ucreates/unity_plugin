@@ -11,5 +11,6 @@ import UIKit
 public class NotifierPlugin: NSObject {
     public class func Notify(gameObjectName: String, methodName: String, parameter: String) {
         UnitySendMessage(gameObjectName, methodName, parameter)
+        return
     }
 }

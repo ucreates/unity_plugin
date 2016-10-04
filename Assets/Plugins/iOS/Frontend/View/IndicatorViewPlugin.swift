@@ -21,23 +21,27 @@ public class IndicatorViewPlugin: NSObject {
         self.view.center = controller.view.center
         self.view.activityIndicatorViewStyle = style
         controller.view.addSubview(self.view)
+        return
     }
     public func show() {
         if (nil == self.view) {
             return
         }
         self.view.startAnimating()
+        return
     }
     public func hide() {
         if (nil == self.view) {
             return
         }
         self.view.stopAnimating()
+        return
     }
     public func destroy() {
         if (nil == self.view) {
             return
         }
         self.view.removeFromSuperview()
+        return
     }
 }

@@ -23,18 +23,22 @@ public class WebViewPlugin: NSObject, UIWebViewDelegate {
         self.view.delegate = self
         self.view.loadRequest(req)
         controller.view.addSubview(self.view)
+        return
     }
     public func show() {
         self.setVisible(true)
+        return
     }
     public func hide() {
         self.setVisible(false)
+        return
     }
     public func setVisible(visible: Bool) {
         if (nil == self.view) {
             return
         }
         self.view.hidden = !visible
+        return
     }
     public func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + (request.URL?.absoluteString)!)
@@ -45,5 +49,6 @@ public class WebViewPlugin: NSObject, UIWebViewDelegate {
             return
         }
         self.view.removeFromSuperview()
+        return
     }
 }

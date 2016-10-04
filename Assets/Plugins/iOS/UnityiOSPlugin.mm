@@ -14,6 +14,7 @@ static IndicatorViewPlugin* activityIndicatorViewPlugin;
 extern "C" void showReviewViewPlugin(char* appStoreUrl) {
     NSString* url = [NSString stringWithCString: appStoreUrl encoding:NSUTF8StringEncoding];
     [ReviewViewPlugin show:url];
+    return;
 }
 extern "C" void showWebViewPlugin(char* url, CGFloat left, CGFloat top, CGFloat right, CGFloat bottom) {
     if (nil != webViewPlugin) {
@@ -23,6 +24,7 @@ extern "C" void showWebViewPlugin(char* url, CGFloat left, CGFloat top, CGFloat 
     webViewPlugin = [WebViewPlugin alloc];
     [webViewPlugin create:requestUrl left:left top:top right:right bottom:bottom];
     [webViewPlugin show];
+    return;
 }
 extern "C" void hideWebViewPlugin() {
     if (nil == webViewPlugin) {
@@ -31,6 +33,7 @@ extern "C" void hideWebViewPlugin() {
     [webViewPlugin hide];
     [webViewPlugin destroy];
     webViewPlugin = nil;
+    return;
 }
 extern "C" void showIndicatorViewPlugin() {
     if (nil != activityIndicatorViewPlugin) {
@@ -39,6 +42,7 @@ extern "C" void showIndicatorViewPlugin() {
     activityIndicatorViewPlugin = [IndicatorViewPlugin alloc];
     [activityIndicatorViewPlugin create];
     [activityIndicatorViewPlugin show];
+    return;
 }
 extern "C" void hideIndicatorViewPlugin() {
     if (nil == activityIndicatorViewPlugin) {
@@ -47,9 +51,11 @@ extern "C" void hideIndicatorViewPlugin() {
     [activityIndicatorViewPlugin hide];
     [activityIndicatorViewPlugin destroy];
     activityIndicatorViewPlugin = nil;
+    return;
 }
 extern "C" void transitionViewControllerPlugin(int viewControllerId) {
     [TransitionPlugin execute:viewControllerId];
+    return;
 }
 extern "C" bool getSwitchPreference(char* keyName) {
     NSString* requestKeyName = [NSString stringWithCString: keyName encoding:NSUTF8StringEncoding];

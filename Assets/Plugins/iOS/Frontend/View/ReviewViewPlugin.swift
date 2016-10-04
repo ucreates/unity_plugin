@@ -16,6 +16,7 @@ public class ReviewViewPlugin: NSObject {
             let url: NSURL = NSURL(string: appStoreUrl)!
             let app: UIApplication = UIApplication.sharedApplication()
             app.openURL(url)
+            return
         }
         let evalAction: UIAlertAction = UIAlertAction(title: "このアプリを評価する", style: UIAlertActionStyle.Default, handler: evalCallBack)
         let noAction: UIAlertAction = UIAlertAction(title: "いいえ、結構です", style: UIAlertActionStyle.Default, handler: nil)
@@ -23,5 +24,6 @@ public class ReviewViewPlugin: NSObject {
         alert.addAction(noAction)
         let controller: UIViewController = ViewControllerPlugin.getInstance()
         controller.presentViewController(alert, animated: true, completion: nil)
+        return
     }
 }
