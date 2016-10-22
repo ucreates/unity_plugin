@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2885dbfe49fa74184b883b0c0197f24d
+guid: fd9d722941ea649a19c5b999924d6531
 timeCreated: 1475628374
 licenseType: Free
 PluginImporter:
@@ -49,7 +49,7 @@ PluginImporter:
       enabled: 1
       settings:
         CompileFlags: 
-        FrameworkDependencies: 
+        FrameworkDependencies: Twitter;
   userData: 
   assetBundleName: 
   assetBundleVariant: 

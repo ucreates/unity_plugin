@@ -11,6 +11,7 @@
 #import <UnityPlugin-Swift.h>
 static WebViewPlugin* webViewPlugin;
 static IndicatorViewPlugin* activityIndicatorViewPlugin;
+static CameraViewPlugin* cameraViewPlugin;
 extern "C" void showReviewViewPlugin(char* appStoreUrl) {
     NSString* url = [NSString stringWithCString: appStoreUrl encoding:NSUTF8StringEncoding];
     [ReviewViewPlugin show:url];
@@ -51,6 +52,45 @@ extern "C" void hideIndicatorViewPlugin() {
     [activityIndicatorViewPlugin hide];
     [activityIndicatorViewPlugin destroy];
     activityIndicatorViewPlugin = nil;
+    return;
+}
+extern "C" void showCameraViewPlugin() {
+    if (nil != cameraViewPlugin) {
+        return;
+    }
+    cameraViewPlugin = [CameraViewPlugin alloc];
+    [cameraViewPlugin create];
+    [cameraViewPlugin show];
+    return;
+}
+extern "C" const char* getTextureCameraViewPlugin() {
+    if (nil == cameraViewPlugin) {
+        return nil;
+    }
+    NSString* base64EncodedDataString = [cameraViewPlugin getTexture];
+    if (nil == base64EncodedDataString) {
+        return nil;
+    }
+    const char* base64EncodedDataUTF8String = [base64EncodedDataString UTF8String];
+    unsigned long bufferSize = strlen(base64EncodedDataUTF8String) + 1;
+    char* ret = (char*)malloc(bufferSize);
+    strcpy(ret, base64EncodedDataUTF8String);
+    return ret;
+}
+extern "C" void updateCameraViewPlugin(bool suspend) {
+    if (nil == cameraViewPlugin) {
+        return;
+    }
+    [cameraViewPlugin update:suspend];
+    return;
+}
+extern "C" void hideCameraViewPlugin() {
+    if (nil == cameraViewPlugin) {
+        return;
+    }
+    [cameraViewPlugin hide];
+    [cameraViewPlugin destroy];
+    cameraViewPlugin = nil;
     return;
 }
 extern "C" void transitionViewControllerPlugin(int viewControllerId) {
