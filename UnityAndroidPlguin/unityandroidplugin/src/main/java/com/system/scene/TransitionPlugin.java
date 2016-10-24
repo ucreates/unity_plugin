@@ -16,7 +16,7 @@ public class TransitionPlugin {
     public static void execute(int activityId) {
         final Activity fromActivity = ActivityPlugin.getInstance();
         final int id = activityId;
-        fromActivity.runOnUiThread(new Runnable() {
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 Activity toActiviry = ActivityFactoryPlugin.factoryMethod(id);
@@ -24,7 +24,8 @@ public class TransitionPlugin {
                 fromActivity.startActivity(intent);
                 return;
             }
-        });
+        };
+        fromActivity.runOnUiThread(runnable);
         return;
     }
 }

@@ -28,7 +28,7 @@ public class WebViewPlugin {
         final Activity activity = ActivityPlugin.getInstance();
         final String url = requestUrl;
         final Rect margin = new Rect(left, top, right, bottom);
-        activity.runOnUiThread(new Runnable() {
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 view = new WebView(activity);
@@ -55,7 +55,8 @@ public class WebViewPlugin {
                 activity.addContentView(layout, viewLayoutParams);
                 return;
             }
-        });
+        };
+        activity.runOnUiThread(runnable);
         return;
     }
     public void show() {
@@ -69,7 +70,7 @@ public class WebViewPlugin {
     public void setVisible(boolean visible) {
         final Activity activity = ActivityPlugin.getInstance();
         final boolean visibleView = visible;
-        activity.runOnUiThread(new Runnable() {
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 if (null == view) {
@@ -82,12 +83,13 @@ public class WebViewPlugin {
                 }
                 return;
             }
-        });
+        };
+        activity.runOnUiThread(runnable);
         return;
     }
     public void destroy() {
         final Activity activity = ActivityPlugin.getInstance();
-        activity.runOnUiThread(new Runnable() {
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 if (view == null || layout == null) {
@@ -97,7 +99,8 @@ public class WebViewPlugin {
                 view = null;
                 return;
             }
-        });
+        };
+        activity.runOnUiThread(runnable);
         return;
     }
 }

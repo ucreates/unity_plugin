@@ -50,7 +50,7 @@ public class CameraViewPlugin {
             return;
         }
         final Activity activity = ActivityPlugin.getInstance();
-        activity.runOnUiThread(new Runnable() {
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 final Camera.PreviewCallback previewCallBack = new Camera.PreviewCallback() {
@@ -192,12 +192,13 @@ public class CameraViewPlugin {
                 created = true;
                 return;
             }
-        });
+        };
+        activity.runOnUiThread(runnable);
         return;
     }
     public void show() {
         final Activity activity = ActivityPlugin.getInstance();
-        activity.runOnUiThread(new Runnable() {
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 if (null == camera) {
@@ -206,7 +207,8 @@ public class CameraViewPlugin {
                 camera.startPreview();
                 return;
             }
-        });
+        };
+        activity.runOnUiThread(runnable);
         return;
     }
     public void update(boolean suspend) {
@@ -221,7 +223,7 @@ public class CameraViewPlugin {
     }
     public void hide() {
         final Activity activity = ActivityPlugin.getInstance();
-        activity.runOnUiThread(new Runnable() {
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 if (null == camera) {
@@ -230,12 +232,13 @@ public class CameraViewPlugin {
                 camera.stopPreview();
                 return;
             }
-        });
+        };
+        activity.runOnUiThread(runnable);
         return;
     }
     public void destroy() {
         final Activity activity = ActivityPlugin.getInstance();
-        activity.runOnUiThread(new Runnable() {
+        Runnable runnable = new Runnable() {
             @TargetApi(Build.VERSION_CODES.FROYO)
             @Override
             public void run() {
@@ -250,7 +253,8 @@ public class CameraViewPlugin {
                 created = false;
                 return;
             }
-        });
+        };
+        activity.runOnUiThread(runnable);
         return;
     }
     public byte[] getTexture() {

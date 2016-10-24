@@ -21,7 +21,7 @@ public class IndicatorViewPlugin {
     private Dialog dialog;
     public void show() {
         final Activity activity = ActivityPlugin.getInstance();
-        activity.runOnUiThread(new Runnable() {
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 FrameLayout.LayoutParams progressBarLayoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -41,12 +41,13 @@ public class IndicatorViewPlugin {
                 dialog.show();
                 return;
             }
-        });
+        };
+        activity.runOnUiThread(runnable);
         return;
     }
     public void hide() {
         final Activity activity = ActivityPlugin.getInstance();
-        activity.runOnUiThread(new Runnable() {
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 if (null == dialog) {
@@ -56,7 +57,8 @@ public class IndicatorViewPlugin {
                 dialog = null;
                 return;
             }
-        });
+        };
+        activity.runOnUiThread(runnable);
         return;
     }
 }

@@ -18,7 +18,7 @@ public class ReviewViewPlugin {
     public void show(String googlePlayUrl) {
         final Activity activity = ActivityPlugin.getInstance();
         final Uri googlePlayUri = Uri.parse(googlePlayUrl);
-        activity.runOnUiThread(new Runnable() {
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 final String[] items = {"このアプリを評価する", "いいえ、まだ結構です",};
@@ -37,7 +37,8 @@ public class ReviewViewPlugin {
                 .show();
                 return;
             }
-        });
+        };
+        activity.runOnUiThread(runnable);
         return;
     }
 }
