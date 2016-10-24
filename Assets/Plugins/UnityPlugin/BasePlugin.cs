@@ -16,5 +16,9 @@ public abstract class BasePlugin {
             return 0;
         }
     }
+    protected AndroidJavaObject androidPlugin {
+        get;
+        set;
+    }
 }
 }

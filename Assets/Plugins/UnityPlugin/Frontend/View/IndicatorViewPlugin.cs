@@ -7,10 +7,6 @@ public sealed class IndicatorViewPlugin : BasePlugin {
     private static extern void showIndicatorViewPlugin();
     [DllImport("__Internal")]
     private static extern void hideIndicatorViewPlugin();
-    private AndroidJavaObject androidPlugin {
-        get;
-        set;
-    }
     public IndicatorViewPlugin() {
         if (RuntimePlatform.Android == Application.platform) {
             this.androidPlugin = new AndroidJavaObject("com.frontend.view.IndicatorViewPlugin");

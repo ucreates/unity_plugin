@@ -23,10 +23,6 @@ public sealed class CameraViewPlugin : BasePlugin {
     private static extern void updateCameraViewPlugin(bool suspend);
     [DllImport("__Internal")]
     private static extern void hideCameraViewPlugin();
-    private AndroidJavaObject androidPlugin {
-        get;
-        set;
-    }
     private bool enablePlugin {
         get;
         set;

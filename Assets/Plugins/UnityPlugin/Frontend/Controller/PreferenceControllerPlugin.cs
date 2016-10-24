@@ -19,10 +19,6 @@ public sealed class PreferenceControllerPlugin : BasePlugin {
             return 2;
         }
     }
-    private AndroidJavaObject androidPlugin {
-        get;
-        set;
-    }
     public PreferenceControllerPlugin() {
         if (RuntimePlatform.Android == Application.platform) {
             this.androidPlugin = new AndroidJavaObject("com.system.scene.TransitionPlugin");

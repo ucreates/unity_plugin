@@ -18,9 +18,8 @@ public sealed class ReviewViewPlugin : BasePlugin {
         if (RuntimePlatform.IPhonePlayer == Application.platform) {
             showReviewViewPlugin(storeUrl);
         } else if (RuntimePlatform.Android == Application.platform) {
-            using(AndroidJavaObject plugin = new AndroidJavaObject("com.frontend.view.ReviewViewPlugin")) {
-                plugin.Call("show", storeUrl);
-            }
+            this.androidPlugin = new AndroidJavaObject("com.frontend.view.ReviewViewPlugin");
+            this.androidPlugin.Call("show", storeUrl);
         } else {
 #if UNITY_STANDALONE
             UnityManagedPlugin.Frontend.View.ReviewViewPlugin managedPlugin = new UnityManagedPlugin.Frontend.View.ReviewViewPlugin();

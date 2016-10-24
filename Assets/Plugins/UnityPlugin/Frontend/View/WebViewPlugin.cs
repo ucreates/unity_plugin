@@ -16,10 +16,6 @@ public sealed class WebViewPlugin : BasePlugin {
     private static extern void showWebViewPlugin(string url, float left, float top, float right, float bottom);
     [DllImport("__Internal")]
     private static extern void hideWebViewPlugin();
-    private AndroidJavaObject androidPlugin {
-        get;
-        set;
-    }
     public WebViewPlugin() {
         if (RuntimePlatform.Android == Application.platform) {
             this.androidPlugin = new AndroidJavaObject("com.frontend.view.WebViewPlugin");

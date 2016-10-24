@@ -14,10 +14,6 @@ namespace UnityPlugin.System.Preference {
 public sealed class PreferencePlugin : BasePlugin {
     [DllImport("__Internal")]
     private static extern bool getSwitchPreference(string keyName);
-    private AndroidJavaObject androidPlugin {
-        get;
-        set;
-    }
     public PreferencePlugin() {
         if (RuntimePlatform.Android == Application.platform) {
             this.androidPlugin = new AndroidJavaObject("com.system.preference.PreferencePlugin");
