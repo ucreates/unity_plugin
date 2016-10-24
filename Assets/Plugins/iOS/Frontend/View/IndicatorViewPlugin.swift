@@ -11,6 +11,7 @@ import Foundation
 import UIKit
 public class IndicatorViewPlugin: NSObject {
     var view: UIActivityIndicatorView!
+    @objc
     public func create() {
         var style: UIActivityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
         if (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad) {
@@ -23,6 +24,7 @@ public class IndicatorViewPlugin: NSObject {
         controller.view.addSubview(self.view)
         return
     }
+    @objc
     public func show() {
         if (nil == self.view) {
             return
@@ -30,6 +32,7 @@ public class IndicatorViewPlugin: NSObject {
         self.view.startAnimating()
         return
     }
+    @objc
     public func hide() {
         if (nil == self.view) {
             return
@@ -37,6 +40,7 @@ public class IndicatorViewPlugin: NSObject {
         self.view.stopAnimating()
         return
     }
+    @objc
     public func destroy() {
         if (nil == self.view) {
             return

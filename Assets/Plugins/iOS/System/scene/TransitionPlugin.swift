@@ -9,6 +9,7 @@
 //======================================================================
 import UIKit
 public class TransitionPlugin: NSObject {
+    @objc
     public class func execute(viewControllerId: Int) -> Void {
         let fromViewController: UIViewController = ViewControllerPlugin.getInstance()
         let toViewController: UIViewController = ViewControllerFactoryPlugin.factoryMethod(viewControllerId)

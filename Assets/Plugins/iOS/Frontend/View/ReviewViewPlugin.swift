@@ -10,6 +10,7 @@
 import Foundation
 import UIKit
 public class ReviewViewPlugin: NSObject {
+    @objc
     public class func show(appStoreUrl: String) {
         let alert: UIAlertController = UIAlertController(title: "Review", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         func evalCallBack (action: UIAlertAction) -> Void {

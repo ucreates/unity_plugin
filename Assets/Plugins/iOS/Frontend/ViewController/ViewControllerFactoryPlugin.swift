@@ -9,6 +9,7 @@
 //======================================================================
 import UIKit
 public class ViewControllerFactoryPlugin: NSObject {
+    @objc
     public class func factoryMethod(viewControllerId: Int) -> UIViewController {
         var ret: UIViewController = ViewControllerPlugin.getInstance()
         switch viewControllerId {

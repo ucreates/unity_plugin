@@ -1,4 +1,4 @@
-//======================================================================
+// ======================================================================
 // Project Name    : unity plugin
 //
 // Copyright © 2016 U-CREATES. All rights reserved.
@@ -10,6 +10,7 @@
 import UIKit
 public class ViewControllerPlugin: NSObject {
     public static let VIEWCONTROLLER_ID: Int = 1
+    @objc
     public class func getInstance() -> UIViewController {
         return UnityGetGLViewController()
     }

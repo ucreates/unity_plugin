@@ -1,4 +1,4 @@
-//======================================================================
+// ======================================================================
 // Project Name    : unity plugin
 //
 // Copyright © 2016 U-CREATES. All rights reserved.
@@ -9,6 +9,7 @@
 //======================================================================
 import UIKit
 public class NotifierPlugin: NSObject {
+    @objc
     public class func Notify(gameObjectName: String, methodName: String, parameter: String) {
         UnitySendMessage(gameObjectName, methodName, parameter)
         return

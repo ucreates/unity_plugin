@@ -9,6 +9,7 @@
 //======================================================================
 import Foundation
 public class PreferencePlugin: NSObject {
+    @objc
     public class func getSwitchPreference(keyName: String) -> Bool {
         let preference: NSUserDefaults = NSUserDefaults()
         return preference.boolForKey(keyName)
