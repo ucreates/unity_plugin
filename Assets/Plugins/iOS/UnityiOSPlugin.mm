@@ -93,6 +93,20 @@ extern "C" void hideCameraViewPlugin() {
     cameraViewPlugin = nil;
     return;
 }
+extern "C" void fillPathPlugin(char* dataPath, char* persistentDataPath, char* streamingAssetsPath, char* temporaryCachePath) {
+    NSString* unityDataPath = [NSString stringWithCString: dataPath encoding:NSUTF8StringEncoding];
+    NSString* unityPersistentDataPath = [NSString stringWithCString: persistentDataPath encoding:NSUTF8StringEncoding];
+    NSString* unityStreamingAssetsPath = [NSString stringWithCString: streamingAssetsPath encoding:NSUTF8StringEncoding];
+    NSString* unityTemporaryCachePath = [NSString stringWithCString: temporaryCachePath encoding:NSUTF8StringEncoding];
+    PathPlugin* pathPlugin = [PathPlugin getInstance];
+    [pathPlugin fill:unityDataPath persistentDataPath:unityPersistentDataPath streamingAssetsPath:unityStreamingAssetsPath temporaryCachePath:unityTemporaryCachePath];
+    return;
+}
+extern "C" void dumpPathPlugin() {
+    PathPlugin* pathPlugin = [PathPlugin getInstance];
+    [pathPlugin dump];
+    return;
+}
 extern "C" void transitionViewControllerPlugin(int viewControllerId) {
     [TransitionPlugin execute:viewControllerId];
     return;

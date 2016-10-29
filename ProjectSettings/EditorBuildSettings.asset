@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Frontend/View/CameraViewPluginViewer.unity
   - enabled: 1
     path: Assets/Scenes/Frontend/Controller/PreferenceControllerPluginViewer.unity
+  - enabled: 1
+    path: Assets/Scenes/System/IO/PathPluginViewer.unity
