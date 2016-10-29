@@ -7,13 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-using System;
 using UnityEngine;
 using UnityEditor;
-namespace UnityManagedPlugin.Frontend.View {
-public class IndicatorViewPlugin {
-    public void Show() {
-        EditorUtility.DisplayDialog("インジゲータ", "", "OK", "");
+namespace UnityManagedPlugin.Frontend.Controller {
+public class PreferenceControllerPlugin {
+    public void Transition() {
+        EditorUtility.DisplayDialog("設定画面", "", "OK", "");
     }
 }
 }
