@@ -11,7 +11,7 @@ using UnityEngine;
 using System.Collections;
 using UnityPlugin;
 using UnityPlugin.Frontend.View;
-public class WebViewPluginBehaviour : MonoBehaviour {
+public class WebViewPluginEventHandler : MonoBehaviour {
     private WebViewPlugin plugin {
         get;
         set;

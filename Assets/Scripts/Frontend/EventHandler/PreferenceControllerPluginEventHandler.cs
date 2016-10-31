@@ -13,7 +13,7 @@ using UnityPlugin.Frontend.Controller;
 using UnityPlugin.System.Preference;
 using System.Collections;
 using System.Runtime.InteropServices;
-public class PreferenceControllerPluginBehaviour : MonoBehaviour {
+public class PreferenceControllerPluginEventHandler : MonoBehaviour {
     private PreferenceControllerPlugin preferenceControllerPlugin {
         get;
         set;

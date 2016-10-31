@@ -12,7 +12,7 @@ using System.Collections;
 using System.Runtime.InteropServices;
 using UnityPlugin;
 using UnityPlugin.Frontend.View;
-public class IndicatorViewPluginBehaviour : MonoBehaviour {
+public class IndicatorViewPluginEventHandler : MonoBehaviour {
     private IndicatorViewPlugin plugin {
         get;
         set;
