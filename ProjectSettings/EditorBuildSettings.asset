@@ -8,13 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PluginLauncher.unity
   - enabled: 1
-    path: Assets/Scenes/Frontend/View/ReviewViewPluginViewer.unity
+    path: Assets/Scenes/Frontend/View/AlertViewPluginViewer.unity
   - enabled: 1
-    path: Assets/Scenes/Frontend/View/WebViewPluginViewer.unity
+    path: Assets/Scenes/Frontend/View/CameraViewPluginViewer.unity
   - enabled: 1
     path: Assets/Scenes/Frontend/View/IndicatorViewPluginViewer.unity
   - enabled: 1
-    path: Assets/Scenes/Frontend/View/CameraViewPluginViewer.unity
+    path: Assets/Scenes/Frontend/View/ReviewViewPluginViewer.unity
+  - enabled: 1
+    path: Assets/Scenes/Frontend/View/WebViewPluginViewer.unity
   - enabled: 1
     path: Assets/Scenes/Frontend/Controller/PreferenceControllerPluginViewer.unity
   - enabled: 1

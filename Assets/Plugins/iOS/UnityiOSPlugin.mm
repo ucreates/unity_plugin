@@ -107,6 +107,11 @@ extern "C" void dumpPathPlugin() {
     [pathPlugin dump];
     return;
 }
+extern "C" void showAlertViewPlugin(char* message) {
+    NSString* encodedMessage = [NSString stringWithCString: message encoding:NSUTF8StringEncoding];
+    [AlertViewPlugin show:encodedMessage];
+    return;
+}
 extern "C" void transitionViewControllerPlugin(int viewControllerId) {
     [TransitionPlugin execute:viewControllerId];
     return;
