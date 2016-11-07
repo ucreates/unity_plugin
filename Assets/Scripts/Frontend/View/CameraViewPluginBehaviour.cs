@@ -36,11 +36,11 @@ public class CameraViewPluginBehaviour : MonoBehaviour {
         }
         float degree = Time.time * CameraViewPluginBehaviour.ACCELERATION;
         this.transform.rotation = Quaternion.Euler(degree, degree, degree);
-        MeshRenderer renderer = this.captureGameObject.GetComponent<MeshRenderer>();
         Texture2D texture = this.plugin.GetTexture();
         if (null == texture) {
             return;
         }
+        MeshRenderer renderer = this.captureGameObject.GetComponent<MeshRenderer>();
         UnityEngine.Object.DestroyImmediate(renderer.material.mainTexture);
         renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
         renderer.receiveShadows = false;
