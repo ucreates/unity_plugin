@@ -15,7 +15,7 @@ import android.content.Intent;
 import android.net.Uri;
 import com.frontend.activity.ActivityPlugin;
 public class ReviewViewPlugin {
-    public void show(String googlePlayUrl) {
+    public static void show(String googlePlayUrl) {
         final Activity activity = ActivityPlugin.getInstance();
         final Uri googlePlayUri = Uri.parse(googlePlayUrl);
         Runnable runnable = new Runnable() {
