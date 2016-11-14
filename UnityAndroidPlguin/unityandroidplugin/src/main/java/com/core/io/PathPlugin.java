@@ -1,6 +1,6 @@
-package com.system.io;
+package com.core.io;
 import android.util.Log;
-import com.system.identifier.TagPlugin;
+import com.core.identifier.TagPlugin;
 public class PathPlugin {
     private static PathPlugin instance = null;
     private String dataPath;

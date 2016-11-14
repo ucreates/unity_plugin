@@ -19,7 +19,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import com.frontend.activity.ActivityPlugin;
-import com.system.identifier.TagPlugin;
+import com.core.identifier.TagPlugin;
 public class WebViewPlugin {
     private final static int TRANSPARENT_BACK_GROUND_COLOR = 0x00000000;
     private WebView view;

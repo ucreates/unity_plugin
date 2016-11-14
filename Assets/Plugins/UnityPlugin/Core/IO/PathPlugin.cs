@@ -10,7 +10,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Runtime.InteropServices;
-namespace UnityPlugin.System.IO {
+namespace UnityPlugin.Core.IO {
 public sealed class PathPlugin : BasePlugin {
     [DllImport("__Internal")]
     private static extern void fillPathPlugin(string dataPath, string persistentDataPath, string streamingAssetsPath, string temporaryCachePath);
@@ -18,7 +18,7 @@ public sealed class PathPlugin : BasePlugin {
     private static extern void dumpPathPlugin();
     public PathPlugin() {
         if (RuntimePlatform.Android == Application.platform) {
-            this.androidPlugin = new AndroidJavaObject("com.system.io.PathPlugin");
+            this.androidPlugin = new AndroidJavaObject("com.core.io.PathPlugin");
         }
     }
     public void Fill() {

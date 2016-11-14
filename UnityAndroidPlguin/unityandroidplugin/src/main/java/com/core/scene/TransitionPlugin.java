@@ -7,7 +7,7 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-package com.system.scene;
+package com.core.scene;
 import android.app.Activity;
 import android.content.Intent;
 import com.frontend.activity.ActivityPlugin;

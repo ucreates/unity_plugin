@@ -10,13 +10,13 @@
 using UnityEngine;
 using System.Collections;
 using System.Runtime.InteropServices;
-namespace UnityPlugin.System.Preference {
+namespace UnityPlugin.Core.Preference {
 public sealed class PreferencePlugin : BasePlugin {
     [DllImport("__Internal")]
     private static extern bool getSwitchPreference(string keyName);
     public PreferencePlugin() {
         if (RuntimePlatform.Android == Application.platform) {
-            this.androidPlugin = new AndroidJavaObject("com.system.preference.PreferencePlugin");
+            this.androidPlugin = new AndroidJavaObject("com.core.preference.PreferencePlugin");
         }
     }
     public bool GetSwitchPreference(string keyName) {

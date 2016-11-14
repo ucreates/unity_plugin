@@ -7,7 +7,7 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-package com.system.identifier;
+package com.core.identifier;
 public class TagPlugin {
     public final static String UNITY_PLUGIN_IDENTIFIER = "UnityAndroidPlugin";
 }

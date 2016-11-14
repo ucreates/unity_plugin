@@ -10,7 +10,7 @@
 using UnityEngine;
 using UnityPlugin;
 using UnityPlugin.Frontend.Controller;
-using UnityPlugin.System.Preference;
+using UnityPlugin.Core.Preference;
 using System.Collections;
 using System.Runtime.InteropServices;
 public class PreferenceControllerPluginEventHandler : MonoBehaviour {

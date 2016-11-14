@@ -20,8 +20,8 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.provider.Settings;
 import android.util.Log;
-import com.system.identifier.TagPlugin;
-import com.system.preference.PreferencePlugin;
+import com.core.identifier.TagPlugin;
+import com.core.preference.PreferencePlugin;
 public class PreferenceActivityPlugin extends PreferenceActivity {
     public static final int ACTIVITY_ID = 2;
     private static final int CELL_NUM = 5;

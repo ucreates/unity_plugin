@@ -7,7 +7,7 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-package com.system.preference;
+package com.core.preference;
 import android.content.Context;
 import android.content.SharedPreferences;
 import com.frontend.activity.ActivityPlugin;
