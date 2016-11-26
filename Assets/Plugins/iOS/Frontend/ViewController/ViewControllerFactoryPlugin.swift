@@ -8,9 +8,9 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 import UIKit
-public class ViewControllerFactoryPlugin: NSObject {
+open class ViewControllerFactoryPlugin: NSObject {
     @objc
-    public class func factoryMethod(viewControllerId: Int) -> UIViewController {
+    open class func factoryMethod(_ viewControllerId: Int) -> UIViewController {
         var ret: UIViewController = ViewControllerPlugin.getInstance()
         switch viewControllerId {
         case PreferenceViewControllerPlugin.VIEWCONTROLLER_ID:

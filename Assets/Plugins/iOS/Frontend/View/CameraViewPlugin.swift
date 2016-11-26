@@ -10,73 +10,77 @@
 import Foundation
 import UIKit
 import AVFoundation
-public class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
-    private static let CAPTURE_QUALITY: CGFloat = 0
-    private static let DISPATCH_QUEUE_NAME: String = "CAPTURE"
-    private var session: AVCaptureSession!
-    private var output: AVCaptureVideoDataOutput!
-    private var camera: AVCaptureDevice!
-    private var view: UIView!
-    private var texture: String!
-    private var queue: dispatch_queue_t!
-    private var context: CIContext! = nil
-    private var created: Bool = false
+open class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
+    fileprivate static let CAPTURE_QUALITY: CGFloat = 0
+    fileprivate static let DISPATCH_QUEUE_NAME: String = "CAPTURE"
+    fileprivate var session: AVCaptureSession!
+    fileprivate var output: AVCaptureVideoDataOutput!
+    fileprivate var camera: AVCaptureDevice!
+    fileprivate var view: UIView!
+    fileprivate var texture: String!
+    fileprivate var queue: DispatchQueue!
+    fileprivate var context: CIContext! = nil
+    fileprivate var created: Bool = false
     @objc
-    public func create() {
-        if (false != self.created) {
-            return
-        }
-        let status: AVAuthorizationStatus = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
-        if (status != AVAuthorizationStatus.Authorized) {
-            return
-        }
-        let deviceList: [AnyObject] = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo)
-        for device: AnyObject in deviceList {
-            if device.position == AVCaptureDevicePosition.Back {
-                self.camera = device as! AVCaptureDevice
-                break
+    open func create() {
+        func callback (granted: Bool) -> Void {
+            if (false == granted || false != self.created) {
+                return
             }
-        }
-        if (nil == self.camera) {
-            return
-        }
-        self.context = CIContext.init()
-        self.queue = dispatch_queue_create(CameraViewPlugin.DISPATCH_QUEUE_NAME, DISPATCH_QUEUE_SERIAL)
-        self.output = AVCaptureVideoDataOutput()
-        self.output.videoSettings = [kCVPixelBufferPixelFormatTypeKey: Int(kCVPixelFormatType_32BGRA)]
-        self.output.setSampleBufferDelegate(self, queue: self.queue)
-        self.output.alwaysDiscardsLateVideoFrames = true
-        self.session = AVCaptureSession()
-        self.session.sessionPreset = AVCaptureSessionPresetMedium
-        self.texture = nil
-        do {
-            let supportedFrameRateRanges: NSArray = self.camera.activeFormat.videoSupportedFrameRateRanges
-            var duration: AVFrameRateRange = supportedFrameRateRanges[0] as! AVFrameRateRange
-            for supportedFrameRateRange in supportedFrameRateRanges {
-                if (supportedFrameRateRange.maxFrameRate > duration.maxFrameRate) {
-                    duration = supportedFrameRateRange as! AVFrameRateRange
+            let status: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+            if (status != AVAuthorizationStatus.authorized) {
+                return
+            }
+            let deviceList: [AnyObject] = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) as [AnyObject]
+            for device: AnyObject in deviceList {
+                if device.position == AVCaptureDevicePosition.back {
+                    self.camera = device as! AVCaptureDevice
+                    break
                 }
             }
-            try self.camera.lockForConfiguration()
-            self.camera.activeVideoMinFrameDuration = duration.minFrameDuration
-            self.camera.activeVideoMaxFrameDuration = duration.maxFrameDuration
-            self.camera.unlockForConfiguration()
-        } catch {
-            return
-        }
-        let capture: AVCaptureInput!
-        do {
-            capture = try AVCaptureDeviceInput.init(device: self.camera) as AVCaptureInput
-            self.session.addInput(capture)
-            self.session.addOutput(self.output)
-        } catch {
-            capture = nil
-        }
-        self.created = true
+            if (nil == self.camera) {
+                return
+            }
+            self.context = CIContext.init()
+            self.queue = DispatchQueue(label: CameraViewPlugin.DISPATCH_QUEUE_NAME, attributes: [])
+            self.output = AVCaptureVideoDataOutput()
+            self.output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable: Int(kCVPixelFormatType_32BGRA)]
+            self.output.setSampleBufferDelegate(self, queue: self.queue)
+            self.output.alwaysDiscardsLateVideoFrames = true
+            self.session = AVCaptureSession()
+            self.session.sessionPreset = AVCaptureSessionPresetMedium
+            self.texture = nil
+            do {
+                let supportedFrameRateRanges: NSArray = self.camera.activeFormat.videoSupportedFrameRateRanges as NSArray
+                var duration: AVFrameRateRange = supportedFrameRateRanges[0] as! AVFrameRateRange
+                for supportedFrameRateRange in supportedFrameRateRanges {
+                    if ((supportedFrameRateRange as AnyObject).maxFrameRate > duration.maxFrameRate) {
+                        duration = supportedFrameRateRange as! AVFrameRateRange
+                    }
+                }
+                try self.camera.lockForConfiguration()
+                self.camera.activeVideoMinFrameDuration = duration.minFrameDuration
+                self.camera.activeVideoMaxFrameDuration = duration.maxFrameDuration
+                self.camera.unlockForConfiguration()
+            } catch {
+                return
+            }
+            let capture: AVCaptureInput!
+            do {
+                capture = try AVCaptureDeviceInput.init(device: self.camera) as AVCaptureInput
+                self.session.addInput(capture)
+                self.session.addOutput(self.output)
+            } catch {
+                capture = nil
+            }
+            self.created = true
+            self.session.startRunning()
+        };
+        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: callback)
         return
     }
     @objc
-    public func show() {
+    open func show() {
         if (nil == self.session) {
             return
         }
@@ -84,7 +88,7 @@ public class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDel
         return
     }
     @objc
-    public func update(suspend: Bool) {
+    open func update(_ suspend: Bool) {
         if (nil == self.session) {
             return
         }
@@ -96,7 +100,7 @@ public class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDel
         return
     }
     @objc
-    public func hide() {
+    open func hide() {
         if (nil == self.session) {
             return
         }
@@ -104,15 +108,15 @@ public class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDel
         return
     }
     @objc
-    public func destroy() {
+    open func destroy() {
         if (nil == self.camera || false == self.created || nil == self.output || nil == self.session) {
             return
         }
-        for output: AnyObject in self.session.outputs {
+        for output: Any in self.session.outputs {
             let avOutPut: AVCaptureOutput = output as! AVCaptureOutput
             self.session.removeOutput(avOutPut)
         }
-        for input: AnyObject in self.session.inputs {
+        for input: Any in self.session.inputs {
             let avInPut: AVCaptureInput = input as! AVCaptureInput
             self.session.removeInput(avInPut)
         }
@@ -124,30 +128,30 @@ public class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDel
         return
     }
     @objc
-    public func getTexture() -> String! {
+    open func getTexture() -> String! {
         return self.texture
     }
-    public func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+    open func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
         if (nil == sampleBuffer || false == self.created) {
             return
         }
-        let dispatcher: dispatch_block_t = {
+        let dispatcher: () -> () = {
             autoreleasepool {
-                let buffer: CVImageBufferRef = CMSampleBufferGetImageBuffer(sampleBuffer)!
-                CVPixelBufferLockBaseAddress(buffer, 0)
+                let buffer: CVImageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
+                CVPixelBufferLockBaseAddress(buffer, CVPixelBufferLockFlags(rawValue: 0))
                 let pixelBufferWidth: Int = CVPixelBufferGetWidth(buffer)
                 let pixelBufferHeight: Int = CVPixelBufferGetHeight(buffer)
                 let imageWidth: CGFloat = CGFloat(pixelBufferWidth)
                 let imageHeight = CGFloat(pixelBufferHeight)
-                let rect: CGRect = CGRectMake(0, 0, imageWidth, imageHeight)
-                let ciimage = CIImage(CVPixelBuffer: buffer)
-                let cgimage = self.context.createCGImage(ciimage, fromRect: rect)
-                let image = UIImage(CGImage: cgimage)
-                let data: NSData = UIImageJPEGRepresentation(image, CameraViewPlugin.CAPTURE_QUALITY)!
-                CVPixelBufferUnlockBaseAddress(buffer, 0)
-                self.texture = data.base64EncodedStringWithOptions([])
+                let rect: CGRect = CGRect(x: 0, y: 0, width: imageWidth, height: imageHeight)
+                let ciimage = CIImage(cvPixelBuffer: buffer)
+                let cgimage = self.context.createCGImage(ciimage, from: rect)
+                let image = UIImage(cgImage: cgimage!)
+                let data: Data = UIImageJPEGRepresentation(image, CameraViewPlugin.CAPTURE_QUALITY)!
+                CVPixelBufferUnlockBaseAddress(buffer, CVPixelBufferLockFlags(rawValue: 0))
+                self.texture = data.base64EncodedString(options: [])
             }
         }
-        dispatch_async(self.queue, dispatcher)
+        self.queue.async(execute: dispatcher)
     }
 }

@@ -8,10 +8,10 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 import UIKit
-public class ViewControllerPlugin: NSObject {
-    public static let VIEWCONTROLLER_ID: Int = 1
+open class ViewControllerPlugin: NSObject {
+    open static let VIEWCONTROLLER_ID: Int = 1
     @objc
-    public class func getInstance() -> UIViewController {
+    open class func getInstance() -> UIViewController {
         return UnityGetGLViewController()
     }
 }

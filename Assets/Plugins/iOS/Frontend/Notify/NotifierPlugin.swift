@@ -8,9 +8,9 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 import UIKit
-public class NotifierPlugin: NSObject {
+open class NotifierPlugin: NSObject {
     @objc
-    public class func Notify(gameObjectName: String, methodName: String, parameter: String) {
+    open class func Notify(_ gameObjectName: String, methodName: String, parameter: String) {
         UnitySendMessage(gameObjectName, methodName, parameter)
         return
     }

@@ -9,13 +9,13 @@
 //======================================================================
 import Foundation
 import UIKit
-public class IndicatorViewPlugin: NSObject {
+open class IndicatorViewPlugin: NSObject {
     var view: UIActivityIndicatorView!
     @objc
-    public func create() {
-        var style: UIActivityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
-        if (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad) {
-            style = UIActivityIndicatorViewStyle.WhiteLarge
+    open func create() {
+        var style: UIActivityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
+        if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad) {
+            style = UIActivityIndicatorViewStyle.whiteLarge
         }
         let controller: UIViewController = ViewControllerPlugin.getInstance()
         self.view = UIActivityIndicatorView()
@@ -25,7 +25,7 @@ public class IndicatorViewPlugin: NSObject {
         return
     }
     @objc
-    public func show() {
+    open func show() {
         if (nil == self.view) {
             return
         }
@@ -33,7 +33,7 @@ public class IndicatorViewPlugin: NSObject {
         return
     }
     @objc
-    public func hide() {
+    open func hide() {
         if (nil == self.view) {
             return
         }
@@ -41,7 +41,7 @@ public class IndicatorViewPlugin: NSObject {
         return
     }
     @objc
-    public func destroy() {
+    open func destroy() {
         if (nil == self.view) {
             return
         }

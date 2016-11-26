@@ -8,14 +8,14 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 import UIKit
-public class PathPlugin: NSObject {
+open class PathPlugin: NSObject {
     static var instance: PathPlugin!
     var dataPath: String!
     var persistentDataPath: String!
     var streamingAssetsPath: String!
     var temporaryCachePath: String!
     var enableFill: Bool!
-    private override init() {
+    fileprivate override init() {
         self.dataPath = ""
         self.persistentDataPath = ""
         self.streamingAssetsPath = ""
@@ -24,14 +24,14 @@ public class PathPlugin: NSObject {
         return
     }
     @objc
-    public class func getInstance() -> PathPlugin {
+    open class func getInstance() -> PathPlugin {
         if (nil == PathPlugin.instance) {
             PathPlugin.instance = PathPlugin()
         }
         return PathPlugin.instance
     }
     @objc
-    public func fill(dataPath: String, persistentDataPath: String, streamingAssetsPath: String, temporaryCachePath: String) -> Void {
+    open func fill(_ dataPath: String, persistentDataPath: String, streamingAssetsPath: String, temporaryCachePath: String) -> Void {
         if (false == self.enableFill) {
             return
         }
@@ -42,19 +42,19 @@ public class PathPlugin: NSObject {
         self.enableFill = false
         return
     }
-    public func getDataPath() -> String! {
+    open func getDataPath() -> String! {
         return self.dataPath
     }
-    public func getPersistentDataPath() -> String! {
+    open func getPersistentDataPath() -> String! {
         return self.persistentDataPath
     }
-    public func getStreamingAssetsPath() -> String! {
+    open func getStreamingAssetsPath() -> String! {
         return self.streamingAssetsPath
     }
-    public func getTemporaryCachePath() -> String! {
+    open func getTemporaryCachePath() -> String! {
         return self.temporaryCachePath
     }
-    public func dump() {
+    open func dump() {
         print("dataPath in iOSPlugin::" + self.dataPath)
         print("persistentDataPath in iOSPlugin::" + self.persistentDataPath)
         print("streamingAssetsPath in iOSPlugin::" + self.streamingAssetsPath)

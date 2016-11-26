@@ -9,14 +9,14 @@
 //======================================================================
 import Foundation
 import UIKit
-public class AlertViewPlugin: NSObject {
+open class AlertViewPlugin: NSObject {
     @objc
-    public class func show(message: String) {
-        let alert: UIAlertController = UIAlertController(title: message, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-        let confirmAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+    open class func show(_ message: String) {
+        let alert: UIAlertController = UIAlertController(title: message, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        let confirmAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
         alert.addAction(confirmAction)
         let controller: UIViewController = ViewControllerPlugin.getInstance()
-        controller.presentViewController(alert, animated: true, completion: nil)
+        controller.present(alert, animated: true, completion: nil)
         return
     }
 }

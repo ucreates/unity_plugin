@@ -9,18 +9,18 @@
 //======================================================================
 import Foundation
 import UIKit
-public class PreferenceViewControllerPlugin: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    public static let VIEWCONTROLLER_ID: Int = 2
-    private static let CELL_NAME: String = "PREFERENCE_CELL"
-    private static let CELL_NUM: Int = 5
-    private static let PREFERENCE_COLOR: UIColor = UIColor(red: 0.937, green: 0.937, blue: 0.956, alpha: 1.0)
-    private static let SECTION_TITLE: [String] = ["設定カテゴリ1", "設定カテゴリ2"]
-    private static let SECTION_HEIGHT: CGFloat = UIScreen.mainScreen().bounds.height * 0.1
-    private static let VIEW_CONTROLLER_NAME: String = "設定画面"
-    private var tableView: UITableView!
-    override public func viewDidLoad() {
+open class PreferenceViewControllerPlugin: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    open static let VIEWCONTROLLER_ID: Int = 2
+    fileprivate static let CELL_NAME: String = "PREFERENCE_CELL"
+    fileprivate static let CELL_NUM: Int = 5
+    fileprivate static let PREFERENCE_COLOR: UIColor = UIColor(red: 0.937, green: 0.937, blue: 0.956, alpha: 1.0)
+    fileprivate static let SECTION_TITLE: [String] = ["設定カテゴリ1", "設定カテゴリ2"]
+    fileprivate static let SECTION_HEIGHT: CGFloat = UIScreen.main.bounds.height * 0.1
+    fileprivate static let VIEW_CONTROLLER_NAME: String = "設定画面"
+    fileprivate var tableView: UITableView!
+    override open func viewDidLoad() {
         super.viewDidLoad()
-        let backButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: #selector(PreferenceViewControllerPlugin.onClickReturnButton))
+        let backButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(PreferenceViewControllerPlugin.onClickReturnButton))
         let controller: UIViewController = ViewControllerPlugin.getInstance()
         let height: CGFloat = controller.view.frame.height
         let width: CGFloat = controller.view.frame.width
@@ -31,13 +31,13 @@ public class PreferenceViewControllerPlugin: UIViewController, UITableViewDataSo
         self.tableView.backgroundColor = PreferenceViewControllerPlugin.PREFERENCE_COLOR
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.separatorColor = UIColor.grayColor()
+        self.tableView.separatorColor = UIColor.gray
         self.tableView.tableFooterView = UIView()
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: PreferenceViewControllerPlugin.CELL_NAME)
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: PreferenceViewControllerPlugin.CELL_NAME)
         self.view.addSubview(self.tableView)
         return
     }
-    override public func viewWillAppear(animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         self.navigationController?.view.backgroundColor = PreferenceViewControllerPlugin.PREFERENCE_COLOR
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationController?.setToolbarHidden(false, animated: false)
@@ -45,60 +45,60 @@ public class PreferenceViewControllerPlugin: UIViewController, UITableViewDataSo
         super.viewWillAppear(animated)
         return
     }
-    public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    open func numberOfSections(in tableView: UITableView) -> Int {
         return PreferenceViewControllerPlugin.SECTION_TITLE.count
     }
-    public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    open func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return PreferenceViewControllerPlugin.SECTION_TITLE[section]
     }
-    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return PreferenceViewControllerPlugin.CELL_NUM
     }
-    public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return PreferenceViewControllerPlugin.SECTION_HEIGHT
     }
-    public func tableView(tableView: UITableView, cellForRowAtIndexPath: NSIndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt cellForRowAtIndexPath: IndexPath) -> UITableViewCell {
         let identifier: String = PreferenceViewControllerPlugin.CELL_NAME + String(cellForRowAtIndexPath.section)
-        var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(identifier)
+        var cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: identifier)
         if (nil == cell) {
-            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: identifier)
+            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: identifier)
         }
         let tag: Int = cellForRowAtIndexPath.row + 1
         if (0 == cellForRowAtIndexPath.section) {
             cell?.textLabel?.text = String(format: "項目%02d", tag)
-            cell?.textLabel?.backgroundColor = UIColor.whiteColor()
-            cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            cell?.textLabel?.backgroundColor = UIColor.white
+            cell?.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         } else if (1 == cellForRowAtIndexPath.section) {
             let id: String = "switch" + String(tag)
             let status: Bool = PreferencePlugin.getSwitchPreference(id)
             let switchView: UISwitch = UISwitch()
-            switchView.addTarget(self, action: #selector(PreferenceViewControllerPlugin.onChangeSwitchStatus(_:)), forControlEvents: UIControlEvents.ValueChanged)
-            switchView.on = status
+            switchView.addTarget(self, action: #selector(PreferenceViewControllerPlugin.onChangeSwitchStatus(_:)), for: UIControlEvents.valueChanged)
+            switchView.isOn = status
             switchView.tag = tag
-            cell?.selectionStyle = UITableViewCellSelectionStyle.Default
+            cell?.selectionStyle = UITableViewCellSelectionStyle.default
             cell?.textLabel?.text = String(format: "項目%02d", tag)
-            cell?.textLabel?.backgroundColor = UIColor.whiteColor()
+            cell?.textLabel?.backgroundColor = UIColor.white
             cell?.accessoryView = switchView
         }
         return cell!
     }
-    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (0 != indexPath.section) {
             return
         }
-        let url: NSURL = NSURL(string: UIApplicationOpenSettingsURLString)!
-        let app: UIApplication = UIApplication.sharedApplication()
+        let url: URL = URL(string: UIApplicationOpenSettingsURLString)!
+        let app: UIApplication = UIApplication.shared
         app.openURL(url)
         return
     }
-    public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let layer: CAShapeLayer = CAShapeLayer()
         let path: UIBezierPath = UIBezierPath(rect: cell.bounds)
-        layer.path = path.CGPath
-        layer.fillColor = UIColor.whiteColor().CGColor
+        layer.path = path.cgPath
+        layer.fillColor = UIColor.white.cgColor
         let bgView: UIView = UIView(frame: cell.bounds)
-        bgView.layer.insertSublayer(layer, atIndex: 0)
-        bgView.backgroundColor = UIColor.clearColor()
+        bgView.layer.insertSublayer(layer, at: 0)
+        bgView.backgroundColor = UIColor.clear
         cell.backgroundColor = PreferenceViewControllerPlugin.PREFERENCE_COLOR
         cell.backgroundView = bgView
         return
@@ -112,12 +112,12 @@ public class PreferenceViewControllerPlugin: UIViewController, UITableViewDataSo
             return
         }
         let controller: UIViewController = ViewControllerPlugin.getInstance()
-        controller.dismissViewControllerAnimated(true, completion: callback)
+        controller.dismiss(animated: true, completion: callback)
         return
     }
-    internal func onChangeSwitchStatus(sender: UISwitch) {
+    internal func onChangeSwitchStatus(_ sender: UISwitch) {
         let id: String = "switch" + String(sender.tag)
-        PreferencePlugin.setSwitchPreference(id, value: sender.on)
+        PreferencePlugin.setSwitchPreference(id, value: sender.isOn)
         return
     }
 }

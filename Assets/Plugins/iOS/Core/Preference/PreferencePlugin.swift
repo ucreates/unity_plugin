@@ -8,15 +8,15 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 import Foundation
-public class PreferencePlugin: NSObject {
+open class PreferencePlugin: NSObject {
     @objc
-    public class func getSwitchPreference(keyName: String) -> Bool {
-        let preference: NSUserDefaults = NSUserDefaults()
-        return preference.boolForKey(keyName)
+    open class func getSwitchPreference(_ keyName: String) -> Bool {
+        let preference: UserDefaults = UserDefaults()
+        return preference.bool(forKey: keyName)
     }
-    public class func setSwitchPreference(keyName: String, value: Bool) -> Void {
-        let preference: NSUserDefaults = NSUserDefaults()
-        preference.setBool(value, forKey: keyName)
+    open class func setSwitchPreference(_ keyName: String, value: Bool) -> Void {
+        let preference: UserDefaults = UserDefaults()
+        preference.set(value, forKey: keyName)
         preference.synchronize()
         return
     }

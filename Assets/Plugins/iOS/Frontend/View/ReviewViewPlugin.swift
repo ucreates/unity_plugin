@@ -9,22 +9,22 @@
 //======================================================================
 import Foundation
 import UIKit
-public class ReviewViewPlugin: NSObject {
+open class ReviewViewPlugin: NSObject {
     @objc
-    public class func show(appStoreUrl: String) {
-        let alert: UIAlertController = UIAlertController(title: "Review", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-        func evalCallBack (action: UIAlertAction) -> Void {
-            let url: NSURL = NSURL(string: appStoreUrl)!
-            let app: UIApplication = UIApplication.sharedApplication()
+    open class func show(_ appStoreUrl: String) {
+        let alert: UIAlertController = UIAlertController(title: "Review", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        func evalCallBack (_ action: UIAlertAction) -> Void {
+            let url: URL = URL(string: appStoreUrl)!
+            let app: UIApplication = UIApplication.shared
             app.openURL(url)
             return
         }
-        let evalAction: UIAlertAction = UIAlertAction(title: "このアプリを評価する", style: UIAlertActionStyle.Default, handler: evalCallBack)
-        let noAction: UIAlertAction = UIAlertAction(title: "いいえ、結構です", style: UIAlertActionStyle.Default, handler: nil)
+        let evalAction: UIAlertAction = UIAlertAction(title: "このアプリを評価する", style: UIAlertActionStyle.default, handler: evalCallBack)
+        let noAction: UIAlertAction = UIAlertAction(title: "いいえ、結構です", style: UIAlertActionStyle.default, handler: nil)
         alert.addAction(evalAction)
         alert.addAction(noAction)
         let controller: UIViewController = ViewControllerPlugin.getInstance()
-        controller.presentViewController(alert, animated: true, completion: nil)
+        controller.present(alert, animated: true, completion: nil)
         return
     }
 }

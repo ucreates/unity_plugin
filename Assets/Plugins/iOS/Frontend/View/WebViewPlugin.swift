@@ -9,51 +9,51 @@
 //======================================================================
 import Foundation
 import UIKit
-public class WebViewPlugin: NSObject, UIWebViewDelegate {
+open class WebViewPlugin: NSObject, UIWebViewDelegate {
     var view: UIWebView!
     @objc
-    public func create(url: String, left: CGFloat, top: CGFloat, right: CGFloat, bottom: CGFloat) {
-        let req: NSURLRequest = NSURLRequest(URL: NSURL(string: url)!)
+    open func create(_ url: String, left: CGFloat, top: CGFloat, right: CGFloat, bottom: CGFloat) {
+        let req: URLRequest = URLRequest(url: URL(string: url)!)
         let controller: UIViewController = ViewControllerPlugin.getInstance()
         let width: CGFloat = controller.view.frame.width
         let height: CGFloat = controller.view.frame.height
         self.view = UIWebView()
-        self.view.frame = CGRectMake(left, top, width - left - right, height - top - bottom)
-        self.view.backgroundColor = UIColor.clearColor()
-        self.view.opaque = false
+        self.view.frame = CGRect(x: left, y: top, width: width - left - right, height: height - top - bottom)
+        self.view.backgroundColor = UIColor.clear
+        self.view.isOpaque = false
         self.view.delegate = self
         self.view.loadRequest(req)
         controller.view.addSubview(self.view)
         return
     }
     @objc
-    public func show() {
+    open func show() {
         self.setVisible(true)
         return
     }
     @objc
-    public func hide() {
+    open func hide() {
         self.setVisible(false)
         return
     }
     @objc
-    public func setVisible(visible: Bool) {
+    open func setVisible(_ visible: Bool) {
         if (nil == self.view) {
             return
         }
-        self.view.hidden = !visible
+        self.view.isHidden = !visible
         return
     }
     @objc
-    public func destroy() {
+    open func destroy() {
         if (nil == self.view) {
             return
         }
         self.view.removeFromSuperview()
         return
     }
-    public func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + (request.URL?.absoluteString)!)
+    open func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + (request.url?.absoluteString)!)
         return true
     }
 }

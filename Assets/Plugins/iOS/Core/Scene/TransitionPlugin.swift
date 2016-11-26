@@ -8,13 +8,13 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 import UIKit
-public class TransitionPlugin: NSObject {
+open class TransitionPlugin: NSObject {
     @objc
-    public class func execute(viewControllerId: Int) -> Void {
+    open class func execute(_ viewControllerId: Int) -> Void {
         let fromViewController: UIViewController = ViewControllerPlugin.getInstance()
         let toViewController: UIViewController = ViewControllerFactoryPlugin.factoryMethod(viewControllerId)
         let navigationController: UINavigationController = UINavigationController(rootViewController: toViewController)
-        fromViewController.presentViewController(navigationController, animated: true, completion: nil)
+        fromViewController.present(navigationController, animated: true, completion: nil)
         return
     }
 }

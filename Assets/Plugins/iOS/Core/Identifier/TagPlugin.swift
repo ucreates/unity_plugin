@@ -8,6 +8,6 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 import Foundation
-public class TagPlugin: NSObject {
+open class TagPlugin: NSObject {
     static let UNITY_PLUGIN_IDENTIFIER = "UnityiOSPlugin"
 }
