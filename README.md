@@ -2,9 +2,9 @@
 the project is iOS / Android plugin for [Unity](https://unity3d.com).
 
 ## Description
-the project is develoed by Unity(5.3.5f1),Xcode(7.3),Android Studio(2.1.2)
+the project is develoed by Unity(5.4.3f1),Xcode(8.1),Android Studio(2.1.2)
 
-iOS plugin supported iOS8.0 Later.
+iOS plugin supported iOS10.0 Later.
 
 Android plugin supported Android 2.3.3(Gingerbread) Later.
 
