@@ -9,6 +9,7 @@
 //======================================================================
 #import <Foundation/Foundation.h>
 #import <UnityPlugin-Swift.h>
+#import "UnityiOSPlugin.h"
 static WebViewPlugin* webViewPlugin;
 static IndicatorViewPlugin* activityIndicatorViewPlugin;
 static CameraViewPlugin* cameraViewPlugin;
@@ -114,6 +115,15 @@ extern "C" void showAlertViewPlugin(char* message) {
 }
 extern "C" void transitionViewControllerPlugin(int viewControllerId) {
     [TransitionPlugin execute:viewControllerId];
+    return;
+}
+extern "C" void transitionTwitterViewControllerPlugin(char* message, unsigned char* imageData, int imageDataLength, bool useTwitterCard) {
+    NSString* unityMassage = [NSString stringWithCString: message encoding:NSUTF8StringEncoding];
+    TwitterViewControllerPlugin* viewController = (TwitterViewControllerPlugin*)[ViewControllerFactoryPlugin factoryMethod:[TwitterViewControllerPlugin VIEWCONTROLLER_ID]];
+    NSData *unityImageData = [NSData dataWithBytes:(const void *)imageData length:imageDataLength];
+    [viewController setParameter:unityMassage postImageData:unityImageData enableTwitterCard:useTwitterCard];
+    UIViewController* fromViewController = [ViewControllerPlugin getInstance];
+    [fromViewController presentViewController:viewController animated: true completion: nil];
     return;
 }
 extern "C" bool getSwitchPreference(char* keyName) {

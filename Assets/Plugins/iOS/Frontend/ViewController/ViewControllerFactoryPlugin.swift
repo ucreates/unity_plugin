@@ -16,6 +16,9 @@ open class ViewControllerFactoryPlugin: NSObject {
         case PreferenceViewControllerPlugin.VIEWCONTROLLER_ID:
             ret = PreferenceViewControllerPlugin()
             break
+        case TwitterViewControllerPlugin.VIEWCONTROLLER_ID:
+            ret = TwitterViewControllerPlugin()
+            break
         default:
             break
         }

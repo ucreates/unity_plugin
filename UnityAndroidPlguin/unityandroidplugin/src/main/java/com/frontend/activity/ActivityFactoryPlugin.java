@@ -9,12 +9,16 @@
 //======================================================================
 package com.frontend.activity;
 import android.app.Activity;
+import com.frontend.activity.sns.TwitterActivityPlugin;
 public class ActivityFactoryPlugin {
     public static Activity factoryMethod(int activityId) {
         Activity activity = null;
         switch (activityId) {
         case PreferenceActivityPlugin.ACTIVITY_ID:
             activity = new PreferenceActivityPlugin();
+            break;
+        case TwitterActivityPlugin.ACTIVITY_ID:
+            activity = new TwitterActivityPlugin();
             break;
         default:
             break;

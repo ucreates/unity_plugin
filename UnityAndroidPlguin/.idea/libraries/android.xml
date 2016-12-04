@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="android">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Library/Android/sdk/platforms/android-22/android.jar!/" />
+      <root url="jar://$USER_HOME$/Library/Android/sdk/platforms/android-23/android.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
