@@ -39,8 +39,9 @@ Thumbs.db
 *.log #log files, for some plugins
 *.pyc #python bytecode cache, for some plugins.
 sysinfo.txt #Unity3D Generated File On Crash Reports
-
+*.class
 UnityAndroidPlguin/build/*
+UnityAndroidPlguin/unityandroidplugin/build/
 UnityAndroidPlguin/.gradle/*
 UnityAndroidPlguin/app/build/intermediates/*
 UnityAndroidPlguin/app/src/*
