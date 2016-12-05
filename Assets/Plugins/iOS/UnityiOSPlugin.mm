@@ -126,7 +126,7 @@ extern "C" void transitionTwitterViewControllerPlugin(char* message, unsigned ch
     [fromViewController presentViewController:viewController animated: true completion: nil];
     return;
 }
-extern "C" bool getSwitchPreference(char* keyName) {
+extern "C" bool getSwitchPreferencePlugin(char* keyName) {
     NSString* requestKeyName = [NSString stringWithCString: keyName encoding:NSUTF8StringEncoding];
     return [PreferencePlugin getSwitchPreference:requestKeyName];
 }

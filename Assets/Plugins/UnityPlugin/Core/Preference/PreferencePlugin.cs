@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 namespace UnityPlugin.Core.Preference {
 public sealed class PreferencePlugin : BasePlugin {
     [DllImport("__Internal")]
-    private static extern bool getSwitchPreference(string keyName);
+    private static extern bool getSwitchPreferencePlugin(string keyName);
     public PreferencePlugin() {
         if (RuntimePlatform.Android == Application.platform) {
             this.androidPlugin = new AndroidJavaObject("com.core.preference.PreferencePlugin");
@@ -22,7 +22,7 @@ public sealed class PreferencePlugin : BasePlugin {
     public bool GetSwitchPreference(string keyName) {
         bool ret = false;
         if (RuntimePlatform.IPhonePlayer == Application.platform) {
-            ret = getSwitchPreference(keyName);
+            ret = getSwitchPreferencePlugin(keyName);
         } else if (RuntimePlatform.Android == Application.platform) {
             ret = this.androidPlugin.CallStatic<bool>("getSwitchPreference", keyName);
         }
