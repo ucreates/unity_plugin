@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.util.List;
 import com.frontend.activity.ActivityPlugin;
 public class CameraViewPlugin {
-    private final static int CAPTURE_QUALITY = 25;
+    private final static int CAPTURE_QUALITY = 20;
     private final static int PIXEL_PER_BYTE = 8;
     private Camera camera;
     private FrameLayout layout;
@@ -124,27 +124,29 @@ public class CameraViewPlugin {
                         if (null == camera) {
                             return;
                         }
-                        Camera.Parameters cameraParameters = camera.getParameters();
                         WindowManager windowManager = (WindowManager)activity.getSystemService(activity.WINDOW_SERVICE);
                         Display display = windowManager.getDefaultDisplay();
                         if (false != this.surfaceCreated) {
                             camera.stopPreview();
                         }
                         int currentOrientation = display.getRotation();
-                        if (currentOrientation == Surface.ROTATION_0) {
-                            cameraParameters.setPreviewSize(width, height);
-                        } else if (currentOrientation == Surface.ROTATION_90) {
-                            cameraParameters.setPreviewSize(height, width);
-                        } else if (currentOrientation == Surface.ROTATION_180) {
-                            cameraParameters.setPreviewSize(width, height);
-                        } else if (currentOrientation == Surface.ROTATION_270) {
-                            cameraParameters.setPreviewSize(height, width);
-                        }
                         byte[] buffer = this.allocatePixelBuffer(format, width, height);
                         int orientation = this.getOrientation(currentOrientation);
                         camera.setDisplayOrientation(orientation);
                         camera.addCallbackBuffer(buffer);
-                        camera.setParameters(cameraParameters);
+                        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.GINGERBREAD_MR1) {
+                            Camera.Parameters cameraParameters = camera.getParameters();
+                            if (currentOrientation == Surface.ROTATION_0) {
+                                cameraParameters.setPreviewSize(width, height);
+                            } else if (currentOrientation == Surface.ROTATION_90) {
+                                cameraParameters.setPreviewSize(height, width);
+                            } else if (currentOrientation == Surface.ROTATION_180) {
+                                cameraParameters.setPreviewSize(width, height);
+                            } else if (currentOrientation == Surface.ROTATION_270) {
+                                cameraParameters.setPreviewSize(height, width);
+                            }
+                            camera.setParameters(cameraParameters);
+                        }
                         camera.setPreviewCallbackWithBuffer(previewCallBack);
                         camera.startPreview();
                         this.surfaceCreated = true;
