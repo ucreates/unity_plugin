@@ -40,10 +40,10 @@ Thumbs.db
 *.pyc #python bytecode cache, for some plugins.
 sysinfo.txt #Unity3D Generated File On Crash Reports
 *.class
-UnityAndroidPlguin/build/*
-UnityAndroidPlguin/unityandroidplugin/build/
-UnityAndroidPlguin/.gradle/*
-UnityAndroidPlguin/app/build/intermediates/*
-UnityAndroidPlguin/app/src/*
-UnityAndroidPlguin/*.meta
+UnityAndroidPlugin/build/*
+UnityAndroidPlugin/unityandroidplugin/build/
+UnityAndroidPlugin/.gradle/*
+UnityAndroidPlugin/app/build/intermediates/*
+UnityAndroidPlugin/app/src/*
+UnityAndroidPlugin/*.meta
 UnityManagedPlugin/UnityManagedPlugin/bin/*
