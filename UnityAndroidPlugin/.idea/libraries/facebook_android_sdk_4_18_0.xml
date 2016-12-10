@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="facebook-android-sdk-4.18.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/unityandroidplugin/libs/facebook/facebook-android-sdk-4.18.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

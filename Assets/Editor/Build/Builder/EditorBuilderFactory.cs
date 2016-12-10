@@ -11,6 +11,9 @@ public class EditorBuilderFactory {
         case TwitterEditorBuilder.BUILDER_ID:
             builder = new TwitterEditorBuilder();
             break;
+        case FacebookEditorBuilder.BUILDER_ID:
+            builder = new FacebookEditorBuilder();
+            break;
         default:
             break;
         }

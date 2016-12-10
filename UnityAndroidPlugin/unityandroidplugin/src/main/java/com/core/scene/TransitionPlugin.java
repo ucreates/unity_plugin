@@ -10,10 +10,9 @@
 package com.core.scene;
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
-import com.core.identifier.TagPlugin;
 import com.frontend.activity.ActivityPlugin;
 import com.frontend.activity.ActivityFactoryPlugin;
+import com.frontend.activity.sns.FacebookActivityPlugin;
 public class TransitionPlugin {
     public static void execute(int activityId) {
         final Activity fromActivity = ActivityPlugin.getInstance();
@@ -42,6 +41,22 @@ public class TransitionPlugin {
                 intent.putExtra("consumerKey", consumerKey);
                 intent.putExtra("consumerSecret", consumerSecret);
                 intent.putExtra("useTwitterCard", useTwitterCard);
+                fromActivity.startActivity(intent);
+                return;
+            }
+        };
+        fromActivity.runOnUiThread(runnable);
+        return;
+    }
+    public static void executeFacebook(final String facebookAppId, final byte[] imageData) {
+        final Activity fromActivity = ActivityPlugin.getInstance();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                Activity toActivity = ActivityFactoryPlugin.factoryMethod(FacebookActivityPlugin.ACTIVITY_ID);
+                Intent intent = new Intent(fromActivity, toActivity.getClass());
+                intent.putExtra("facebookAppId", facebookAppId);
+                intent.putExtra("imageData", imageData);
                 fromActivity.startActivity(intent);
                 return;
             }

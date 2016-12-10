@@ -9,6 +9,7 @@
 //======================================================================
 package com.frontend.activity;
 import android.app.Activity;
+import com.frontend.activity.sns.FacebookActivityPlugin;
 import com.frontend.activity.sns.TwitterActivityPlugin;
 public class ActivityFactoryPlugin {
     public static Activity factoryMethod(int activityId) {
@@ -16,6 +17,9 @@ public class ActivityFactoryPlugin {
         switch (activityId) {
         case PreferenceActivityPlugin.ACTIVITY_ID:
             activity = new PreferenceActivityPlugin();
+            break;
+        case FacebookActivityPlugin.ACTIVITY_ID:
+            activity = new FacebookActivityPlugin();
             break;
         case TwitterActivityPlugin.ACTIVITY_ID:
             activity = new TwitterActivityPlugin();

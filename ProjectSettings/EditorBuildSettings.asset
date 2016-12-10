@@ -22,4 +22,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Frontend/Controller/Sns/TwitterControllerPluginViewer.unity
   - enabled: 1
+    path: Assets/Scenes/Frontend/Controller/Sns/FacebookControllerPluginViewer.unity
+  - enabled: 1
     path: Assets/Scenes/Core/IO/PathPluginViewer.unity

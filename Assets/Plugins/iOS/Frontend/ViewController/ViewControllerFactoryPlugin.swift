@@ -19,6 +19,9 @@ open class ViewControllerFactoryPlugin: NSObject {
         case TwitterViewControllerPlugin.VIEWCONTROLLER_ID:
             ret = TwitterViewControllerPlugin()
             break
+        case FacebookViewControllerPlugin.VIEWCONTROLLER_ID:
+            ret = FacebookViewControllerPlugin()
+            break
         default:
             break
         }

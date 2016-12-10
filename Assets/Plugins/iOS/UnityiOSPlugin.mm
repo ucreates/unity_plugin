@@ -126,6 +126,14 @@ extern "C" void transitionTwitterViewControllerPlugin(char* message, unsigned ch
     [fromViewController presentViewController:viewController animated: true completion: nil];
     return;
 }
+extern "C" void transitionFacebookViewControllerPlugin(unsigned char* imageData, int imageDataLength) {
+    FacebookViewControllerPlugin* viewController = (FacebookViewControllerPlugin*)[ViewControllerFactoryPlugin factoryMethod:[FacebookViewControllerPlugin VIEWCONTROLLER_ID]];
+    NSData *unityImageData = [NSData dataWithBytes:(const void *)imageData length:imageDataLength];
+    [viewController setParameterWithPostImageData:unityImageData];
+    UIViewController* fromViewController = [ViewControllerPlugin getInstance];
+    [fromViewController presentViewController:viewController animated: true completion: nil];
+    return;
+}
 extern "C" bool getSwitchPreferencePlugin(char* keyName) {
     NSString* requestKeyName = [NSString stringWithCString: keyName encoding:NSUTF8StringEncoding];
     return [PreferencePlugin getSwitchPreference:requestKeyName];

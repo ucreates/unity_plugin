@@ -11,6 +11,7 @@ public class BuildPostProcess {
         int[] builderIdList = new int[] {
             IDEEditorBuilder.BUILDER_ID,
             TwitterEditorBuilder.BUILDER_ID,
+            FacebookEditorBuilder.BUILDER_ID,
         };
         if (buildTarget == BuildTarget.iOS) {
             PBXProject project = new PBXProject();

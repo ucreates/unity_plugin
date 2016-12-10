@@ -12,13 +12,16 @@
         </activity>
         <activity android:name="com.frontend.activity.PreferenceActivityPlugin"/>
         <activity android:name="com.frontend.activity.sns.TwitterActivityPlugin" android:theme="@android:style/Theme.Translucent" />
+        <activity android:name="com.frontend.activity.sns.FacebookActivityPlugin" android:theme="@android:style/Theme.Translucent" />
         <receiver android:name="com.frontend.receiver.sns.TwitterBroadcastReceiverPlugin" android:exported="false">
             <intent-filter>
                 <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_SUCCESS"/>
                 <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_FAILURE"/>
             </intent-filter>
-        </receiver>             
-        <meta-data android:name="io.fabric.ApiKey" android:value="API_KEY" />
+        </receiver>
+        <provider android:authorities="com.facebook.app.FacebookContentProviderFACEBOOK_APP_ID" android:name="com.facebook.FacebookContentProvider" android:exported="true" />
+        <meta-data android:name="io.fabric.ApiKey" android:value="FABRIC_API_KEY" />
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="FACEBOOK_APP_ID" />
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.CAMERA" />
