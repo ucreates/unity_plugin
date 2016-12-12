@@ -31,7 +31,7 @@ public class TwitterControllerPluginEventHandler : MonoBehaviour {
         } else if (RuntimePlatform.Android == Application.platform) {
             message += " android";
         }
-        Texture2D texture = Resources.Load<Texture2D>("Textures/card");
+        Texture2D texture = Resources.Load<Texture2D>("Textures/twitter_card");
         this.plugin.Tweet(message, texture, useTwitterCard);
     }
 }

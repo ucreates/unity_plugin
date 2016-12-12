@@ -13,12 +13,17 @@ import Fabric
 import TwitterKit
 open class TwitterViewControllerPlugin: UIViewController, TWTRComposerViewControllerDelegate {
     open static let VIEWCONTROLLER_ID: Int = 3
+    fileprivate var authorized: Bool = false
     fileprivate var useTwitterCard: Bool!
     fileprivate var message: String!
     fileprivate var imageData: Data!
     @objc
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if (false != self.authorized) {
+            return
+        }
+        self.authorized = true
         let fabricKitList: [AnyObject] = [Twitter.self]
         Fabric.with(fabricKitList)
         let service: TwitterServicePlugin = TwitterServicePlugin()
