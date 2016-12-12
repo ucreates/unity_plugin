@@ -18,7 +18,7 @@ public class BuildPostProcess {
             PlistDocument plist = new PlistDocument();
             string projectPath = PBXProject.GetPBXProjectPath(buildPath);
             string plistPath = Path.Combine(buildPath, @"Info.plist");
-            string fromCliRootPath = Path.Combine(System.Environment.CurrentDirectory, @"Cli/iOS");
+            string fromCliRootPath = Path.Combine(System.Environment.CurrentDirectory, @"Assets/Editor/Cli/iOS");
             string destCliRootPath = buildPath;
             string fromFrameworkRootPath = Path.Combine(System.Environment.CurrentDirectory, @"Assets/Plugins/iOS/Frameworks");
             string destFrameworkRootPath = "Frameworks/Plugins/iOS/Frameworks";
