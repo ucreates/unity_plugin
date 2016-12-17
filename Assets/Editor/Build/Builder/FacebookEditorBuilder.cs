@@ -13,18 +13,23 @@ public class FacebookEditorBuilder : BaseEditorBuilder {
             return;
         }
         PlistElementDict rootDict = plist.root;
-        PlistElementArray bundleURLTypesArray = rootDict.CreateArray("CFBundleURLTypes");
-        PlistElementDict bundleURLSchemaDict = bundleURLTypesArray.AddDict();
-        PlistElementArray bundleURLSchemaArray = bundleURLSchemaDict.CreateArray("CFBundleURLSchemes");
-        bundleURLSchemaArray.AddString("fb" + FacebookSetting.APP_ID);
         rootDict.SetString("FacebookAppID", FacebookSetting.APP_ID);
         rootDict.SetString("FacebookDisplayName", PlayerSettings.productName);
-        PlistElementArray lsApplicationQueriesSchemesArray = rootDict.CreateArray("LSApplicationQueriesSchemes");
-        lsApplicationQueriesSchemesArray.AddString("fbapi");
-        lsApplicationQueriesSchemesArray.AddString("fb-messenger-api");
-        lsApplicationQueriesSchemesArray.AddString("fbauth2");
-        lsApplicationQueriesSchemesArray.AddString("fbshareextension");
         rootDict.SetString("NSPhotoLibraryUsageDescription", "Photo Access By Unity Facebook Plugin");
+        return;
+    }
+    public override void BuildiOSURLSchemes(PlistElementArray bundleURLTypesArray) {
+        PlistElementDict bundleURLSchemaDict = bundleURLTypesArray.AddDict();
+        bundleURLSchemaDict.SetString("CFBundleTypeRole", "Editor");
+        PlistElementArray bundleURLSchemaArray = bundleURLSchemaDict.CreateArray("CFBundleURLSchemes");
+        bundleURLSchemaArray.AddString("fb" + FacebookSetting.APP_ID);
+        return;
+    }
+    public override void BuildiOSApplicationQueriesSchemes(PlistElementArray querySchemesArray) {
+        querySchemesArray.AddString("fbapi");
+        querySchemesArray.AddString("fb-messenger-api");
+        querySchemesArray.AddString("fbauth2");
+        querySchemesArray.AddString("fbshareextension");
         return;
     }
 }

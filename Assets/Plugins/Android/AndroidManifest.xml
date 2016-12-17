@@ -13,6 +13,16 @@
         <activity android:name="com.frontend.activity.PreferenceActivityPlugin"/>
         <activity android:name="com.frontend.activity.sns.TwitterActivityPlugin" android:theme="@android:style/Theme.Translucent" />
         <activity android:name="com.frontend.activity.sns.FacebookActivityPlugin" android:theme="@android:style/Theme.Translucent" />
+        <activity android:name="com.frontend.activity.sns.LineActivityPlugin" android:theme="@android:style/Theme.Translucent" />
+        <activity android:name="jp.line.android.sdk.activity.LineAuthCompleteActivity" android:configChanges="keyboard|orientation" android:exported="true" android:screenOrientation="sensor">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="line.LINE_CHANNEL_ID" />
+            </intent-filter>
+        </activity>
+        <activity android:name="jp.line.android.sdk.activity.WebLoginActivity" android:exported="false" android:configChanges="keyboard|orientation" android:screenOrientation="sensor"/>
         <receiver android:name="com.frontend.receiver.sns.TwitterBroadcastReceiverPlugin" android:exported="false">
             <intent-filter>
                 <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_SUCCESS"/>
@@ -22,6 +32,8 @@
         <provider android:authorities="com.facebook.app.FacebookContentProviderFACEBOOK_APP_ID" android:name="com.facebook.FacebookContentProvider" android:exported="true" />
         <meta-data android:name="io.fabric.ApiKey" android:value="FABRIC_API_KEY" />
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="FACEBOOK_APP_ID" />
+        <meta-data android:name="jp.line.sdk.ChannelId" android:value="LINE_CHANNEL_ID" />
+        <meta-data android:name="jp.line.sdk.AuthScheme" android:value="line.LINE_CHANNEL_ID" />
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.CAMERA" />

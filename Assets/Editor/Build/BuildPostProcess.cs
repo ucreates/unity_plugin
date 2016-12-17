@@ -12,6 +12,7 @@ public class BuildPostProcess {
             IDEEditorBuilder.BUILDER_ID,
             TwitterEditorBuilder.BUILDER_ID,
             FacebookEditorBuilder.BUILDER_ID,
+            LineEditorBuilder.BUILDER_ID,
         };
         if (buildTarget == BuildTarget.iOS) {
             PBXProject project = new PBXProject();
@@ -41,6 +42,17 @@ public class BuildPostProcess {
                 builder.Build(BuildTarget.iOS);
                 project = builder.project;
                 plist = builder.plist;
+            }
+            PlistElementDict rootDict = plist.root;
+            PlistElementArray bundleURLTypesArray = rootDict.CreateArray("CFBundleURLTypes");
+            foreach (int builderId in builderIdList) {
+                BaseEditorBuilder builder = EditorBuilderFactory.FactoryMethod(builderId);
+                builder.BuildiOSURLSchemes(bundleURLTypesArray);
+            }
+            PlistElementArray lsApplicationQueriesSchemesArray = rootDict.CreateArray("LSApplicationQueriesSchemes");
+            foreach (int builderId in builderIdList) {
+                BaseEditorBuilder builder = EditorBuilderFactory.FactoryMethod(builderId);
+                builder.BuildiOSApplicationQueriesSchemes(lsApplicationQueriesSchemesArray);
             }
             plist.WriteToFile(plistPath);
             project.WriteToFile(projectPath);

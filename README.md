@@ -41,9 +41,15 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/UnityPlugin/Core/Sns/FacebookSetting.cs
 
-5.iOS build with Unity.
+5.please rewrite the replacement section of the following file to the LINE channel id. you can create and confirm LINE channel id by LINE official developer web site.
 
-6.published project build with Xcode.
+- LINE(Login):https://developers.line.me/line-login/overview
+
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/UnityPlugin/Core/Sns/LineSetting.cs
+
+6.iOS build with Unity.
+
+7.published project build with Xcode.
 
 ***Notes on use for Android***
 
@@ -67,4 +73,12 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Android/AndroidManifest.xml
 
-4.Android build with Unity.
+4.please rewrite the replacement section of the following file to the LINE channel id. you can create and confirm LINE channel id by LINE official developer web site.
+
+- LINE(Login):https://developers.line.me/line-login/overview
+
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/UnityPlugin/Core/Sns/LineSetting.cs
+
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Android/AndroidManifest.xml
+
+5.Android build with Unity.

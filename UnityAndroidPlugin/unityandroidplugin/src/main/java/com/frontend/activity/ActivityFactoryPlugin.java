@@ -10,6 +10,7 @@
 package com.frontend.activity;
 import android.app.Activity;
 import com.frontend.activity.sns.FacebookActivityPlugin;
+import com.frontend.activity.sns.LineActivityPlugin;
 import com.frontend.activity.sns.TwitterActivityPlugin;
 public class ActivityFactoryPlugin {
     public static Activity factoryMethod(int activityId) {
@@ -23,6 +24,9 @@ public class ActivityFactoryPlugin {
             break;
         case TwitterActivityPlugin.ACTIVITY_ID:
             activity = new TwitterActivityPlugin();
+            break;
+        case LineActivityPlugin.ACTIVITY_ID:
+            activity = new LineActivityPlugin();
             break;
         default:
             break;

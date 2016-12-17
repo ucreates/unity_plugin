@@ -22,6 +22,9 @@ open class ViewControllerFactoryPlugin: NSObject {
         case FacebookViewControllerPlugin.VIEWCONTROLLER_ID:
             ret = FacebookViewControllerPlugin()
             break
+        case LineViewControllerPlugin.VIEWCONTROLLER_ID:
+            ret = LineViewControllerPlugin()
+            break
         default:
             break
         }

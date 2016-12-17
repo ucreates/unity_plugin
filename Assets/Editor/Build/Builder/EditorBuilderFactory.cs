@@ -14,6 +14,9 @@ public class EditorBuilderFactory {
         case FacebookEditorBuilder.BUILDER_ID:
             builder = new FacebookEditorBuilder();
             break;
+        case LineEditorBuilder.BUILDER_ID:
+            builder = new LineEditorBuilder();
+            break;
         default:
             break;
         }

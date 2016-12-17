@@ -13,10 +13,18 @@ import UIKit
 class UnityiOSPluginAppDelegate: NSObject {
     @objc
     open class func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        LineAdapter.handleLaunchOptions(launchOptions)
+        return true
     }
     @objc
     open class func application(_ app: UIApplication, url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        LineAdapter.handleOpen(url)
+        return true
+    }
+    @objc
+    open class func application(_ application: UIApplication, url: URL) -> Bool {
+        return LineAdapter.handleOpen(url)
     }
 }

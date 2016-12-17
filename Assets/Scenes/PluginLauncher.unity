@@ -699,6 +699,8 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: FacebookControllerPlugin
       m_Image: {fileID: 0}
+    - m_Text: LineControllerPlugin
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

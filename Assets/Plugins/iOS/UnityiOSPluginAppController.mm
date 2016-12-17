@@ -24,6 +24,9 @@
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
     return [UnityiOSPluginAppDelegate application:app url:url options:options];
 }
+- (BOOL)application:(UIApplication *)app handleOpenURL:(NSURL *)url {
+    return [UnityiOSPluginAppDelegate application:app url:url];
+}
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     [super applicationWillEnterForeground:application];
     return;

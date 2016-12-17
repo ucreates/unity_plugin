@@ -60,5 +60,11 @@ public abstract class BaseEditorBuilder {
     protected virtual void RunAndroid() {
         return;
     }
+    public virtual void BuildiOSURLSchemes(PlistElementArray bundleURLSchemaDict) {
+        return;
+    }
+    public virtual void BuildiOSApplicationQueriesSchemes(PlistElementArray querySchemesArray) {
+        return;
+    }
 }
 }
