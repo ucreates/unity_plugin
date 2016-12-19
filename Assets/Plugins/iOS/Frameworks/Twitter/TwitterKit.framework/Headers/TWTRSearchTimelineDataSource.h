@@ -7,6 +7,7 @@
 #import <Foundation/Foundation.h>
 #import <TwitterKit/TWTRTimelineDataSource.h>
 @class TWTRAPIClient;
+@class TWTRTimelineFilter;
 NS_ASSUME_NONNULL_BEGIN
 /**
 Data source representing a Search Timeline. Provides TWTRTweet objects to a TWTRTimelineViewController in pages determined by the TWTRTimelineCursor object passed in to the `loadNext:` and `loadPrevious:` methods.
@@ -63,6 +64,10 @@ Data source representing a Search Timeline. Provides TWTRTweet objects to a TWTR
  *  Defaults to YES.
  */
 @property (nonatomic) BOOL filterSensitiveTweets;
+/*
+ *  A filtering object that hides certain tweets.
+ */
+@property (nonatomic, copy, nullable) TWTRTimelineFilter *timelineFilter;
 /**
  *  Convenience initializer. Uses default values for `languageCode` and `maxTweetsPerRequest`.
  *

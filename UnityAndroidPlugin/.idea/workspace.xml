@@ -128,8 +128,8 @@
       <file leaf-file-name="TwitterActivityPlugin.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/sns/TwitterActivityPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+            <state relative-caret-position="0">
+              <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
               <folding>
                 <element signature="e#0#5030#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -2050,8 +2050,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1402" />
-    <option name="y" value="117" />
+    <option name="x" value="1600" />
+    <option name="y" value="355" />
     <option name="width" value="1594" />
     <option name="height" value="720" />
   </component>
@@ -2646,7 +2646,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1402" y="117" width="1594" height="720" extended-state="0" />
+    <frame x="1600" y="355" width="1594" height="720" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3045,8 +3045,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/sns/TwitterActivityPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        <state relative-caret-position="0">
+          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
           <folding>
             <element signature="e#0#5030#0" expanded="true" />
             <element signature="imports" expanded="true" />
