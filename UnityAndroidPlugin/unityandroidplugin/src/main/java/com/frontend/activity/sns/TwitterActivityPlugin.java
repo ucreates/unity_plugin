@@ -36,11 +36,11 @@ public class TwitterActivityPlugin extends Activity {
         Intent intent = getIntent();
         final Activity activity = this;
         final String post = intent.getStringExtra("post");
-        final String imageFilePath = intent.getStringExtra("pixPath");
+        final String imageDataPath = intent.getStringExtra("imageDataPath");
         String consumerKey = intent.getStringExtra("consumerKey");
         String consumerSecret = intent.getStringExtra("consumerSecret");
         boolean useTwitterCard = intent.getBooleanExtra("useTwitterCard", false);
-        File imageFile = new File(imageFilePath);
+        File imageFile = new File(imageDataPath);
         final Uri imageFileUri = Uri.fromFile(imageFile);
         this.service = new TwitterServicePlugin();
         TwitterAuthConfig config = new TwitterAuthConfig(consumerKey, consumerSecret);

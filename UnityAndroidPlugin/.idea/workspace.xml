@@ -36,16 +36,114 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TransitionPlugin.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/core/scene/TransitionPlugin.java">
+      <file leaf-file-name="FacebookActivityPlugin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/sns/FacebookActivityPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+            <state relative-caret-position="1410">
+              <caret line="94" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#4368#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LineServicePlugin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/service/sns/LineServicePlugin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#943#1273#0" expanded="true" />
-                <element signature="e#1272#1273#0" expanded="true" />
+                <element signature="e#1099#2254#0" expanded="true" />
+                <element signature="e#2253#2254#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LineSdkContext.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/unityandroidplugin/libs/line/line-android-sdk-3.1.21.jar!/jp/line/android/sdk/LineSdkContext.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LineAuthManager.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/unityandroidplugin/libs/line/line-android-sdk-3.1.21.jar!/jp/line/android/sdk/login/LineAuthManager.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LineActivityPlugin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/sns/LineActivityPlugin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="975">
+              <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LineLoginFuture.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/unityandroidplugin/libs/line/line-android-sdk-3.1.21.jar!/jp/line/android/sdk/login/LineLoginFuture.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="9" column="38" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LineLoginFutureListener.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/unityandroidplugin/libs/line/line-android-sdk-3.1.21.jar!/jp/line/android/sdk/login/LineLoginFutureListener.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="7" column="32" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/unityandroidplugin/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TwitterActivityPlugin.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/sns/TwitterActivityPlugin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#5030#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransitionPlugin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/core/scene/TransitionPlugin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="41" column="46" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1562,7 +1660,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="5928429000000" />
+        <entry key="$PROJECT_DIR$" value="5925330038000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1940,7 +2038,6 @@
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/receiver/sns/TwitterBroadcastReceiverPlugin.java" />
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/view/CameraViewPlugin.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/sns/TwitterActivityPlugin.java" />
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/service/sns/FacebookServicePlugin.java" />
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/sns/FacebookActivityPlugin.java" />
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/ActivityFactoryPlugin.java" />
@@ -1948,12 +2045,13 @@
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/sns/LineActivityPlugin.java" />
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/service/sns/LineServicePlugin.java" />
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/core/scene/TransitionPlugin.java" />
+        <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/sns/TwitterActivityPlugin.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1585" />
-    <option name="y" value="283" />
+    <option name="x" value="1402" />
+    <option name="y" value="117" />
     <option name="width" value="1594" />
     <option name="height" value="720" />
   </component>
@@ -2150,10 +2248,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2548,12 +2646,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1585" y="283" width="1594" height="720" extended-state="0" />
+    <frame x="1402" y="117" width="1594" height="720" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24561404" sideWeight="0.3447165" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24561404" sideWeight="0.34149486" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294509" sideWeight="0.49508598" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2562,13 +2660,13 @@
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294509" sideWeight="0.497543" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32376397" sideWeight="0.42847937" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32376397" sideWeight="0.4310567" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24561404" sideWeight="0.6552835" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24561404" sideWeight="0.65850514" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18469217" sideWeight="0.25491402" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34213918" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2799,7 +2897,7 @@
         <state relative-caret-position="195">
           <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2866,7 +2964,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/sns/FacebookActivityPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
+        <state relative-caret-position="1410">
           <caret line="94" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding>
             <element signature="e#0#4368#0" expanded="true" />
@@ -2877,10 +2975,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/service/sns/LineServicePlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
-          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+        <state relative-caret-position="283">
+          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1099#2254#0" expanded="true" />
+            <element signature="e#2253#2254#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2903,7 +3003,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/sns/LineActivityPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
+        <state relative-caret-position="975">
           <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2935,25 +3035,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/sns/TwitterActivityPlugin.java">
+    <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/core/scene/TransitionPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="61" column="94" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="94" />
-          <folding>
-            <element signature="e#0#5024#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="41" column="46" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/core/scene/TransitionPlugin.java">
+    <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/sns/TwitterActivityPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+        <state relative-caret-position="15">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
           <folding>
+            <element signature="e#0#5030#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#943#1273#0" expanded="true" />
-            <element signature="e#1272#1273#0" expanded="true" />
           </folding>
         </state>
       </provider>

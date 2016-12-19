@@ -39,7 +39,7 @@ public class TransitionPlugin {
                 Activity toActivity = ActivityFactoryPlugin.factoryMethod(TwitterActivityPlugin.ACTIVITY_ID);
                 Intent intent = new Intent(fromActivity, toActivity.getClass());
                 intent.putExtra("post", post);
-                intent.putExtra("pixPath", imageDataPath);
+                intent.putExtra("imageDataPath", imageDataPath);
                 intent.putExtra("consumerKey", consumerKey);
                 intent.putExtra("consumerSecret", consumerSecret);
                 intent.putExtra("useTwitterCard", useTwitterCard);
