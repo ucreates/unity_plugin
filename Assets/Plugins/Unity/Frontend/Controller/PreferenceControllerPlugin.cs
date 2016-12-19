@@ -29,7 +29,7 @@ public sealed class PreferenceControllerPlugin : BasePlugin {
             transitionViewControllerPlugin(this.id);
         } else if (RuntimePlatform.Android == Application.platform) {
             if (null != this.androidPlugin) {
-                this.androidPlugin.CallStatic("execute", this.id);
+                this.androidPlugin.CallStatic("transition", this.id);
             }
         } else {
 #if UNITY_STANDALONE

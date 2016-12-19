@@ -12,10 +12,11 @@ import android.app.Activity;
 import android.content.Intent;
 import com.frontend.activity.ActivityPlugin;
 import com.frontend.activity.ActivityFactoryPlugin;
+import com.frontend.activity.sns.TwitterActivityPlugin;
 import com.frontend.activity.sns.FacebookActivityPlugin;
 import com.frontend.activity.sns.LineActivityPlugin;
 public class TransitionPlugin {
-    public static void execute(int activityId) {
+    public static void transition(int activityId) {
         final Activity fromActivity = ActivityPlugin.getInstance();
         final int id = activityId;
         Runnable runnable = new Runnable() {
@@ -30,15 +31,15 @@ public class TransitionPlugin {
         fromActivity.runOnUiThread(runnable);
         return;
     }
-    public static void executeTwitter(final int activityId, final String post, final String pixPath, final String consumerKey, final String consumerSecret, final boolean useTwitterCard) {
+    public static void transitionTwitter(final String post, final String imageDataPath, final String consumerKey, final String consumerSecret, final boolean useTwitterCard) {
         final Activity fromActivity = ActivityPlugin.getInstance();
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                Activity toActivity = ActivityFactoryPlugin.factoryMethod(activityId);
+                Activity toActivity = ActivityFactoryPlugin.factoryMethod(TwitterActivityPlugin.ACTIVITY_ID);
                 Intent intent = new Intent(fromActivity, toActivity.getClass());
                 intent.putExtra("post", post);
-                intent.putExtra("pixPath", pixPath);
+                intent.putExtra("pixPath", imageDataPath);
                 intent.putExtra("consumerKey", consumerKey);
                 intent.putExtra("consumerSecret", consumerSecret);
                 intent.putExtra("useTwitterCard", useTwitterCard);
@@ -49,7 +50,7 @@ public class TransitionPlugin {
         fromActivity.runOnUiThread(runnable);
         return;
     }
-    public static void executeFacebook(final String facebookAppId, final byte[] imageData) {
+    public static void transitionFacebook(final String facebookAppId, final byte[] imageData) {
         final Activity fromActivity = ActivityPlugin.getInstance();
         Runnable runnable = new Runnable() {
             @Override
@@ -65,7 +66,7 @@ public class TransitionPlugin {
         fromActivity.runOnUiThread(runnable);
         return;
     }
-    public static void executeLine(final String imageDataPath) {
+    public static void transitionLine(final String imageDataPath) {
         final Activity fromActivity = ActivityPlugin.getInstance();
         Runnable runnable = new Runnable() {
             @Override

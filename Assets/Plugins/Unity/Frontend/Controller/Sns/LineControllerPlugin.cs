@@ -44,7 +44,7 @@ public sealed class LineControllerPlugin : BasePlugin {
             }
             string imagePath = Path.Combine(Application.temporaryCachePath, "image.png");
             File.WriteAllBytes(imagePath, imageData);
-            this.androidPlugin.CallStatic("executeLine", imagePath);
+            this.androidPlugin.CallStatic("transitionLine", imagePath);
         }
         return;
     }
