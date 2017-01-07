@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="support-v4-23.3.0">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/unityandroidplugin/libs/android/support-v4-23.3.0.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

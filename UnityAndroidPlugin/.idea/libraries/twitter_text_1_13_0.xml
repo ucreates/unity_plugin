@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="twitter-text-1.13.0">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/unityandroidplugin/libs/twitter/twitter-text-1.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugin/libs/twitter/twitter-text-1.13.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

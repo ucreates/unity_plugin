@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="bolts-applinks-1.4.0">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/unityandroidplugin/libs/thirdparty/bolts-applinks-1.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugin/libs/thirdparty/bolts-applinks-1.4.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

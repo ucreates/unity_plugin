@@ -44,6 +44,5 @@ UnityAndroidPlugin/build/*
 UnityAndroidPlugin/unityandroidplugin/build/
 UnityAndroidPlugin/.gradle/*
 UnityAndroidPlugin/app/build/intermediates/*
-UnityAndroidPlugin/app/src/*
 UnityAndroidPlugin/*.meta
 UnityManagedPlugin/UnityManagedPlugin/bin/*

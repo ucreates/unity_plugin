@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="facebook-android-sdk-4.18.0-">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/plugin/build/intermediates/exploded-aar/facebook-android-sdk-4.18.0/res" />
+      <root url="jar://$PROJECT_DIR$/plugin/build/intermediates/exploded-aar/facebook-android-sdk-4.18.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

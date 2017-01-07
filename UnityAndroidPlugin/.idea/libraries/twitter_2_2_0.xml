@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="twitter-2.2.0">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/unityandroidplugin/libs/twitter/twitter-2.2.0.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

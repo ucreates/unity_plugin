@@ -1,1 +1,1 @@
-include ':app', ':unityandroidplugin'
+include ':app', ':plugin'

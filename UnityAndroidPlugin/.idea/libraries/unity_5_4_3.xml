@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="unity-5.4.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugin/libs/unity/unity-5.4.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

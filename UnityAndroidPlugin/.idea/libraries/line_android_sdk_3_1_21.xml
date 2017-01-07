@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="line-android-sdk-3.1.21">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/unityandroidplugin/libs/line/line-android-sdk-3.1.21.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugin/libs/line/line-android-sdk-3.1.21.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -12,7 +12,6 @@
         </activity>
         <activity android:name="com.frontend.activity.PreferenceActivityPlugin"/>
         <activity android:name="com.frontend.activity.sns.TwitterActivityPlugin" android:theme="@android:style/Theme.Translucent" />
-        <activity android:name="com.frontend.activity.sns.FacebookActivityPlugin" android:theme="@android:style/Theme.Translucent" />
         <activity android:name="com.frontend.activity.sns.LineActivityPlugin" android:theme="@android:style/Theme.Translucent" />
         <activity android:name="jp.line.android.sdk.activity.LineAuthCompleteActivity" android:configChanges="keyboard|orientation" android:exported="true" android:screenOrientation="sensor">
             <intent-filter>
@@ -23,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name="jp.line.android.sdk.activity.WebLoginActivity" android:exported="false" android:configChanges="keyboard|orientation" android:screenOrientation="sensor"/>
+        <activity android:name="com.frontend.activity.sns.FacebookActivityPlugin" android:theme="@android:style/Theme.Translucent" />
         <receiver android:name="com.frontend.receiver.sns.TwitterBroadcastReceiverPlugin" android:exported="false">
             <intent-filter>
                 <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_SUCCESS"/>
