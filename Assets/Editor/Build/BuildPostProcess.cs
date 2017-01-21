@@ -33,6 +33,10 @@ public class BuildPostProcess {
             plist.ReadFromFile(plistPath);
             string targetName = PBXProject.GetUnityTargetName();
             string targetGUID = project.TargetGuidByName(targetName);
+            string[] frameworkList = new string[] {"StoreKit.framework"};
+            foreach (string framework in frameworkList) {
+                project.AddFrameworkToProject(targetGUID, framework, false);
+            }
             foreach (int builderId in builderIdList) {
                 BaseEditorBuilder builder = EditorBuilderFactory.FactoryMethod(builderId);
                 builder.project = project;

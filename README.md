@@ -81,4 +81,10 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Android/AndroidManifest.xml
 
-5.Android build with Unity.
+5.please rewrite the replacement section of the following file to the Your Android App License Key. you can create and confirm License Key by Google Play Developer Console web site.
+
+- Google Play Developer Console:https://play.google.com/apps/publish/
+
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Payment/PaymentSettingPlugin.cs
+
+6.Android build with Unity.

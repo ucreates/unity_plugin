@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: fd9d722941ea649a19c5b999924d6531
-timeCreated: 1481191589
+guid: 482eda748066c4508ad56fb17eda38b0
+timeCreated: 1484361140
 licenseType: Free
 PluginImporter:
   serializedVersion: 1
@@ -8,48 +8,16 @@ PluginImporter:
   executionOrder: {}
   isPreloaded: 0
   platformData:
-    Android:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
     Any:
       enabled: 0
       settings: {}
     Editor:
       enabled: 0
       settings:
-        CPU: AnyCPU
         DefaultValueInitialized: true
-        OS: AnyOS
-    Linux:
-      enabled: 0
-      settings:
-        CPU: x86
-    Linux64:
-      enabled: 0
-      settings:
-        CPU: x86_64
-    OSXIntel:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-    OSXIntel64:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-    Win:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-    Win64:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
     iOS:
       enabled: 1
-      settings:
-        CompileFlags: 
-        FrameworkDependencies: Twitter;
+      settings: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

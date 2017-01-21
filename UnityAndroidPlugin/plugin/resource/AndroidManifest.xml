@@ -23,6 +23,7 @@
         </activity>
         <activity android:name="jp.line.android.sdk.activity.WebLoginActivity" android:exported="false" android:configChanges="keyboard|orientation" android:screenOrientation="sensor"/>
         <activity android:name="com.frontend.activity.sns.FacebookActivityPlugin" android:theme="@android:style/Theme.Translucent" />
+        <activity android:name="com.frontend.activity.PaymentActivityPlugin" android:theme="@android:style/Theme.Translucent" />
         <receiver android:name="com.frontend.receiver.sns.TwitterBroadcastReceiverPlugin" android:exported="false">
             <intent-filter>
                 <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_SUCCESS"/>
@@ -37,6 +38,7 @@
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.android.vending.BILLING" />
     <uses-feature android:glEsVersion="0x00020000"/>
     <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
     <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false"/>

@@ -142,6 +142,15 @@ extern "C" void transitionLineViewControllerPlugin(unsigned char* imageData, int
     [fromViewController presentViewController:viewController animated: true completion: nil];
     return;
 }
+extern "C" void transitionPaymentViewControllerPlugin(char* paymentUserId, char* paymentProductId) {
+    NSString* unityUserId = [NSString stringWithCString: paymentUserId encoding:NSUTF8StringEncoding];
+    NSString* unityProductId = [NSString stringWithCString: paymentProductId encoding:NSUTF8StringEncoding];
+    PaymentViewControllerPlugin* viewController = (PaymentViewControllerPlugin*)[ViewControllerFactoryPlugin factoryMethod:[PaymentViewControllerPlugin VIEWCONTROLLER_ID]];
+    [viewController setParameter:unityUserId unityProductId:unityProductId];
+    UIViewController* fromViewController = [ViewControllerPlugin getInstance];
+    [fromViewController presentViewController:viewController animated: true completion: nil];
+    return;
+}
 extern "C" bool getSwitchPreferencePlugin(char* keyName) {
     NSString* requestKeyName = [NSString stringWithCString: keyName encoding:NSUTF8StringEncoding];
     return [PreferencePlugin getSwitchPreference:requestKeyName];

@@ -25,6 +25,9 @@ open class ViewControllerFactoryPlugin: NSObject {
         case LineViewControllerPlugin.VIEWCONTROLLER_ID:
             ret = LineViewControllerPlugin()
             break
+        case PaymentViewControllerPlugin.VIEWCONTROLLER_ID:
+            ret = PaymentViewControllerPlugin()
+            break
         default:
             break
         }

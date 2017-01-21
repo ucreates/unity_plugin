@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.content.Intent;
 import com.frontend.activity.ActivityPlugin;
 import com.frontend.activity.ActivityFactoryPlugin;
+import com.frontend.activity.PaymentActivityPlugin;
 import com.frontend.activity.sns.TwitterActivityPlugin;
 import com.frontend.activity.sns.FacebookActivityPlugin;
 import com.frontend.activity.sns.LineActivityPlugin;
@@ -74,6 +75,24 @@ public class TransitionPlugin {
                 Activity toActivity = ActivityFactoryPlugin.factoryMethod(LineActivityPlugin.ACTIVITY_ID);
                 Intent intent = new Intent(fromActivity, toActivity.getClass());
                 intent.putExtra("imageDataPath", imageDataPath);
+                fromActivity.startActivity(intent);
+                return;
+            }
+        };
+        fromActivity.runOnUiThread(runnable);
+        return;
+    }
+    public static void transitionPayment(final String userId, final String skuId, final String skuType, final String publicKey) {
+        final Activity fromActivity = ActivityPlugin.getInstance();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                Activity toActivity = ActivityFactoryPlugin.factoryMethod(PaymentActivityPlugin.ACTIVITY_ID);
+                Intent intent = new Intent(fromActivity, toActivity.getClass());
+                intent.putExtra("publicKey", publicKey);
+                intent.putExtra("skuId", skuId);
+                intent.putExtra("skuType", skuType);
+                intent.putExtra("userId", userId);
                 fromActivity.startActivity(intent);
                 return;
             }
