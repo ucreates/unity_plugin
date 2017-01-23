@@ -29,12 +29,12 @@ public class TwitterEditorBuilder : BaseEditorBuilder {
         }
         PlistElementDict rootDict = plist.root;
         PlistElementDict fabricDict =  rootDict.CreateDict("Fabric");
-        fabricDict.SetString("APIKey", TwitterSetting.API_KEY);
+        fabricDict.SetString("APIKey", TwitterSettingPlugin.API_KEY);
         PlistElementArray kitsArray = fabricDict.CreateArray("Kits");
         PlistElementDict kitsDict = kitsArray.AddDict();
         PlistElementDict keyInfoDict = kitsDict.CreateDict("KitInfo");
-        keyInfoDict.SetString("consumerKey", TwitterSetting.CONSUMER_KEY);
-        keyInfoDict.SetString("consumerSecret", TwitterSetting.CONSUMER_SEACRET);
+        keyInfoDict.SetString("consumerKey", TwitterSettingPlugin.CONSUMER_KEY);
+        keyInfoDict.SetString("consumerSecret", TwitterSettingPlugin.CONSUMER_SEACRET);
         kitsDict.SetString("KitName", "Twitter");
         return;
     }
@@ -53,8 +53,8 @@ public class TwitterEditorBuilder : BaseEditorBuilder {
         builder.commandElementList.Add(destCliPath);
         builder.commandElementList.Add(projectPath);
         builder.commandElementList.Add("./Frameworks/Plugins/iOS/Frameworks/Twitter/Fabric.framework/run");
-        builder.commandElementList.Add(TwitterSetting.API_KEY);
-        builder.commandElementList.Add(TwitterSetting.BUILD_SEACRET);
+        builder.commandElementList.Add(TwitterSettingPlugin.API_KEY);
+        builder.commandElementList.Add(TwitterSettingPlugin.BUILD_SEACRET);
         ProcessStartInfo info = new ProcessStartInfo();
         info.UseShellExecute = false;
         info.FileName = "/usr/bin/ruby";

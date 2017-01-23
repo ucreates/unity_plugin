@@ -10,7 +10,7 @@
 using UnityEngine;
 using System.Collections;
 namespace UnityPlugin.Core.Sns {
-public class FacebookSetting {
-    public static string APP_ID = "<APP_ID>";
+public class LineSettingPlugin {
+    public static string CHANNEL_ID = "<CHANNEL_ID>";
 }
 }

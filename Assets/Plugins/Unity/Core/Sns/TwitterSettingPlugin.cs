@@ -10,7 +10,7 @@
 using UnityEngine;
 using System.Collections;
 namespace UnityPlugin.Core.Sns {
-public class TwitterSetting {
+public class TwitterSettingPlugin {
     public static string API_KEY = "<API_KEY>";
     public static string CONSUMER_KEY = "<CONSUMER_KEY>";
     public static string CONSUMER_SEACRET = "<CONSUMER_SEACRET>";

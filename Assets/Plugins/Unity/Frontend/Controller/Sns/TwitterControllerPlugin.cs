@@ -44,7 +44,7 @@ public sealed class TwitterControllerPlugin : BasePlugin {
             }
             string imagePath = Path.Combine(Application.temporaryCachePath, "image.png");
             File.WriteAllBytes(imagePath, imageData);
-            this.androidPlugin.CallStatic("transitionTwitter", message, imagePath, TwitterSetting.CONSUMER_KEY, TwitterSetting.CONSUMER_SEACRET, enableTwitterCard);
+            this.androidPlugin.CallStatic("transitionTwitter", message, imagePath, TwitterSettingPlugin.CONSUMER_KEY, TwitterSettingPlugin.CONSUMER_SEACRET, enableTwitterCard);
         }
         return;
     }

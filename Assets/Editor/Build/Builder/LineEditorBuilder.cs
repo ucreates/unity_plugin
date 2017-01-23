@@ -18,7 +18,7 @@ public class LineEditorBuilder : BaseEditorBuilder {
             this.project.AddFrameworkToProject(this.targetGUID, framework, false);
         }
         PlistElementDict lineAdapterConfigDict = rootDict.CreateDict("LineAdapterConfig");
-        lineAdapterConfigDict.SetString("ChannelId", LineSetting.CHANNEL_ID);
+        lineAdapterConfigDict.SetString("ChannelId", LineSettingPlugin.CHANNEL_ID);
         PlistElementDict nsAppTransportSecurityDict = rootDict.CreateDict("NSAppTransportSecurity");
         PlistElementDict nsExeptionDomainsDict = nsAppTransportSecurityDict.CreateDict("NSExceptionDomains");
         PlistElementDict obsLineAppsComDict = nsExeptionDomainsDict.CreateDict("obs.line-apps.com");

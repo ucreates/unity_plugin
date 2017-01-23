@@ -42,7 +42,7 @@ public sealed class FacebookControllerPlugin : BasePlugin {
             if (null == this.androidPlugin) {
                 return;
             }
-            this.androidPlugin.CallStatic("transitionFacebook", FacebookSetting.APP_ID, imageData);
+            this.androidPlugin.CallStatic("transitionFacebook", FacebookSettingPlugin.APP_ID, imageData);
         }
         return;
     }
