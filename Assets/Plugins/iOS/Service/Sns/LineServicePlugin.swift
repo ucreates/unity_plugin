@@ -12,7 +12,7 @@ import UIKit
 class LineServicePlugin: NSObject {
     fileprivate let lineAdapter: LineAdapter = LineAdapter.default()!
     @objc
-    open func logIn(lineViewController: LineViewControllerPlugin) -> () {
+    open func logIn(lineViewController: LineViewControllerPlugin) -> Void {
         if (false == self.lineAdapter.canAuthorizeUsingLineApp) {
             let viewController = LineAdapterWebViewController(adapter: self.lineAdapter, with: LineAdapterWebViewOrientation.all)
             viewController.navigationItem.leftBarButtonItem = LineAdapterNavigationController.barButtonItem(withTitle: "Cancel", target: lineViewController, action: #selector(LineViewControllerPlugin.cancel(_:)))

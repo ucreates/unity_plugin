@@ -22,11 +22,11 @@ open class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
     fileprivate var context: CIContext! = nil
     fileprivate var created: Bool = false
     @objc
-    open func create() {
+    open func create() -> Void {
         if (false != self.created) {
             return
         }
-        AVCaptureDevice.requestAccess(forMediaType:AVMediaTypeVideo, completionHandler: nil)
+        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: nil)
         let status: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         if (status != AVAuthorizationStatus.authorized) {
             return
@@ -63,6 +63,7 @@ open class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
             self.camera.activeVideoMaxFrameDuration = duration.maxFrameDuration
             self.camera.unlockForConfiguration()
         } catch {
+            print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + error.localizedDescription)
             return
         }
         let capture: AVCaptureInput!
@@ -71,13 +72,14 @@ open class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
             self.session.addInput(capture)
             self.session.addOutput(self.output)
         } catch {
+            print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + error.localizedDescription)
             capture = nil
         }
         self.created = true
         return
     }
     @objc
-    open func show() {
+    open func show() -> Void {
         if (nil == self.session) {
             return
         }
@@ -85,7 +87,7 @@ open class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         return
     }
     @objc
-    open func update(_ suspend: Bool) {
+    open func update(_ suspend: Bool) -> Void {
         if (nil == self.session) {
             return
         }
@@ -97,7 +99,7 @@ open class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         return
     }
     @objc
-    open func hide() {
+    open func hide() -> Void {
         if (nil == self.session) {
             return
         }
@@ -105,7 +107,7 @@ open class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         return
     }
     @objc
-    open func destroy() {
+    open func destroy() -> Void {
         if (nil == self.camera || false == self.created || nil == self.output || nil == self.session) {
             return
         }
@@ -128,11 +130,11 @@ open class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
     open func getTexture() -> String! {
         return self.texture
     }
-    open func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+    open func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) -> Void {
         if (nil == sampleBuffer || false == self.created) {
             return
         }
-        let dispatcher: ()->() = {
+        let dispatcher: () -> () = {
             autoreleasepool {
                 let buffer: CVImageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
                 CVPixelBufferLockBaseAddress(buffer, CVPixelBufferLockFlags(rawValue: 0))

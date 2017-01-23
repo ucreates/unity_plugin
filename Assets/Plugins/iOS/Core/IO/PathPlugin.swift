@@ -54,11 +54,11 @@ open class PathPlugin: NSObject {
     open func getTemporaryCachePath() -> String! {
         return self.temporaryCachePath
     }
-    open func dump() {
-        print("dataPath in iOSPlugin::" + self.dataPath)
-        print("persistentDataPath in iOSPlugin::" + self.persistentDataPath)
-        print("streamingAssetsPath in iOSPlugin::" + self.streamingAssetsPath)
-        print("temporaryCachePath in iOSPlugin::" + self.temporaryCachePath)
+    open func dump() -> Void {
+        print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + "dataPath::" + self.dataPath)
+        print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + "persistentDataPath::" + self.persistentDataPath)
+        print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + "streamingAssetsPath::" + self.streamingAssetsPath)
+        print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + "temporaryCachePath::" + self.temporaryCachePath)
         return
     }
 }

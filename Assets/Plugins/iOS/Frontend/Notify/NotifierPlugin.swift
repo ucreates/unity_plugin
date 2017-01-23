@@ -10,7 +10,7 @@
 import UIKit
 open class NotifierPlugin: NSObject {
     @objc
-    open class func Notify(_ gameObjectName: String, methodName: String, parameter: String) {
+    open class func Notify(_ gameObjectName: String, methodName: String, parameter: String) -> Void {
         UnitySendMessage(gameObjectName, methodName, parameter)
         return
     }

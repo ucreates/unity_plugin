@@ -13,7 +13,7 @@ import Foundation
 import UIKit
 class FacebookServicePlugin: NSObject {
     @objc
-    open func logIn(facebookViewController: UIViewController, callback: (() -> Void)? = nil) -> () {
+    open func logIn(facebookViewController: UIViewController, callback: (() -> Void)? = nil) -> Void {
         var permissions: [Any] = ["publish_actions"]
         func loginCallback(result: FBSDKLoginManagerLoginResult?, error: Error?) -> Swift.Void {
             if (nil != error) {

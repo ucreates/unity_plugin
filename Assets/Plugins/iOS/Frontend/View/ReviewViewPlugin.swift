@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 open class ReviewViewPlugin: NSObject {
     @objc
-    open class func show(_ appStoreUrl: String) {
+    open class func show(_ appStoreUrl: String) -> Void {
         let alert: UIAlertController = UIAlertController(title: "Review", message: "", preferredStyle: UIAlertControllerStyle.alert)
         func evalCallBack (_ action: UIAlertAction) -> Void {
             let url: URL = URL(string: appStoreUrl)!

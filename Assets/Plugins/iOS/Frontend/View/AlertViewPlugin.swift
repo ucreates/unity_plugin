@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 open class AlertViewPlugin: NSObject {
     @objc
-    open class func show(_ message: String) {
+    open class func show(_ message: String) -> Void {
         let alert: UIAlertController = UIAlertController(title: message, message: nil, preferredStyle: UIAlertControllerStyle.alert)
         let confirmAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
         alert.addAction(confirmAction)

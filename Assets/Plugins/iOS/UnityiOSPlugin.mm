@@ -119,24 +119,24 @@ extern "C" void transitionViewControllerPlugin(int viewControllerId) {
 }
 extern "C" void transitionTwitterViewControllerPlugin(char* message, unsigned char* imageData, int imageDataLength, bool useTwitterCard) {
     NSString* unityMassage = [NSString stringWithCString: message encoding:NSUTF8StringEncoding];
-    TwitterViewControllerPlugin* viewController = (TwitterViewControllerPlugin*)[ViewControllerFactoryPlugin factoryMethod:[TwitterViewControllerPlugin VIEWCONTROLLER_ID]];
     NSData *unityImageData = [NSData dataWithBytes:(const void *)imageData length:imageDataLength];
+    TwitterViewControllerPlugin* viewController = (TwitterViewControllerPlugin*)[ViewControllerFactoryPlugin factoryMethod:[TwitterViewControllerPlugin VIEWCONTROLLER_ID]];
     [viewController setParameter:unityMassage postImageData:unityImageData enableTwitterCard:useTwitterCard];
     UIViewController* fromViewController = [ViewControllerPlugin getInstance];
     [fromViewController presentViewController:viewController animated: true completion: nil];
     return;
 }
 extern "C" void transitionFacebookViewControllerPlugin(unsigned char* imageData, int imageDataLength) {
-    FacebookViewControllerPlugin* viewController = (FacebookViewControllerPlugin*)[ViewControllerFactoryPlugin factoryMethod:[FacebookViewControllerPlugin VIEWCONTROLLER_ID]];
     NSData *unityImageData = [NSData dataWithBytes:(const void *)imageData length:imageDataLength];
+    FacebookViewControllerPlugin* viewController = (FacebookViewControllerPlugin*)[ViewControllerFactoryPlugin factoryMethod:[FacebookViewControllerPlugin VIEWCONTROLLER_ID]];
     [viewController setParameterWithPostImageData:unityImageData];
     UIViewController* fromViewController = [ViewControllerPlugin getInstance];
     [fromViewController presentViewController:viewController animated: true completion: nil];
     return;
 }
 extern "C" void transitionLineViewControllerPlugin(unsigned char* imageData, int imageDataLength) {
-    LineViewControllerPlugin* viewController = (LineViewControllerPlugin*)[ViewControllerFactoryPlugin factoryMethod:[LineViewControllerPlugin VIEWCONTROLLER_ID]];
     NSData *unityImageData = [NSData dataWithBytes:(const void *)imageData length:imageDataLength];
+    LineViewControllerPlugin* viewController = (LineViewControllerPlugin*)[ViewControllerFactoryPlugin factoryMethod:[LineViewControllerPlugin VIEWCONTROLLER_ID]];
     [viewController setParameterWithPostImageData:unityImageData];
     UIViewController* fromViewController = [ViewControllerPlugin getInstance];
     [fromViewController presentViewController:viewController animated: true completion: nil];

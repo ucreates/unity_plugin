@@ -18,7 +18,7 @@ open class TwitterViewControllerPlugin: UIViewController, TWTRComposerViewContro
     fileprivate var message: String!
     fileprivate var imageData: Data!
     @objc
-    override open func viewDidAppear(_ animated: Bool) {
+    override open func viewDidAppear(_ animated: Bool) -> Void {
         super.viewDidAppear(animated)
         if (false != self.authorized) {
             return
@@ -96,7 +96,7 @@ open class TwitterViewControllerPlugin: UIViewController, TWTRComposerViewContro
         return
     }
     @objc
-    open func setParameter(_ post: String, postImageData: Data, enableTwitterCard: Bool) {
+    open func setParameter(_ post: String, postImageData: Data, enableTwitterCard: Bool) -> Void {
         self.message = post
         self.imageData = postImageData
         self.useTwitterCard = enableTwitterCard

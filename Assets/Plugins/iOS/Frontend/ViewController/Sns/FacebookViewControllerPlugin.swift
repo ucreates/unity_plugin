@@ -15,7 +15,7 @@ class FacebookViewControllerPlugin: UIViewController, FBSDKSharingDelegate {
     open static let VIEWCONTROLLER_ID: Int = 4
     fileprivate var authorized: Bool = false
     fileprivate var imageData: Data!
-    override open func viewDidAppear(_ animated: Bool) {
+    override open func viewDidAppear(_ animated: Bool) -> Void {
         super.viewDidAppear(animated)
         if (false != self.authorized) {
             return
@@ -43,19 +43,19 @@ class FacebookViewControllerPlugin: UIViewController, FBSDKSharingDelegate {
         }
         return
     }
-    open func sharer(_ sharer: FBSDKSharing!, didCompleteWithResults results: [AnyHashable: Any]!) {
+    open func sharer(_ sharer: FBSDKSharing!, didCompleteWithResults results: [AnyHashable: Any]!) -> Void {
         let controller: UIViewController = ViewControllerPlugin.getInstance()
         controller.dismiss(animated: true, completion: nil)
         return
     }
-    open func sharer(_ sharer: FBSDKSharing!, didFailWithError error: Error!) {
+    open func sharer(_ sharer: FBSDKSharing!, didFailWithError error: Error!) -> Void {
         let service: FacebookServicePlugin = FacebookServicePlugin()
         service.logOut()
         let controller: UIViewController = ViewControllerPlugin.getInstance()
         controller.dismiss(animated: true, completion: nil)
         return
     }
-    open func sharerDidCancel(_ sharer: FBSDKSharing!) {
+    open func sharerDidCancel(_ sharer: FBSDKSharing!) -> Void {
         let service: FacebookServicePlugin = FacebookServicePlugin()
         service.logOut()
         let controller: UIViewController = ViewControllerPlugin.getInstance()
@@ -63,7 +63,7 @@ class FacebookViewControllerPlugin: UIViewController, FBSDKSharingDelegate {
         return
     }
     @objc
-    open func setParameter(postImageData: Data) {
+    open func setParameter(postImageData: Data) -> Void {
         self.imageData = postImageData
         return
     }

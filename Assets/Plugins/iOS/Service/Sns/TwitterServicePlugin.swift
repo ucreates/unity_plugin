@@ -12,7 +12,7 @@ import Fabric
 import TwitterKit
 open class TwitterServicePlugin: NSObject {
     @objc
-    open func logIn(_ callback: (() -> Void)? = nil) -> () {
+    open func logIn(_ callback: (() -> Void)? = nil) -> Void {
         func loginCallback (session: TWTRSession?, error: Error?) -> Swift.Void {
             if (nil != session) {
                 callback?()

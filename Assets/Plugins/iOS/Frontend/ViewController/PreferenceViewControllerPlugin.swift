@@ -18,7 +18,7 @@ open class PreferenceViewControllerPlugin: UIViewController, UITableViewDataSour
     fileprivate static let SECTION_HEIGHT: CGFloat = UIScreen.main.bounds.height * 0.1
     fileprivate static let VIEW_CONTROLLER_NAME: String = "設定画面"
     fileprivate var tableView: UITableView!
-    override open func viewDidLoad() {
+    override open func viewDidLoad() -> Void {
         super.viewDidLoad()
         let backButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(PreferenceViewControllerPlugin.onClickReturnButton))
         let controller: UIViewController = ViewControllerPlugin.getInstance()
@@ -37,7 +37,7 @@ open class PreferenceViewControllerPlugin: UIViewController, UITableViewDataSour
         self.view.addSubview(self.tableView)
         return
     }
-    override open func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) -> Void {
         self.navigationController?.view.backgroundColor = PreferenceViewControllerPlugin.PREFERENCE_COLOR
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationController?.setToolbarHidden(false, animated: false)
@@ -82,7 +82,7 @@ open class PreferenceViewControllerPlugin: UIViewController, UITableViewDataSour
         }
         return cell!
     }
-    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) -> Void {
         if (0 != indexPath.section) {
             return
         }
@@ -91,7 +91,7 @@ open class PreferenceViewControllerPlugin: UIViewController, UITableViewDataSour
         app.openURL(url)
         return
     }
-    open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) -> Void {
         let layer: CAShapeLayer = CAShapeLayer()
         let path: UIBezierPath = UIBezierPath(rect: cell.bounds)
         layer.path = path.cgPath
@@ -103,7 +103,7 @@ open class PreferenceViewControllerPlugin: UIViewController, UITableViewDataSour
         cell.backgroundView = bgView
         return
     }
-    internal func onClickReturnButton() {
+    internal func onClickReturnButton() -> Void {
         func callback() -> Void {
             if (nil == self.tableView) {
                 return
@@ -115,7 +115,7 @@ open class PreferenceViewControllerPlugin: UIViewController, UITableViewDataSour
         controller.dismiss(animated: true, completion: callback)
         return
     }
-    internal func onChangeSwitchStatus(_ sender: UISwitch) {
+    internal func onChangeSwitchStatus(_ sender: UISwitch) -> Void {
         let id: String = "switch" + String(sender.tag)
         PreferencePlugin.setSwitchPreference(id, value: sender.isOn)
         return

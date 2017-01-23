@@ -12,7 +12,7 @@ import UIKit
 open class WebViewPlugin: NSObject, UIWebViewDelegate {
     var view: UIWebView!
     @objc
-    open func create(_ url: String, left: CGFloat, top: CGFloat, right: CGFloat, bottom: CGFloat) {
+    open func create(_ url: String, left: CGFloat, top: CGFloat, right: CGFloat, bottom: CGFloat) -> Void {
         let req: URLRequest = URLRequest(url: URL(string: url)!)
         let controller: UIViewController = ViewControllerPlugin.getInstance()
         let width: CGFloat = controller.view.frame.width
@@ -27,17 +27,17 @@ open class WebViewPlugin: NSObject, UIWebViewDelegate {
         return
     }
     @objc
-    open func show() {
+    open func show() -> Void {
         self.setVisible(true)
         return
     }
     @objc
-    open func hide() {
+    open func hide() -> Void {
         self.setVisible(false)
         return
     }
     @objc
-    open func setVisible(_ visible: Bool) {
+    open func setVisible(_ visible: Bool) -> Void {
         if (nil == self.view) {
             return
         }
@@ -45,7 +45,7 @@ open class WebViewPlugin: NSObject, UIWebViewDelegate {
         return
     }
     @objc
-    open func destroy() {
+    open func destroy() -> Void {
         if (nil == self.view) {
             return
         }

@@ -13,7 +13,7 @@ class LineViewControllerPlugin: UIViewController {
     fileprivate var authorized: Bool = false
     fileprivate var imageData: Data!
     fileprivate var service: LineServicePlugin? = nil
-    override open func viewDidAppear(_ animated: Bool) {
+    override open func viewDidAppear(_ animated: Bool) -> Void {
         super.viewDidAppear(animated)
         if (false != self.authorized) {
             return
@@ -29,7 +29,7 @@ class LineViewControllerPlugin: UIViewController {
         }
         return
     }
-    func authorizationDidChange(_ notification: Notification) {
+    func authorizationDidChange(_ notification: Notification) -> Void {
         let adapter: LineAdapter = notification.object as! LineAdapter
         if let error = notification.userInfo?["error"] as? NSError {
             func callback() -> Void {
@@ -44,7 +44,7 @@ class LineViewControllerPlugin: UIViewController {
         self.authorizationDidChangeByLineAdapter(adapter)
         return
     }
-    func authorizationDidChangeByLineAdapter(_ adapter: LineAdapter) {
+    func authorizationDidChangeByLineAdapter(_ adapter: LineAdapter) -> Void {
         if (false == adapter.isAuthorized) {
             return
         } else if (false == adapter.canAuthorizeUsingLineApp) {
@@ -65,7 +65,7 @@ class LineViewControllerPlugin: UIViewController {
         self.dismiss(animated: true, completion: nil)
         return
     }
-    func cancel(_ sender: AnyObject) {
+    func cancel(_ sender: AnyObject) -> Void {
         func callback() -> Void {
             service?.logOut()
             return
@@ -75,7 +75,7 @@ class LineViewControllerPlugin: UIViewController {
         return
     }
     @objc
-    open func setParameter(postImageData: Data) {
+    open func setParameter(postImageData: Data) -> Void {
         self.imageData = postImageData
         return
     }
