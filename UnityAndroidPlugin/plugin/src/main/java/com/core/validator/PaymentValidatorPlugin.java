@@ -11,6 +11,7 @@ package com.core.validator;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import com.core.identifier.TagPlugin;
 import com.service.response.PaymentServiceResponsePlugin;
 import java.security.InvalidKeyException;
 import java.security.KeyFactory;
@@ -27,11 +28,9 @@ public class PaymentValidatorPlugin {
     public static boolean isValid(String skuName, Bundle skuDetailsList) throws JSONException {
         if (false == skuDetailsList.containsKey("DETAILS_LIST")) {
             int response = PaymentServiceResponsePlugin.getResponse(skuDetailsList);
-            if (response != 0) {
-                Log.i("InAppBilling", "invalid skuDetailList::" + String.valueOf(response));
+            if (PaymentServiceResponsePlugin.RESULT_OK != response) {
                 return false;
             } else {
-                Log.i("InAppBilling", "this app does not have sku details");
                 return false;
             }
         }
@@ -40,17 +39,16 @@ public class PaymentValidatorPlugin {
         for (String detail : detailList) {
             JSONObject jsonObject = new JSONObject(detail);
             String productId = jsonObject.optString("productId");
-            Log.i("InAppBilling", "productId::" + productId);
             if (productId.equals(skuName)) {
                 ret = true;
                 break;
             }
-            Log.i("InAppBilling", "skuDetail::" + detail);
         }
         return ret;
     }
     public static boolean isValid(String base64EncordedPublickKey, String signedData, String signatureData) {
         byte[] signatureBytes;
+        String errorMessage = null;
         try {
             signatureBytes = Base64.decode(signatureData, Base64.DEFAULT);
             byte[] decodedKey = Base64.decode(base64EncordedPublickKey, Base64.DEFAULT);
@@ -60,23 +58,21 @@ public class PaymentValidatorPlugin {
             signature.initVerify(pubickKey);
             signature.update(signedData.getBytes());
             if (!signature.verify(signatureBytes)) {
-                Log.e("InAppBilling", "Signature verification failed.");
                 return false;
             }
             return true;
         } catch (IllegalArgumentException e) {
-            return false;
+            errorMessage = e.getMessage();
         } catch (NoSuchAlgorithmException e) {
-            Log.e("InAppBilling", "NoSuchAlgorithmException.");
-            throw new RuntimeException(e);
+            errorMessage = e.getMessage();
         } catch (InvalidKeySpecException e) {
-            Log.e("InAppBilling", "Invalid key specification.");
-            throw new IllegalArgumentException(e);
+            errorMessage = e.getMessage();
         } catch (InvalidKeyException e) {
-            Log.e("InAppBilling", "Invalid key specification.");
+            errorMessage = e.getMessage();
         } catch (SignatureException e) {
-            Log.e("InAppBilling", "Signature exception.");
+            errorMessage = e.getMessage();
         }
+        Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, errorMessage);
         return false;
     }
 }
