@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "81715B521D30AAFC00DCF3CA"
-               BuildableName = "UnityiOSPlugin.bundle"
+               BlueprintIdentifier = "81BEC3FA1E3632F400F66A52"
+               BuildableName = "libUnityiOSPlugin.a"
                BlueprintName = "UnityiOSPlugin"
                ReferencedContainer = "container:UnityiOSPlugin.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "81715B521D30AAFC00DCF3CA"
-            BuildableName = "UnityiOSPlugin.bundle"
+            BlueprintIdentifier = "81BEC3FA1E3632F400F66A52"
+            BuildableName = "libUnityiOSPlugin.a"
             BlueprintName = "UnityiOSPlugin"
             ReferencedContainer = "container:UnityiOSPlugin.xcodeproj">
          </BuildableReference>
@@ -63,8 +63,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "81715B521D30AAFC00DCF3CA"
-            BuildableName = "UnityiOSPlugin.bundle"
+            BlueprintIdentifier = "81BEC3FA1E3632F400F66A52"
+            BuildableName = "libUnityiOSPlugin.a"
             BlueprintName = "UnityiOSPlugin"
             ReferencedContainer = "container:UnityiOSPlugin.xcodeproj">
          </BuildableReference>

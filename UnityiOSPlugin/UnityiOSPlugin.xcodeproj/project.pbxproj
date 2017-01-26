@@ -7,169 +7,415 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		81715B701D30C7B800DCF3CA /* UnityiOSPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81715B6C1D30C7B800DCF3CA /* UnityiOSPlugin.mm */; };
-		81AD34D31D97F43800326262 /* ViewControllerFactoryPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD34D21D97F43800326262 /* ViewControllerFactoryPlugin.swift */; };
-		81AD34D51D97F44400326262 /* PreferenceViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD34D41D97F44400326262 /* PreferenceViewControllerPlugin.swift */; };
-		81AD34D81D97F4FE00326262 /* TransitionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD34D71D97F4FE00326262 /* TransitionPlugin.swift */; };
-		81B5FB981D8D263100C06399 /* Identifier.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB881D8D263100C06399 /* Identifier.meta */; };
-		81B5FB991D8D263100C06399 /* NotifierPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5FB8B1D8D263100C06399 /* NotifierPlugin.swift */; };
-		81B5FB9A1D8D263100C06399 /* NotifierPlugin.swift.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB8C1D8D263100C06399 /* NotifierPlugin.swift.meta */; };
-		81B5FB9B1D8D263100C06399 /* Notify.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB8D1D8D263100C06399 /* Notify.meta */; };
-		81B5FB9C1D8D263100C06399 /* ReviewViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5FB8F1D8D263100C06399 /* ReviewViewPlugin.swift */; };
-		81B5FB9D1D8D263100C06399 /* ReviewViewPlugin.swift.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB901D8D263100C06399 /* ReviewViewPlugin.swift.meta */; };
-		81B5FB9E1D8D263100C06399 /* WebViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5FB911D8D263100C06399 /* WebViewPlugin.swift */; };
-		81B5FB9F1D8D263100C06399 /* WebViewPlugin.swift.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB921D8D263100C06399 /* WebViewPlugin.swift.meta */; };
-		81B5FBA01D8D263100C06399 /* View.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB931D8D263100C06399 /* View.meta */; };
-		81B5FBA11D8D263100C06399 /* ViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5FB951D8D263100C06399 /* ViewControllerPlugin.swift */; };
-		81B5FBA21D8D263100C06399 /* ViewControllerPlugin.swift.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB961D8D263100C06399 /* ViewControllerPlugin.swift.meta */; };
-		81B5FBA31D8D263100C06399 /* ViewController.meta in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FB971D8D263100C06399 /* ViewController.meta */; };
-		81B5FBA51D8D264700C06399 /* TagPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5FBA41D8D264700C06399 /* TagPlugin.swift */; };
+		81BEC46E1E36333C00F66A52 /* UnityiOSPluginAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC40A1E36333C00F66A52 /* UnityiOSPluginAppDelegate.swift */; };
+		81BEC46F1E36333C00F66A52 /* TagPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC40E1E36333C00F66A52 /* TagPlugin.swift */; };
+		81BEC4701E36333C00F66A52 /* PathPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC4121E36333C00F66A52 /* PathPlugin.swift */; };
+		81BEC4711E36333C00F66A52 /* PreferencePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC4161E36333C00F66A52 /* PreferencePlugin.swift */; };
+		81BEC4721E36333C00F66A52 /* TransitionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC41A1E36333C00F66A52 /* TransitionPlugin.swift */; };
+		81BEC4731E36333C00F66A52 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BEC4201E36333C00F66A52 /* Bolts.framework */; };
+		81BEC4741E36333C00F66A52 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BEC4221E36333C00F66A52 /* FBSDKCoreKit.framework */; };
+		81BEC4751E36333C00F66A52 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BEC4241E36333C00F66A52 /* FBSDKLoginKit.framework */; };
+		81BEC4761E36333C00F66A52 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BEC4261E36333C00F66A52 /* FBSDKShareKit.framework */; };
+		81BEC4771E36333C00F66A52 /* LineAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BEC42A1E36333C00F66A52 /* LineAdapter.framework */; };
+		81BEC4781E36333C00F66A52 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BEC4301E36333C00F66A52 /* Fabric.framework */; };
+		81BEC4791E36333C00F66A52 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BEC4321E36333C00F66A52 /* TwitterCore.framework */; };
+		81BEC47A1E36333C00F66A52 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BEC4341E36333C00F66A52 /* TwitterKit.framework */; };
+		81BEC47B1E36333C00F66A52 /* NotifierPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC43A1E36333C00F66A52 /* NotifierPlugin.swift */; };
+		81BEC47C1E36333C00F66A52 /* AlertViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC43E1E36333C00F66A52 /* AlertViewPlugin.swift */; };
+		81BEC47D1E36333C00F66A52 /* CameraViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC4401E36333C00F66A52 /* CameraViewPlugin.swift */; };
+		81BEC47E1E36333C00F66A52 /* IndicatorViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC4421E36333C00F66A52 /* IndicatorViewPlugin.swift */; };
+		81BEC47F1E36333C00F66A52 /* ReviewViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC4441E36333C00F66A52 /* ReviewViewPlugin.swift */; };
+		81BEC4801E36333C00F66A52 /* WebViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC4461E36333C00F66A52 /* WebViewPlugin.swift */; };
+		81BEC4811E36333C00F66A52 /* PaymentViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC44A1E36333C00F66A52 /* PaymentViewControllerPlugin.swift */; };
+		81BEC4821E36333C00F66A52 /* PreferenceViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC44C1E36333C00F66A52 /* PreferenceViewControllerPlugin.swift */; };
+		81BEC4831E36333C00F66A52 /* FacebookViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC44F1E36333C00F66A52 /* FacebookViewControllerPlugin.swift */; };
+		81BEC4841E36333C00F66A52 /* LineViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC4511E36333C00F66A52 /* LineViewControllerPlugin.swift */; };
+		81BEC4851E36333C00F66A52 /* TwitterViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC4531E36333C00F66A52 /* TwitterViewControllerPlugin.swift */; };
+		81BEC4861E36333C00F66A52 /* ViewControllerFactoryPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC4561E36333C00F66A52 /* ViewControllerFactoryPlugin.swift */; };
+		81BEC4871E36333C00F66A52 /* ViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC4581E36333C00F66A52 /* ViewControllerPlugin.swift */; };
+		81BEC4881E36333C00F66A52 /* PaymentServicePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC45D1E36333C00F66A52 /* PaymentServicePlugin.swift */; };
+		81BEC4891E36333C00F66A52 /* FacebookServicePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC4601E36333C00F66A52 /* FacebookServicePlugin.swift */; };
+		81BEC48A1E36333C00F66A52 /* LineServicePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC4621E36333C00F66A52 /* LineServicePlugin.swift */; };
+		81BEC48B1E36333C00F66A52 /* TwitterServicePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC4641E36333C00F66A52 /* TwitterServicePlugin.swift */; };
+		81BEC48C1E36333C00F66A52 /* UnityiOSPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC46A1E36333C00F66A52 /* UnityiOSPlugin.mm */; };
+		81BEC48D1E36333C00F66A52 /* UnityiOSPluginAppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81BEC46C1E36333C00F66A52 /* UnityiOSPluginAppController.mm */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		81BEC3F91E3632F400F66A52 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		81715B531D30AAFC00DCF3CA /* UnityiOSPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnityiOSPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		81715B561D30AAFC00DCF3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81715B6C1D30C7B800DCF3CA /* UnityiOSPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = UnityiOSPlugin.mm; path = ../../Assets/Plugins/iOS/UnityiOSPlugin.mm; sourceTree = "<group>"; };
-		81715B6D1D30C7B800DCF3CA /* UnityiOSPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnityiOSPlugin.h; path = ../../Assets/Plugins/iOS/UnityiOSPlugin.h; sourceTree = "<group>"; };
-		81AD34D21D97F43800326262 /* ViewControllerFactoryPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactoryPlugin.swift; sourceTree = "<group>"; };
-		81AD34D41D97F44400326262 /* PreferenceViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewControllerPlugin.swift; sourceTree = "<group>"; };
-		81AD34D71D97F4FE00326262 /* TransitionPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPlugin.swift; sourceTree = "<group>"; };
-		81B5FB881D8D263100C06399 /* Identifier.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Identifier.meta; sourceTree = "<group>"; };
-		81B5FB8B1D8D263100C06399 /* NotifierPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifierPlugin.swift; sourceTree = "<group>"; };
-		81B5FB8C1D8D263100C06399 /* NotifierPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NotifierPlugin.swift.meta; sourceTree = "<group>"; };
-		81B5FB8D1D8D263100C06399 /* Notify.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notify.meta; sourceTree = "<group>"; };
-		81B5FB8F1D8D263100C06399 /* ReviewViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewPlugin.swift; sourceTree = "<group>"; };
-		81B5FB901D8D263100C06399 /* ReviewViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReviewViewPlugin.swift.meta; sourceTree = "<group>"; };
-		81B5FB911D8D263100C06399 /* WebViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewPlugin.swift; sourceTree = "<group>"; };
-		81B5FB921D8D263100C06399 /* WebViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewPlugin.swift.meta; sourceTree = "<group>"; };
-		81B5FB931D8D263100C06399 /* View.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = View.meta; sourceTree = "<group>"; };
-		81B5FB951D8D263100C06399 /* ViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPlugin.swift; sourceTree = "<group>"; };
-		81B5FB961D8D263100C06399 /* ViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
-		81B5FB971D8D263100C06399 /* ViewController.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewController.meta; sourceTree = "<group>"; };
-		81B5FBA41D8D264700C06399 /* TagPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagPlugin.swift; sourceTree = "<group>"; };
+		81BEC3FB1E3632F400F66A52 /* libUnityiOSPlugin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUnityiOSPlugin.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		81BEC40A1E36333C00F66A52 /* UnityiOSPluginAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnityiOSPluginAppDelegate.swift; sourceTree = "<group>"; };
+		81BEC40B1E36333C00F66A52 /* UnityiOSPluginAppDelegate.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityiOSPluginAppDelegate.swift.meta; sourceTree = "<group>"; };
+		81BEC40C1E36333C00F66A52 /* Delegate.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Delegate.meta; sourceTree = "<group>"; };
+		81BEC40E1E36333C00F66A52 /* TagPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagPlugin.swift; sourceTree = "<group>"; };
+		81BEC40F1E36333C00F66A52 /* TagPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TagPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4101E36333C00F66A52 /* Identifier.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Identifier.meta; sourceTree = "<group>"; };
+		81BEC4121E36333C00F66A52 /* PathPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathPlugin.swift; sourceTree = "<group>"; };
+		81BEC4131E36333C00F66A52 /* PathPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PathPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4141E36333C00F66A52 /* IO.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IO.meta; sourceTree = "<group>"; };
+		81BEC4161E36333C00F66A52 /* PreferencePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencePlugin.swift; sourceTree = "<group>"; };
+		81BEC4171E36333C00F66A52 /* PreferencePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PreferencePlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4181E36333C00F66A52 /* Preference.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Preference.meta; sourceTree = "<group>"; };
+		81BEC41A1E36333C00F66A52 /* TransitionPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPlugin.swift; sourceTree = "<group>"; };
+		81BEC41B1E36333C00F66A52 /* TransitionPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TransitionPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC41C1E36333C00F66A52 /* Scene.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Scene.meta; sourceTree = "<group>"; };
+		81BEC41D1E36333C00F66A52 /* Core.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Core.meta; sourceTree = "<group>"; };
+		81BEC4201E36333C00F66A52 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		81BEC4211E36333C00F66A52 /* Bolts.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bolts.framework.meta; sourceTree = "<group>"; };
+		81BEC4221E36333C00F66A52 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		81BEC4231E36333C00F66A52 /* FBSDKCoreKit.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FBSDKCoreKit.framework.meta; sourceTree = "<group>"; };
+		81BEC4241E36333C00F66A52 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		81BEC4251E36333C00F66A52 /* FBSDKLoginKit.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FBSDKLoginKit.framework.meta; sourceTree = "<group>"; };
+		81BEC4261E36333C00F66A52 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		81BEC4271E36333C00F66A52 /* FBSDKShareKit.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FBSDKShareKit.framework.meta; sourceTree = "<group>"; };
+		81BEC4281E36333C00F66A52 /* Facebook.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Facebook.meta; sourceTree = "<group>"; };
+		81BEC42A1E36333C00F66A52 /* LineAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LineAdapter.framework; sourceTree = "<group>"; };
+		81BEC42B1E36333C00F66A52 /* LineAdapter.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LineAdapter.framework.meta; sourceTree = "<group>"; };
+		81BEC42C1E36333C00F66A52 /* LineAdapterUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LineAdapterUI.bundle; sourceTree = "<group>"; };
+		81BEC42D1E36333C00F66A52 /* LineAdapterUI.bundle.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LineAdapterUI.bundle.meta; sourceTree = "<group>"; };
+		81BEC42E1E36333C00F66A52 /* Line.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Line.meta; sourceTree = "<group>"; };
+		81BEC4301E36333C00F66A52 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		81BEC4311E36333C00F66A52 /* Fabric.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fabric.framework.meta; sourceTree = "<group>"; };
+		81BEC4321E36333C00F66A52 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		81BEC4331E36333C00F66A52 /* TwitterCore.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwitterCore.framework.meta; sourceTree = "<group>"; };
+		81BEC4341E36333C00F66A52 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		81BEC4351E36333C00F66A52 /* TwitterKit.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwitterKit.framework.meta; sourceTree = "<group>"; };
+		81BEC4361E36333C00F66A52 /* Twitter.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Twitter.meta; sourceTree = "<group>"; };
+		81BEC4371E36333C00F66A52 /* Frameworks.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Frameworks.meta; sourceTree = "<group>"; };
+		81BEC43A1E36333C00F66A52 /* NotifierPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifierPlugin.swift; sourceTree = "<group>"; };
+		81BEC43B1E36333C00F66A52 /* NotifierPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NotifierPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC43C1E36333C00F66A52 /* Notify.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notify.meta; sourceTree = "<group>"; };
+		81BEC43E1E36333C00F66A52 /* AlertViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewPlugin.swift; sourceTree = "<group>"; };
+		81BEC43F1E36333C00F66A52 /* AlertViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AlertViewPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4401E36333C00F66A52 /* CameraViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewPlugin.swift; sourceTree = "<group>"; };
+		81BEC4411E36333C00F66A52 /* CameraViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CameraViewPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4421E36333C00F66A52 /* IndicatorViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorViewPlugin.swift; sourceTree = "<group>"; };
+		81BEC4431E36333C00F66A52 /* IndicatorViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IndicatorViewPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4441E36333C00F66A52 /* ReviewViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewPlugin.swift; sourceTree = "<group>"; };
+		81BEC4451E36333C00F66A52 /* ReviewViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReviewViewPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4461E36333C00F66A52 /* WebViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewPlugin.swift; sourceTree = "<group>"; };
+		81BEC4471E36333C00F66A52 /* WebViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4481E36333C00F66A52 /* View.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = View.meta; sourceTree = "<group>"; };
+		81BEC44A1E36333C00F66A52 /* PaymentViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81BEC44B1E36333C00F66A52 /* PaymentViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PaymentViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC44C1E36333C00F66A52 /* PreferenceViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81BEC44D1E36333C00F66A52 /* PreferenceViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PreferenceViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC44F1E36333C00F66A52 /* FacebookViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81BEC4501E36333C00F66A52 /* FacebookViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FacebookViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4511E36333C00F66A52 /* LineViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81BEC4521E36333C00F66A52 /* LineViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LineViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4531E36333C00F66A52 /* TwitterViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81BEC4541E36333C00F66A52 /* TwitterViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwitterViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4551E36333C00F66A52 /* Sns.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sns.meta; sourceTree = "<group>"; };
+		81BEC4561E36333C00F66A52 /* ViewControllerFactoryPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactoryPlugin.swift; sourceTree = "<group>"; };
+		81BEC4571E36333C00F66A52 /* ViewControllerFactoryPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewControllerFactoryPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4581E36333C00F66A52 /* ViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81BEC4591E36333C00F66A52 /* ViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC45A1E36333C00F66A52 /* ViewController.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewController.meta; sourceTree = "<group>"; };
+		81BEC45B1E36333C00F66A52 /* Frontend.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Frontend.meta; sourceTree = "<group>"; };
+		81BEC45D1E36333C00F66A52 /* PaymentServicePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentServicePlugin.swift; sourceTree = "<group>"; };
+		81BEC45E1E36333C00F66A52 /* PaymentServicePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PaymentServicePlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4601E36333C00F66A52 /* FacebookServicePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookServicePlugin.swift; sourceTree = "<group>"; };
+		81BEC4611E36333C00F66A52 /* FacebookServicePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FacebookServicePlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4621E36333C00F66A52 /* LineServicePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineServicePlugin.swift; sourceTree = "<group>"; };
+		81BEC4631E36333C00F66A52 /* LineServicePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LineServicePlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4641E36333C00F66A52 /* TwitterServicePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterServicePlugin.swift; sourceTree = "<group>"; };
+		81BEC4651E36333C00F66A52 /* TwitterServicePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwitterServicePlugin.swift.meta; sourceTree = "<group>"; };
+		81BEC4661E36333C00F66A52 /* Sns.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sns.meta; sourceTree = "<group>"; };
+		81BEC4671E36333C00F66A52 /* Service.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Service.meta; sourceTree = "<group>"; };
+		81BEC4681E36333C00F66A52 /* UnityiOSPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityiOSPlugin.h; sourceTree = "<group>"; };
+		81BEC4691E36333C00F66A52 /* UnityiOSPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityiOSPlugin.h.meta; sourceTree = "<group>"; };
+		81BEC46A1E36333C00F66A52 /* UnityiOSPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UnityiOSPlugin.mm; sourceTree = "<group>"; };
+		81BEC46B1E36333C00F66A52 /* UnityiOSPlugin.mm.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityiOSPlugin.mm.meta; sourceTree = "<group>"; };
+		81BEC46C1E36333C00F66A52 /* UnityiOSPluginAppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UnityiOSPluginAppController.mm; sourceTree = "<group>"; };
+		81BEC46D1E36333C00F66A52 /* UnityiOSPluginAppController.mm.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityiOSPluginAppController.mm.meta; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		81715B501D30AAFC00DCF3CA /* Frameworks */ = {
+		81BEC3F81E3632F400F66A52 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BEC4761E36333C00F66A52 /* FBSDKShareKit.framework in Frameworks */,
+				81BEC4731E36333C00F66A52 /* Bolts.framework in Frameworks */,
+				81BEC4791E36333C00F66A52 /* TwitterCore.framework in Frameworks */,
+				81BEC47A1E36333C00F66A52 /* TwitterKit.framework in Frameworks */,
+				81BEC4741E36333C00F66A52 /* FBSDKCoreKit.framework in Frameworks */,
+				81BEC4751E36333C00F66A52 /* FBSDKLoginKit.framework in Frameworks */,
+				81BEC4771E36333C00F66A52 /* LineAdapter.framework in Frameworks */,
+				81BEC4781E36333C00F66A52 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		81715B4A1D30AAFC00DCF3CA = {
+		81BEC3F21E3632F400F66A52 = {
 			isa = PBXGroup;
 			children = (
-				81715B551D30AAFC00DCF3CA /* UnityiOSPlugin */,
-				81715B541D30AAFC00DCF3CA /* Products */,
+				81BEC4071E36333C00F66A52 /* iOS */,
+				81BEC3FC1E3632F400F66A52 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		81715B541D30AAFC00DCF3CA /* Products */ = {
+		81BEC3FC1E3632F400F66A52 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				81715B531D30AAFC00DCF3CA /* UnityiOSPlugin.bundle */,
+				81BEC3FB1E3632F400F66A52 /* libUnityiOSPlugin.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		81715B551D30AAFC00DCF3CA /* UnityiOSPlugin */ = {
+		81BEC4071E36333C00F66A52 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				81B5FB861D8D263100C06399 /* System */,
-				81B5FB891D8D263100C06399 /* Frontend */,
-				81715B6C1D30C7B800DCF3CA /* UnityiOSPlugin.mm */,
-				81715B6D1D30C7B800DCF3CA /* UnityiOSPlugin.h */,
-				81715B561D30AAFC00DCF3CA /* Info.plist */,
+				81BEC4081E36333C00F66A52 /* Core */,
+				81BEC41D1E36333C00F66A52 /* Core.meta */,
+				81BEC41E1E36333C00F66A52 /* Frameworks */,
+				81BEC4371E36333C00F66A52 /* Frameworks.meta */,
+				81BEC4381E36333C00F66A52 /* Frontend */,
+				81BEC45B1E36333C00F66A52 /* Frontend.meta */,
+				81BEC45C1E36333C00F66A52 /* Service */,
+				81BEC4671E36333C00F66A52 /* Service.meta */,
+				81BEC4681E36333C00F66A52 /* UnityiOSPlugin.h */,
+				81BEC4691E36333C00F66A52 /* UnityiOSPlugin.h.meta */,
+				81BEC46A1E36333C00F66A52 /* UnityiOSPlugin.mm */,
+				81BEC46B1E36333C00F66A52 /* UnityiOSPlugin.mm.meta */,
+				81BEC46C1E36333C00F66A52 /* UnityiOSPluginAppController.mm */,
+				81BEC46D1E36333C00F66A52 /* UnityiOSPluginAppController.mm.meta */,
 			);
-			path = UnityiOSPlugin;
+			name = iOS;
+			path = ../Assets/Plugins/iOS;
 			sourceTree = "<group>";
 		};
-		81AD34D61D97F4EF00326262 /* scene */ = {
+		81BEC4081E36333C00F66A52 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				81AD34D71D97F4FE00326262 /* TransitionPlugin.swift */,
+				81BEC4091E36333C00F66A52 /* Delegate */,
+				81BEC40C1E36333C00F66A52 /* Delegate.meta */,
+				81BEC40D1E36333C00F66A52 /* Identifier */,
+				81BEC4101E36333C00F66A52 /* Identifier.meta */,
+				81BEC4111E36333C00F66A52 /* IO */,
+				81BEC4141E36333C00F66A52 /* IO.meta */,
+				81BEC4151E36333C00F66A52 /* Preference */,
+				81BEC4181E36333C00F66A52 /* Preference.meta */,
+				81BEC4191E36333C00F66A52 /* Scene */,
+				81BEC41C1E36333C00F66A52 /* Scene.meta */,
 			);
-			path = scene;
+			path = Core;
 			sourceTree = "<group>";
 		};
-		81B5FB861D8D263100C06399 /* System */ = {
+		81BEC4091E36333C00F66A52 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				81AD34D61D97F4EF00326262 /* scene */,
-				81B5FB871D8D263100C06399 /* Identifier */,
-				81B5FB881D8D263100C06399 /* Identifier.meta */,
+				81BEC40A1E36333C00F66A52 /* UnityiOSPluginAppDelegate.swift */,
+				81BEC40B1E36333C00F66A52 /* UnityiOSPluginAppDelegate.swift.meta */,
 			);
-			name = System;
-			path = ../../Assets/Plugins/iOS/System;
+			path = Delegate;
 			sourceTree = "<group>";
 		};
-		81B5FB871D8D263100C06399 /* Identifier */ = {
+		81BEC40D1E36333C00F66A52 /* Identifier */ = {
 			isa = PBXGroup;
 			children = (
-				81B5FBA41D8D264700C06399 /* TagPlugin.swift */,
+				81BEC40E1E36333C00F66A52 /* TagPlugin.swift */,
+				81BEC40F1E36333C00F66A52 /* TagPlugin.swift.meta */,
 			);
 			path = Identifier;
 			sourceTree = "<group>";
 		};
-		81B5FB891D8D263100C06399 /* Frontend */ = {
+		81BEC4111E36333C00F66A52 /* IO */ = {
 			isa = PBXGroup;
 			children = (
-				81B5FB8A1D8D263100C06399 /* Notify */,
-				81B5FB8D1D8D263100C06399 /* Notify.meta */,
-				81B5FB8E1D8D263100C06399 /* View */,
-				81B5FB931D8D263100C06399 /* View.meta */,
-				81B5FB941D8D263100C06399 /* ViewController */,
-				81B5FB971D8D263100C06399 /* ViewController.meta */,
+				81BEC4121E36333C00F66A52 /* PathPlugin.swift */,
+				81BEC4131E36333C00F66A52 /* PathPlugin.swift.meta */,
 			);
-			name = Frontend;
-			path = ../../Assets/Plugins/iOS/Frontend;
+			path = IO;
 			sourceTree = "<group>";
 		};
-		81B5FB8A1D8D263100C06399 /* Notify */ = {
+		81BEC4151E36333C00F66A52 /* Preference */ = {
 			isa = PBXGroup;
 			children = (
-				81B5FB8B1D8D263100C06399 /* NotifierPlugin.swift */,
-				81B5FB8C1D8D263100C06399 /* NotifierPlugin.swift.meta */,
+				81BEC4161E36333C00F66A52 /* PreferencePlugin.swift */,
+				81BEC4171E36333C00F66A52 /* PreferencePlugin.swift.meta */,
+			);
+			path = Preference;
+			sourceTree = "<group>";
+		};
+		81BEC4191E36333C00F66A52 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				81BEC41A1E36333C00F66A52 /* TransitionPlugin.swift */,
+				81BEC41B1E36333C00F66A52 /* TransitionPlugin.swift.meta */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		81BEC41E1E36333C00F66A52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81BEC41F1E36333C00F66A52 /* Facebook */,
+				81BEC4281E36333C00F66A52 /* Facebook.meta */,
+				81BEC4291E36333C00F66A52 /* Line */,
+				81BEC42E1E36333C00F66A52 /* Line.meta */,
+				81BEC42F1E36333C00F66A52 /* Twitter */,
+				81BEC4361E36333C00F66A52 /* Twitter.meta */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		81BEC41F1E36333C00F66A52 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				81BEC4201E36333C00F66A52 /* Bolts.framework */,
+				81BEC4211E36333C00F66A52 /* Bolts.framework.meta */,
+				81BEC4221E36333C00F66A52 /* FBSDKCoreKit.framework */,
+				81BEC4231E36333C00F66A52 /* FBSDKCoreKit.framework.meta */,
+				81BEC4241E36333C00F66A52 /* FBSDKLoginKit.framework */,
+				81BEC4251E36333C00F66A52 /* FBSDKLoginKit.framework.meta */,
+				81BEC4261E36333C00F66A52 /* FBSDKShareKit.framework */,
+				81BEC4271E36333C00F66A52 /* FBSDKShareKit.framework.meta */,
+			);
+			path = Facebook;
+			sourceTree = "<group>";
+		};
+		81BEC4291E36333C00F66A52 /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				81BEC42A1E36333C00F66A52 /* LineAdapter.framework */,
+				81BEC42B1E36333C00F66A52 /* LineAdapter.framework.meta */,
+				81BEC42C1E36333C00F66A52 /* LineAdapterUI.bundle */,
+				81BEC42D1E36333C00F66A52 /* LineAdapterUI.bundle.meta */,
+			);
+			path = Line;
+			sourceTree = "<group>";
+		};
+		81BEC42F1E36333C00F66A52 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				81BEC4301E36333C00F66A52 /* Fabric.framework */,
+				81BEC4311E36333C00F66A52 /* Fabric.framework.meta */,
+				81BEC4321E36333C00F66A52 /* TwitterCore.framework */,
+				81BEC4331E36333C00F66A52 /* TwitterCore.framework.meta */,
+				81BEC4341E36333C00F66A52 /* TwitterKit.framework */,
+				81BEC4351E36333C00F66A52 /* TwitterKit.framework.meta */,
+			);
+			path = Twitter;
+			sourceTree = "<group>";
+		};
+		81BEC4381E36333C00F66A52 /* Frontend */ = {
+			isa = PBXGroup;
+			children = (
+				81BEC4391E36333C00F66A52 /* Notify */,
+				81BEC43C1E36333C00F66A52 /* Notify.meta */,
+				81BEC43D1E36333C00F66A52 /* View */,
+				81BEC4481E36333C00F66A52 /* View.meta */,
+				81BEC4491E36333C00F66A52 /* ViewController */,
+				81BEC45A1E36333C00F66A52 /* ViewController.meta */,
+			);
+			path = Frontend;
+			sourceTree = "<group>";
+		};
+		81BEC4391E36333C00F66A52 /* Notify */ = {
+			isa = PBXGroup;
+			children = (
+				81BEC43A1E36333C00F66A52 /* NotifierPlugin.swift */,
+				81BEC43B1E36333C00F66A52 /* NotifierPlugin.swift.meta */,
 			);
 			path = Notify;
 			sourceTree = "<group>";
 		};
-		81B5FB8E1D8D263100C06399 /* View */ = {
+		81BEC43D1E36333C00F66A52 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				81B5FB8F1D8D263100C06399 /* ReviewViewPlugin.swift */,
-				81B5FB901D8D263100C06399 /* ReviewViewPlugin.swift.meta */,
-				81B5FB911D8D263100C06399 /* WebViewPlugin.swift */,
-				81B5FB921D8D263100C06399 /* WebViewPlugin.swift.meta */,
+				81BEC43E1E36333C00F66A52 /* AlertViewPlugin.swift */,
+				81BEC43F1E36333C00F66A52 /* AlertViewPlugin.swift.meta */,
+				81BEC4401E36333C00F66A52 /* CameraViewPlugin.swift */,
+				81BEC4411E36333C00F66A52 /* CameraViewPlugin.swift.meta */,
+				81BEC4421E36333C00F66A52 /* IndicatorViewPlugin.swift */,
+				81BEC4431E36333C00F66A52 /* IndicatorViewPlugin.swift.meta */,
+				81BEC4441E36333C00F66A52 /* ReviewViewPlugin.swift */,
+				81BEC4451E36333C00F66A52 /* ReviewViewPlugin.swift.meta */,
+				81BEC4461E36333C00F66A52 /* WebViewPlugin.swift */,
+				81BEC4471E36333C00F66A52 /* WebViewPlugin.swift.meta */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		81B5FB941D8D263100C06399 /* ViewController */ = {
+		81BEC4491E36333C00F66A52 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				81AD34D41D97F44400326262 /* PreferenceViewControllerPlugin.swift */,
-				81B5FB951D8D263100C06399 /* ViewControllerPlugin.swift */,
-				81B5FB961D8D263100C06399 /* ViewControllerPlugin.swift.meta */,
-				81AD34D21D97F43800326262 /* ViewControllerFactoryPlugin.swift */,
+				81BEC44A1E36333C00F66A52 /* PaymentViewControllerPlugin.swift */,
+				81BEC44B1E36333C00F66A52 /* PaymentViewControllerPlugin.swift.meta */,
+				81BEC44C1E36333C00F66A52 /* PreferenceViewControllerPlugin.swift */,
+				81BEC44D1E36333C00F66A52 /* PreferenceViewControllerPlugin.swift.meta */,
+				81BEC44E1E36333C00F66A52 /* Sns */,
+				81BEC4551E36333C00F66A52 /* Sns.meta */,
+				81BEC4561E36333C00F66A52 /* ViewControllerFactoryPlugin.swift */,
+				81BEC4571E36333C00F66A52 /* ViewControllerFactoryPlugin.swift.meta */,
+				81BEC4581E36333C00F66A52 /* ViewControllerPlugin.swift */,
+				81BEC4591E36333C00F66A52 /* ViewControllerPlugin.swift.meta */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		81BEC44E1E36333C00F66A52 /* Sns */ = {
+			isa = PBXGroup;
+			children = (
+				81BEC44F1E36333C00F66A52 /* FacebookViewControllerPlugin.swift */,
+				81BEC4501E36333C00F66A52 /* FacebookViewControllerPlugin.swift.meta */,
+				81BEC4511E36333C00F66A52 /* LineViewControllerPlugin.swift */,
+				81BEC4521E36333C00F66A52 /* LineViewControllerPlugin.swift.meta */,
+				81BEC4531E36333C00F66A52 /* TwitterViewControllerPlugin.swift */,
+				81BEC4541E36333C00F66A52 /* TwitterViewControllerPlugin.swift.meta */,
+			);
+			path = Sns;
+			sourceTree = "<group>";
+		};
+		81BEC45C1E36333C00F66A52 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				81BEC45D1E36333C00F66A52 /* PaymentServicePlugin.swift */,
+				81BEC45E1E36333C00F66A52 /* PaymentServicePlugin.swift.meta */,
+				81BEC45F1E36333C00F66A52 /* Sns */,
+				81BEC4661E36333C00F66A52 /* Sns.meta */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		81BEC45F1E36333C00F66A52 /* Sns */ = {
+			isa = PBXGroup;
+			children = (
+				81BEC4601E36333C00F66A52 /* FacebookServicePlugin.swift */,
+				81BEC4611E36333C00F66A52 /* FacebookServicePlugin.swift.meta */,
+				81BEC4621E36333C00F66A52 /* LineServicePlugin.swift */,
+				81BEC4631E36333C00F66A52 /* LineServicePlugin.swift.meta */,
+				81BEC4641E36333C00F66A52 /* TwitterServicePlugin.swift */,
+				81BEC4651E36333C00F66A52 /* TwitterServicePlugin.swift.meta */,
+			);
+			path = Sns;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		81715B521D30AAFC00DCF3CA /* UnityiOSPlugin */ = {
+		81BEC3FA1E3632F400F66A52 /* UnityiOSPlugin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 81715B591D30AAFC00DCF3CA /* Build configuration list for PBXNativeTarget "UnityiOSPlugin" */;
+			buildConfigurationList = 81BEC4041E3632F400F66A52 /* Build configuration list for PBXNativeTarget "UnityiOSPlugin" */;
 			buildPhases = (
-				81715B4F1D30AAFC00DCF3CA /* Sources */,
-				81715B501D30AAFC00DCF3CA /* Frameworks */,
-				81715B511D30AAFC00DCF3CA /* Resources */,
+				81BEC3F71E3632F400F66A52 /* Sources */,
+				81BEC3F81E3632F400F66A52 /* Frameworks */,
+				81BEC3F91E3632F400F66A52 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -177,79 +423,78 @@
 			);
 			name = UnityiOSPlugin;
 			productName = UnityiOSPlugin;
-			productReference = 81715B531D30AAFC00DCF3CA /* UnityiOSPlugin.bundle */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 81BEC3FB1E3632F400F66A52 /* libUnityiOSPlugin.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		81715B4B1D30AAFC00DCF3CA /* Project object */ = {
+		81BEC3F31E3632F400F66A52 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "柾本 耕太郎";
 				TargetAttributes = {
-					81715B521D30AAFC00DCF3CA = {
-						CreatedOnToolsVersion = 7.3;
+					81BEC3FA1E3632F400F66A52 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = C9V674GA4T;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 81715B4E1D30AAFC00DCF3CA /* Build configuration list for PBXProject "UnityiOSPlugin" */;
+			buildConfigurationList = 81BEC3F61E3632F400F66A52 /* Build configuration list for PBXProject "UnityiOSPlugin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 81715B4A1D30AAFC00DCF3CA;
-			productRefGroup = 81715B541D30AAFC00DCF3CA /* Products */;
+			mainGroup = 81BEC3F21E3632F400F66A52;
+			productRefGroup = 81BEC3FC1E3632F400F66A52 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				81715B521D30AAFC00DCF3CA /* UnityiOSPlugin */,
+				81BEC3FA1E3632F400F66A52 /* UnityiOSPlugin */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		81715B511D30AAFC00DCF3CA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81B5FBA21D8D263100C06399 /* ViewControllerPlugin.swift.meta in Resources */,
-				81B5FB9F1D8D263100C06399 /* WebViewPlugin.swift.meta in Resources */,
-				81B5FB9A1D8D263100C06399 /* NotifierPlugin.swift.meta in Resources */,
-				81B5FB981D8D263100C06399 /* Identifier.meta in Resources */,
-				81B5FB9B1D8D263100C06399 /* Notify.meta in Resources */,
-				81B5FB9D1D8D263100C06399 /* ReviewViewPlugin.swift.meta in Resources */,
-				81B5FBA01D8D263100C06399 /* View.meta in Resources */,
-				81B5FBA31D8D263100C06399 /* ViewController.meta in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		81715B4F1D30AAFC00DCF3CA /* Sources */ = {
+		81BEC3F71E3632F400F66A52 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81B5FB991D8D263100C06399 /* NotifierPlugin.swift in Sources */,
-				81B5FB9C1D8D263100C06399 /* ReviewViewPlugin.swift in Sources */,
-				81B5FB9E1D8D263100C06399 /* WebViewPlugin.swift in Sources */,
-				81AD34D31D97F43800326262 /* ViewControllerFactoryPlugin.swift in Sources */,
-				81AD34D81D97F4FE00326262 /* TransitionPlugin.swift in Sources */,
-				81AD34D51D97F44400326262 /* PreferenceViewControllerPlugin.swift in Sources */,
-				81715B701D30C7B800DCF3CA /* UnityiOSPlugin.mm in Sources */,
-				81B5FBA11D8D263100C06399 /* ViewControllerPlugin.swift in Sources */,
-				81B5FBA51D8D264700C06399 /* TagPlugin.swift in Sources */,
+				81BEC46E1E36333C00F66A52 /* UnityiOSPluginAppDelegate.swift in Sources */,
+				81BEC47E1E36333C00F66A52 /* IndicatorViewPlugin.swift in Sources */,
+				81BEC4701E36333C00F66A52 /* PathPlugin.swift in Sources */,
+				81BEC47F1E36333C00F66A52 /* ReviewViewPlugin.swift in Sources */,
+				81BEC4811E36333C00F66A52 /* PaymentViewControllerPlugin.swift in Sources */,
+				81BEC4821E36333C00F66A52 /* PreferenceViewControllerPlugin.swift in Sources */,
+				81BEC47B1E36333C00F66A52 /* NotifierPlugin.swift in Sources */,
+				81BEC4851E36333C00F66A52 /* TwitterViewControllerPlugin.swift in Sources */,
+				81BEC48A1E36333C00F66A52 /* LineServicePlugin.swift in Sources */,
+				81BEC4891E36333C00F66A52 /* FacebookServicePlugin.swift in Sources */,
+				81BEC48B1E36333C00F66A52 /* TwitterServicePlugin.swift in Sources */,
+				81BEC48C1E36333C00F66A52 /* UnityiOSPlugin.mm in Sources */,
+				81BEC4721E36333C00F66A52 /* TransitionPlugin.swift in Sources */,
+				81BEC47D1E36333C00F66A52 /* CameraViewPlugin.swift in Sources */,
+				81BEC4831E36333C00F66A52 /* FacebookViewControllerPlugin.swift in Sources */,
+				81BEC4861E36333C00F66A52 /* ViewControllerFactoryPlugin.swift in Sources */,
+				81BEC4881E36333C00F66A52 /* PaymentServicePlugin.swift in Sources */,
+				81BEC4801E36333C00F66A52 /* WebViewPlugin.swift in Sources */,
+				81BEC4841E36333C00F66A52 /* LineViewControllerPlugin.swift in Sources */,
+				81BEC46F1E36333C00F66A52 /* TagPlugin.swift in Sources */,
+				81BEC4871E36333C00F66A52 /* ViewControllerPlugin.swift in Sources */,
+				81BEC47C1E36333C00F66A52 /* AlertViewPlugin.swift in Sources */,
+				81BEC48D1E36333C00F66A52 /* UnityiOSPluginAppController.mm in Sources */,
+				81BEC4711E36333C00F66A52 /* PreferencePlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		81715B571D30AAFC00DCF3CA /* Debug */ = {
+		81BEC4021E3632F400F66A52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -261,13 +506,16 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -286,14 +534,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		81715B581D30AAFC00DCF3CA /* Release */ = {
+		81BEC4031E3632F400F66A52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -305,13 +553,16 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -324,62 +575,55 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		81715B5A1D30AAFC00DCF3CA /* Debug */ = {
+		81BEC4051E3632F400F66A52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = UnityiOSPlugin/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ucreates.unity.ios.plugin;
+				DEVELOPMENT_TEAM = C9V674GA4T;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/../Assets/Plugins/iOS/UnityiOSPlugin.h";
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
-		81715B5B1D30AAFC00DCF3CA /* Release */ = {
+		81BEC4061E3632F400F66A52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = UnityiOSPlugin/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ucreates.unity.ios.plugin;
+				DEVELOPMENT_TEAM = C9V674GA4T;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/../Assets/Plugins/iOS/UnityiOSPlugin.h";
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		81715B4E1D30AAFC00DCF3CA /* Build configuration list for PBXProject "UnityiOSPlugin" */ = {
+		81BEC3F61E3632F400F66A52 /* Build configuration list for PBXProject "UnityiOSPlugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				81715B571D30AAFC00DCF3CA /* Debug */,
-				81715B581D30AAFC00DCF3CA /* Release */,
+				81BEC4021E3632F400F66A52 /* Debug */,
+				81BEC4031E3632F400F66A52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		81715B591D30AAFC00DCF3CA /* Build configuration list for PBXNativeTarget "UnityiOSPlugin" */ = {
+		81BEC4041E3632F400F66A52 /* Build configuration list for PBXNativeTarget "UnityiOSPlugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				81715B5A1D30AAFC00DCF3CA /* Debug */,
-				81715B5B1D30AAFC00DCF3CA /* Release */,
+				81BEC4051E3632F400F66A52 /* Debug */,
+				81BEC4061E3632F400F66A52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 81715B4B1D30AAFC00DCF3CA /* Project object */;
+	rootObject = 81BEC3F31E3632F400F66A52 /* Project object */;
 }
