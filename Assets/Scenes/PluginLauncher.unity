@@ -703,6 +703,8 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: PaymentControllerPlugin
       m_Image: {fileID: 0}
+    - m_Text: NativeTextureAssetPlugin
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

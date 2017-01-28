@@ -47,9 +47,21 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/UnityPlugin/Core/Sns/LineSetting.cs
 
-6.iOS build with Unity.
+6.please configure player and build setting for UnityNativePlugin in the Unity project and published Xcode project.
 
-7.published project build with Xcode.
+- Unity
+
+ - Player Setting→iOS→Other Settings→Architecture:Universal
+
+- Xcode
+
+ - Architectures→Build Architecture Only:Debug/Release→Yes
+
+ - Architectures→Supported Platform:iphoneos→iOS
+
+7.iOS build with Unity.
+
+8.published project build with Xcode.
 
 ***Notes on use for Android***
 

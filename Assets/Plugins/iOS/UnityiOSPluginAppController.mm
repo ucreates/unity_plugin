@@ -8,6 +8,7 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 #import "UnityAppController.h"
+#import "UnityNativePlugin.h"
 #import <UnityPlugin-Swift.h>
 @interface UnityiOSPluginAppController : UnityAppController
 @end
@@ -29,6 +30,10 @@
 }
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     [super applicationWillEnterForeground:application];
+    return;
+}
+- (void)shouldAttachRenderDelegate {
+    UnityRegisterRenderingPluginV5(&UnityPluginLoad, &UnityPluginUnload);
     return;
 }
 @end

@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8165C0161E386097000B9214 /* NativeTextureAssetCollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8165C0141E386097000B9214 /* NativeTextureAssetCollection.cpp */; };
+		81A956291E39E00800BA050B /* TagPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81A956271E39E00800BA050B /* TagPlugin.cpp */; };
+		81BF05EB1E39A6C4009FF041 /* ExtensionPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81BF05E91E39A6C4009FF041 /* ExtensionPlugin.cpp */; };
+		81BF05EE1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81BF05EC1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.cpp */; };
+		81D468A91E35AEE5001BBDB1 /* LogPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D4688A1E35AEE5001BBDB1 /* LogPlugin.cpp */; };
+		81D468AA1E35AEE5001BBDB1 /* UnityNativePlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D468A71E35AEE5001BBDB1 /* UnityNativePlugin.cpp */; };
+		81D468CE1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D468CC1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp */; };
+		81D468D11E35D54F001BBDB1 /* BaseNativeRendererPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D468CF1E35D54F001BBDB1 /* BaseNativeRendererPlugin.cpp */; };
+		81D468D41E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D468D21E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp */; };
+		81F271F11E36E40500B85998 /* BaseNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F271EF1E36E40500B85998 /* BaseNativeTextureAssetPlugin.cpp */; };
+		81F271F51E36E8E300B85998 /* RawNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F271F31E36E8E300B85998 /* RawNativeTextureAssetPlugin.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		81D468511E35A6B9001BBDB1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8165C0141E386097000B9214 /* NativeTextureAssetCollection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeTextureAssetCollection.cpp; sourceTree = "<group>"; };
+		8165C0151E386097000B9214 /* NativeTextureAssetCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTextureAssetCollection.h; sourceTree = "<group>"; };
+		81A956271E39E00800BA050B /* TagPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TagPlugin.cpp; sourceTree = "<group>"; };
+		81A956281E39E00800BA050B /* TagPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagPlugin.h; sourceTree = "<group>"; };
+		81BF05E91E39A6C4009FF041 /* ExtensionPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExtensionPlugin.cpp; sourceTree = "<group>"; };
+		81BF05EA1E39A6C4009FF041 /* ExtensionPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionPlugin.h; sourceTree = "<group>"; };
+		81BF05EC1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeTextureAssetFactoryPlugin.cpp; sourceTree = "<group>"; };
+		81BF05ED1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTextureAssetFactoryPlugin.h; sourceTree = "<group>"; };
+		81D468531E35A6B9001BBDB1 /* libUnityNativePlugin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUnityNativePlugin.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		81D4688A1E35AEE5001BBDB1 /* LogPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogPlugin.cpp; sourceTree = "<group>"; };
+		81D4688B1E35AEE5001BBDB1 /* LogPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogPlugin.h; sourceTree = "<group>"; };
+		81D468A71E35AEE5001BBDB1 /* UnityNativePlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnityNativePlugin.cpp; sourceTree = "<group>"; };
+		81D468A81E35AEE5001BBDB1 /* UnityNativePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityNativePlugin.h; sourceTree = "<group>"; };
+		81D468B21E35B241001BBDB1 /* IUnityGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUnityGraphics.h; sourceTree = "<group>"; };
+		81D468BC1E35B241001BBDB1 /* IUnityInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUnityInterface.h; sourceTree = "<group>"; };
+		81D468CC1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenGLES2NativeRendererPlugin.cpp; sourceTree = "<group>"; };
+		81D468CD1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLES2NativeRendererPlugin.h; sourceTree = "<group>"; };
+		81D468CF1E35D54F001BBDB1 /* BaseNativeRendererPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseNativeRendererPlugin.cpp; sourceTree = "<group>"; };
+		81D468D01E35D54F001BBDB1 /* BaseNativeRendererPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNativeRendererPlugin.h; sourceTree = "<group>"; };
+		81D468D21E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeRendererFactoryPlugin.cpp; sourceTree = "<group>"; };
+		81D468D31E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeRendererFactoryPlugin.h; sourceTree = "<group>"; };
+		81F271EF1E36E40500B85998 /* BaseNativeTextureAssetPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseNativeTextureAssetPlugin.cpp; sourceTree = "<group>"; };
+		81F271F01E36E40500B85998 /* BaseNativeTextureAssetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNativeTextureAssetPlugin.h; sourceTree = "<group>"; };
+		81F271F21E36E84800B85998 /* PlatformBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformBase.h; sourceTree = "<group>"; };
+		81F271F31E36E8E300B85998 /* RawNativeTextureAssetPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RawNativeTextureAssetPlugin.cpp; sourceTree = "<group>"; };
+		81F271F41E36E8E300B85998 /* RawNativeTextureAssetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawNativeTextureAssetPlugin.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81D468501E35A6B9001BBDB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81A956261E39DFFD00BA050B /* identifier */ = {
+			isa = PBXGroup;
+			children = (
+				81A956271E39E00800BA050B /* TagPlugin.cpp */,
+				81A956281E39E00800BA050B /* TagPlugin.h */,
+			);
+			path = identifier;
+			sourceTree = "<group>";
+		};
+		81BF05E81E39A69A009FF041 /* io */ = {
+			isa = PBXGroup;
+			children = (
+				81BF05E91E39A6C4009FF041 /* ExtensionPlugin.cpp */,
+				81BF05EA1E39A6C4009FF041 /* ExtensionPlugin.h */,
+			);
+			path = io;
+			sourceTree = "<group>";
+		};
+		81D4684A1E35A6B9001BBDB1 = {
+			isa = PBXGroup;
+			children = (
+				81D468871E35AEE5001BBDB1 /* src */,
+				81D468541E35A6B9001BBDB1 /* Products */,
+				81D468821E35AB40001BBDB1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		81D468541E35A6B9001BBDB1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81D468531E35A6B9001BBDB1 /* libUnityNativePlugin.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81D468821E35AB40001BBDB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81D468871E35AEE5001BBDB1 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				81D468BE1E35B274001BBDB1 /* frontend */,
+				81D468881E35AEE5001BBDB1 /* core */,
+				81D468A71E35AEE5001BBDB1 /* UnityNativePlugin.cpp */,
+				81D468A81E35AEE5001BBDB1 /* UnityNativePlugin.h */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = "<group>";
+		};
+		81D468881E35AEE5001BBDB1 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				81A956261E39DFFD00BA050B /* identifier */,
+				81BF05E81E39A69A009FF041 /* io */,
+				81D468B01E35B241001BBDB1 /* platform */,
+				81D468891E35AEE5001BBDB1 /* util */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		81D468891E35AEE5001BBDB1 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				81D4688A1E35AEE5001BBDB1 /* LogPlugin.cpp */,
+				81D4688B1E35AEE5001BBDB1 /* LogPlugin.h */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		81D468B01E35B241001BBDB1 /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				81F271F21E36E84800B85998 /* PlatformBase.h */,
+				81D468B11E35B241001BBDB1 /* unity */,
+			);
+			path = platform;
+			sourceTree = "<group>";
+		};
+		81D468B11E35B241001BBDB1 /* unity */ = {
+			isa = PBXGroup;
+			children = (
+				81D468B21E35B241001BBDB1 /* IUnityGraphics.h */,
+				81D468BC1E35B241001BBDB1 /* IUnityInterface.h */,
+			);
+			path = unity;
+			sourceTree = "<group>";
+		};
+		81D468BE1E35B274001BBDB1 /* frontend */ = {
+			isa = PBXGroup;
+			children = (
+				81D468BF1E35B274001BBDB1 /* component */,
+			);
+			path = frontend;
+			sourceTree = "<group>";
+		};
+		81D468BF1E35B274001BBDB1 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				81F271ED1E36E3F200B85998 /* asset */,
+				81D468C01E35B274001BBDB1 /* renderer */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
+		81D468C01E35B274001BBDB1 /* renderer */ = {
+			isa = PBXGroup;
+			children = (
+				81D468CC1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp */,
+				81D468CD1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.h */,
+				81D468CF1E35D54F001BBDB1 /* BaseNativeRendererPlugin.cpp */,
+				81D468D01E35D54F001BBDB1 /* BaseNativeRendererPlugin.h */,
+				81D468D21E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp */,
+				81D468D31E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.h */,
+			);
+			path = renderer;
+			sourceTree = "<group>";
+		};
+		81F271ED1E36E3F200B85998 /* asset */ = {
+			isa = PBXGroup;
+			children = (
+				81F271EE1E36E3F200B85998 /* render */,
+			);
+			path = asset;
+			sourceTree = "<group>";
+		};
+		81F271EE1E36E3F200B85998 /* render */ = {
+			isa = PBXGroup;
+			children = (
+				81F271EF1E36E40500B85998 /* BaseNativeTextureAssetPlugin.cpp */,
+				81F271F01E36E40500B85998 /* BaseNativeTextureAssetPlugin.h */,
+				81F271F31E36E8E300B85998 /* RawNativeTextureAssetPlugin.cpp */,
+				81F271F41E36E8E300B85998 /* RawNativeTextureAssetPlugin.h */,
+				8165C0141E386097000B9214 /* NativeTextureAssetCollection.cpp */,
+				8165C0151E386097000B9214 /* NativeTextureAssetCollection.h */,
+				81BF05EC1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.cpp */,
+				81BF05ED1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.h */,
+			);
+			path = render;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81D468521E35A6B9001BBDB1 /* UnityNativePlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81D4685C1E35A6BA001BBDB1 /* Build configuration list for PBXNativeTarget "UnityNativePlugin" */;
+			buildPhases = (
+				81D4684F1E35A6B9001BBDB1 /* Sources */,
+				81D468501E35A6B9001BBDB1 /* Frameworks */,
+				81D468511E35A6B9001BBDB1 /* CopyFiles */,
+				81D468EB1E35EB61001BBDB1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnityNativePlugin;
+			productName = UnityNativePlugin;
+			productReference = 81D468531E35A6B9001BBDB1 /* libUnityNativePlugin.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81D4684B1E35A6B9001BBDB1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "柾本 耕太郎";
+				TargetAttributes = {
+					81D468521E35A6B9001BBDB1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = C9V674GA4T;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 81D4684E1E35A6B9001BBDB1 /* Build configuration list for PBXProject "UnityNativePlugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 81D4684A1E35A6B9001BBDB1;
+			productRefGroup = 81D468541E35A6B9001BBDB1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81D468521E35A6B9001BBDB1 /* UnityNativePlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		81D468EB1E35EB61001BBDB1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "find ../../Assets/Plugins/iOS/Native/ -name \"*.h\" -exec rm {} + ;\nfind ../src/ -name \"*.h\" -exec cp -pr {} ../../Assets/Plugins/iOS/Native/ \\;";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81D4684F1E35A6B9001BBDB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81BF05EB1E39A6C4009FF041 /* ExtensionPlugin.cpp in Sources */,
+				81D468D11E35D54F001BBDB1 /* BaseNativeRendererPlugin.cpp in Sources */,
+				81A956291E39E00800BA050B /* TagPlugin.cpp in Sources */,
+				81F271F11E36E40500B85998 /* BaseNativeTextureAssetPlugin.cpp in Sources */,
+				81BF05EE1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.cpp in Sources */,
+				8165C0161E386097000B9214 /* NativeTextureAssetCollection.cpp in Sources */,
+				81F271F51E36E8E300B85998 /* RawNativeTextureAssetPlugin.cpp in Sources */,
+				81D468A91E35AEE5001BBDB1 /* LogPlugin.cpp in Sources */,
+				81D468CE1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp in Sources */,
+				81D468AA1E35AEE5001BBDB1 /* UnityNativePlugin.cpp in Sources */,
+				81D468D41E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		81D4685A1E35A6BA001BBDB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		81D4685B1E35A6BA001BBDB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		81D4685D1E35A6BA001BBDB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ../../Assets/Plugins/iOS;
+				DEVELOPMENT_TEAM = C9V674GA4T;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "../src/**";
+			};
+			name = Debug;
+		};
+		81D4685E1E35A6BA001BBDB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ../../Assets/Plugins/iOS;
+				DEVELOPMENT_TEAM = C9V674GA4T;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "../src/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81D4684E1E35A6B9001BBDB1 /* Build configuration list for PBXProject "UnityNativePlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81D4685A1E35A6BA001BBDB1 /* Debug */,
+				81D4685B1E35A6BA001BBDB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81D4685C1E35A6BA001BBDB1 /* Build configuration list for PBXNativeTarget "UnityNativePlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81D4685D1E35A6BA001BBDB1 /* Debug */,
+				81D4685E1E35A6BA001BBDB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 81D4684B1E35A6B9001BBDB1 /* Project object */;
+}
