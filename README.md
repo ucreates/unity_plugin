@@ -33,19 +33,19 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - fabric:https://fabric.io/settings/account
 
-- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/UnityPlugin/Core/Sns/TwitterSetting.cs
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Sns/TwitterSettingPlugin.cs
 
 4.please rewrite the replacement section of the following file to the facebook app id. you can confirm facebook app id by facebook official developer web site.
 
 - facebook:https://developers.facebook.com/apps/
 
-- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/UnityPlugin/Core/Sns/FacebookSetting.cs
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Sns/FacebookSettingPlugin.cs
 
 5.please rewrite the replacement section of the following file to the LINE channel id. you can create and confirm LINE channel id by LINE official developer web site.
 
 - LINE(Login):https://developers.line.me/line-login/overview
 
-- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/UnityPlugin/Core/Sns/LineSetting.cs
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Sns/LineSettingPlugin.cs
 
 6.please configure player and build setting for UnityNativePlugin in the Unity project and published Xcode project.
 
@@ -73,7 +73,7 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - fabric:https://fabric.io/settings/account
 
-- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/UnityPlugin/Core/Sns/TwitterSetting.cs
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Sns/TwitterSettingPlugin.cs
 
 - replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Android/AndroidManifest.xml
 
@@ -81,7 +81,7 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - facebook:https://developers.facebook.com/apps/
 
-- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/UnityPlugin/Core/Sns/FacebookSetting.cs
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Sns/FacebookSettingPlugin.cs
 
 - replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Android/AndroidManifest.xml
 
@@ -89,7 +89,7 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - LINE(Login):https://developers.line.me/line-login/overview
 
-- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/UnityPlugin/Core/Sns/LineSetting.cs
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Sns/LineSettingPlugin.cs
 
 - replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Android/AndroidManifest.xml
 
