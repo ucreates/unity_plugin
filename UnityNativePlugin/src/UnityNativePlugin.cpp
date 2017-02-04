@@ -9,8 +9,9 @@
 //======================================================================
 #include "UnityNativePlugin.h"
 #include "NativeRendererFactoryPlugin.h"
-#include "NativeTextureAssetCollection.h"
+#include "NativeTextureAssetCollectionPlugin.h"
 #include "NativeTextureAssetFactoryPlugin.h"
+#include "YuvNativeTextureAssetPlugin.h"
 void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API UnityPluginLoad(IUnityInterfaces* unityInterfaces) {
     interfaces = unityInterfaces;
     if (NULL == interfaces) {
@@ -33,33 +34,42 @@ void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API UnityPluginUnload() {
 }
 void UNITY_INTERFACE_API OnGraphicsDeviceEvent(UnityGfxDeviceEventType eventType) {
     if (eventType == kUnityGfxDeviceEventShutdown) {
-        if (NULL != nativeRendererPlugin) {
-            delete nativeRendererPlugin;
-            nativeRendererPlugin = NULL;
+        if (NULL != nativeRenderer) {
+            delete nativeRenderer;
+            nativeRenderer = NULL;
         }
-        NativeTextureAssetCollection::destroy();
+        if (NULL != cameraNativeTextureAsset) {
+            delete cameraNativeTextureAsset;
+            cameraNativeTextureAsset = NULL;
+        }
+        NativeTextureAssetCollectionPlugin::destroy();
         return;
     }
 }
 void UNITY_INTERFACE_EXPORT CreateNativeRendererPlugin() {
-    graphics = interfaces->Get<IUnityGraphics>();
-    UnityGfxRenderer rendererType = graphics->GetRenderer();
-    if (NULL != nativeRendererPlugin) {
+    if (NULL != nativeRenderer) {
         return;
     }
-    nativeRendererPlugin = NativeRendererFactoryPlugin::factoryMethod(rendererType);
+    if (NULL == graphics) {
+        graphics = interfaces->Get<IUnityGraphics>();
+        if (NULL == graphics) {
+            return;
+        }
+    }
+    UnityGfxRenderer rendererType = graphics->GetRenderer();
+    nativeRenderer = NativeRendererFactoryPlugin::factoryMethod(rendererType);
     return;
 }
 void UNITY_INTERFACE_EXPORT DestroyNativeRendererPlugin() {
-    if (NULL == nativeRendererPlugin) {
+    if (NULL == nativeRenderer) {
         return;
     }
-    delete nativeRendererPlugin;
-    nativeRendererPlugin = NULL;
+    delete nativeRenderer;
+    nativeRenderer = NULL;
     return;
 }
 void UNITY_INTERFACE_EXPORT LoadTextureByNativeTextureAssetPlugin(int instanceId, char* textureAssetPath, int width, int height, bool useAlphaChannel) {
-    NativeTextureAssetCollection* collection = NativeTextureAssetCollection::getInstance();
+    NativeTextureAssetCollectionPlugin* collection = NativeTextureAssetCollectionPlugin::getInstance();
     BaseNativeTextureAssetPlugin* textureAsset = collection->findByInstanceId(instanceId);
     if (NULL != textureAsset) {
         return;
@@ -70,7 +80,7 @@ void UNITY_INTERFACE_EXPORT LoadTextureByNativeTextureAssetPlugin(int instanceId
     return;
 }
 int UNITY_INTERFACE_EXPORT GetTextureWidthByNativeTextureAssetPlugin(int instanceId) {
-    NativeTextureAssetCollection* collection = NativeTextureAssetCollection::getInstance();
+    NativeTextureAssetCollectionPlugin* collection = NativeTextureAssetCollectionPlugin::getInstance();
     BaseNativeTextureAssetPlugin* textureAsset = collection->findByInstanceId(instanceId);
     if (NULL == textureAsset) {
         return 0;
@@ -78,7 +88,7 @@ int UNITY_INTERFACE_EXPORT GetTextureWidthByNativeTextureAssetPlugin(int instanc
     return textureAsset->getWidth();
 }
 int UNITY_INTERFACE_EXPORT GetTextureHeightByNativeTextureAssetPlugin(int instanceId) {
-    NativeTextureAssetCollection* collection = NativeTextureAssetCollection::getInstance();
+    NativeTextureAssetCollectionPlugin* collection = NativeTextureAssetCollectionPlugin::getInstance();
     BaseNativeTextureAssetPlugin* textureAsset = collection->findByInstanceId(instanceId);
     if (NULL == textureAsset) {
         return 0;
@@ -86,7 +96,7 @@ int UNITY_INTERFACE_EXPORT GetTextureHeightByNativeTextureAssetPlugin(int instan
     return textureAsset->getHeight();
 }
 bool UNITY_INTERFACE_EXPORT EnableAlphaChannelByNativeTextureAssetPlugin(int instanceId) {
-    NativeTextureAssetCollection* collection = NativeTextureAssetCollection::getInstance();
+    NativeTextureAssetCollectionPlugin* collection = NativeTextureAssetCollectionPlugin::getInstance();
     BaseNativeTextureAssetPlugin* textureAsset = collection->findByInstanceId(instanceId);
     if (NULL == textureAsset) {
         return false;
@@ -94,7 +104,7 @@ bool UNITY_INTERFACE_EXPORT EnableAlphaChannelByNativeTextureAssetPlugin(int ins
     return textureAsset->enableAlphaChannel();
 }
 void UNITY_INTERFACE_EXPORT DestroyTextureByNativeTextureAssetPlugin(int instanceId) {
-    NativeTextureAssetCollection* collection = NativeTextureAssetCollection::getInstance();
+    NativeTextureAssetCollectionPlugin* collection = NativeTextureAssetCollectionPlugin::getInstance();
     BaseNativeTextureAssetPlugin* textureAsset = collection->findByInstanceId(instanceId);
     if (NULL == textureAsset || false != textureAsset->isDestroy()) {
         return;
@@ -103,7 +113,7 @@ void UNITY_INTERFACE_EXPORT DestroyTextureByNativeTextureAssetPlugin(int instanc
     return;
 }
 void UNITY_INTERFACE_EXPORT SetTextureIdToNativeTextureAssetPlugin(int instanceId, void* unityNativeTexturePtr) {
-    NativeTextureAssetCollection* collection = NativeTextureAssetCollection::getInstance();
+    NativeTextureAssetCollectionPlugin* collection = NativeTextureAssetCollectionPlugin::getInstance();
     BaseNativeTextureAssetPlugin* textureAsset = collection->findByInstanceId(instanceId);
     if (NULL == textureAsset) {
         return;
@@ -113,18 +123,46 @@ void UNITY_INTERFACE_EXPORT SetTextureIdToNativeTextureAssetPlugin(int instanceI
     return;
 }
 bool UNITY_INTERFACE_EXPORT EnableTextureByNativeTextureAssetPlugin(int instanceId) {
-    NativeTextureAssetCollection* collection = NativeTextureAssetCollection::getInstance();
+    NativeTextureAssetCollectionPlugin* collection = NativeTextureAssetCollectionPlugin::getInstance();
     BaseNativeTextureAssetPlugin* textureAsset = collection->findByInstanceId(instanceId);
     if (NULL == textureAsset) {
         return false;
     }
     return true;
 }
-void UNITY_INTERFACE_API RenderTextureByNativeRendererPlugin(int eventID) {
-    if (NULL == nativeRendererPlugin) {
+void UNITY_INTERFACE_EXPORT CreatePreviewFrameNativeCameraTextureAssetPlugin() {
+    if (NULL != cameraNativeTextureAsset) {
         return;
     }
-    NativeTextureAssetCollection* collection = NativeTextureAssetCollection::getInstance();
+    cameraNativeTextureAsset = NativeTextureAssetFactoryPlugin::factoryMethod(YuvNativeTextureAssetPlugin::TEXTURE_TYPE);
+    return;
+}
+void UNITY_INTERFACE_EXPORT DestroyPreviewFrameNativeCameraTextureAssetPlugin() {
+    if (NULL == cameraNativeTextureAsset) {
+        return;
+    }
+    delete cameraNativeTextureAsset;
+    cameraNativeTextureAsset = NULL;
+    NativeTextureAssetCollectionPlugin::destroy();
+    return;
+}
+void UNITY_INTERFACE_EXPORT SetTextureIdToNativeCameraTextureAssetPlugin(int instanceId, void* unityNativeTexturePtr) {
+    NativeTextureAssetCollectionPlugin* collection = NativeTextureAssetCollectionPlugin::getInstance();
+    BaseNativeTextureAssetPlugin* textureAsset = collection->findByInstanceId(instanceId);
+    if (NULL != textureAsset) {
+        return;
+    }
+    textureAsset = NativeTextureAssetFactoryPlugin::factoryMethod(YuvNativeTextureAssetPlugin::TEXTURE_TYPE);
+    GLuint textureId = (GLuint)(size_t)unityNativeTexturePtr;
+    textureAsset->setTextureId(textureId);
+    collection->add(instanceId, textureAsset);
+    return;
+}
+void UNITY_INTERFACE_API RenderTextureByNativeRendererPlugin(int eventID) {
+    if (NULL == nativeRenderer) {
+        return;
+    }
+    NativeTextureAssetCollectionPlugin* collection = NativeTextureAssetCollectionPlugin::getInstance();
     std::map<int, BaseNativeTextureAssetPlugin*>* textureAssetMap = collection->getCollection();
     for (std::map<int, BaseNativeTextureAssetPlugin*>::iterator it = textureAssetMap->begin(); it != textureAssetMap->end();) {
         BaseNativeTextureAssetPlugin* textureAsset = it->second;
@@ -136,9 +174,48 @@ void UNITY_INTERFACE_API RenderTextureByNativeRendererPlugin(int eventID) {
             textureAssetMap->erase(eraseIt);
             continue;
         }
-        nativeRendererPlugin->render(textureAsset);
+        nativeRenderer->render(textureAsset);
+        ++it;
+    }
+    return;
+}
+void UNITY_INTERFACE_EXPORT RenderCameraPreviewFrameByNativeRendererPlugin(int eventID) {
+    if (NULL == nativeRenderer || NULL == cameraNativeTextureAsset) {
+        return;
+    }
+    unsigned char* cameraCaptureData = cameraNativeTextureAsset->getData();
+    if (NULL == cameraCaptureData) {
+        return;
+    }
+    int cameraCaptureWidth = cameraNativeTextureAsset->getWidth();
+    int cameraCaptureHeight = cameraNativeTextureAsset->getHeight();
+    NativeTextureAssetCollectionPlugin* collection = NativeTextureAssetCollectionPlugin::getInstance();
+    std::map<int, BaseNativeTextureAssetPlugin*>* textureAssetMap = collection->getCollection();
+    for (std::map<int, BaseNativeTextureAssetPlugin*>::iterator it = textureAssetMap->begin(); it != textureAssetMap->end();) {
+        BaseNativeTextureAssetPlugin* textureAsset = it->second;
+        GLuint textureId = textureAsset->getTextureId();
+        nativeRenderer->render(textureId, cameraCaptureWidth, cameraCaptureHeight, cameraCaptureData, true);
         ++it;
     }
     return;
 }
 UnityRenderingEvent UNITY_INTERFACE_EXPORT GetRenderTextureCallbackByNativeRendererPlugin() { return RenderTextureByNativeRendererPlugin; }
+UnityRenderingEvent UNITY_INTERFACE_EXPORT GetRenderCameraPreviewFrameCallbackByNativeRendererPlugin() { return RenderCameraPreviewFrameByNativeRendererPlugin; }
+#if UNITY_IPHONE
+void UNITY_INTERFACE_EXPORT SetPreviewFrameToNativeCameraTextureAssetPlugin(unsigned char* previewFrameData, int width, int height) {
+    if (NULL == cameraNativeTextureAsset) {
+        return;
+    }
+    cameraNativeTextureAsset->load(previewFrameData, width, height, true);
+    return;
+}
+#endif
+#if UNITY_ANDROID
+JNIEXPORT void JNICALL Java_com_gateway_UnityAndroidPlugin_SetPreviewFrameToNativeCameraTextureAssetPlugin(JNIEnv* env, jobject selfObject, jbyteArray previewFrameData, jint bufferSize, jint width, jint height) {
+    if (false != env->IsSameObject(previewFrameData, NULL) || NULL == cameraNativeTextureAsset) {
+        return;
+    }
+    cameraNativeTextureAsset->load(env, selfObject, previewFrameData, bufferSize, width, height, true);
+    return;
+}
+#endif

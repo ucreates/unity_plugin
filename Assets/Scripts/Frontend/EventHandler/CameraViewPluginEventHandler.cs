@@ -23,12 +23,6 @@ public class CameraViewPluginEventHandler : MonoBehaviour {
             this.client = clientGameObject.GetComponent<CameraViewPluginBehaviour>();
         }
     }
-    void Update() {
-        if (null == this.client) {
-            return;
-        }
-        this.client.OnOrientationChanged();
-    }
     void OnApplicationPause(bool pauseStatus) {
         if (null == this.client) {
             return;

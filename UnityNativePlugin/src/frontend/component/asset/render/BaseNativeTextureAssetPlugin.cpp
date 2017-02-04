@@ -16,11 +16,21 @@ BaseNativeTextureAssetPlugin::BaseNativeTextureAssetPlugin() {
     this->height = 0;
     this->alphaChannel = false;
     this->enableDestroy = false;
+#if UNITY_ANDROID
+    this->jniData = NULL;
+#endif
 }
 BaseNativeTextureAssetPlugin::~BaseNativeTextureAssetPlugin() {
     if (NULL != this->data) {
         free(this->data);
+        this->data = NULL;
     }
+#if UNITY_ANDROID
+    if (NULL != this->jniData) {
+        free(this->jniData);
+        this->jniData = NULL;
+    }
+#endif
 }
 GLuint BaseNativeTextureAssetPlugin::getTextureId() { return this->textureId; }
 bool BaseNativeTextureAssetPlugin::load(const char* textureAssetPath, int textureWidth, int textureHeight, bool useAlphaChannel) { return true; }
@@ -50,3 +60,9 @@ void BaseNativeTextureAssetPlugin::destroy() {
     this->enableDestroy = true;
     return;
 }
+#if UNITY_IPHONE
+bool BaseNativeTextureAssetPlugin::load(const unsigned char* textureData, int textureWidth, int textureHeight, bool useAlphaChannel) { return true; }
+#endif
+#if UNITY_ANDROID
+bool BaseNativeTextureAssetPlugin::load(JNIEnv* env, jobject selfObject, const jbyteArray textureData, jint bufferSize, jint textureWidth, jint textureHeight, bool useAlphaChannel) { return true; }
+#endif

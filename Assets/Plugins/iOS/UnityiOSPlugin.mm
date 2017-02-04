@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <UnityPlugin-Swift.h>
 #import "UnityiOSPlugin.h"
+#import "UnityNativePlugin.h"
 static WebViewPlugin* webViewPlugin;
 static IndicatorViewPlugin* activityIndicatorViewPlugin;
 static CameraViewPlugin* cameraViewPlugin;
@@ -55,28 +56,16 @@ extern "C" void hideIndicatorViewPlugin() {
     activityIndicatorViewPlugin = nil;
     return;
 }
-extern "C" void showCameraViewPlugin() {
+extern "C" void showCameraViewPlugin(char* gameObjectName, char* onShowCallbackMethodName, char* onHideCallbackMethodName) {
     if (nil != cameraViewPlugin) {
         return;
     }
+    NSString* unityGameObjectName = [NSString stringWithCString: gameObjectName encoding:NSUTF8StringEncoding];
+    NSString* unityOnShowCallbackMethodName = [NSString stringWithCString: onShowCallbackMethodName encoding:NSUTF8StringEncoding];
+    NSString* unityOnHideCallbackMethodName = [NSString stringWithCString: onHideCallbackMethodName encoding:NSUTF8StringEncoding];
     cameraViewPlugin = [CameraViewPlugin alloc];
-    [cameraViewPlugin create];
-    [cameraViewPlugin show];
+    [cameraViewPlugin createWithGameObjectName:unityGameObjectName onShowCallbackName:unityOnShowCallbackMethodName onHideCallbackName:unityOnHideCallbackMethodName];
     return;
-}
-extern "C" const char* getTextureCameraViewPlugin() {
-    if (nil == cameraViewPlugin) {
-        return nil;
-    }
-    NSString* base64EncodedDataString = [cameraViewPlugin getTexture];
-    if (nil == base64EncodedDataString) {
-        return nil;
-    }
-    const char* base64EncodedDataUTF8String = [base64EncodedDataString UTF8String];
-    unsigned long bufferSize = strlen(base64EncodedDataUTF8String) + 1;
-    char* ret = (char*)malloc(bufferSize);
-    strcpy(ret, base64EncodedDataUTF8String);
-    return ret;
 }
 extern "C" void updateCameraViewPlugin(bool suspend) {
     if (nil == cameraViewPlugin) {
@@ -89,7 +78,6 @@ extern "C" void hideCameraViewPlugin() {
     if (nil == cameraViewPlugin) {
         return;
     }
-    [cameraViewPlugin hide];
     [cameraViewPlugin destroy];
     cameraViewPlugin = nil;
     return;
@@ -154,4 +142,8 @@ extern "C" void transitionPaymentViewControllerPlugin(char* paymentUserId, char*
 extern "C" bool getSwitchPreferencePlugin(char* keyName) {
     NSString* requestKeyName = [NSString stringWithCString: keyName encoding:NSUTF8StringEncoding];
     return [PreferencePlugin getSwitchPreference:requestKeyName];
+}
+void setPreviewFrameCameraViewPlugin(unsigned char* imageData, int width, int height) {
+    SetPreviewFrameToNativeCameraTextureAssetPlugin(imageData, width, height);
+    return;
 }

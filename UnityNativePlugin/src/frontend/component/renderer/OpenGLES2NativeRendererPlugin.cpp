@@ -8,6 +8,7 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 #include "OpenGLES2NativeRendererPlugin.h"
+#include "TextureAssetValidatorPlugin.h"
 OpenGLES2NativeRendererPlugin::OpenGLES2NativeRendererPlugin() {}
 OpenGLES2NativeRendererPlugin::~OpenGLES2NativeRendererPlugin() {}
 void OpenGLES2NativeRendererPlugin::render(unsigned int textureId, int width, int height, unsigned char* data, bool useAlphaChannel) {
@@ -22,6 +23,9 @@ void OpenGLES2NativeRendererPlugin::render(unsigned int textureId, int width, in
     return;
 }
 void OpenGLES2NativeRendererPlugin::render(BaseNativeTextureAssetPlugin* textureAsset) {
+    if (false == TextureAssetValidatorPlugin::isValid(textureAsset)) {
+        return;
+    }
     GLuint textureId = textureAsset->getTextureId();
     int width = textureAsset->getWidth();
     int height = textureAsset->getHeight();

@@ -12,96 +12,100 @@ using System;
 using System.Runtime.InteropServices;
 namespace UnityPlugin.Frontend.View {
 public sealed class CameraViewPlugin : BasePlugin {
-    private const int ORIENTATION_AUTO = 0;
-    private const int ORIENTATION_HORIZONTAL = 1;
-    private const int ORIENTATION_PORTRATE = 2;
+    public const int VALID_CAPTURE_PREVIEW_SIZE_COUNT = 2;
     [DllImport("__Internal")]
-    private static extern void showCameraViewPlugin();
-    [DllImport("__Internal")]
-    private static extern string getTextureCameraViewPlugin();
+    private static extern void showCameraViewPlugin(string gameObjectName, string onShowCallbackName, string onHideCallbackName);
     [DllImport("__Internal")]
     private static extern void updateCameraViewPlugin(bool suspend);
     [DllImport("__Internal")]
     private static extern void hideCameraViewPlugin();
-    private bool enablePlugin {
-        get;
-        set;
-    }
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
+    [DllImport("UnityNativePlugin")]
+#endif
+    private static extern void CreatePreviewFrameNativeCameraTextureAssetPlugin();
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
+    [DllImport("UnityNativePlugin")]
+#endif
+    private static extern void DestroyPreviewFrameNativeCameraTextureAssetPlugin();
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
+    [DllImport("UnityNativePlugin")]
+#endif
+    private static extern void SetTextureIdToNativeCameraTextureAssetPlugin(int instanceId, System.IntPtr unityNativeTexturePtr);
+#if UNITY_IPHONE
+    [DllImport("__Internal")]
+#else
+    [DllImport("UnityNativePlugin")]
+#endif
+    private static extern IntPtr GetRenderCameraPreviewFrameCallbackByNativeRendererPlugin();
     public CameraViewPlugin() {
         if (RuntimePlatform.Android == Application.platform) {
             this.androidPlugin = new AndroidJavaObject("com.frontend.view.CameraViewPlugin");
         }
-        this.enablePlugin = false;
         return;
     }
-    public void Show() {
-        if (RuntimePlatform.IPhonePlayer == Application.platform) {
-            showCameraViewPlugin();
-        } else if (RuntimePlatform.Android == Application.platform) {
-            if (null != this.androidPlugin) {
-                this.androidPlugin.Call("create");
-                this.androidPlugin.Call("show");
+    public void Show(string gameObjectName, string onShowCallbackName, string onHideCallbackName) {
+        if (RuntimePlatform.IPhonePlayer == Application.platform || RuntimePlatform.Android == Application.platform) {
+            Screen.orientation = ScreenOrientation.Portrait;
+            CreatePreviewFrameNativeCameraTextureAssetPlugin();
+            if (RuntimePlatform.IPhonePlayer == Application.platform) {
+                showCameraViewPlugin(gameObjectName, onShowCallbackName, onHideCallbackName);
+            } else if (RuntimePlatform.Android == Application.platform) {
+                if (null != this.androidPlugin) {
+                    this.androidPlugin.Call("create", gameObjectName, onShowCallbackName, onHideCallbackName);
+                }
             }
         }
-        this.enablePlugin = true;
         return;
     }
     public void Hide() {
-        this.enablePlugin = false;
-        if (RuntimePlatform.IPhonePlayer == Application.platform) {
-            hideCameraViewPlugin();
-        } else if (RuntimePlatform.Android == Application.platform) {
-            if (null != this.androidPlugin) {
-                this.androidPlugin.Call("hide");
-                this.androidPlugin.Call("destroy");
+        if (RuntimePlatform.IPhonePlayer == Application.platform || RuntimePlatform.Android == Application.platform) {
+            Screen.orientation = ScreenOrientation.AutoRotation;
+            if (RuntimePlatform.IPhonePlayer == Application.platform) {
+                hideCameraViewPlugin();
+            } else if (RuntimePlatform.Android == Application.platform) {
+                if (null != this.androidPlugin) {
+                    this.androidPlugin.Call("destroy");
+                }
             }
+            DestroyPreviewFrameNativeCameraTextureAssetPlugin();
         }
         return;
     }
     public void Update(bool suspend) {
-        if (RuntimePlatform.IPhonePlayer == Application.platform) {
-            updateCameraViewPlugin(suspend);
-        } else if (RuntimePlatform.Android == Application.platform) {
-            if (null != this.androidPlugin) {
-                this.androidPlugin.Call("update", suspend);
+        if (RuntimePlatform.IPhonePlayer == Application.platform || RuntimePlatform.Android == Application.platform) {
+            if (RuntimePlatform.IPhonePlayer == Application.platform) {
+                updateCameraViewPlugin(suspend);
+            } else if (RuntimePlatform.Android == Application.platform) {
+                if (null != this.androidPlugin) {
+                    this.androidPlugin.Call("update", suspend);
+                }
+                if (false != suspend) {
+                    DestroyPreviewFrameNativeCameraTextureAssetPlugin();
+                } else {
+                    CreatePreviewFrameNativeCameraTextureAssetPlugin();
+                }
             }
         }
-        this.enablePlugin = !suspend;
         return;
     }
-    public Texture2D GetTexture() {
-        if (false == this.enablePlugin) {
-            return null;
+    public void SetTexture(int instanceId, IntPtr texturePtr) {
+        if (RuntimePlatform.IPhonePlayer == Application.platform || RuntimePlatform.Android == Application.platform) {
+            SetTextureIdToNativeCameraTextureAssetPlugin(instanceId, texturePtr);
         }
-        byte[] data = null;
-        if (RuntimePlatform.IPhonePlayer == Application.platform) {
-            string base64EncodedUTF8Data = getTextureCameraViewPlugin();
-            if (false != string.IsNullOrEmpty(base64EncodedUTF8Data)) {
-                return null;
-            }
-            data = Convert.FromBase64String(base64EncodedUTF8Data);
-        } else if (RuntimePlatform.Android == Application.platform) {
-            if (null == this.androidPlugin) {
-                return null;
-            }
-            AndroidJavaObject androidJavaObject = this.androidPlugin.Call<AndroidJavaObject>("getTexture");
-            if (null == androidJavaObject) {
-                return null;
-            }
-            IntPtr rawObject = androidJavaObject.GetRawObject();
-            data = AndroidJNIHelper.ConvertFromJNIArray<byte[]>(rawObject);
+        return;
+    }
+    public IntPtr GetNativeRenderCallback() {
+        IntPtr ret = IntPtr.Zero;
+        if (RuntimePlatform.IPhonePlayer == Application.platform || RuntimePlatform.Android == Application.platform) {
+            ret =  GetRenderCameraPreviewFrameCallbackByNativeRendererPlugin();
         }
-        if (null == data) {
-            return null;
-        }
-        Texture2D texture = new Texture2D(Screen.width, Screen.height, TextureFormat.ARGB32, false);
-        texture.LoadImage(data);
-        texture.hideFlags = HideFlags.HideAndDontSave;
-        texture.filterMode = FilterMode.Bilinear;
-        texture.wrapMode = TextureWrapMode.Clamp;
-        texture.anisoLevel = 1;
-        texture.Apply();
-        return texture;
+        return ret;
     }
 }
 }

@@ -36,7 +36,6 @@ public class NativeTextureAssetPluginEntity {
         } else if (height > width) {
             this.heightRatio = (float)height / (float)width;
         }
-        this.widthRatio = width / height;
         this.enableAlphaChannel = enableAlphaChannel;
     }
 }

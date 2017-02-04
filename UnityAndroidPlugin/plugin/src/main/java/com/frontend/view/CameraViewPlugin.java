@@ -10,45 +10,55 @@
 package com.frontend.view;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.graphics.ImageFormat;
 import android.hardware.Camera;
 import android.graphics.PixelFormat;
-import android.graphics.Rect;
-import android.graphics.YuvImage;
+import android.graphics.Point;
 import android.os.Build;
-import android.view.Display;
 import android.view.Gravity;
-import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
-import java.io.ByteArrayOutputStream;
+import com.frontend.activity.ActivityPlugin;
+import com.frontend.notify.NotifierPlugin;
+import com.gateway.UnityAndroidPlugin;
 import java.io.IOException;
 import java.util.List;
-import com.frontend.activity.ActivityPlugin;
 public class CameraViewPlugin {
-    private final static int CAPTURE_QUALITY = 20;
+    private final static int PREVIEW_WIDTH = 640;
+    private final static int PREVIEW_HEIGHT = 480;
     private final static int PIXEL_PER_BYTE = 8;
+    private final static int DISPLAY_ORIENTATION = 0;
+    private final static int PREVIEW_FRAMERATE = 30;
+    private final static String COMPLETE_DESTROY_MESSAGE = "complete destroy camera";
     private Camera camera;
-    private FrameLayout layout;
-    private SurfaceView view;
     private SurfaceHolder.Callback callback;
     private boolean created;
-    private byte[] texture;
+    private FrameLayout layout;
+    private int previewBufferSize;
+    private String callbackGameObjectName;
+    private String showCallbackName;
+    private String hideCallbackName;
+    private SurfaceView view;
     public CameraViewPlugin() {
         this.callback = null;
         this.camera = null;
         this.created = false;
         this.layout = null;
-        this.texture = null;
         this.view = null;
+        this.callbackGameObjectName = null;
+        this.showCallbackName = null;
+        this.hideCallbackName = null;
     }
-    public void create() {
+    public void create(final String gameObjectName, final String onShowCallbackName, final String onHideCallbackName) {
         if (false != this.created) {
             return;
         }
+        this.callbackGameObjectName = gameObjectName;
+        this.showCallbackName = onShowCallbackName;
+        this.hideCallbackName = onHideCallbackName;
         final Activity activity = ActivityPlugin.getInstance();
         Runnable runnable = new Runnable() {
             @Override
@@ -58,22 +68,8 @@ public class CameraViewPlugin {
                     @Override
                     public void onPreviewFrame(byte[] bytes, Camera camera) {
                         Camera.Parameters cameraParameters = camera.getParameters();
-                        List<Camera.Size> sizeList = cameraParameters.getSupportedPreviewSizes();
-                        Camera.Size previewSize = sizeList.get(0);
-                        int previewFormat = cameraParameters.getPreviewFormat();
-                        int width = previewSize.width;
-                        int height = previewSize.height;
-                        try {
-                            YuvImage image = new YuvImage(bytes, previewFormat, width, height, null);
-                            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-                            Rect imageSize = new Rect(0, 0, width, height);
-                            image.compressToJpeg(imageSize, CameraViewPlugin.CAPTURE_QUALITY, outputStream);
-                            texture = outputStream.toByteArray();
-                            outputStream.reset();
-                            outputStream.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                        Camera.Size previewSize = cameraParameters.getPreviewSize();
+                        UnityAndroidPlugin.setPreviewFrameCameraViewPlugin(bytes, previewBufferSize, previewSize.width, previewSize.height);
                         camera.addCallbackBuffer(bytes);
                         return;
                     }
@@ -91,15 +87,18 @@ public class CameraViewPlugin {
                                 return;
                             }
                             Camera.Parameters cameraParameters = camera.getParameters();
-                            List<Camera.Size> sizeList = cameraParameters.getSupportedPreviewSizes();
-                            Camera.Size previewSize = sizeList.get(0);
-                            int previewFormat = cameraParameters.getPreviewFormat();
-                            int orientation = this.getOrientation();
-                            byte[] buffer = this.allocatePixelBuffer(previewFormat, previewSize.width, previewSize.height);
+                            cameraParameters.setPreviewFormat(ImageFormat.NV21);
+                            Point previewSize = this.getPreviewSize(cameraParameters);
+                            int previewWidth = previewSize.x;
+                            int previewHeight = previewSize.y;
+                            byte[] buffer = this.allocatePixelBuffer(ImageFormat.NV21, previewWidth, previewHeight);
+                            previewBufferSize = previewWidth * previewHeight + (previewWidth * previewHeight / 2);
                             camera.addCallbackBuffer(buffer);
-                            camera.setDisplayOrientation(orientation);
+                            camera.setParameters(cameraParameters);
                             camera.setPreviewCallbackWithBuffer(previewCallBack);
                             camera.setPreviewDisplay(holder);
+                            String parameter = String.valueOf(previewWidth) + "x" + String.valueOf(previewHeight);
+                            NotifierPlugin.notify(gameObjectName, onShowCallbackName, parameter);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -117,6 +116,7 @@ public class CameraViewPlugin {
                         camera = null;
                         holder.removeCallback(callback);
                         this.surfaceCreated = false;
+                        NotifierPlugin.notify(callbackGameObjectName, hideCallbackName, CameraViewPlugin.COMPLETE_DESTROY_MESSAGE);
                         return;
                     }
                     @TargetApi(Build.VERSION_CODES.FROYO)
@@ -124,29 +124,19 @@ public class CameraViewPlugin {
                         if (null == camera) {
                             return;
                         }
-                        WindowManager windowManager = (WindowManager)activity.getSystemService(activity.WINDOW_SERVICE);
-                        Display display = windowManager.getDefaultDisplay();
                         if (false != this.surfaceCreated) {
                             camera.stopPreview();
                         }
-                        int currentOrientation = display.getRotation();
-                        byte[] buffer = this.allocatePixelBuffer(format, width, height);
-                        int orientation = this.getOrientation(currentOrientation);
-                        camera.setDisplayOrientation(orientation);
+                        byte[] buffer = this.allocatePixelBuffer(ImageFormat.NV21, width, height);
+                        Camera.Parameters cameraParameters = camera.getParameters();
+                        Point previewSize = this.getPreviewSize(cameraParameters);
+                        int previewWidth = previewSize.x;
+                        int previewHeight = previewSize.y;
+                        cameraParameters.setPreviewSize(previewWidth, previewHeight);
+                        cameraParameters.setPreviewFrameRate(CameraViewPlugin.PREVIEW_FRAMERATE);
                         camera.addCallbackBuffer(buffer);
-                        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.GINGERBREAD_MR1) {
-                            Camera.Parameters cameraParameters = camera.getParameters();
-                            if (currentOrientation == Surface.ROTATION_0) {
-                                cameraParameters.setPreviewSize(width, height);
-                            } else if (currentOrientation == Surface.ROTATION_90) {
-                                cameraParameters.setPreviewSize(height, width);
-                            } else if (currentOrientation == Surface.ROTATION_180) {
-                                cameraParameters.setPreviewSize(width, height);
-                            } else if (currentOrientation == Surface.ROTATION_270) {
-                                cameraParameters.setPreviewSize(height, width);
-                            }
-                            camera.setParameters(cameraParameters);
-                        }
+                        camera.setDisplayOrientation(CameraViewPlugin.DISPLAY_ORIENTATION);
+                        camera.setParameters(cameraParameters);
                         camera.setPreviewCallbackWithBuffer(previewCallBack);
                         camera.startPreview();
                         this.surfaceCreated = true;
@@ -159,25 +149,25 @@ public class CameraViewPlugin {
                         byte[] buffer = new byte[bufferSize];
                         return buffer;
                     }
-                    @TargetApi(Build.VERSION_CODES.FROYO)
-                    private int getOrientation() {
-                        WindowManager windowManager = (WindowManager)activity.getSystemService(activity.WINDOW_SERVICE);
-                        Display display = windowManager.getDefaultDisplay();
-                        int orientation = display.getRotation();
-                        return this.getOrientation(orientation);
-                    }
-                    private int getOrientation(int currentOrientation) {
-                        int ret = 0;
-                        if (currentOrientation == Surface.ROTATION_0) {
-                            ret = 0;
-                        } else if (currentOrientation == Surface.ROTATION_90) {
-                            ret = 90;
-                        } else if (currentOrientation == Surface.ROTATION_180) {
-                            ret = 180;
-                        } else if (currentOrientation == Surface.ROTATION_270) {
-                            ret = 270;
+                    private Point getPreviewSize(Camera.Parameters cameraParameters) {
+                        int previewWidth = 0;
+                        int previewHeight = 0;
+                        List<Camera.Size> sizeList = cameraParameters.getSupportedPreviewSizes();
+                        for (int i = 0; i < sizeList.size(); i++) {
+                            Camera.Size previewSize = sizeList.get(i);
+                            if (CameraViewPlugin.PREVIEW_WIDTH == previewSize.width && CameraViewPlugin.PREVIEW_HEIGHT == previewSize.height) {
+                                previewWidth = CameraViewPlugin.PREVIEW_WIDTH;
+                                previewHeight = CameraViewPlugin.PREVIEW_HEIGHT;
+                                break;
+                            }
                         }
-                        return ret;
+                        if (0 == previewWidth && 0 == previewHeight) {
+                            int index = sizeList.size() - 1;
+                            Camera.Size previewSize = sizeList.get(index);
+                            previewWidth = previewSize.width;
+                            previewHeight = previewSize.height;
+                        }
+                        return new Point(previewWidth, previewHeight);
                     }
                 };
                 FrameLayout.LayoutParams frameLayoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.NO_GRAVITY);
@@ -218,8 +208,7 @@ public class CameraViewPlugin {
             this.hide();
             this.destroy();
         } else {
-            this.create();
-            this.show();
+            this.create(this.callbackGameObjectName, this.showCallbackName, this.hideCallbackName);
         }
         return;
     }
@@ -239,6 +228,7 @@ public class CameraViewPlugin {
         return;
     }
     public void destroy() {
+        this.hide();
         final Activity activity = ActivityPlugin.getInstance();
         Runnable runnable = new Runnable() {
             @TargetApi(Build.VERSION_CODES.FROYO)
@@ -250,7 +240,6 @@ public class CameraViewPlugin {
                 view.setVisibility(View.INVISIBLE);
                 layout.removeView(view);
                 layout = null;
-                texture = null;
                 view = null;
                 created = false;
                 return;
@@ -258,8 +247,5 @@ public class CameraViewPlugin {
         };
         activity.runOnUiThread(runnable);
         return;
-    }
-    public byte[] getTexture() {
-        return this.texture;
     }
 }

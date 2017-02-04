@@ -9,11 +9,26 @@
 //======================================================================
 #include "NativeTextureAssetFactoryPlugin.h"
 #include "RawNativeTextureAssetPlugin.h"
+#include "YuvNativeTextureAssetPlugin.h"
 #include "ExtensionPlugin.h"
 BaseNativeTextureAssetPlugin* NativeTextureAssetFactoryPlugin::factoryMethod(const char* textureAssetPath) {
     BaseNativeTextureAssetPlugin* textureAsset = NULL;
     if (false != ExtensionPlugin::hasExtension(textureAssetPath, ".raw")) {
         textureAsset = new RawNativeTextureAssetPlugin();
+    }
+    return textureAsset;
+}
+BaseNativeTextureAssetPlugin* NativeTextureAssetFactoryPlugin::factoryMethod(const int textureType) {
+    BaseNativeTextureAssetPlugin* textureAsset = NULL;
+    switch (textureType) {
+        case RawNativeTextureAssetPlugin::TEXTURE_TYPE:
+            textureAsset = new RawNativeTextureAssetPlugin();
+            break;
+        case YuvNativeTextureAssetPlugin::TEXTURE_TYPE:
+            textureAsset = new YuvNativeTextureAssetPlugin();
+            break;
+        default:
+            break;
     }
     return textureAsset;
 }

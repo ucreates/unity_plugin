@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8165C0161E386097000B9214 /* NativeTextureAssetCollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8165C0141E386097000B9214 /* NativeTextureAssetCollection.cpp */; };
+		81566E461E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81566E441E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp */; };
+		8165C0161E386097000B9214 /* NativeTextureAssetCollectionPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8165C0141E386097000B9214 /* NativeTextureAssetCollectionPlugin.cpp */; };
+		81A658211E443324006B2100 /* TextureAssetValidatorPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81A6581F1E443324006B2100 /* TextureAssetValidatorPlugin.cpp */; };
+		81A658281E445FDB006B2100 /* BGRAPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81A658241E445FDB006B2100 /* BGRAPlugin.cpp */; };
+		81A658291E445FDB006B2100 /* LogPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81A658261E445FDB006B2100 /* LogPlugin.cpp */; };
 		81A956291E39E00800BA050B /* TagPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81A956271E39E00800BA050B /* TagPlugin.cpp */; };
 		81BF05EB1E39A6C4009FF041 /* ExtensionPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81BF05E91E39A6C4009FF041 /* ExtensionPlugin.cpp */; };
 		81BF05EE1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81BF05EC1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.cpp */; };
-		81D468A91E35AEE5001BBDB1 /* LogPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D4688A1E35AEE5001BBDB1 /* LogPlugin.cpp */; };
 		81D468AA1E35AEE5001BBDB1 /* UnityNativePlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D468A71E35AEE5001BBDB1 /* UnityNativePlugin.cpp */; };
 		81D468CE1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D468CC1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp */; };
 		81D468D11E35D54F001BBDB1 /* BaseNativeRendererPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D468CF1E35D54F001BBDB1 /* BaseNativeRendererPlugin.cpp */; };
@@ -33,8 +36,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8165C0141E386097000B9214 /* NativeTextureAssetCollection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeTextureAssetCollection.cpp; sourceTree = "<group>"; };
-		8165C0151E386097000B9214 /* NativeTextureAssetCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTextureAssetCollection.h; sourceTree = "<group>"; };
+		81566E2B1E3ED0CA00CB2A4B /* libyuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libyuv.a; path = ../lib/ios/libyuv.a; sourceTree = "<group>"; };
+		81566E441E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YuvNativeTextureAssetPlugin.cpp; sourceTree = "<group>"; };
+		81566E451E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuvNativeTextureAssetPlugin.h; sourceTree = "<group>"; };
+		8165C0141E386097000B9214 /* NativeTextureAssetCollectionPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeTextureAssetCollectionPlugin.cpp; sourceTree = "<group>"; };
+		8165C0151E386097000B9214 /* NativeTextureAssetCollectionPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTextureAssetCollectionPlugin.h; sourceTree = "<group>"; };
+		81A6581F1E443324006B2100 /* TextureAssetValidatorPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureAssetValidatorPlugin.cpp; sourceTree = "<group>"; };
+		81A658201E443324006B2100 /* TextureAssetValidatorPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureAssetValidatorPlugin.h; sourceTree = "<group>"; };
+		81A658241E445FDB006B2100 /* BGRAPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BGRAPlugin.cpp; sourceTree = "<group>"; };
+		81A658251E445FDB006B2100 /* BGRAPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGRAPlugin.h; sourceTree = "<group>"; };
+		81A658261E445FDB006B2100 /* LogPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogPlugin.cpp; sourceTree = "<group>"; };
+		81A658271E445FDB006B2100 /* LogPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogPlugin.h; sourceTree = "<group>"; };
 		81A956271E39E00800BA050B /* TagPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TagPlugin.cpp; sourceTree = "<group>"; };
 		81A956281E39E00800BA050B /* TagPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagPlugin.h; sourceTree = "<group>"; };
 		81BF05E91E39A6C4009FF041 /* ExtensionPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExtensionPlugin.cpp; sourceTree = "<group>"; };
@@ -42,8 +54,6 @@
 		81BF05EC1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeTextureAssetFactoryPlugin.cpp; sourceTree = "<group>"; };
 		81BF05ED1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTextureAssetFactoryPlugin.h; sourceTree = "<group>"; };
 		81D468531E35A6B9001BBDB1 /* libUnityNativePlugin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUnityNativePlugin.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		81D4688A1E35AEE5001BBDB1 /* LogPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogPlugin.cpp; sourceTree = "<group>"; };
-		81D4688B1E35AEE5001BBDB1 /* LogPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogPlugin.h; sourceTree = "<group>"; };
 		81D468A71E35AEE5001BBDB1 /* UnityNativePlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnityNativePlugin.cpp; sourceTree = "<group>"; };
 		81D468A81E35AEE5001BBDB1 /* UnityNativePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityNativePlugin.h; sourceTree = "<group>"; };
 		81D468B21E35B241001BBDB1 /* IUnityGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUnityGraphics.h; sourceTree = "<group>"; };
@@ -72,6 +82,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81A6581E1E443303006B2100 /* validator */ = {
+			isa = PBXGroup;
+			children = (
+				81A6581F1E443324006B2100 /* TextureAssetValidatorPlugin.cpp */,
+				81A658201E443324006B2100 /* TextureAssetValidatorPlugin.h */,
+			);
+			path = validator;
+			sourceTree = "<group>";
+		};
+		81A658221E445FDB006B2100 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				81A658231E445FDB006B2100 /* color */,
+				81A658261E445FDB006B2100 /* LogPlugin.cpp */,
+				81A658271E445FDB006B2100 /* LogPlugin.h */,
+			);
+			path = utility;
+			sourceTree = "<group>";
+		};
+		81A658231E445FDB006B2100 /* color */ = {
+			isa = PBXGroup;
+			children = (
+				81A658241E445FDB006B2100 /* BGRAPlugin.cpp */,
+				81A658251E445FDB006B2100 /* BGRAPlugin.h */,
+			);
+			path = color;
+			sourceTree = "<group>";
+		};
 		81A956261E39DFFD00BA050B /* identifier */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +148,7 @@
 		81D468821E35AB40001BBDB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81566E2B1E3ED0CA00CB2A4B /* libyuv.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,21 +168,13 @@
 		81D468881E35AEE5001BBDB1 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				81A658221E445FDB006B2100 /* utility */,
+				81A6581E1E443303006B2100 /* validator */,
 				81A956261E39DFFD00BA050B /* identifier */,
 				81BF05E81E39A69A009FF041 /* io */,
 				81D468B01E35B241001BBDB1 /* platform */,
-				81D468891E35AEE5001BBDB1 /* util */,
 			);
 			path = core;
-			sourceTree = "<group>";
-		};
-		81D468891E35AEE5001BBDB1 /* util */ = {
-			isa = PBXGroup;
-			children = (
-				81D4688A1E35AEE5001BBDB1 /* LogPlugin.cpp */,
-				81D4688B1E35AEE5001BBDB1 /* LogPlugin.h */,
-			);
-			path = util;
 			sourceTree = "<group>";
 		};
 		81D468B01E35B241001BBDB1 /* platform */ = {
@@ -209,10 +240,12 @@
 				81F271F01E36E40500B85998 /* BaseNativeTextureAssetPlugin.h */,
 				81F271F31E36E8E300B85998 /* RawNativeTextureAssetPlugin.cpp */,
 				81F271F41E36E8E300B85998 /* RawNativeTextureAssetPlugin.h */,
-				8165C0141E386097000B9214 /* NativeTextureAssetCollection.cpp */,
-				8165C0151E386097000B9214 /* NativeTextureAssetCollection.h */,
+				8165C0141E386097000B9214 /* NativeTextureAssetCollectionPlugin.cpp */,
+				8165C0151E386097000B9214 /* NativeTextureAssetCollectionPlugin.h */,
 				81BF05EC1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.cpp */,
 				81BF05ED1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.h */,
+				81566E441E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp */,
+				81566E451E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.h */,
 			);
 			path = render;
 			sourceTree = "<group>";
@@ -283,7 +316,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "find ../../Assets/Plugins/iOS/Native/ -name \"*.h\" -exec rm {} + ;\nfind ../src/ -name \"*.h\" -exec cp -pr {} ../../Assets/Plugins/iOS/Native/ \\;";
+			shellScript = "find ../../Assets/Plugins/iOS/Gateway/ -name \"*.h\" -exec rm {} + ;\nfind ../src/ -name \"*.h\" -exec cp -pr {} ../../Assets/Plugins/iOS/Gateway/ \\;\nfind ../lib/include/ -name \"*.h\" -exec cp -pr {} ../../Assets/Plugins/iOS/Gateway/ \\;";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -293,16 +326,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81A658281E445FDB006B2100 /* BGRAPlugin.cpp in Sources */,
 				81BF05EB1E39A6C4009FF041 /* ExtensionPlugin.cpp in Sources */,
 				81D468D11E35D54F001BBDB1 /* BaseNativeRendererPlugin.cpp in Sources */,
 				81A956291E39E00800BA050B /* TagPlugin.cpp in Sources */,
 				81F271F11E36E40500B85998 /* BaseNativeTextureAssetPlugin.cpp in Sources */,
 				81BF05EE1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.cpp in Sources */,
-				8165C0161E386097000B9214 /* NativeTextureAssetCollection.cpp in Sources */,
+				8165C0161E386097000B9214 /* NativeTextureAssetCollectionPlugin.cpp in Sources */,
 				81F271F51E36E8E300B85998 /* RawNativeTextureAssetPlugin.cpp in Sources */,
-				81D468A91E35AEE5001BBDB1 /* LogPlugin.cpp in Sources */,
+				81566E461E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp in Sources */,
 				81D468CE1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp in Sources */,
 				81D468AA1E35AEE5001BBDB1 /* UnityNativePlugin.cpp in Sources */,
+				81A658291E445FDB006B2100 /* LogPlugin.cpp in Sources */,
+				81A658211E443324006B2100 /* TextureAssetValidatorPlugin.cpp in Sources */,
 				81D468D41E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,11 +439,17 @@
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ../../Assets/Plugins/iOS;
 				DEVELOPMENT_TEAM = C9V674GA4T;
+				LIBRARY_SEARCH_PATHS = "../lib/ios/**";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-l",
+					libyuv,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "../src/**";
+				USER_HEADER_SEARCH_PATHS = "../src/** ../lib/include/**";
 			};
 			name = Debug;
 		};
@@ -416,11 +458,17 @@
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = ../../Assets/Plugins/iOS;
 				DEVELOPMENT_TEAM = C9V674GA4T;
+				LIBRARY_SEARCH_PATHS = "../lib/ios/**";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-l",
+					libyuv,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "../src/**";
+				USER_HEADER_SEARCH_PATHS = "../src/** ../lib/include/**";
 			};
 			name = Release;
 		};

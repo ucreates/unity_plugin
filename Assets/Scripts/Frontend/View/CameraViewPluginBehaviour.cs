@@ -9,12 +9,22 @@
 //======================================================================
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
 using UnityPlugin;
 using UnityPlugin.Frontend.View;
+using UnityPlugin.Frontend.Component.Renderer;
 public class CameraViewPluginBehaviour : MonoBehaviour {
     private const float ACCELERATION = 100f;
-    private CameraViewPlugin plugin {
+    private CameraViewPlugin cameraViewPlugin {
+        get;
+        set;
+    }
+    private NativeRendererPlugin nativeRendererPlugin {
+        get;
+        set;
+    }
+    private float aspectRatio {
         get;
         set;
     }
@@ -24,50 +34,86 @@ public class CameraViewPluginBehaviour : MonoBehaviour {
     }
     // Use this for initialization
     void Start() {
+        this.cameraViewPlugin = PluginFactory.GetPlugin<CameraViewPlugin>();
+        this.nativeRendererPlugin = PluginFactory.GetPlugin<NativeRendererPlugin>();
+        float z = this.gameObject.transform.position.z + 2f;
         this.captureGameObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
         this.captureGameObject.name = "Capture";
-        this.plugin = PluginFactory.GetPlugin<CameraViewPlugin>();
-        this.OnOrientationChanged();
+        this.captureGameObject.transform.position = new Vector3(0f, 0f, z);
+        this.captureGameObject.transform.localScale = Vector3.zero;
         return;
     }
-    void Update() {
-        if (null == this.plugin) {
-            return;
-        }
+    // Update is called once per frame
+    private void Update() {
         float degree = Time.time * CameraViewPluginBehaviour.ACCELERATION;
         this.transform.rotation = Quaternion.Euler(degree, degree, degree);
-        Texture2D texture = this.plugin.GetTexture();
-        if (null == texture) {
-            return;
-        }
-        MeshRenderer renderer = this.captureGameObject.GetComponent<MeshRenderer>();
-        UnityEngine.Object.DestroyImmediate(renderer.material.mainTexture);
-        renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-        renderer.receiveShadows = false;
-        renderer.material.mainTexture = texture;
+        this.StartCoroutine("OnRender");
         return;
     }
-    public void OnPause(bool suspend) {
-        if (null == this.plugin) {
-            return;
-        }
-        this.plugin.Update(suspend);
-        return;
+    private IEnumerator OnRender() {
+        IntPtr nativeRenderCallback = this.cameraViewPlugin.GetNativeRenderCallback();
+        yield return this.nativeRendererPlugin.Render(nativeRenderCallback);
     }
     public void OnShow() {
-        if (null == this.plugin) {
+        if (null == this.cameraViewPlugin) {
             return;
         }
-        this.plugin.Show();
+        this.cameraViewPlugin.Show(this.gameObject.name, "OnShowCallback", "OnHideCallback");
+        return;
+    }
+    public void OnShowCallback(string parameter) {
+        string[] previewFrameSize = parameter.Split('x');
+        if (CameraViewPlugin.VALID_CAPTURE_PREVIEW_SIZE_COUNT != previewFrameSize.Length) {
+            return;
+        }
+        int width = Convert.ToInt32(previewFrameSize[0]);
+        int height = Convert.ToInt32(previewFrameSize[1]);
+        Texture2D texture = new Texture2D(width, height, TextureFormat.ARGB32, false);
+        texture.hideFlags = HideFlags.HideAndDontSave;
+        texture.filterMode = FilterMode.Bilinear;
+        texture.wrapMode = TextureWrapMode.Clamp;
+        texture.anisoLevel = 1;
+        texture.Apply();
+        IntPtr texturePtr = texture.GetNativeTexturePtr();
+        int instanceId = this.captureGameObject.GetInstanceID();
+        UnityEngine.Renderer[] rendererList = new UnityEngine.Renderer[2];
+        rendererList[0] = this.captureGameObject.GetComponent<UnityEngine.Renderer>();
+        rendererList[1] = this.GetComponent<UnityEngine.Renderer>();
+        for (int i = 0; i < rendererList.Length; i++) {
+            UnityEngine.Renderer renderer = rendererList[i];
+            renderer.material.mainTexture = texture;
+            renderer.material.mainTextureScale = new Vector2(1f, 1f);
+        }
+        this.cameraViewPlugin.SetTexture(instanceId, texturePtr);
+        this.aspectRatio = (float)height / (float)width;
+        this.OnOrientationChanged();
+        this.nativeRendererPlugin.Create();
         return;
     }
     public void OnHide() {
-        if (null == this.plugin) {
+        if (null == this.cameraViewPlugin) {
             return;
         }
-        this.plugin.Hide();
-        MeshRenderer renderer = this.captureGameObject.GetComponent<MeshRenderer>();
-        UnityEngine.Object.DestroyImmediate(renderer.material.mainTexture);
+        this.cameraViewPlugin.Hide();
+        return;
+    }
+    public void OnHideCallback(string parameter) {
+        this.nativeRendererPlugin.Destroy();
+        UnityEngine.Renderer[] rendererList = new UnityEngine.Renderer[2];
+        rendererList[0] = this.captureGameObject.GetComponent<UnityEngine.Renderer>();
+        rendererList[1] = this.GetComponent<UnityEngine.Renderer>();
+        for (int i = 0; i < rendererList.Length; i++) {
+            UnityEngine.Renderer renderer = rendererList[i];
+            UnityEngine.Object.DestroyImmediate(renderer.material.mainTexture);
+        }
+        //you should write scene transition process by UnityEngine.SceneManagement.SceneManager
+        return;
+    }
+    public void OnPause(bool suspend) {
+        if (null == this.cameraViewPlugin) {
+            return;
+        }
+        this.cameraViewPlugin.Update(suspend);
         return;
     }
     public void OnOrientationChanged() {
@@ -82,36 +128,15 @@ public class CameraViewPluginBehaviour : MonoBehaviour {
         Vector3 worldRightDownPoint = Camera.main.ViewportToWorldPoint(viewPortPoint);
         float width = worldRightDownPoint.x - worldLeftUpPoint.x;
         float height = worldRightDownPoint.y - worldLeftUpPoint.y;
-        float tmpsize = 0f;
         width = Mathf.Abs(width);
         height = Mathf.Abs(height);
-        float rotate = 0f;
-        ScreenOrientation oientation = Screen.orientation;
-        switch (oientation) {
-        case ScreenOrientation.Portrait:
-            rotate = 90f;
-            tmpsize = width;
-            width = height;
-            height = tmpsize;
-            break;
-        case ScreenOrientation.PortraitUpsideDown:
-            rotate = 270f;
-            tmpsize = width;
-            width = height;
-            height = tmpsize;
-            break;
-        case ScreenOrientation.LandscapeRight:
-            rotate = 0f;
-            break;
-        case ScreenOrientation.LandscapeLeft:
-            rotate = 180f;
-            break;
-        default:
-            break;
+        float sideWidth = width < height ? height : width;
+        this.captureGameObject.transform.localScale = new Vector3(-1f * sideWidth, sideWidth * this.aspectRatio, 1f);
+        Quaternion rotation = Quaternion.identity;
+        if (RuntimePlatform.Android == Application.platform) {
+            rotation = Quaternion.Euler(0f, 0f, 270f);
         }
-        this.captureGameObject.transform.position = new Vector3(0f, 0f, 2f);
-        this.captureGameObject.transform.localScale = new Vector3(width, height, 1f);
-        this.captureGameObject.transform.rotation = Quaternion.Euler(0f, 0f, rotate);
+        this.captureGameObject.transform.rotation = rotation;
         return;
     }
 }
