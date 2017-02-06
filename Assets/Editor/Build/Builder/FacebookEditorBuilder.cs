@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using UnityEditor.iOS.Xcode;
-using UnityPlugin.Core.Sns;
+using UnityPlugin.Core.Configure.Sns;
 using System.Collections;
 using System.Diagnostics;
 using System.IO;
@@ -13,7 +13,7 @@ public class FacebookEditorBuilder : BaseEditorBuilder {
             return;
         }
         PlistElementDict rootDict = plist.root;
-        rootDict.SetString("FacebookAppID", FacebookSettingPlugin.APP_ID);
+        rootDict.SetString("FacebookAppID", FacebookConfigurePlugin.APP_ID);
         rootDict.SetString("FacebookDisplayName", PlayerSettings.productName);
         rootDict.SetString("NSPhotoLibraryUsageDescription", "Photo Access By Unity Facebook Plugin");
         return;
@@ -22,7 +22,7 @@ public class FacebookEditorBuilder : BaseEditorBuilder {
         PlistElementDict bundleURLSchemaDict = bundleURLTypesArray.AddDict();
         bundleURLSchemaDict.SetString("CFBundleTypeRole", "Editor");
         PlistElementArray bundleURLSchemaArray = bundleURLSchemaDict.CreateArray("CFBundleURLSchemes");
-        bundleURLSchemaArray.AddString("fb" + FacebookSettingPlugin.APP_ID);
+        bundleURLSchemaArray.AddString("fb" + FacebookConfigurePlugin.APP_ID);
         return;
     }
     public override void BuildiOSApplicationQueriesSchemes(PlistElementArray querySchemesArray) {

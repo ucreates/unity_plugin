@@ -8,7 +8,7 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 using UnityEngine;
-using UnityPlugin.Core.Sns;
+using UnityPlugin.Core.Configure.Sns;
 using System;
 using System.IO;
 using System.Collections;
@@ -42,7 +42,7 @@ public sealed class FacebookControllerPlugin : BasePlugin {
             if (null == this.androidPlugin) {
                 return;
             }
-            this.androidPlugin.CallStatic("transitionFacebook", FacebookSettingPlugin.APP_ID, imageData);
+            this.androidPlugin.CallStatic("transitionFacebook", FacebookConfigurePlugin.APP_ID, imageData);
         }
         return;
     }

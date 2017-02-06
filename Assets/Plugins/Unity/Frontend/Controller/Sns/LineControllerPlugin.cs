@@ -8,7 +8,7 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 using UnityEngine;
-using UnityPlugin.Core.Sns;
+using UnityPlugin.Core.Configure.Sns;
 using System;
 using System.IO;
 using System.Collections;

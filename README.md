@@ -29,25 +29,29 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - replacement:https://gist.github.com/ucreates/dccc0d1ec16b54423eca786180fac9ea
 
-3.please rewrite the replacement section of the following file to the fabric api key. you can confirm fabric api key by fabric official web site.
+3.please add some domain of the following file to the allowed http access domain list in UIWebView.
+
+- add to:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Configure/WebViewConfigurePlugin.cs
+
+4.please rewrite the replacement section of the following file to the fabric api key. you can confirm fabric api key by fabric official web site.
 
 - fabric:https://fabric.io/settings/account
 
-- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Sns/TwitterSettingPlugin.cs
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Configure/Sns/TwitterConfigurePlugin.cs
 
-4.please rewrite the replacement section of the following file to the facebook app id. you can confirm facebook app id by facebook official developer web site.
+5.please rewrite the replacement section of the following file to the facebook app id. you can confirm facebook app id by facebook official developer web site.
 
 - facebook:https://developers.facebook.com/apps/
 
-- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Sns/FacebookSettingPlugin.cs
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Configure/Sns/FacebookConfigurePlugin.cs
 
-5.please rewrite the replacement section of the following file to the LINE channel id. you can create and confirm LINE channel id by LINE official developer web site.
+6.please rewrite the replacement section of the following file to the LINE channel id. you can create and confirm LINE channel id by LINE official developer web site.
 
 - LINE(Login):https://developers.line.me/line-login/overview
 
-- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Sns/LineSettingPlugin.cs
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Configure/Sns/LineConfigurePlugin.cs
 
-6.please configure player and build setting for UnityNativePlugin in the Unity project and published Xcode project.
+7.please configure player and build setting for UnityNativePlugin in the Unity project and published Xcode project.
 
 - Unity
 
@@ -59,9 +63,9 @@ you may confirm some sample behaviours. which exists in following folder.
 
  - Architectures→Supported Platform:iphoneos→iOS
 
-7.iOS build with Unity.
+8.iOS build with Unity.
 
-8.published project build with Xcode.
+9.published project build with Xcode.
 
 ***Notes on use for Android***
 
@@ -73,7 +77,7 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - fabric:https://fabric.io/settings/account
 
-- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Sns/TwitterSettingPlugin.cs
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Configure/Sns/TwitterConfigurePlugin.cs
 
 - replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Android/AndroidManifest.xml
 
@@ -81,7 +85,7 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - facebook:https://developers.facebook.com/apps/
 
-- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Sns/FacebookSettingPlugin.cs
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Configure/Sns/FacebookConfigurePlugin.cs
 
 - replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Android/AndroidManifest.xml
 
@@ -89,7 +93,7 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - LINE(Login):https://developers.line.me/line-login/overview
 
-- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Sns/LineSettingPlugin.cs
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Configure/Sns/LineConfigurePlugin.cs
 
 - replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Android/AndroidManifest.xml
 
@@ -97,6 +101,6 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - Google Play Developer Console:https://play.google.com/apps/publish/
 
-- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Payment/PaymentSettingPlugin.cs
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/Assets/Plugins/Unity/Core/Configure/PaymentConfigurePlugin.cs
 
 6.Android build with Unity.

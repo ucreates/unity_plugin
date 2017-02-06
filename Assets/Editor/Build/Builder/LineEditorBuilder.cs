@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using UnityEditor.iOS.Xcode;
-using UnityPlugin.Core.Sns;
+using UnityPlugin.Core.Configure.Sns;
 using System.Collections;
 using System.Diagnostics;
 using System.IO;
@@ -18,9 +18,23 @@ public class LineEditorBuilder : BaseEditorBuilder {
             this.project.AddFrameworkToProject(this.targetGUID, framework, false);
         }
         PlistElementDict lineAdapterConfigDict = rootDict.CreateDict("LineAdapterConfig");
-        lineAdapterConfigDict.SetString("ChannelId", LineSettingPlugin.CHANNEL_ID);
-        PlistElementDict nsAppTransportSecurityDict = rootDict.CreateDict("NSAppTransportSecurity");
-        PlistElementDict nsExeptionDomainsDict = nsAppTransportSecurityDict.CreateDict("NSExceptionDomains");
+        lineAdapterConfigDict.SetString("ChannelId", LineConfigurePlugin.CHANNEL_ID);
+        return;
+    }
+    public override void BuildiOSURLSchemes(PlistElementArray bundleURLTypesArray) {
+        PlistElementDict bundleURLSchemaDict = bundleURLTypesArray.AddDict();
+        bundleURLSchemaDict.SetString("CFBundleTypeRole", "Editor");
+        bundleURLSchemaDict.SetString("CFBundleURLName", PlayerSettings.bundleIdentifier);
+        PlistElementArray bundleURLSchemaArray = bundleURLSchemaDict.CreateArray("CFBundleURLSchemes");
+        bundleURLSchemaArray.AddString("line3rdp." + PlayerSettings.bundleIdentifier);
+        return;
+    }
+    public override void BuildiOSApplicationQueriesSchemes(PlistElementArray querySchemesArray) {
+        querySchemesArray.AddString("lineauth");
+        querySchemesArray.AddString("line3rdp." + PlayerSettings.bundleIdentifier);
+        return;
+    }
+    public override void BuildiOSNSAppTransportSecuritySchemes(PlistElementDict nsExeptionDomainsDict) {
         PlistElementDict obsLineAppsComDict = nsExeptionDomainsDict.CreateDict("obs.line-apps.com");
         obsLineAppsComDict.SetBoolean("NSIncludesSubdomains", true);
         obsLineAppsComDict.SetBoolean("NSThirdPartyExceptionAllowsInsecureHTTPLoads", true);
@@ -40,19 +54,6 @@ public class LineEditorBuilder : BaseEditorBuilder {
         accessLineMeDict.SetBoolean("NSThirdPartyExceptionRequiresForwardSecrecy", false);
         PlistElementDict appLineMeDict = nsExeptionDomainsDict.CreateDict("app.line.me");
         appLineMeDict.SetBoolean("NSThirdPartyExceptionRequiresForwardSecrecy", false);
-        return;
-    }
-    public override void BuildiOSURLSchemes(PlistElementArray bundleURLTypesArray) {
-        PlistElementDict bundleURLSchemaDict = bundleURLTypesArray.AddDict();
-        bundleURLSchemaDict.SetString("CFBundleTypeRole", "Editor");
-        bundleURLSchemaDict.SetString("CFBundleURLName", PlayerSettings.bundleIdentifier);
-        PlistElementArray bundleURLSchemaArray = bundleURLSchemaDict.CreateArray("CFBundleURLSchemes");
-        bundleURLSchemaArray.AddString("line3rdp." + PlayerSettings.bundleIdentifier);
-        return;
-    }
-    public override void BuildiOSApplicationQueriesSchemes(PlistElementArray querySchemesArray) {
-        querySchemesArray.AddString("lineauth");
-        querySchemesArray.AddString("line3rdp." + PlayerSettings.bundleIdentifier);
         return;
     }
 }

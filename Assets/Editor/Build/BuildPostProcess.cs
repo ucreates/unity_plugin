@@ -13,6 +13,7 @@ public class BuildPostProcess {
             TwitterEditorBuilder.BUILDER_ID,
             FacebookEditorBuilder.BUILDER_ID,
             LineEditorBuilder.BUILDER_ID,
+            WebViewEditorBuilder.BUILDER_ID,
         };
         if (buildTarget == BuildTarget.iOS) {
             PBXProject project = new PBXProject();
@@ -57,6 +58,13 @@ public class BuildPostProcess {
             foreach (int builderId in builderIdList) {
                 BaseEditorBuilder builder = EditorBuilderFactory.FactoryMethod(builderId);
                 builder.BuildiOSApplicationQueriesSchemes(lsApplicationQueriesSchemesArray);
+            }
+            PlistElementDict nsAppTransportSecurityDict = rootDict.CreateDict("NSAppTransportSecurity");
+            nsAppTransportSecurityDict.SetBoolean("NSAllowsArbitraryLoads", true);
+            PlistElementDict nsExeptionDomainsDict = nsAppTransportSecurityDict.CreateDict("NSExceptionDomains");
+            foreach (int builderId in builderIdList) {
+                BaseEditorBuilder builder = EditorBuilderFactory.FactoryMethod(builderId);
+                builder.BuildiOSNSAppTransportSecuritySchemes(nsExeptionDomainsDict);
             }
             plist.WriteToFile(plistPath);
             project.WriteToFile(projectPath);

@@ -15,10 +15,11 @@ open class WebViewPlugin: NSObject, UIWebViewDelegate {
     open func create(_ url: String, left: CGFloat, top: CGFloat, right: CGFloat, bottom: CGFloat) -> Void {
         let req: URLRequest = URLRequest(url: URL(string: url)!)
         let controller: UIViewController = ViewControllerPlugin.getInstance()
-        let width: CGFloat = controller.view.frame.width
-        let height: CGFloat = controller.view.frame.height
+        let width: CGFloat = controller.view.frame.width - left - right
+        let height: CGFloat = controller.view.frame.height - top - bottom
         self.view = UIWebView()
-        self.view.frame = CGRect(x: left, y: top, width: width - left - right, height: height - top - bottom)
+        self.view.frame = CGRect(x: left, y: top, width: width, height: height)
+        self.view.scalesPageToFit = false
         self.view.backgroundColor = UIColor.clear
         self.view.isOpaque = false
         self.view.delegate = self

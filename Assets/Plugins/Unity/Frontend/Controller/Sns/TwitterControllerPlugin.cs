@@ -8,7 +8,7 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 using UnityEngine;
-using UnityPlugin.Core.Sns;
+using UnityPlugin.Core.Configure.Sns;
 using System;
 using System.IO;
 using System.Collections;
@@ -44,7 +44,7 @@ public sealed class TwitterControllerPlugin : BasePlugin {
             }
             string imagePath = Path.Combine(Application.temporaryCachePath, "image.png");
             File.WriteAllBytes(imagePath, imageData);
-            this.androidPlugin.CallStatic("transitionTwitter", message, imagePath, TwitterSettingPlugin.CONSUMER_KEY, TwitterSettingPlugin.CONSUMER_SEACRET, enableTwitterCard);
+            this.androidPlugin.CallStatic("transitionTwitter", message, imagePath, TwitterConfigurePlugin.CONSUMER_KEY, TwitterConfigurePlugin.CONSUMER_SEACRET, enableTwitterCard);
         }
         return;
     }

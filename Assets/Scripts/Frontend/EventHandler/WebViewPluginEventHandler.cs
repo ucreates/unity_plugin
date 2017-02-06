@@ -21,7 +21,9 @@ public class WebViewPluginEventHandler : MonoBehaviour {
         this.plugin = PluginFactory.GetPlugin<WebViewPlugin>();
     }
     public void OnShow() {
-        this.plugin.Show("http://www.yahoo.co.jp/", 100f, 100f, 100f, 100f);
+        float horizonMargin = Screen.width * 0.1f;
+        float verticalMargin = Screen.height * 0.1f;
+        this.plugin.Show("http://www.yahoo.co.jp/", horizonMargin, verticalMargin, horizonMargin, verticalMargin);
     }
     public void OnHide() {
         this.plugin.Hide();

@@ -19,7 +19,7 @@ extern "C" void showReviewViewPlugin(char* appStoreUrl) {
     [ReviewViewPlugin show:url];
     return;
 }
-extern "C" void showWebViewPlugin(char* url, CGFloat left, CGFloat top, CGFloat right, CGFloat bottom) {
+extern "C" void showWebViewPlugin(char* url, float left, float top, float right, float bottom) {
     if (nil != webViewPlugin) {
         return;
     }

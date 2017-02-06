@@ -17,6 +17,9 @@ public class EditorBuilderFactory {
         case LineEditorBuilder.BUILDER_ID:
             builder = new LineEditorBuilder();
             break;
+        case WebViewEditorBuilder.BUILDER_ID:
+            builder = new WebViewEditorBuilder();
+            break;
         default:
             break;
         }

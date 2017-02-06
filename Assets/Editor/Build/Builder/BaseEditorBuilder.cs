@@ -66,5 +66,8 @@ public abstract class BaseEditorBuilder {
     public virtual void BuildiOSApplicationQueriesSchemes(PlistElementArray querySchemesArray) {
         return;
     }
+    public virtual void BuildiOSNSAppTransportSecuritySchemes(PlistElementDict nsExeptionDomainsDict) {
+        return;
+    }
 }
 }

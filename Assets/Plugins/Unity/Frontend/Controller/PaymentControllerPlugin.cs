@@ -10,7 +10,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Runtime.InteropServices;
-using UnityPlugin.Core;
+using UnityPlugin.Core.Configure;
 namespace UnityPlugin.Frontend.Controller {
 public sealed class PaymentControllerPlugin : BasePlugin {
     public const string GOOGLE_PLAY_SKU_TYPE_INAPP = "inapp";
@@ -32,7 +32,7 @@ public sealed class PaymentControllerPlugin : BasePlugin {
             transitionPaymentViewControllerPlugin(userId, productId);
         } else if (RuntimePlatform.Android == Application.platform) {
             if (null != this.androidPlugin) {
-                this.androidPlugin.CallStatic("transitionPayment", userId, productId, androidSKUType, PaymentSettingPlugin.PUBLIC_KEY);
+                this.androidPlugin.CallStatic("transitionPayment", userId, productId, androidSKUType, PaymentConfigurePlugin.PUBLIC_KEY);
             }
         }
     }
