@@ -1,13 +1,13 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-NDK_APP_DST_DIR="${PWD}/../../Assets/Plugins/Android/"
+NDK_APP_DST_DIR="${PWD}/../../UnityPlugin/Assets/Plugins/Android/"
 LOCAL_MODULE    := libyuv
 LOCAL_SRC_FILES := ../lib/android/libyuv.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-NDK_APP_DST_DIR="${PWD}/../../Assets/Plugins/Android/"
+NDK_APP_DST_DIR="${PWD}/../../UnityPlugin/Assets/Plugins/Android/"
 LOCAL_MODULE = UnityNativePlugin
 LOCAL_SRC_FILES := UnityNativePlugin.cpp 
 LOCAL_SRC_FILES += $(shell find $(LOCAL_PATH)/core/ -name '*.cpp')

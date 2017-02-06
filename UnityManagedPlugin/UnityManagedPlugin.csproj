@@ -8,13 +8,13 @@
     <RootNamespace>UnityManagedPlugin</RootNamespace>
     <AssemblyName>UnityManagedPlugin</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <BaseDirectory>..\Assets\Plugins\Managed</BaseDirectory>
+    <BaseDirectory>..\UnityPlugin\Assets\Plugins\Managed</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\Assets\Plugins\Managed</OutputPath>
+    <OutputPath>..\UnityPlugin\Assets\Plugins\Managed</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -23,7 +23,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\Assets\Plugins\Managed</OutputPath>
+    <OutputPath>..\UnityPlugin\Assets\Plugins\Managed</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>

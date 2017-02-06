@@ -91,11 +91,11 @@ task plugin(type: Sync) {
     from  ('./libs/thirdparty/') {
         include '**/*.jar'
     }
-    into '../../Assets/Plugins/Android/'
+    into '../../UnityPlugin/Assets/Plugins/Android/'
 }
 task manifest(type: Copy) {
     from  ('./resource/') {
         include '**/*.xml'
     }
-    into '../../Assets/Plugins/Android/'
+    into '../../UnityPlugin/Assets/Plugins/Android/'
 }

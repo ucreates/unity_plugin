@@ -15,7 +15,7 @@ Global
 		{1507A322-EF7C-415B-9BE9-EB063DF74E4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		BaseDirectory = ..\Assets\Plugins\Managed
-		outputpath = ..\Assets\Plugins\Managed
+		BaseDirectory = ..\UnityPlugin\Assets\Plugins\Managed
+		outputpath = ..\UnityPlugin\Assets\Plugins\Managed
 	EndGlobalSection
 EndGlobal

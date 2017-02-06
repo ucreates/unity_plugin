@@ -316,7 +316,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "find ../../Assets/Plugins/iOS/Gateway/ -name \"*.h\" -exec rm {} + ;\nfind ../src/ -name \"*.h\" -exec cp -pr {} ../../Assets/Plugins/iOS/Gateway/ \\;\nfind ../lib/include/ -name \"*.h\" -exec cp -pr {} ../../Assets/Plugins/iOS/Gateway/ \\;";
+			shellScript = "find ../../UnityPlugin/Assets/Plugins/iOS/Gateway/ -name \"*.h\" -exec rm {} + ;\nfind ../src/ -name \"*.h\" -exec cp -pr {} ../../UnityPlugin/Assets/Plugins/iOS/Gateway/ \\;\nfind ../lib/include/ -name \"*.h\" -exec cp -pr {} ../../UnityPlugin/Assets/Plugins/iOS/Gateway/ \\;";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -437,7 +437,7 @@
 		81D4685D1E35A6BA001BBDB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = ../../Assets/Plugins/iOS;
+				CONFIGURATION_BUILD_DIR = ../../UnityPlugin/Assets/Plugins/iOS;
 				DEVELOPMENT_TEAM = C9V674GA4T;
 				LIBRARY_SEARCH_PATHS = "../lib/ios/**";
 				ONLY_ACTIVE_ARCH = YES;
@@ -456,7 +456,7 @@
 		81D4685E1E35A6BA001BBDB1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = ../../Assets/Plugins/iOS;
+				CONFIGURATION_BUILD_DIR = ../../UnityPlugin/Assets/Plugins/iOS;
 				DEVELOPMENT_TEAM = C9V674GA4T;
 				LIBRARY_SEARCH_PATHS = "../lib/ios/**";
 				ONLY_ACTIVE_ARCH = YES;
