@@ -14,27 +14,27 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param session Contains the OAuth tokens and minimal information associated with the logged in user or nil.
  *  @param error   Error that will be non nil if the authentication request failed.
  */
-typedef void (^TWTRLogInCompletion)(TWTRSession * _Nullable session,  NSError * _Nullable error);
+typedef void (^TWTRLogInCompletion)(TWTRSession *_Nullable session, NSError *_Nullable error);
 /**
  *  TWTRSession represents a user's session authenticated with the Twitter API.
  */
-@interface TWTRSession : NSObject <TWTRAuthSession>
+@interface TWTRSession : NSObject<TWTRAuthSession>
 /**
  *  The authorization token.
  */
-@property (nonatomic, copy, readonly) NSString *authToken;
+@property(nonatomic, copy, readonly) NSString *authToken;
 /**
  *  The authorization token secret.
  */
-@property (nonatomic, copy, readonly) NSString *authTokenSecret;
+@property(nonatomic, copy, readonly) NSString *authTokenSecret;
 /**
  *  The username associated with the access token.
  */
-@property (nonatomic, copy, readonly) NSString *userName;
+@property(nonatomic, copy, readonly) NSString *userName;
 /**
  *  The user ID associated with the access token.
  */
-@property (nonatomic, copy, readonly) NSString *userID;
+@property(nonatomic, copy, readonly) NSString *userID;
 /**
  *  Returns an `TWTRSession` object initialized by copying the values from the dictionary or nil if the dictionary is missing.
  *

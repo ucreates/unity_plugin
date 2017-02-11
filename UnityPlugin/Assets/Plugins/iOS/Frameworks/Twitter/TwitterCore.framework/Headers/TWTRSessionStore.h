@@ -18,11 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param refreshedSession The refreshed session
  *  @param error            Error that will be non nil if the refresh request failed
  */
-typedef void (^TWTRSessionStoreRefreshCompletion)(id _Nullable refreshedSession, NSError * _Nullable error);
+typedef void (^TWTRSessionStoreRefreshCompletion)(id _Nullable refreshedSession, NSError *_Nullable error);
 /**
  *  Protocol for session stores that can refresh expired sessions.
  */
-@protocol TWTRSessionRefreshingStore <NSObject>
+@protocol TWTRSessionRefreshingStore<NSObject>
 /**
  *  Refresh an expired session.
  *
@@ -57,7 +57,7 @@ typedef void (^TWTRSessionStoreRefreshCompletion)(id _Nullable refreshedSession,
  *  @param session The saved session
  *  @param error   Error that will be non nil if the save request fails.
  */
-typedef void (^TWTRSessionStoreSaveCompletion)(id<TWTRAuthSession> _Nullable session, NSError * _Nullable error);
+typedef void (^TWTRSessionStoreSaveCompletion)(id<TWTRAuthSession> _Nullable session, NSError *_Nullable error);
 /**
  *  Completion block called when fetching all stored user sessions completes or fails.
  *
@@ -73,7 +73,7 @@ typedef void (^TWTRSessionStoreDeleteCompletion)(id<TWTRAuthSession> _Nullable s
 /**
  *  Protocol for session store that manages user sessions.
  */
-@protocol TWTRUserSessionStore <NSObject>
+@protocol TWTRUserSessionStore<NSObject>
 /**
  *  Saves the existing session to the store after validations.
  *
@@ -121,11 +121,11 @@ typedef void (^TWTRSessionStoreDeleteCompletion)(id<TWTRAuthSession> _Nullable s
  *  @param guestSession The retrieved guest session
  *  @param error        Error that will be non nil if the save request fails.
  */
-typedef void (^TWTRSessionGuestLogInCompletion)(TWTRGuestSession * _Nullable guestSession, NSError * _Nullable error);
+typedef void (^TWTRSessionGuestLogInCompletion)(TWTRGuestSession *_Nullable guestSession, NSError *_Nullable error);
 /**
  *  Protocol for session stores that can manage guest sessions.
  */
-@protocol TWTRGuestSessionStore <NSObject>
+@protocol TWTRGuestSessionStore<NSObject>
 /**
  *  Log in as a guest user and return the guest session. This can be used when the user is not a Twitter user.
  *
@@ -139,11 +139,11 @@ typedef void (^TWTRSessionGuestLogInCompletion)(TWTRGuestSession * _Nullable gue
 /**
  *  Convenience composite protocol of a store that handles user, guest, and refreshable sessions.
  */
-@protocol TWTRSessionStore <TWTRUserSessionStore, TWTRGuestSessionStore, TWTRSessionRefreshingStore>
+@protocol TWTRSessionStore<TWTRUserSessionStore, TWTRGuestSessionStore, TWTRSessionRefreshingStore>
 /**
  *  Returns the store's auth config.
  */
-@property (nonatomic, readonly) TWTRAuthConfig *authConfig;
+@property(nonatomic, readonly) TWTRAuthConfig *authConfig;
 @end
 #pragma mark - Concrete Session Store Class
 /**
@@ -153,22 +153,22 @@ typedef void (^TWTRSessionGuestLogInCompletion)(TWTRGuestSession * _Nullable gue
  *  @warning Instances of the session manager at the same path are not synchronized. The session store
  *  will simply choose the latest version in the case of conflicts.
  */
-@interface TWTRSessionStore : NSObject <TWTRSessionStore>
+@interface TWTRSessionStore : NSObject<TWTRSessionStore>
 - (instancetype)init NS_UNAVAILABLE;
 /**
  * Provides a mechanism for reloading the session store. This method will force the session store
- * to find any sessions that may have been saved by another session store or application that is 
+ * to find any sessions that may have been saved by another session store or application that is
  * using the same keychain access groups.
  *
  * Most applications will not need to call this method. You may need to call this method if you are
  * using multiple stores within your application and you need to synchronize when one writes to the
  * store. The more likely case for needing to call this method is if you are sharing credentials
  * between applications. In this situation you will want to call this method when the application
- * comes back to the foreground. 
- * 
+ * comes back to the foreground.
+ *
  * This method does not need to be called when the store is created because this process happens
  * by default at time of instantiation.
- * 
+ *
  * You should avoid calling this method if you do not have a specific reason to do so, like the reasons
  * mentioned above as this method does cause disk I/O and multiple calls can cause performance problems.
  */

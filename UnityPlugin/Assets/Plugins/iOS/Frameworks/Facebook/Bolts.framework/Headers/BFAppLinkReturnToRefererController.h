@@ -16,30 +16,27 @@
  Protocol that a class can implement in order to be notified when the user has navigated back
  to the referer of an App Link.
  */
-@protocol BFAppLinkReturnToRefererControllerDelegate <NSObject>
+@protocol BFAppLinkReturnToRefererControllerDelegate<NSObject>
 @optional
 /*! Called when the user has tapped to navigate, but before the navigation has been performed. */
-- (void)returnToRefererController:(BFAppLinkReturnToRefererController *)controller
-            willNavigateToAppLink:(BFAppLink *)appLink;
+- (void)returnToRefererController:(BFAppLinkReturnToRefererController *)controller willNavigateToAppLink:(BFAppLink *)appLink;
 /*! Called after the navigation has been attempted, with an indication of whether the referer
  app link was successfully opened. */
-- (void)returnToRefererController:(BFAppLinkReturnToRefererController *)controller
-             didNavigateToAppLink:(BFAppLink *)url
-                             type:(BFAppLinkNavigationType)type;
+- (void)returnToRefererController:(BFAppLinkReturnToRefererController *)controller didNavigateToAppLink:(BFAppLink *)url type:(BFAppLinkNavigationType)type;
 @end
 /*!
  A controller class that implements default behavior for a BFAppLinkReturnToRefererView, including
  the ability to display the view above the navigation bar for navigation-based apps.
  */
-@interface BFAppLinkReturnToRefererController : NSObject <BFAppLinkReturnToRefererViewDelegate>
+@interface BFAppLinkReturnToRefererController : NSObject<BFAppLinkReturnToRefererViewDelegate>
 /*!
  The delegate that will be notified when the user navigates back to the referer.
  */
-@property (nonatomic, weak) id<BFAppLinkReturnToRefererControllerDelegate> delegate;
+@property(nonatomic, weak) id<BFAppLinkReturnToRefererControllerDelegate> delegate;
 /*!
  The BFAppLinkReturnToRefererView this controller is controlling.
  */
-@property (nonatomic, strong) BFAppLinkReturnToRefererView *view;
+@property(nonatomic, strong) BFAppLinkReturnToRefererView *view;
 /*!
  Initializes a controller suitable for controlling a BFAppLinkReturnToRefererView that is to be displayed
  contained within another UIView (i.e., not displayed above the navigation bar).

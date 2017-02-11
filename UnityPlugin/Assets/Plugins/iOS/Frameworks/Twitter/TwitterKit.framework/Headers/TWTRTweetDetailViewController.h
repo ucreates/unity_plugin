@@ -19,46 +19,46 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * The Tweet being displayed.
  */
-@property (nonatomic, readonly) TWTRTweet *tweet;
+@property(nonatomic, readonly) TWTRTweet *tweet;
 /**
  * The delegate for this view controller.
  */
-@property (nonatomic, weak) id<TWTRTweetDetailViewControllerDelegate> delegate;
+@property(nonatomic, weak) id<TWTRTweetDetailViewControllerDelegate> delegate;
 /**
  * The scroll view which is the root view of the view controller.
  * This view is exposed to allow for the adjustment of the scroll view's
  * contentInset or to interact with the scroll view's gesture recognizers.
  */
-@property (nonatomic, readonly) UIScrollView *scrollView;
+@property(nonatomic, readonly) UIScrollView *scrollView;
 /**
  * The background color of the view.
  */
-@property (nonatomic, null_resettable) UIColor *backgroundColor;
+@property(nonatomic, null_resettable) UIColor *backgroundColor;
 /**
- * The primary text color. This value will be applied to the 
+ * The primary text color. This value will be applied to the
  * username and tweet text.
  */
-@property (nonatomic, null_resettable) UIColor *primaryTextColor;
+@property(nonatomic, null_resettable) UIColor *primaryTextColor;
 /**
  * The secondary text color.
  */
-@property (nonatomic, null_resettable) UIColor *secondaryTextColor;
+@property(nonatomic, null_resettable) UIColor *secondaryTextColor;
 /**
  * A color to apply to links.
  */
-@property (nonatomic, null_resettable) UIColor *linkTextColor;
+@property(nonatomic, null_resettable) UIColor *linkTextColor;
 /**
  * A value indicating the amount that the action bar should be offset
  * from the bottom of the bar. A positive amount will move the view up
  * while a negative amount will move it down.
  */
-@property (nonatomic) CGFloat actionBarInset;
+@property(nonatomic) CGFloat actionBarInset;
 /**
  * Initializes the receiver with the given tweet.
  */
 - (instancetype)initWithTweet:(TWTRTweet *)tweet;
 @end
-@protocol TWTRTweetDetailViewControllerDelegate <NSObject>
+@protocol TWTRTweetDetailViewControllerDelegate<NSObject>
 @optional
 /**
  *  called when a URL in the text of a tweet was tapped. Implement to show your own webview rather than opening Safari.

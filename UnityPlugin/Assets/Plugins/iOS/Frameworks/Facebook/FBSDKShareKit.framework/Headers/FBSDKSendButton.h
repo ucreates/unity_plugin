@@ -23,5 +23,5 @@
  Tapping the receiver will invoke the FBSDKShareDialog with the attached shareContent.  If the dialog cannot
  be shown, the button will be disable.
  */
-@interface FBSDKSendButton : FBSDKButton <FBSDKSharingButton>
+@interface FBSDKSendButton : FBSDKButton<FBSDKSharingButton>
 @end

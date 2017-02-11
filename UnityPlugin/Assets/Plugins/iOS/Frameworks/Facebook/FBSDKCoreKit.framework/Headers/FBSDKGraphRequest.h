@@ -37,17 +37,14 @@
  - Parameter graphPath: the graph path (e.g., @"me").
  - Parameter parameters: the optional parameters dictionary.
  */
-- (instancetype)initWithGraphPath:(NSString *)graphPath
-                       parameters:(NSDictionary *)parameters;
+- (instancetype)initWithGraphPath:(NSString *)graphPath parameters:(NSDictionary *)parameters;
 /**
   Initializes a new instance that use use `[FBSDKAccessToken currentAccessToken]`.
  - Parameter graphPath: the graph path (e.g., @"me").
  - Parameter parameters: the optional parameters dictionary.
  - Parameter HTTPMethod: the optional HTTP method. nil defaults to @"GET".
  */
-- (instancetype)initWithGraphPath:(NSString *)graphPath
-                       parameters:(NSDictionary *)parameters
-                       HTTPMethod:(NSString *)HTTPMethod;
+- (instancetype)initWithGraphPath:(NSString *)graphPath parameters:(NSDictionary *)parameters HTTPMethod:(NSString *)HTTPMethod;
 /**
   Initializes a new instance.
  - Parameter graphPath: the graph path (e.g., @"me").
@@ -56,32 +53,27 @@
  - Parameter version: the optional Graph API version (e.g., @"v2.0"). nil defaults to `[FBSDKSettings graphAPIVersion]`.
  - Parameter HTTPMethod: the optional HTTP method (e.g., @"POST"). nil defaults to @"GET".
  */
-- (instancetype)initWithGraphPath:(NSString *)graphPath
-                       parameters:(NSDictionary *)parameters
-                      tokenString:(NSString *)tokenString
-                          version:(NSString *)version
-                       HTTPMethod:(NSString *)HTTPMethod
-NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithGraphPath:(NSString *)graphPath parameters:(NSDictionary *)parameters tokenString:(NSString *)tokenString version:(NSString *)version HTTPMethod:(NSString *)HTTPMethod NS_DESIGNATED_INITIALIZER;
 /**
   The request parameters.
  */
-@property (nonatomic, strong, readonly) NSMutableDictionary *parameters;
+@property(nonatomic, strong, readonly) NSMutableDictionary *parameters;
 /**
   The access token string used by the request.
  */
-@property (nonatomic, copy, readonly) NSString *tokenString;
+@property(nonatomic, copy, readonly) NSString *tokenString;
 /**
   The Graph API endpoint to use for the request, for example "me".
  */
-@property (nonatomic, copy, readonly) NSString *graphPath;
+@property(nonatomic, copy, readonly) NSString *graphPath;
 /**
   The HTTPMethod to use for the request, for example "GET" or "POST".
  */
-@property (nonatomic, copy, readonly) NSString *HTTPMethod;
+@property(nonatomic, copy, readonly) NSString *HTTPMethod;
 /**
   The Graph API version to use (e.g., "v2.0")
  */
-@property (nonatomic, copy, readonly) NSString *version;
+@property(nonatomic, copy, readonly) NSString *version;
 /**
   If set, disables the automatic error recovery mechanism.
  - Parameter disable: whether to disable the automatic error recovery mechanism

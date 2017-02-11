@@ -23,7 +23,7 @@
   An Open Graph Action for sharing.
  The property keys MUST have namespaces specified on them, such as `og:image`.
  */
-@interface FBSDKShareOpenGraphAction : FBSDKShareOpenGraphValueContainer <FBSDKCopying, NSSecureCoding>
+@interface FBSDKShareOpenGraphAction : FBSDKShareOpenGraphValueContainer<FBSDKCopying, NSSecureCoding>
 /**
   Convenience method to build a new action and set the object for the specified key.
  - Parameter actionType: The action type of the receiver
@@ -49,7 +49,7 @@
   Gets the action type.
  - Returns: The action type
  */
-@property (nonatomic, copy) NSString *actionType;
+@property(nonatomic, copy) NSString *actionType;
 /**
   Compares the receiver to another Open Graph Action.
  - Parameter action: The other action

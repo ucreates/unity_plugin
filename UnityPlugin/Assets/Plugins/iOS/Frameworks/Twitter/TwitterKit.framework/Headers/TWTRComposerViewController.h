@@ -11,18 +11,18 @@
 @protocol TWTRComposerViewControllerDelegate;
 NS_ASSUME_NONNULL_BEGIN
 @interface TWTRComposerViewController : UIViewController
-@property (nonatomic, weak, nullable) id<TWTRComposerViewControllerDelegate> delegate;
+@property(nonatomic, weak, nullable) id<TWTRComposerViewControllerDelegate> delegate;
 /**
  * A theme to use for the composer. If nil will default to the light theme.
  */
-@property (nonatomic, null_resettable) TWTRComposerTheme *theme;
+@property(nonatomic, null_resettable) TWTRComposerTheme *theme;
 /**
  * An array of hashtags that will be added to the composer. This property must be
  * set before the composer's view is loaded. If any hashtags are not valid they will
  * be ignored.
  * Hashtags must come in the form @[@"#fabric", @"#twitter"].
  */
-@property (nonatomic, copy, nullable) NSArray *hashtags;
+@property(nonatomic, copy, nullable) NSArray *hashtags;
 /**
  * Use initWithUserID: instead.
  */
@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithUserID:(NSString *)userID cardConfiguration:(nullable TWTRCardConfiguration *)cardConfig;
 @end
-@protocol TWTRComposerViewControllerDelegate <NSObject>
+@protocol TWTRComposerViewControllerDelegate<NSObject>
 @optional
 /**
  * Called when the user taps the cancel button. This method will be called after the view controller is dismissed.
@@ -53,7 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)composerDidSucceed:(TWTRComposerViewController *)controller withTweet:(TWTRTweet *)tweet;
 /**
- * This method is called if the composer is not able to send the Tweet. 
+ * This method is called if the composer is not able to send the Tweet.
  * The view controller will not be dismissed automatically if this method is called.
  */
 - (void)composerDidFail:(TWTRComposerViewController *)controller withError:(NSError *)error;

@@ -28,15 +28,13 @@ FBSDK_EXTERN NSString *const FBSDKAppEventsOverrideAppIDBundleKey;
  NS_ENUM (NSUInteger, FBSDKAppEventsFlushBehavior)
   Specifies when `FBSDKAppEvents` sends log events to the server.
  */
-typedef NS_ENUM(NSUInteger, FBSDKAppEventsFlushBehavior)
-{
-  /** Flush automatically: periodically (once a minute or every 100 logged events) and always at app reactivation. */
-  FBSDKAppEventsFlushBehaviorAuto = 0,
-  /** Only flush when the `flush` method is called. When an app is moved to background/terminated, the
-   events are persisted and re-established at activation, but they will only be written with an
-   explicit call to `flush`. */
-  FBSDKAppEventsFlushBehaviorExplicitOnly,
-};
+typedef NS_ENUM(NSUInteger, FBSDKAppEventsFlushBehavior) {
+    /** Flush automatically: periodically (once a minute or every 100 logged events) and always at app reactivation. */
+    FBSDKAppEventsFlushBehaviorAuto = 0,
+    /** Only flush when the `flush` method is called. When an app is moved to background/terminated, the
+     events are persisted and re-established at activation, but they will only be written with an
+     explicit call to `flush`. */
+    FBSDKAppEventsFlushBehaviorExplicitOnly, };
 /**
  @methodgroup Predefined event names for logging events common to many apps.  Logging occurs through the `logEvent` family of methods on `FBSDKAppEvents`.
  Common event parameters are provided in the `FBSDKAppEventsParameterNames*` constants.
@@ -148,8 +146,7 @@ FBSDK_EXTERN NSString *const FBSDKAppEventParameterValueNo;
  - Parameter valueToSum:  Amount to be aggregated into all events of this eventName, and App Insights will report
  the cumulative and average value of this amount.
  */
-+ (void)logEvent:(NSString *)eventName
-      valueToSum:(double)valueToSum;
++ (void)logEvent:(NSString *)eventName valueToSum:(double)valueToSum;
 /**
   Log an event with an eventName and a set of key/value pairs in the parameters dictionary.
  Parameter limitations are described above.
@@ -160,8 +157,7 @@ FBSDK_EXTERN NSString *const FBSDKAppEventParameterValueNo;
  parameters and name construction are given in the `FBSDKAppEvents` documentation.  Commonly used parameter names
  are provided in `FBSDKAppEventParameterName*` constants.
  */
-+ (void)logEvent:(NSString *)eventName
-      parameters:(NSDictionary *)parameters;
++ (void)logEvent:(NSString *)eventName parameters:(NSDictionary *)parameters;
 /**
   Log an event with an eventName, a numeric value to be aggregated with other events of this name,
  and a set of key/value pairs in the parameters dictionary.
@@ -174,9 +170,7 @@ FBSDK_EXTERN NSString *const FBSDKAppEventParameterValueNo;
  parameters and name construction are given in the `FBSDKAppEvents` documentation.  Commonly used parameter names
  are provided in `FBSDKAppEventParameterName*` constants.
  */
-+ (void)logEvent:(NSString *)eventName
-      valueToSum:(double)valueToSum
-      parameters:(NSDictionary *)parameters;
++ (void)logEvent:(NSString *)eventName valueToSum:(double)valueToSum parameters:(NSDictionary *)parameters;
 /**
   Log an event with an eventName, a numeric value to be aggregated with other events of this name,
  and a set of key/value pairs in the parameters dictionary.  Providing session lets the developer
@@ -192,10 +186,7 @@ FBSDK_EXTERN NSString *const FBSDKAppEventParameterValueNo;
  are provided in `FBSDKAppEventParameterName*` constants.
  - Parameter accessToken:  The optional access token to log the event as.
  */
-+ (void)logEvent:(NSString *)eventName
-      valueToSum:(NSNumber *)valueToSum
-      parameters:(NSDictionary *)parameters
-     accessToken:(FBSDKAccessToken *)accessToken;
++ (void)logEvent:(NSString *)eventName valueToSum:(NSNumber *)valueToSum parameters:(NSDictionary *)parameters accessToken:(FBSDKAccessToken *)accessToken;
 /*
  * Purchase logging
  */
@@ -208,8 +199,7 @@ FBSDK_EXTERN NSString *const FBSDKAppEventParameterValueNo;
               This event immediately triggers a flush of the `FBSDKAppEvents` event queue, unless the `flushBehavior` is set
  to `FBSDKAppEventsFlushBehaviorExplicitOnly`.
  */
-+ (void)logPurchase:(double)purchaseAmount
-           currency:(NSString *)currency;
++ (void)logPurchase:(double)purchaseAmount currency:(NSString *)currency;
 /**
   Log a purchase of the specified amount, in the specified currency, also providing a set of
  additional characteristics describing the purchase.
@@ -224,9 +214,7 @@ FBSDK_EXTERN NSString *const FBSDKAppEventParameterValueNo;
               This event immediately triggers a flush of the `FBSDKAppEvents` event queue, unless the `flushBehavior` is set
  to `FBSDKAppEventsFlushBehaviorExplicitOnly`.
  */
-+ (void)logPurchase:(double)purchaseAmount
-           currency:(NSString *)currency
-         parameters:(NSDictionary *)parameters;
++ (void)logPurchase:(double)purchaseAmount currency:(NSString *)currency parameters:(NSDictionary *)parameters;
 /**
   Log a purchase of the specified amount, in the specified currency, also providing a set of
  additional characteristics describing the purchase, as well as an <FBSession> to log to.
@@ -242,10 +230,7 @@ FBSDK_EXTERN NSString *const FBSDKAppEventParameterValueNo;
             This event immediately triggers a flush of the `FBSDKAppEvents` event queue, unless the `flushBehavior` is set
  to `FBSDKAppEventsFlushBehaviorExplicitOnly`.
  */
-+ (void)logPurchase:(double)purchaseAmount
-           currency:(NSString *)currency
-         parameters:(NSDictionary *)parameters
-        accessToken:(FBSDKAccessToken *)accessToken;
++ (void)logPurchase:(double)purchaseAmount currency:(NSString *)currency parameters:(NSDictionary *)parameters accessToken:(FBSDKAccessToken *)accessToken;
 /*
  * Push Notifications Logging
  */

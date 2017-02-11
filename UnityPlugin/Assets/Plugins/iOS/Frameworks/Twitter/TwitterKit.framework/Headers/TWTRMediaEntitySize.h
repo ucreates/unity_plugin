@@ -6,25 +6,22 @@
 //
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
-typedef NS_ENUM(NSUInteger, TWTRMediaEntitySizeResizingMode) {
-    TWTRMediaEntitySizeResizingModeFit,
-    TWTRMediaEntitySizeResizingModeCrop,
-};
+typedef NS_ENUM(NSUInteger, TWTRMediaEntitySizeResizingMode) {TWTRMediaEntitySizeResizingModeFit, TWTRMediaEntitySizeResizingModeCrop, };
 FOUNDATION_EXPORT NSString *NSStringFromTWTRMediaEntitySizeResizingMode(TWTRMediaEntitySizeResizingMode resizingMode);
 FOUNDATION_EXPORT TWTRMediaEntitySizeResizingMode TWTRMediaEntitySizeResizingModeFromString(NSString *resizingModeString);
-@interface TWTRMediaEntitySize : NSObject <NSCoding>
+@interface TWTRMediaEntitySize : NSObject<NSCoding>
 /**
  * The name of the size. 'large', 'medium', etc.
  */
-@property (nonatomic, copy, readonly) NSString *name;
+@property(nonatomic, copy, readonly) NSString *name;
 /**
  * Resize mode of the image size e.g. Fit, Crop.
  */
-@property (nonatomic, readonly) TWTRMediaEntitySizeResizingMode resizingMode;
+@property(nonatomic, readonly) TWTRMediaEntitySizeResizingMode resizingMode;
 /**
  * The actual size.
  */
-@property (nonatomic, readonly) CGSize size;
+@property(nonatomic, readonly) CGSize size;
 - (instancetype)init NS_UNAVAILABLE;
 /**
  *  Designated initializer.

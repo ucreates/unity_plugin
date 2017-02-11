@@ -10,7 +10,7 @@
 import CoreData
 import FBSDKCoreKit
 import UIKit
-class UnityiOSPluginAppDelegate: NSObject {
+open class UnityiOSPluginAppDelegate: NSObject {
     @objc
     open class func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)

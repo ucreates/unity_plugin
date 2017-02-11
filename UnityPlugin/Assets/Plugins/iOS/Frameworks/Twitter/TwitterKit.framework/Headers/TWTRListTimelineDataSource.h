@@ -14,33 +14,33 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @see https://dev.twitter.com/rest/reference/get/lists/statuses
  */
-@interface TWTRListTimelineDataSource : NSObject <TWTRTimelineDataSource>
+@interface TWTRListTimelineDataSource : NSObject<TWTRTimelineDataSource>
 /**
  *  The ID of the list to show Tweets for. Either the `listID` or the `listSlug` and `listOwnerScreenName` are required.
  */
-@property (nonatomic, copy, readonly) NSString *listID;
+@property(nonatomic, copy, readonly) NSString *listID;
 /**
  *  The slug of the list to show Tweets for. Either the `listID` or the `listSlug` and `listOwnerScreenName` are required.
  */
-@property (nonatomic, copy, readonly) NSString *listSlug;
+@property(nonatomic, copy, readonly) NSString *listSlug;
 /**
  *  Screen name of the owner of the list as specified by the `listSlug`. Either the `listID` or the `listSlug` and `listOwnerScreenName` are required.
  */
-@property (nonatomic, copy, readonly) NSString *listOwnerScreenName;
+@property(nonatomic, copy, readonly) NSString *listOwnerScreenName;
 /**
  *  The number of Tweets to request in each query to the Twitter Timeline API when fetching the next batch of Tweets. Will request 30 Tweets by default. Setting this value to 0 will use the server default.
  */
-@property (nonatomic, readonly) NSUInteger maxTweetsPerRequest;
+@property(nonatomic, readonly) NSUInteger maxTweetsPerRequest;
 /**
  *  Whether to request retweets in the set of Tweets from the server.
  *
  *  Defaults to YES.
  */
-@property (nonatomic, readonly) BOOL includeRetweets;
+@property(nonatomic, readonly) BOOL includeRetweets;
 /*
  *  A filtering object that hides certain tweets.
  */
-@property (nonatomic, copy, nullable) TWTRTimelineFilter *timelineFilter;
+@property(nonatomic, copy, nullable) TWTRTimelineFilter *timelineFilter;
 /**
  *  Convenience initializer. Uses default values for `maxTweetsPerRequest` and `includeRetweets`.
  *
@@ -72,7 +72,12 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return A fully initialized list timeline datasource.
  */
-- (instancetype)initWithListID:(nullable NSString *)listID listSlug:(nullable NSString *)listSlug listOwnerScreenName:(nullable NSString *)listOwnerScreenName APIClient:(TWTRAPIClient *)client maxTweetsPerRequest:(NSUInteger)maxTweetsPerRequest includeRetweets:(BOOL)includeRetweets NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithListID:(nullable NSString *)listID
+                      listSlug:(nullable NSString *)listSlug
+           listOwnerScreenName:(nullable NSString *)listOwnerScreenName
+                     APIClient:(TWTRAPIClient *)client
+           maxTweetsPerRequest:(NSUInteger)maxTweetsPerRequest
+               includeRetweets:(BOOL)includeRetweets NS_DESIGNATED_INITIALIZER;
 - (instancetype)init NS_UNAVAILABLE;
 @end
 NS_ASSUME_NONNULL_END

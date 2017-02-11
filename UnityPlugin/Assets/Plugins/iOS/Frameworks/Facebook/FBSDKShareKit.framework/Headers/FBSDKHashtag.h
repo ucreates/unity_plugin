@@ -20,7 +20,7 @@
 /**
   Represents a single hashtag that can be used with the share dialog.
  */
-@interface FBSDKHashtag : NSObject <FBSDKCopying, NSSecureCoding>
+@interface FBSDKHashtag : NSObject<FBSDKCopying, NSSecureCoding>
 /**
   Convenience method to build a new hashtag with a string identifier. Equivalent to setting the
    `stringRepresentation` property.
@@ -34,14 +34,14 @@
    `valid` property.
  - Returns: The hashtag string.
  */
-@property (nonatomic, readwrite, copy) NSString *stringRepresentation;
+@property(nonatomic, readwrite, copy) NSString *stringRepresentation;
 /**
   Tests if a hashtag is valid.
  A valid hashtag matches the regular expression "#\w+": A single '#' followed by one or more
    word characters.
  - Returns: YES if the hashtag is valid, NO otherwise.
  */
-@property (nonatomic, readonly, assign, getter=isValid) BOOL valid;
+@property(nonatomic, readonly, assign, getter=isValid) BOOL valid;
 /**
   Compares the receiver to another hashtag.
  - Parameter hashtag: The other hashtag

@@ -12,16 +12,12 @@
 #import <Bolts/BFAppLinkNavigation.h>
 @class BFAppLinkReturnToRefererView;
 @class BFURL;
-typedef NS_ENUM(NSUInteger, BFIncludeStatusBarInSize) {
-    BFIncludeStatusBarInSizeNever,
-    BFIncludeStatusBarInSizeIOS7AndLater,
-    BFIncludeStatusBarInSizeAlways,
-};
+typedef NS_ENUM(NSUInteger, BFIncludeStatusBarInSize) {BFIncludeStatusBarInSizeNever, BFIncludeStatusBarInSizeIOS7AndLater, BFIncludeStatusBarInSizeAlways, };
 /*!
  Protocol that a class can implement in order to be notified when the user has navigated back
  to the referer of an App Link.
  */
-@protocol BFAppLinkReturnToRefererViewDelegate <NSObject>
+@protocol BFAppLinkReturnToRefererViewDelegate<NSObject>
 /*!
  Called when the user has tapped inside the close button.
  */
@@ -29,8 +25,7 @@ typedef NS_ENUM(NSUInteger, BFIncludeStatusBarInSize) {
 /*!
  Called when the user has tapped inside the App Link portion of the view.
  */
-- (void)returnToRefererViewDidTapInsideLink:(BFAppLinkReturnToRefererView *)view
-                                       link:(BFAppLink *)link;
+- (void)returnToRefererViewDidTapInsideLink:(BFAppLinkReturnToRefererView *)view link:(BFAppLink *)link;
 @end
 /*!
  Provides a UIView that displays a button allowing users to navigate back to the
@@ -43,20 +38,20 @@ typedef NS_ENUM(NSUInteger, BFIncludeStatusBarInSize) {
 /*!
  The delegate that will be notified when the user navigates back to the referer.
  */
-@property (nonatomic, weak) id<BFAppLinkReturnToRefererViewDelegate> delegate;
+@property(nonatomic, weak) id<BFAppLinkReturnToRefererViewDelegate> delegate;
 /*!
  The color of the text label and close button.
  */
-@property (nonatomic, strong) UIColor *textColor;
-@property (nonatomic, strong) BFAppLink *refererAppLink;
+@property(nonatomic, strong) UIColor *textColor;
+@property(nonatomic, strong) BFAppLink *refererAppLink;
 /*!
  Indicates whether to extend the size of the view to include the current status bar
  size, for use in scenarios where the view might extend under the status bar on iOS 7 and
  above; this property has no effect on earlier versions of iOS.
  */
-@property (nonatomic, assign) BFIncludeStatusBarInSize includeStatusBarInSize;
+@property(nonatomic, assign) BFIncludeStatusBarInSize includeStatusBarInSize;
 /*!
  Indicates whether the user has closed the view by clicking the close button.
  */
-@property (nonatomic, assign) BOOL closed;
+@property(nonatomic, assign) BOOL closed;
 @end

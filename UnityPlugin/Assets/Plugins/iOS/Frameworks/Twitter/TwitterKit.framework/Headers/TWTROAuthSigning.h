@@ -10,7 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  This class provides tools to generate OAuth signatures.
  */
-@interface TWTROAuthSigning : NSObject <TWTRCoreOAuthSigning>
+@interface TWTROAuthSigning : NSObject<TWTRCoreOAuthSigning>
 /**
  *  @name Initialization
  */

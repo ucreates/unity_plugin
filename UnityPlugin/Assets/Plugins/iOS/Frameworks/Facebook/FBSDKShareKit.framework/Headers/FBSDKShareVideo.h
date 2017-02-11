@@ -21,7 +21,7 @@
 /**
   A video for sharing.
  */
-@interface FBSDKShareVideo : NSObject <FBSDKCopying, NSSecureCoding>
+@interface FBSDKShareVideo : NSObject<FBSDKCopying, NSSecureCoding>
 /**
   Convenience method to build a new video object with a videoURL.
  - Parameter videoURL: The URL to the video
@@ -37,12 +37,12 @@
   The file URL to the video.
  - Returns: URL that points to the location of the video on disk
  */
-@property (nonatomic, copy) NSURL *videoURL;
+@property(nonatomic, copy) NSURL *videoURL;
 /**
   The photo that represents the video.
  - Returns: The photo
  */
-@property (nonatomic, copy) FBSDKSharePhoto *previewPhoto;
+@property(nonatomic, copy) FBSDKSharePhoto *previewPhoto;
 /**
   Compares the receiver to another video.
  - Parameter video: The other video

@@ -20,7 +20,7 @@
 /**
   A dialog for sharing content through Messenger.
  */
-@interface FBSDKMessageDialog : NSObject <FBSDKSharingDialog>
+@interface FBSDKMessageDialog : NSObject<FBSDKSharingDialog>
 /**
   Convenience method to show a Message Share Dialog with content and a delegate.
  - Parameter content: The content to be shared.

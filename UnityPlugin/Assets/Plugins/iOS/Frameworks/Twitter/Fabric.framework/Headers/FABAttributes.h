@@ -19,16 +19,16 @@
 #pragma once
 #define FAB_UNAVAILABLE(x) __attribute__((unavailable(x)))
 #if !__has_feature(nullability)
-    #define nonnull
-    #define nullable
-    #define _Nullable
-    #define _Nonnull
+#define nonnull
+#define nullable
+#define _Nullable
+#define _Nonnull
 #endif
 #ifndef NS_ASSUME_NONNULL_BEGIN
-    #define NS_ASSUME_NONNULL_BEGIN
+#define NS_ASSUME_NONNULL_BEGIN
 #endif
 #ifndef NS_ASSUME_NONNULL_END
-    #define NS_ASSUME_NONNULL_END
+#define NS_ASSUME_NONNULL_END
 #endif
 /**
  * The following macros are defined here to provide
@@ -36,9 +36,9 @@
  * them you should migrate to the native nullability
  * macros.
  */
-#define fab_nullable      nullable
-#define fab_nonnull       nonnull
-#define FAB_NONNULL       __fab_nonnull
-#define FAB_NULLABLE      __fab_nullable
+#define fab_nullable nullable
+#define fab_nonnull nonnull
+#define FAB_NONNULL __fab_nonnull
+#define FAB_NULLABLE __fab_nullable
 #define FAB_START_NONNULL NS_ASSUME_NONNULL_BEGIN
-#define FAB_END_NONNULL   NS_ASSUME_NONNULL_END
+#define FAB_END_NONNULL NS_ASSUME_NONNULL_END

@@ -9,7 +9,7 @@
 //======================================================================
 import UIKit
 import StoreKit
-class PaymentServicePlugin: NSObject {
+open class PaymentServicePlugin: NSObject {
     fileprivate static let VERIFY_RECIPT_URL: String = "https://buy.itunes.apple.com/verifyReceipt"
     fileprivate var downloadProgress: Float?
     fileprivate var downloadAssetPath: String?

@@ -30,44 +30,44 @@ Data source representing a Search Timeline. Provides TWTRTweet objects to a TWTR
   @see https://dev.twitter.com/rest/public/search
   Not implemented: `result_type`
  */
-@interface TWTRSearchTimelineDataSource : NSObject <TWTRTimelineDataSource>
+@interface TWTRSearchTimelineDataSource : NSObject<TWTRTimelineDataSource>
 /**
  *  The search query. This matches what you would type into https://twitter.com/search
  */
-@property (nonatomic, copy, readonly) NSString *searchQuery;
+@property(nonatomic, copy, readonly) NSString *searchQuery;
 /**
  *  Restricts tweets returned to a given language, specified by its ISO 639-1 code (for example: en, es). Language detection is best-effort. The server defaults to returning Tweets in all languages.
  *
  *  @see http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
  */
-@property (nonatomic, copy, readonly, nullable) NSString *languageCode;
+@property(nonatomic, copy, readonly, nullable) NSString *languageCode;
 /**
  *  The number of Tweets to request in each network request for more Tweets. By default requests 30 tweets. If set to `0` the parameter will not be set on the request and the Twitter API will use the default size for the endpoint.
  */
-@property (nonatomic, readonly) NSUInteger maxTweetsPerRequest;
+@property(nonatomic, readonly) NSUInteger maxTweetsPerRequest;
 /**
  *  The geocode details to narrow search results. The format is "latitude,longitude,radius" e.g. "37.781157,-122.398720,1mi"
  *
  *  @see https://dev.twitter.com/rest/public/search
  */
-@property (nonatomic, copy, nullable) NSString *geocodeSpecifier;
+@property(nonatomic, copy, nullable) NSString *geocodeSpecifier;
 /**
- *  Only search top-ranked Tweets. When debugging, you may want to turn this off in order to 
+ *  Only search top-ranked Tweets. When debugging, you may want to turn this off in order to
  *  show new and unfiltered Tweets.
  *
  *  Default to YES.
  */
-@property (nonatomic) BOOL topTweetsOnly;
+@property(nonatomic) BOOL topTweetsOnly;
 /**
- *  Filter out sensitive (containing nudity or violence) tweets. 
+ *  Filter out sensitive (containing nudity or violence) tweets.
  *
  *  Defaults to YES.
  */
-@property (nonatomic) BOOL filterSensitiveTweets;
+@property(nonatomic) BOOL filterSensitiveTweets;
 /*
  *  A filtering object that hides certain tweets.
  */
-@property (nonatomic, copy, nullable) TWTRTimelineFilter *timelineFilter;
+@property(nonatomic, copy, nullable) TWTRTimelineFilter *timelineFilter;
 /**
  *  Convenience initializer. Uses default values for `languageCode` and `maxTweetsPerRequest`.
  *

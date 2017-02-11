@@ -6,15 +6,15 @@
 #import <Foundation/Foundation.h>
 #import <TwitterKit/TWTRJSONConvertible.h>
 NS_ASSUME_NONNULL_BEGIN
-@interface TWTRTweetEntity : NSObject <NSCoding, NSCopying, TWTRJSONConvertible>
+@interface TWTRTweetEntity : NSObject<NSCoding, NSCopying, TWTRJSONConvertible>
 /**
  * The start index of the entity in code points.
  */
-@property (nonatomic, readonly) NSInteger startIndex;
+@property(nonatomic, readonly) NSInteger startIndex;
 /**
  * The end index of the entity in code points.
  */
-@property (nonatomic, readonly) NSInteger endIndex;
+@property(nonatomic, readonly) NSInteger endIndex;
 /**
  * Initializes the receiver with the given start index and end index.
  */

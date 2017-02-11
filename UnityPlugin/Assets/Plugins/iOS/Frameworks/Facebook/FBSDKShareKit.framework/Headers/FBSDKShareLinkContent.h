@@ -20,31 +20,31 @@
 /**
   A model for status and link content to be shared.
  */
-@interface FBSDKShareLinkContent : NSObject <FBSDKSharingContent>
+@interface FBSDKShareLinkContent : NSObject<FBSDKSharingContent>
 /**
   The description of the link.
  If not specified, this field is automatically populated by information scraped from the contentURL,
  typically the title of the page.  This value may be discarded for specially handled links (ex: iTunes URLs).
  - Returns: The description of the link
  */
-@property (nonatomic, copy) NSString *contentDescription;
+@property(nonatomic, copy) NSString *contentDescription;
 /**
   The title to display for this link.
  This value may be discarded for specially handled links (ex: iTunes URLs).
  - Returns: The link title
  */
-@property (nonatomic, copy) NSString *contentTitle;
+@property(nonatomic, copy) NSString *contentTitle;
 /**
   The URL of a picture to attach to this content.
  - Returns: The network URL of an image
  */
-@property (nonatomic, copy) NSURL *imageURL;
+@property(nonatomic, copy) NSURL *imageURL;
 /**
   Some quote text of the link.
  If specified, the quote text will render with custom styling on top of the link.
  - Returns: The quote text of a link
  */
-@property (nonatomic, copy) NSString *quote;
+@property(nonatomic, copy) NSString *quote;
 /**
   Compares the receiver to another link content.
  - Parameter content: The other content

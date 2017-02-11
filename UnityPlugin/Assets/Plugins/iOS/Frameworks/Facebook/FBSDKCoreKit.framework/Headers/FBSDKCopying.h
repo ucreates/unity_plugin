@@ -20,7 +20,7 @@
   Extension protocol for NSCopying that adds the copy method, which is implemented on NSObject.
  NSObject<NSCopying> implicitly conforms to this protocol.
  */
-@protocol FBSDKCopying <NSCopying, NSObject>
+@protocol FBSDKCopying<NSCopying, NSObject>
 /**
   Implemented by NSObject as a convenience to copyWithZone:.
  - Returns: A copy of the receiver.

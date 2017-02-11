@@ -38,10 +38,7 @@
  - Parameter annotation: The annotation as passed to [UIApplicationDelegate application:openURL:sourceApplication:annotation:].
  - Returns: YES if the url was intended for the Facebook SDK, NO if not.
   */
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation;
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
 /**
   Call this method from the [UIApplicationDelegate application:openURL:options:] method
@@ -52,9 +49,7 @@
  - Parameter options: The options dictionary as passed to [UIApplicationDelegate application:openURL:options:].
  - Returns: YES if the url was intended for the Facebook SDK, NO if not.
  */
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options;
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options;
 #endif
 /**
   Call this method from the [UIApplicationDelegate application:didFinishLaunchingWithOptions:] method

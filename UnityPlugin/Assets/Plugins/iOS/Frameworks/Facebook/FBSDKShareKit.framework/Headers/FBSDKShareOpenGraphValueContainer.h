@@ -22,7 +22,7 @@
   Protocol defining operations on open graph actions and objects.
  The property keys MUST have namespaces specified on them, such as `og:image`.
  */
-@protocol FBSDKShareOpenGraphValueContaining <NSObject, NSSecureCoding>
+@protocol FBSDKShareOpenGraphValueContaining<NSObject, NSSecureCoding>
 /**
   Gets an NSArray out of the receiver.
  - Parameter key: The key for the value
@@ -132,5 +132,5 @@
 /**
   A base class to container Open Graph values.
  */
-@interface FBSDKShareOpenGraphValueContainer : NSObject <FBSDKShareOpenGraphValueContaining>
+@interface FBSDKShareOpenGraphValueContainer : NSObject<FBSDKShareOpenGraphValueContaining>
 @end

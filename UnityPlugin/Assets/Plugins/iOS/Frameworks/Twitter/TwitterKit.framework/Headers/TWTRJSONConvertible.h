@@ -6,7 +6,7 @@
 //
 #import <Foundation/Foundation.h>
 NS_ASSUME_NONNULL_BEGIN
-@protocol TWTRJSONConvertible <NSObject>
+@protocol TWTRJSONConvertible<NSObject>
 /**
  * Initialize the receiver with its JSON object representation.
  *

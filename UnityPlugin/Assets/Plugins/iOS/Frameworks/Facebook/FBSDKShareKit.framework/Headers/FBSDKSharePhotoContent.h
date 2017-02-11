@@ -20,12 +20,12 @@
 /**
   A model for photo content to be shared.
  */
-@interface FBSDKSharePhotoContent : NSObject <FBSDKSharingContent>
+@interface FBSDKSharePhotoContent : NSObject<FBSDKSharingContent>
 /**
   Photos to be shared.
  - Returns: Array of the photos (FBSDKSharePhoto)
  */
-@property (nonatomic, copy) NSArray *photos;
+@property(nonatomic, copy) NSArray *photos;
 /**
   Compares the receiver to another photo content.
  - Parameter content: The other content

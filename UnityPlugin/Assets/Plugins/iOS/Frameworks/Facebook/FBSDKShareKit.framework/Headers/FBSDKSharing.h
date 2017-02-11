@@ -24,21 +24,21 @@
 - See:FBSDKMessageDialog
 - See:FBSDKShareAPI
  */
-@protocol FBSDKSharing <NSObject>
+@protocol FBSDKSharing<NSObject>
 /**
   The receiver's delegate or nil if it doesn't have a delegate.
  */
-@property (nonatomic, weak) id<FBSDKSharingDelegate> delegate;
+@property(nonatomic, weak) id<FBSDKSharingDelegate> delegate;
 /**
   The content to be shared.
  */
-@property (nonatomic, copy) id<FBSDKSharingContent> shareContent;
+@property(nonatomic, copy) id<FBSDKSharingContent> shareContent;
 /**
   A Boolean value that indicates whether the receiver should fail if it finds an error with the share content.
  If NO, the sharer will still be displayed without the data that was mis-configured.  For example, an
  invalid placeID specified on the shareContent would produce a data error.
  */
-@property (nonatomic, assign) BOOL shouldFailOnDataError;
+@property(nonatomic, assign) BOOL shouldFailOnDataError;
 /**
   Validates the content on the receiver.
  - Parameter errorRef: If an error occurs, upon return contains an NSError object that describes the problem.
@@ -49,7 +49,7 @@
 /**
   The common interface for dialogs that initiate sharing.
  */
-@protocol FBSDKSharingDialog <FBSDKSharing>
+@protocol FBSDKSharingDialog<FBSDKSharing>
 /**
   A Boolean value that indicates whether the receiver can initiate a share.
  May return NO if the appropriate Facebook app is not installed and is required or an access token is
@@ -71,7 +71,7 @@
  receive the information.  For example, if the person is not signed into the containing app, the sharer may not be able
  to distinguish between completion of a share and cancellation.
  */
-@protocol FBSDKSharingDelegate <NSObject>
+@protocol FBSDKSharingDelegate<NSObject>
 /**
   Sent to the delegate when the share completes without error or cancellation.
  - Parameter sharer: The FBSDKSharing that completed.

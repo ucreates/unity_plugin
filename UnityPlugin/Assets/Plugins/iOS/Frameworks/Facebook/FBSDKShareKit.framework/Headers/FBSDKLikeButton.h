@@ -26,10 +26,10 @@
  currentAccessToken has "publish_actions" permission and the object is an Open Graph object, then the like can happen
  seamlessly without the fast-app-switch.
  */
-@interface FBSDKLikeButton : FBSDKButton <FBSDKLiking>
+@interface FBSDKLikeButton : FBSDKButton<FBSDKLiking>
 /**
   If YES, a sound is played when the receiver is toggled.
  @default YES
  */
-@property (nonatomic, assign, getter = isSoundEnabled) BOOL soundEnabled;
+@property(nonatomic, assign, getter=isSoundEnabled) BOOL soundEnabled;
 @end

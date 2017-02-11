@@ -26,7 +26,7 @@
  (like NSURLConnection). If you want to use FBSDKShareAPI in a background thread, you must manage the run loop
  yourself.
  */
-@interface FBSDKShareAPI : NSObject <FBSDKSharing>
+@interface FBSDKShareAPI : NSObject<FBSDKSharing>
 /**
   Convenience method to build up a share API with content and a delegate.
  - Parameter content: The content to be shared.
@@ -36,18 +36,18 @@
 /**
   The message the person has provided through the custom dialog that will accompany the share content.
  */
-@property (nonatomic, copy) NSString *message;
+@property(nonatomic, copy) NSString *message;
 /**
   The graph node to which content should be shared.
  */
-@property (nonatomic, copy) NSString *graphNode;
+@property(nonatomic, copy) NSString *graphNode;
 /**
   The access token used when performing a share. The access token must have the "publish_actions"
  permission granted.
  Defaults to [FBSDKAccessToken currentAccessToken]. Setting this to nil will revert the access token to
  [FBSDKAccessToken currentAccessToken].
  */
-@property (nonatomic, strong) FBSDKAccessToken *accessToken;
+@property(nonatomic, strong) FBSDKAccessToken *accessToken;
 /**
   A Boolean value that indicates whether the receiver can send the share.
  May return NO if the appropriate Facebook app is not installed and is required or an access token is

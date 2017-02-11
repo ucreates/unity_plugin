@@ -26,20 +26,17 @@
  - Parameter filename: The filename for the attachment
  - Parameter contentType: The content type for the attachment
  */
-- (instancetype)initWithData:(NSData *)data
-                    filename:(NSString *)filename
-                 contentType:(NSString *)contentType
-NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithData:(NSData *)data filename:(NSString *)filename contentType:(NSString *)contentType NS_DESIGNATED_INITIALIZER;
 /**
   The content type for the attachment.
  */
-@property (nonatomic, copy, readonly) NSString *contentType;
+@property(nonatomic, copy, readonly) NSString *contentType;
 /**
   The attachment data.
  */
-@property (nonatomic, strong, readonly) NSData *data;
+@property(nonatomic, strong, readonly) NSData *data;
 /**
   The filename for the attachment.
  */
-@property (nonatomic, copy, readonly) NSString *filename;
+@property(nonatomic, copy, readonly) NSString *filename;
 @end

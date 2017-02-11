@@ -20,24 +20,20 @@
  FBSDKTooltipViewArrowDirection enum
   Passed on construction to determine arrow orientation.
  */
-typedef NS_ENUM(NSUInteger, FBSDKTooltipViewArrowDirection)
-{
-  /** View is located above given point, arrow is pointing down. */
-  FBSDKTooltipViewArrowDirectionDown = 0,
-  /** View is located below given point, arrow is pointing up. */
-  FBSDKTooltipViewArrowDirectionUp = 1,
-};
+typedef NS_ENUM(NSUInteger, FBSDKTooltipViewArrowDirection) {
+    /** View is located above given point, arrow is pointing down. */
+    FBSDKTooltipViewArrowDirectionDown = 0,
+    /** View is located below given point, arrow is pointing up. */
+    FBSDKTooltipViewArrowDirectionUp = 1, };
 /**
  FBSDKTooltipColorStyle enum
   Passed on construction to determine color styling.
  */
-typedef NS_ENUM(NSUInteger, FBSDKTooltipColorStyle)
-{
-  /** Light blue background, white text, faded blue close button. */
-  FBSDKTooltipColorStyleFriendlyBlue = 0,
-  /** Dark gray background, white text, light gray close button. */
-  FBSDKTooltipColorStyleNeutralGray = 1,
-};
+typedef NS_ENUM(NSUInteger, FBSDKTooltipColorStyle) {
+    /** Light blue background, white text, faded blue close button. */
+    FBSDKTooltipColorStyleFriendlyBlue = 0,
+    /** Dark gray background, white text, light gray close button. */
+    FBSDKTooltipColorStyleNeutralGray = 1, };
 /**
   Tooltip bubble with text in it used to display tips for UI elements,
  with a pointed arrow (to refer to the UI element).
@@ -49,20 +45,20 @@ typedef NS_ENUM(NSUInteger, FBSDKTooltipColorStyle)
  Set this to zero to make the display permanent until explicitly dismissed.
  Defaults to six seconds.
  */
-@property (nonatomic, assign) CFTimeInterval displayDuration;
+@property(nonatomic, assign) CFTimeInterval displayDuration;
 /**
   Gets or sets the color style after initialization.
  Defaults to value passed to -initWithTagline:message:colorStyle:.
  */
-@property (nonatomic, assign) FBSDKTooltipColorStyle colorStyle;
+@property(nonatomic, assign) FBSDKTooltipColorStyle colorStyle;
 /**
   Gets or sets the message.
  */
-@property (nonatomic, copy) NSString *message;
+@property(nonatomic, copy) NSString *message;
 /**
   Gets or sets the optional phrase that comprises the first part of the label (and is highlighted differently).
  */
-@property (nonatomic, copy) NSString *tagline;
+@property(nonatomic, copy) NSString *tagline;
 /**
   Designated initializer.
  - Parameter tagline: First part of the label, that will be highlighted with different color. Can be nil.

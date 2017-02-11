@@ -23,15 +23,13 @@
  NS_ENUM (NSUInteger, FBSDKLikeControlAuxiliaryPosition)
   Specifies the position of the auxiliary view relative to the like button.
  */
-typedef NS_ENUM(NSUInteger, FBSDKLikeControlAuxiliaryPosition)
-{
-  /** The auxiliary view is inline with the like button. */
-  FBSDKLikeControlAuxiliaryPositionInline,
-  /** The auxiliary view is above the like button. */
-  FBSDKLikeControlAuxiliaryPositionTop,
-  /** The auxiliary view is below the like button. */
-  FBSDKLikeControlAuxiliaryPositionBottom,
-};
+typedef NS_ENUM(NSUInteger, FBSDKLikeControlAuxiliaryPosition) {
+    /** The auxiliary view is inline with the like button. */
+    FBSDKLikeControlAuxiliaryPositionInline,
+    /** The auxiliary view is above the like button. */
+    FBSDKLikeControlAuxiliaryPositionTop,
+    /** The auxiliary view is below the like button. */
+    FBSDKLikeControlAuxiliaryPositionBottom, };
 /**
   Converts an FBSDKLikeControlAuxiliaryPosition to an NSString.
  */
@@ -41,15 +39,13 @@ FBSDK_EXTERN NSString *NSStringFromFBSDKLikeControlAuxiliaryPosition(FBSDKLikeCo
   Specifies the horizontal alignment for FBSDKLikeControlStyleStandard with
  FBSDKLikeControlAuxiliaryPositionTop or FBSDKLikeControlAuxiliaryPositionBottom.
  */
-typedef NS_ENUM(NSUInteger, FBSDKLikeControlHorizontalAlignment)
-{
-  /** The subviews are left aligned. */
-  FBSDKLikeControlHorizontalAlignmentLeft,
-  /** The subviews are center aligned. */
-  FBSDKLikeControlHorizontalAlignmentCenter,
-  /** The subviews are right aligned. */
-  FBSDKLikeControlHorizontalAlignmentRight,
-};
+typedef NS_ENUM(NSUInteger, FBSDKLikeControlHorizontalAlignment) {
+    /** The subviews are left aligned. */
+    FBSDKLikeControlHorizontalAlignmentLeft,
+    /** The subviews are center aligned. */
+    FBSDKLikeControlHorizontalAlignmentCenter,
+    /** The subviews are right aligned. */
+    FBSDKLikeControlHorizontalAlignmentRight, };
 /**
   Converts an FBSDKLikeControlHorizontalAlignment to an NSString.
  */
@@ -58,13 +54,11 @@ FBSDK_EXTERN NSString *NSStringFromFBSDKLikeControlHorizontalAlignment(FBSDKLike
  NS_ENUM (NSUInteger, FBSDKLikeControlStyle)
   Specifies the style of a like control.
  */
-typedef NS_ENUM(NSUInteger, FBSDKLikeControlStyle)
-{
-  /** Displays the button and the social sentence. */
-  FBSDKLikeControlStyleStandard = 0,
-  /** Displays the button and a box that contains the like count. */
-  FBSDKLikeControlStyleBoxCount,
-};
+typedef NS_ENUM(NSUInteger, FBSDKLikeControlStyle) {
+    /** Displays the button and the social sentence. */
+    FBSDKLikeControlStyleStandard = 0,
+    /** Displays the button and a box that contains the like count. */
+    FBSDKLikeControlStyleBoxCount, };
 /**
   Converts an FBSDKLikeControlStyle to an NSString.
  */
@@ -75,37 +69,37 @@ FBSDK_EXTERN NSString *NSStringFromFBSDKLikeControlStyle(FBSDKLikeControlStyle s
  fast-app-switch that allows the user to like the object.  Upon return to the calling app, the view will update
  with the new state and send actions for the UIControlEventValueChanged event.
  */
-@interface FBSDKLikeControl : UIControl <FBSDKLiking>
+@interface FBSDKLikeControl : UIControl<FBSDKLiking>
 /**
   The foreground color to use for the content of the receiver.
  */
-@property (nonatomic, strong) UIColor *foregroundColor;
+@property(nonatomic, strong) UIColor *foregroundColor;
 /**
   The position for the auxiliary view for the receiver.
 - See:FBSDKLikeControlAuxiliaryPosition
  */
-@property (nonatomic, assign) FBSDKLikeControlAuxiliaryPosition likeControlAuxiliaryPosition;
+@property(nonatomic, assign) FBSDKLikeControlAuxiliaryPosition likeControlAuxiliaryPosition;
 /**
   The text alignment of the social sentence.
  This value is only valid for FBSDKLikeControlStyleStandard with
  FBSDKLikeControlAuxiliaryPositionTop|Bottom.
  */
-@property (nonatomic, assign) FBSDKLikeControlHorizontalAlignment likeControlHorizontalAlignment;
+@property(nonatomic, assign) FBSDKLikeControlHorizontalAlignment likeControlHorizontalAlignment;
 /**
   The style to use for the receiver.
 - See:FBSDKLikeControlStyle
  */
-@property (nonatomic, assign) FBSDKLikeControlStyle likeControlStyle;
+@property(nonatomic, assign) FBSDKLikeControlStyle likeControlStyle;
 /**
   The preferred maximum width (in points) for autolayout.
  This property affects the size of the receiver when layout constraints are applied to it. During layout,
  if the text extends beyond the width specified by this property, the additional text is flowed to one or more new
  lines, thereby increasing the height of the receiver.
  */
-@property (nonatomic, assign) CGFloat preferredMaxLayoutWidth;
+@property(nonatomic, assign) CGFloat preferredMaxLayoutWidth;
 /**
   If YES, a sound is played when the receiver is toggled.
  @default YES
  */
-@property (nonatomic, assign, getter = isSoundEnabled) BOOL soundEnabled;
+@property(nonatomic, assign, getter=isSoundEnabled) BOOL soundEnabled;
 @end

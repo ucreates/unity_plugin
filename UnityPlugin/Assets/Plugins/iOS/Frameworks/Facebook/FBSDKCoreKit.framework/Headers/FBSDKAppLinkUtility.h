@@ -50,8 +50,8 @@ typedef void (^FBSDKDeferredAppInviteHandler)(NSURL *url);
 /**
 - Warning:This method is no longer available and will always return NO.
  */
-+ (BOOL)fetchDeferredAppInvite:(FBSDKDeferredAppInviteHandler)handler
-__attribute__((deprecated("This method is no longer available.")));;
++ (BOOL)fetchDeferredAppInvite:(FBSDKDeferredAppInviteHandler)handler __attribute__((deprecated("This method is no longer available.")));
+;
 /*
   Call this method to fetch promotion code from the url, if it's present. This function
  requires Bolts framework.
@@ -63,5 +63,5 @@ __attribute__((deprecated("This method is no longer available.")));;
  This can be used to fetch the promotion code that was associated with the invite when it
  was created. This method should be called with the url from the openURL method.
 */
-+ (NSString*)appInvitePromotionCodeFromURL:(NSURL*)url;
++ (NSString *)appInvitePromotionCodeFromURL:(NSURL *)url;
 @end

@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The Tweet view inside this cell. Holds all relevant text and images.
  */
-@property (nonatomic, readonly) TWTRTweetView *tweetView;
+@property(nonatomic, readonly) TWTRTweetView *tweetView;
 /**
  *  Configures the existing Tweet view with a Tweet. Updates labels, images, and thumbnails.
  *

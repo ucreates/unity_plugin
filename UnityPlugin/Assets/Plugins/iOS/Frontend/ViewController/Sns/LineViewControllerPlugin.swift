@@ -8,7 +8,7 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 import UIKit
-class LineViewControllerPlugin: UIViewController {
+open class LineViewControllerPlugin: UIViewController {
     open static let VIEWCONTROLLER_ID: Int = 5
     fileprivate var authorized: Bool = false
     fileprivate var imageData: Data!

@@ -9,7 +9,7 @@
 @class TWTRTweet;
 @class TWTRTimelineViewController;
 NS_ASSUME_NONNULL_BEGIN
-@protocol TWTRTimelineDelegate <NSObject>
+@protocol TWTRTimelineDelegate<NSObject>
 @optional
 /**
  *  The Timeline started loading new Tweets. This would be an

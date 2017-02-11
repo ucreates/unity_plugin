@@ -8,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The NSError domain of errors surfaced by the Twitter API.
  */
-FOUNDATION_EXPORT NSString * const TWTRAPIErrorDomain;
+FOUNDATION_EXPORT NSString* const TWTRAPIErrorDomain;
 /**
  *  Error codes surfaced by the Twitter API.
  *  @see https://dev.twitter.com/docs/error-codes-responses
@@ -26,12 +26,10 @@ typedef NS_ENUM(NSUInteger, TWTRAPIErrorCode) {
      *  Not authorized to use this endpoint.
      */
     TWTRAPIErrorCodeNotAuthorizedForEndpoint = 37,
-    
     /**
      * Generic API error code for invalid parameter
      */
     TWTRAPIErrorCodeInvalidParameter = 44,
-    
     /**
      *  Corresponds with an HTTP 403 — the access token being used belongs to a suspended user and they can't complete the action you're trying to take
      */
@@ -77,7 +75,8 @@ typedef NS_ENUM(NSUInteger, TWTRAPIErrorCode) {
      */
     TWTRAPIErrorCodeNotAuthorizedToSeeStatus = 179,
     /**
-     *  Corresponds with HTTP 403 — returned when a Tweet cannot be posted due to the user having no allowance remaining to post. Despite the text in the error message indicating that this error is only returned when a daily limit is reached, this error will be returned whenever a posting limitation has been reached. Posting allowances have roaming windows of time of unspecified duration.
+     *  Corresponds with HTTP 403 — returned when a Tweet cannot be posted due to the user having no allowance remaining to post. Despite the text in the error message indicating that this error is only returned when a daily limit is reached, this
+     * error will be returned whenever a posting limitation has been reached. Posting allowances have roaming windows of time of unspecified duration.
      */
     TWTRAPIErrorCodeOverDailyStatusUpdateLimit = 185,
     /**
@@ -89,7 +88,8 @@ typedef NS_ENUM(NSUInteger, TWTRAPIErrorCode) {
      */
     TWTRAPIErrorCodeBadAuthenticationData = 215,
     /**
-     *  We constantly monitor and adjust our filters to block spam and malicious activity on the Twitter platform. These systems are tuned in real-time. If you get this response our systems have flagged the Tweet or DM as possibly fitting this profile. If you feel that the Tweet or DM you attempted to create was flagged in error, please report the details around that to us by filing a ticket at https://support.twitter.com/forms/platform
+     *  We constantly monitor and adjust our filters to block spam and malicious activity on the Twitter platform. These systems are tuned in real-time. If you get this response our systems have flagged the Tweet or DM as possibly fitting this
+     * profile. If you feel that the Tweet or DM you attempted to create was flagged in error, please report the details around that to us by filing a ticket at https://support.twitter.com/forms/platform
      */
     TWTRAPIErrorCodeRequestIsAutomated = 226,
     /**
@@ -100,17 +100,14 @@ typedef NS_ENUM(NSUInteger, TWTRAPIErrorCode) {
      * Returned from server in digits sign-in flow if user provides wrong confirmation code
      */
     TWTRAPIErrorCodeChallengeCodeInvalid = 236,
-    
     /**
      *  "Bad guest token." The token has probably expired. Try calling `-[Twitter logInGuestWithCompletion:]` again later.
      */
     TWTRAPIErrorCodeBadGuestToken = 239,
-    
     /**
      * Rate limiting case for /1/sdk/login
      */
     TWTRAPIErrorCodeLoginRateExceeded = 245,
-    
     /**
      *  Corresponds to a HTTP request to a retired URL.
      */
@@ -127,12 +124,10 @@ typedef NS_ENUM(NSUInteger, TWTRAPIErrorCode) {
      *  Corresponds with HTTP 403. The authenticated user account is not muting the account a call is attempting to unmute.
      */
     TWTRAPIErrorCodeCannotMuteSpecifiedUser = 272,
-    
     /**
      * Rate limiting case for /1.1/device/register.json endpint
      */
     TWTRAPIErrorCodeDeviceRegisterRateExceeded = 299,
-    
     /**
      *  Phone's carrier not suppported and we can not deliver the sms/make the voice call
      */
@@ -144,6 +139,5 @@ typedef NS_ENUM(NSUInteger, TWTRAPIErrorCode) {
     /**
      *  Returned in API v1.1 when a request cannot be served due to the application's rate limit having been exhausted for the resource. See [Rate Limiting in API v1.1](https://dev.twitter.com/docs/rate-limiting/1.1).
      */
-    TWTRAPIErrorCodeTooManyRequests = 429
-};
+    TWTRAPIErrorCodeTooManyRequests = 429};
 NS_ASSUME_NONNULL_END

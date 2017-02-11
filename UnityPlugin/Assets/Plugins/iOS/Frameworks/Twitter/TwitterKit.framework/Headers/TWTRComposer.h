@@ -17,8 +17,7 @@ typedef NS_ENUM(NSInteger, TWTRComposerResult) {
     /**
      *  The composer is dismissed and the message is being sent in the background, after the user selects Done.
      */
-    TWTRComposerResultDone
-};
+    TWTRComposerResultDone};
 /**
  *  Completion block called when the user finishes composing a Tweet.
  */

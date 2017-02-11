@@ -21,15 +21,13 @@
  NS_ENUM (NSUInteger, FBSDKLikeObjectType)
   Specifies the type of object referenced by the objectID for likes.
  */
-typedef NS_ENUM(NSUInteger, FBSDKLikeObjectType)
-{
-  /** The objectID refers to an unknown object type. */
-  FBSDKLikeObjectTypeUnknown = 0,
-  /** The objectID refers to an Open Graph object. */
-  FBSDKLikeObjectTypeOpenGraph,
-  /** The objectID refers to an Page object. */
-  FBSDKLikeObjectTypePage,
-};
+typedef NS_ENUM(NSUInteger, FBSDKLikeObjectType) {
+    /** The objectID refers to an unknown object type. */
+    FBSDKLikeObjectTypeUnknown = 0,
+    /** The objectID refers to an Open Graph object. */
+    FBSDKLikeObjectTypeOpenGraph,
+    /** The objectID refers to an Page object. */
+    FBSDKLikeObjectTypePage, };
 /**
   Converts an FBLikeControlObjectType to an NSString.
  */

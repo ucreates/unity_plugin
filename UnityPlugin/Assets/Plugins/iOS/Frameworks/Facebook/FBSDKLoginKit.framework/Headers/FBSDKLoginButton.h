@@ -24,17 +24,15 @@
  NS_ENUM(NSUInteger, FBSDKLoginButtonTooltipBehavior)
   Indicates the desired login tooltip behavior.
  */
-typedef NS_ENUM(NSUInteger, FBSDKLoginButtonTooltipBehavior)
-{
-  /** The default behavior. The tooltip will only be displayed if
-   the app is eligible (determined by possible server round trip) */
-  FBSDKLoginButtonTooltipBehaviorAutomatic = 0,
-  /** Force display of the tooltip (typically for UI testing) */
-  FBSDKLoginButtonTooltipBehaviorForceDisplay = 1,
-  /** Force disable. In this case you can still exert more refined
-   control by manually constructing a `FBSDKLoginTooltipView` instance. */
-  FBSDKLoginButtonTooltipBehaviorDisable = 2
-};
+typedef NS_ENUM(NSUInteger, FBSDKLoginButtonTooltipBehavior) {
+    /** The default behavior. The tooltip will only be displayed if
+     the app is eligible (determined by possible server round trip) */
+    FBSDKLoginButtonTooltipBehaviorAutomatic = 0,
+    /** Force display of the tooltip (typically for UI testing) */
+    FBSDKLoginButtonTooltipBehaviorForceDisplay = 1,
+    /** Force disable. In this case you can still exert more refined
+     control by manually constructing a `FBSDKLoginTooltipView` instance. */
+    FBSDKLoginButtonTooltipBehaviorDisable = 2};
 /**
   A button that initiates a log in or log out flow upon tapping.
  `FBSDKLoginButton` works with `[FBSDKAccessToken currentAccessToken]` to
@@ -49,42 +47,42 @@ typedef NS_ENUM(NSUInteger, FBSDKLoginButtonTooltipBehavior)
 /**
   The default audience to use, if publish permissions are requested at login time.
  */
-@property (assign, nonatomic) FBSDKDefaultAudience defaultAudience;
+@property(assign, nonatomic) FBSDKDefaultAudience defaultAudience;
 /**
   Gets or sets the delegate.
  */
-@property (weak, nonatomic) IBOutlet id<FBSDKLoginButtonDelegate> delegate;
+@property(weak, nonatomic) IBOutlet id<FBSDKLoginButtonDelegate> delegate;
 /**
   Gets or sets the login behavior to use
  */
-@property (assign, nonatomic) FBSDKLoginBehavior loginBehavior;
+@property(assign, nonatomic) FBSDKLoginBehavior loginBehavior;
 /**
   The publish permissions to request.
  Use `defaultAudience` to specify the default audience to publish to.
  Note this is converted to NSSet and is only
  an NSArray for the convenience of literal syntax.
  */
-@property (copy, nonatomic) NSArray *publishPermissions;
+@property(copy, nonatomic) NSArray *publishPermissions;
 /**
   The read permissions to request.
  Note, that if read permissions are specified, then publish permissions should not be specified. This is converted to NSSet and is only
  an NSArray for the convenience of literal syntax.
  */
-@property (copy, nonatomic) NSArray *readPermissions;
+@property(copy, nonatomic) NSArray *readPermissions;
 /**
   Gets or sets the desired tooltip behavior.
  */
-@property (assign, nonatomic) FBSDKLoginButtonTooltipBehavior tooltipBehavior;
+@property(assign, nonatomic) FBSDKLoginButtonTooltipBehavior tooltipBehavior;
 /**
   Gets or sets the desired tooltip color style.
  */
-@property (assign, nonatomic) FBSDKTooltipColorStyle tooltipColorStyle;
+@property(assign, nonatomic) FBSDKTooltipColorStyle tooltipColorStyle;
 @end
 /**
  @protocol
   A delegate for `FBSDKLoginButton`
  */
-@protocol FBSDKLoginButtonDelegate <NSObject>
+@protocol FBSDKLoginButtonDelegate<NSObject>
 @required
 /**
   Sent to the delegate when the button was used to login.
@@ -92,9 +90,7 @@ typedef NS_ENUM(NSUInteger, FBSDKLoginButtonTooltipBehavior)
  - Parameter result: The results of the login
  - Parameter error: The error (if any) from the login
  */
-- (void)  loginButton:(FBSDKLoginButton *)loginButton
-didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
-                error:(NSError *)error;
+- (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error;
 /**
   Sent to the delegate when the button was used to logout.
  - Parameter loginButton: The button that was clicked.
@@ -106,5 +102,5 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
  - Parameter loginButton: the sender
  - Returns: YES if the login should be allowed to proceed, NO otherwise
  */
-- (BOOL) loginButtonWillLogin:(FBSDKLoginButton *)loginButton;
+- (BOOL)loginButtonWillLogin:(FBSDKLoginButton *)loginButton;
 @end

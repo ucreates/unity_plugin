@@ -15,7 +15,7 @@ static WebViewPlugin* webViewPlugin;
 static IndicatorViewPlugin* activityIndicatorViewPlugin;
 static CameraViewPlugin* cameraViewPlugin;
 extern "C" void showReviewViewPlugin(char* appStoreUrl) {
-    NSString* url = [NSString stringWithCString: appStoreUrl encoding:NSUTF8StringEncoding];
+    NSString* url = [NSString stringWithCString:appStoreUrl encoding:NSUTF8StringEncoding];
     [ReviewViewPlugin show:url];
     return;
 }
@@ -23,7 +23,7 @@ extern "C" void showWebViewPlugin(char* url, float left, float top, float right,
     if (nil != webViewPlugin) {
         return;
     }
-    NSString* requestUrl = [NSString stringWithCString: url encoding:NSUTF8StringEncoding];
+    NSString* requestUrl = [NSString stringWithCString:url encoding:NSUTF8StringEncoding];
     webViewPlugin = [WebViewPlugin alloc];
     [webViewPlugin create:requestUrl left:left top:top right:right bottom:bottom];
     [webViewPlugin show];
@@ -60,9 +60,9 @@ extern "C" void showCameraViewPlugin(char* gameObjectName, char* onShowCallbackM
     if (nil != cameraViewPlugin) {
         return;
     }
-    NSString* unityGameObjectName = [NSString stringWithCString: gameObjectName encoding:NSUTF8StringEncoding];
-    NSString* unityOnShowCallbackMethodName = [NSString stringWithCString: onShowCallbackMethodName encoding:NSUTF8StringEncoding];
-    NSString* unityOnHideCallbackMethodName = [NSString stringWithCString: onHideCallbackMethodName encoding:NSUTF8StringEncoding];
+    NSString* unityGameObjectName = [NSString stringWithCString:gameObjectName encoding:NSUTF8StringEncoding];
+    NSString* unityOnShowCallbackMethodName = [NSString stringWithCString:onShowCallbackMethodName encoding:NSUTF8StringEncoding];
+    NSString* unityOnHideCallbackMethodName = [NSString stringWithCString:onHideCallbackMethodName encoding:NSUTF8StringEncoding];
     cameraViewPlugin = [CameraViewPlugin alloc];
     [cameraViewPlugin createWithGameObjectName:unityGameObjectName onShowCallbackName:unityOnShowCallbackMethodName onHideCallbackName:unityOnHideCallbackMethodName];
     return;
@@ -83,10 +83,10 @@ extern "C" void hideCameraViewPlugin() {
     return;
 }
 extern "C" void fillPathPlugin(char* dataPath, char* persistentDataPath, char* streamingAssetsPath, char* temporaryCachePath) {
-    NSString* unityDataPath = [NSString stringWithCString: dataPath encoding:NSUTF8StringEncoding];
-    NSString* unityPersistentDataPath = [NSString stringWithCString: persistentDataPath encoding:NSUTF8StringEncoding];
-    NSString* unityStreamingAssetsPath = [NSString stringWithCString: streamingAssetsPath encoding:NSUTF8StringEncoding];
-    NSString* unityTemporaryCachePath = [NSString stringWithCString: temporaryCachePath encoding:NSUTF8StringEncoding];
+    NSString* unityDataPath = [NSString stringWithCString:dataPath encoding:NSUTF8StringEncoding];
+    NSString* unityPersistentDataPath = [NSString stringWithCString:persistentDataPath encoding:NSUTF8StringEncoding];
+    NSString* unityStreamingAssetsPath = [NSString stringWithCString:streamingAssetsPath encoding:NSUTF8StringEncoding];
+    NSString* unityTemporaryCachePath = [NSString stringWithCString:temporaryCachePath encoding:NSUTF8StringEncoding];
     PathPlugin* pathPlugin = [PathPlugin getInstance];
     [pathPlugin fill:unityDataPath persistentDataPath:unityPersistentDataPath streamingAssetsPath:unityStreamingAssetsPath temporaryCachePath:unityTemporaryCachePath];
     return;
@@ -97,7 +97,7 @@ extern "C" void dumpPathPlugin() {
     return;
 }
 extern "C" void showAlertViewPlugin(char* message) {
-    NSString* encodedMessage = [NSString stringWithCString: message encoding:NSUTF8StringEncoding];
+    NSString* encodedMessage = [NSString stringWithCString:message encoding:NSUTF8StringEncoding];
     [AlertViewPlugin show:encodedMessage];
     return;
 }
@@ -106,41 +106,41 @@ extern "C" void transitionViewControllerPlugin(int viewControllerId) {
     return;
 }
 extern "C" void transitionTwitterViewControllerPlugin(char* message, unsigned char* imageData, int imageDataLength, bool useTwitterCard) {
-    NSString* unityMassage = [NSString stringWithCString: message encoding:NSUTF8StringEncoding];
-    NSData *unityImageData = [NSData dataWithBytes:(const void *)imageData length:imageDataLength];
+    NSString* unityMassage = [NSString stringWithCString:message encoding:NSUTF8StringEncoding];
+    NSData* unityImageData = [NSData dataWithBytes:(const void*)imageData length:imageDataLength];
     TwitterViewControllerPlugin* viewController = (TwitterViewControllerPlugin*)[ViewControllerFactoryPlugin factoryMethod:[TwitterViewControllerPlugin VIEWCONTROLLER_ID]];
     [viewController setParameter:unityMassage postImageData:unityImageData enableTwitterCard:useTwitterCard];
     UIViewController* fromViewController = [ViewControllerPlugin getInstance];
-    [fromViewController presentViewController:viewController animated: true completion: nil];
+    [fromViewController presentViewController:viewController animated:true completion:nil];
     return;
 }
 extern "C" void transitionFacebookViewControllerPlugin(unsigned char* imageData, int imageDataLength) {
-    NSData *unityImageData = [NSData dataWithBytes:(const void *)imageData length:imageDataLength];
+    NSData* unityImageData = [NSData dataWithBytes:(const void*)imageData length:imageDataLength];
     FacebookViewControllerPlugin* viewController = (FacebookViewControllerPlugin*)[ViewControllerFactoryPlugin factoryMethod:[FacebookViewControllerPlugin VIEWCONTROLLER_ID]];
     [viewController setParameterWithPostImageData:unityImageData];
     UIViewController* fromViewController = [ViewControllerPlugin getInstance];
-    [fromViewController presentViewController:viewController animated: true completion: nil];
+    [fromViewController presentViewController:viewController animated:true completion:nil];
     return;
 }
 extern "C" void transitionLineViewControllerPlugin(unsigned char* imageData, int imageDataLength) {
-    NSData *unityImageData = [NSData dataWithBytes:(const void *)imageData length:imageDataLength];
+    NSData* unityImageData = [NSData dataWithBytes:(const void*)imageData length:imageDataLength];
     LineViewControllerPlugin* viewController = (LineViewControllerPlugin*)[ViewControllerFactoryPlugin factoryMethod:[LineViewControllerPlugin VIEWCONTROLLER_ID]];
     [viewController setParameterWithPostImageData:unityImageData];
     UIViewController* fromViewController = [ViewControllerPlugin getInstance];
-    [fromViewController presentViewController:viewController animated: true completion: nil];
+    [fromViewController presentViewController:viewController animated:true completion:nil];
     return;
 }
 extern "C" void transitionPaymentViewControllerPlugin(char* paymentUserId, char* paymentProductId) {
-    NSString* unityUserId = [NSString stringWithCString: paymentUserId encoding:NSUTF8StringEncoding];
-    NSString* unityProductId = [NSString stringWithCString: paymentProductId encoding:NSUTF8StringEncoding];
+    NSString* unityUserId = [NSString stringWithCString:paymentUserId encoding:NSUTF8StringEncoding];
+    NSString* unityProductId = [NSString stringWithCString:paymentProductId encoding:NSUTF8StringEncoding];
     PaymentViewControllerPlugin* viewController = (PaymentViewControllerPlugin*)[ViewControllerFactoryPlugin factoryMethod:[PaymentViewControllerPlugin VIEWCONTROLLER_ID]];
     [viewController setParameter:unityUserId unityProductId:unityProductId];
     UIViewController* fromViewController = [ViewControllerPlugin getInstance];
-    [fromViewController presentViewController:viewController animated: true completion: nil];
+    [fromViewController presentViewController:viewController animated:true completion:nil];
     return;
 }
 extern "C" bool getSwitchPreferencePlugin(char* keyName) {
-    NSString* requestKeyName = [NSString stringWithCString: keyName encoding:NSUTF8StringEncoding];
+    NSString* requestKeyName = [NSString stringWithCString:keyName encoding:NSUTF8StringEncoding];
     return [PreferencePlugin getSwitchPreference:requestKeyName];
 }
 void setPreviewFrameCameraViewPlugin(unsigned char* imageData, int width, int height) {

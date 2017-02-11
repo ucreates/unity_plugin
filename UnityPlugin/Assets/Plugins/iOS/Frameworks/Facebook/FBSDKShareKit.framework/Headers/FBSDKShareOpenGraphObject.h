@@ -33,7 +33,7 @@
     @"fitness:metrics:location:longitude": @"2.17403",
  }];
  */
-@interface FBSDKShareOpenGraphObject : FBSDKShareOpenGraphValueContainer <FBSDKCopying, NSSecureCoding>
+@interface FBSDKShareOpenGraphObject : FBSDKShareOpenGraphValueContainer<FBSDKCopying, NSSecureCoding>
 /**
   Convenience method to build a new action and set the object for the specified key.
  - Parameter properties: Properties for the Open Graph object, which will be parsed into the proper models

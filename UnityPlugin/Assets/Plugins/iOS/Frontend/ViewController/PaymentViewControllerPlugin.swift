@@ -9,12 +9,12 @@
 //======================================================================
 import UIKit
 import StoreKit
-class PaymentViewControllerPlugin: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+open class PaymentViewControllerPlugin: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     open static let VIEWCONTROLLER_ID: Int = 6
     fileprivate var userId: String!
     fileprivate var productId: String!
     fileprivate var service: PaymentServicePlugin!
-    override func viewDidLoad() -> Void {
+    override open func viewDidLoad() -> Void {
         super.viewDidLoad()
         self.service = PaymentServicePlugin()
         let ret: Bool = service.request(prodctId: self.productId, paymentViewController: self)

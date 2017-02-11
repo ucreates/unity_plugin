@@ -24,21 +24,21 @@
 /**
   the access token.
  */
-@property (copy, nonatomic) FBSDKAccessToken *token;
+@property(copy, nonatomic) FBSDKAccessToken *token;
 /**
   whether the login was cancelled by the user.
  */
-@property (readonly, nonatomic) BOOL isCancelled;
+@property(readonly, nonatomic) BOOL isCancelled;
 /**
   the set of permissions granted by the user in the associated request.
  inspect the token's permissions set for a complete list.
  */
-@property (copy, nonatomic) NSSet *grantedPermissions;
+@property(copy, nonatomic) NSSet *grantedPermissions;
 /**
   the set of permissions declined by the user in the associated request.
  inspect the token's permissions set for a complete list.
  */
-@property (copy, nonatomic) NSSet *declinedPermissions;
+@property(copy, nonatomic) NSSet *declinedPermissions;
 /**
   Initializes a new instance.
  - Parameter token: the access token
@@ -46,9 +46,5 @@
  - Parameter grantedPermissions: the set of granted permissions
  - Parameter declinedPermissions: the set of declined permissions
  */
-- (instancetype)initWithToken:(FBSDKAccessToken *)token
-                  isCancelled:(BOOL)isCancelled
-           grantedPermissions:(NSSet *)grantedPermissions
-          declinedPermissions:(NSSet *)declinedPermissions
-NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithToken:(FBSDKAccessToken *)token isCancelled:(BOOL)isCancelled grantedPermissions:(NSSet *)grantedPermissions declinedPermissions:(NSSet *)declinedPermissions NS_DESIGNATED_INITIALIZER;
 @end

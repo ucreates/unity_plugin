@@ -26,44 +26,42 @@ FBSDK_EXTERN NSString *const FBSDKLoginErrorDomain;
  NS_ENUM(NSInteger, FBSDKLoginErrorCode)
   Error codes for FBSDKLoginErrorDomain.
  */
-typedef NS_ENUM(NSInteger, FBSDKLoginErrorCode)
-{
-  /**
-    Reserved.
-   */
-  FBSDKLoginReservedErrorCode = 300,
-  /**
-    The error code for unknown errors.
-   */
-  FBSDKLoginUnknownErrorCode,
-  /**
-    The user's password has changed and must log in again
-  */
-  FBSDKLoginPasswordChangedErrorCode,
-  /**
-    The user must log in to their account on www.facebook.com to restore access
-  */
-  FBSDKLoginUserCheckpointedErrorCode,
-  /**
-    Indicates a failure to request new permissions because the user has changed.
-   */
-  FBSDKLoginUserMismatchErrorCode,
-  /**
-    The user must confirm their account with Facebook before logging in
-  */
-  FBSDKLoginUnconfirmedUserErrorCode,
-  /**
-    The Accounts framework failed without returning an error, indicating the
-   app's slider in the iOS Facebook Settings (device Settings -> Facebook -> App Name) has
-   been disabled.
-   */
-  FBSDKLoginSystemAccountAppDisabledErrorCode,
-  /**
-    An error occurred related to Facebook system Account store
-  */
-  FBSDKLoginSystemAccountUnavailableErrorCode,
-  /**
-    The login response was missing a valid challenge string.
-  */
-  FBSDKLoginBadChallengeString,
-};
+typedef NS_ENUM(NSInteger, FBSDKLoginErrorCode) {
+    /**
+      Reserved.
+     */
+    FBSDKLoginReservedErrorCode = 300,
+    /**
+      The error code for unknown errors.
+     */
+    FBSDKLoginUnknownErrorCode,
+    /**
+      The user's password has changed and must log in again
+    */
+    FBSDKLoginPasswordChangedErrorCode,
+    /**
+      The user must log in to their account on www.facebook.com to restore access
+    */
+    FBSDKLoginUserCheckpointedErrorCode,
+    /**
+      Indicates a failure to request new permissions because the user has changed.
+     */
+    FBSDKLoginUserMismatchErrorCode,
+    /**
+      The user must confirm their account with Facebook before logging in
+    */
+    FBSDKLoginUnconfirmedUserErrorCode,
+    /**
+      The Accounts framework failed without returning an error, indicating the
+     app's slider in the iOS Facebook Settings (device Settings -> Facebook -> App Name) has
+     been disabled.
+     */
+    FBSDKLoginSystemAccountAppDisabledErrorCode,
+    /**
+      An error occurred related to Facebook system Account store
+    */
+    FBSDKLoginSystemAccountUnavailableErrorCode,
+    /**
+      The login response was missing a valid challenge string.
+    */
+    FBSDKLoginBadChallengeString, };

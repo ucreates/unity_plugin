@@ -14,13 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void (^TWTRAuthenticationCompletionHandler)(id<TWTRSessionStore> sessionStore, NSString *userID);
 /**
  Delegate for `TWTRTweetView` to receive updates on the user interacting with this particular Tweet view.
- 
     // Create the tweet view
     TWTRTweetView *tweetView = [[TWTRTweetView alloc] initWithTweet:tweet];
     // Set the delegate
     tweetView.delegate = self;
  */
-@protocol TWTRTweetViewDelegate <NSObject>
+@protocol TWTRTweetViewDelegate<NSObject>
 @optional
 /**
  *  The tweet view image was tapped.
@@ -56,11 +55,11 @@ typedef void (^TWTRAuthenticationCompletionHandler)(id<TWTRSessionStore> session
 /**
  *  Called when the Tweet is tapped and will present a detail view controller.
  *  If this method is not implemented the detail view controller will be presented modally with the inherited themes
- *  of the tweetView. 
+ *  of the tweetView.
  *
  *  If this method is implemented the return value will be used to determine how to proceed. If YES is returned the controller
  *  will be presented as if this method was not implemented. If NO is returned the controller will not be presented and it
- *  it is the developer's responsibility to show it. This allows the developer to push the detail view controller onto their 
+ *  it is the developer's responsibility to show it. This allows the developer to push the detail view controller onto their
  *  own navigation stack, or present in a way that is appropriate for their particular use-case.
  *
  *  @param tweetView  The Tweet view showing this Tweet object.

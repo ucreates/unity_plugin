@@ -31,15 +31,15 @@
 /**
   The receiver's delegate or nil if it doesn't have a delegate.
  */
-@property (nonatomic, weak) id<FBSDKGameRequestDialogDelegate> delegate;
+@property(nonatomic, weak) id<FBSDKGameRequestDialogDelegate> delegate;
 /**
   The content for game request.
  */
-@property (nonatomic, copy) FBSDKGameRequestContent *content;
+@property(nonatomic, copy) FBSDKGameRequestContent *content;
 /**
   Specifies whether frictionless requests are enabled.
  */
-@property (nonatomic, assign) BOOL frictionlessRequestsEnabled;
+@property(nonatomic, assign) BOOL frictionlessRequestsEnabled;
 /**
   A Boolean value that indicates whether the receiver can initiate a game request.
  May return NO if the appropriate Facebook app is not installed and is required or an access token is
@@ -67,7 +67,7 @@
  receive the information.  For example, if the person is not signed into the containing app, the shower may not be able
  to distinguish between completion of a game request and cancellation.
  */
-@protocol FBSDKGameRequestDialogDelegate <NSObject>
+@protocol FBSDKGameRequestDialogDelegate<NSObject>
 /**
   Sent to the delegate when the game request completes without error.
  - Parameter gameRequestDialog: The FBSDKGameRequestDialog that completed.

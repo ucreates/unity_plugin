@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  This class is a `UITableViewController` subclass that displays `TWTRTweetTableViewCell` cells. It handles cell-reuse, cell-configuration, and loading more Tweets from the given timeline once the last cell is displayed.
  ## Usage
- Initialize this class with any object that conforms to the `TWTRTimelineDataSource` protocol. We provide two such classes, `TWTRUserTimelineDataSource` and `TWTRSearchTimelineDataSource`. These provide `TWTRTweet` objects to this table view which then configures the instances of `TWTRTweetTableViewCell`.
+ Initialize this class with any object that conforms to the `TWTRTimelineDataSource` protocol. We provide two such classes, `TWTRUserTimelineDataSource` and `TWTRSearchTimelineDataSource`. These provide `TWTRTweet` objects to this table view which
+ then configures the instances of `TWTRTweetTableViewCell`.
     // Create the data source
     TWTRAPIClient *client = [[TWTRAPIClient alloc] init];
     TWTRUserTimelineDataSource *dataSource = [[TWTRUserTimelineDataSource alloc] initWithScreenName:@"jack" APIClient:client];
@@ -27,34 +28,31 @@ NS_ASSUME_NONNULL_BEGIN
   The source of `TWTRTweet` objects for this `TWTRTimelineViewController`.
   May be set to update the Tweets being shown by this table view. Must be set on the main thread.
  */
-@property (nonatomic, copy) id<TWTRTimelineDataSource> dataSource;
+@property(nonatomic, copy) id<TWTRTimelineDataSource> dataSource;
 /**
  *  The configuration of MoPub ads to show in the timeline. You must
  *  link against the MoPub framework and provide this configuration in order
  *  for ads to be injected.
  *  @note Changing this will force a reload of the timeline. You can only set this once. Must be set on the main thread.
  */
-@property (nonatomic, nullable) TWTRMoPubAdConfiguration *adConfiguration;
+@property(nonatomic, nullable) TWTRMoPubAdConfiguration *adConfiguration;
 /**
  *  Whether action buttons (Like, Share) should be shown on the `TWTRTweetTableViewCell`s inside the tableview.
  */
-@property (nonatomic) BOOL showTweetActions;
+@property(nonatomic) BOOL showTweetActions;
 /**
  * If set, this value will be passed to all TWTRTweetView instances in the timeline.
  */
-@property (nonatomic, weak) id<TWTRTweetViewDelegate> tweetViewDelegate;
+@property(nonatomic, weak) id<TWTRTweetViewDelegate> tweetViewDelegate;
 /**
  *  The object that acts as the delegate for the timeline.
  */
-@property (nonatomic, weak) id<TWTRTimelineDelegate> timelineDelegate;
+@property(nonatomic, weak) id<TWTRTimelineDelegate> timelineDelegate;
 /**
  Initializes a timeline view controller. Does not start loading tweets until
  `viewWillAppear:` is called.
- 
  This method must be used to initialize this class. The `init` method is unavailable.
- 
  @param dataSource   A timeline data source object that conforms to the `TWTRTimelineDataSource` protocol.
- 
  @return A fully initialized `TWTRTimelineViewController` or nil if the data source is missing.
  */
 - (instancetype)initWithDataSource:(nullable id<TWTRTimelineDataSource>)dataSource;
@@ -79,13 +77,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSUInteger)countOfTweets;
 /**
  * Returns the Tweet at the given index.
- * 
+ *
  * @warning This method will throw an exception if the index is out of range of the count of Tweets.
  */
 - (TWTRTweet *)tweetAtIndex:(NSInteger)index;
 /**
  * Returns a copy of the Tweets at the time of calling this method.
- 
  * This method returns the copy of the current Tweets. The Tweets may change
  * after this method is called.
  */

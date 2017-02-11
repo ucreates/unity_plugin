@@ -115,11 +115,13 @@ FBSDK_EXTERN NSString *const FBSDKLoggingBehaviorDeveloperErrors;
 - See:[UIImageJPEGRepresentation](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/#//apple_ref/c/func/UIImageJPEGRepresentation) */
 + (void)setJPEGCompressionQuality:(CGFloat)JPEGCompressionQuality;
 /**
-  Gets whether data such as that generated through FBSDKAppEvents and sent to Facebook should be restricted from being used for other than analytics and conversions.  Defaults to NO.  This value is stored on the device and persists across app launches.
+  Gets whether data such as that generated through FBSDKAppEvents and sent to Facebook should be restricted from being used for other than analytics and conversions.  Defaults to NO.  This value is stored on the device and persists across app
+  launches.
  */
 + (BOOL)limitEventAndDataUsage;
 /**
-  Sets whether data such as that generated through FBSDKAppEvents and sent to Facebook should be restricted from being used for other than analytics and conversions.  Defaults to NO.  This value is stored on the device and persists across app launches.
+  Sets whether data such as that generated through FBSDKAppEvents and sent to Facebook should be restricted from being used for other than analytics and conversions.  Defaults to NO.  This value is stored on the device and persists across app
+ launches.
  - Parameter limitEventAndDataUsage:   The desired value.
  */
 + (void)setLimitEventAndDataUsage:(BOOL)limitEventAndDataUsage;

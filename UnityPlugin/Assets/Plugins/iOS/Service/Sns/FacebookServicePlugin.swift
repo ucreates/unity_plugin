@@ -11,7 +11,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Foundation
 import UIKit
-class FacebookServicePlugin: NSObject {
+open class FacebookServicePlugin: NSObject {
     @objc
     open func logIn(facebookViewController: UIViewController, callback: (() -> Void)? = nil) -> Void {
         var permissions: [Any] = ["publish_actions"]

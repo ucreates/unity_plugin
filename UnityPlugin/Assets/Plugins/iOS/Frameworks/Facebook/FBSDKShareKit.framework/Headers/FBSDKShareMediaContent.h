@@ -20,12 +20,12 @@
 /**
   A model for media content (photo or video) to be shared.
  */
-@interface FBSDKShareMediaContent : NSObject <FBSDKSharingContent>
+@interface FBSDKShareMediaContent : NSObject<FBSDKSharingContent>
 /**
   Media to be shared.
  - Returns: Array of the media (FBSDKSharePhoto or FBSDKShareVideo)
  */
-@property (nonatomic, copy) NSArray *media;
+@property(nonatomic, copy) NSArray *media;
 /**
   Compares the receiver to another media content.
  - Parameter content: The other content

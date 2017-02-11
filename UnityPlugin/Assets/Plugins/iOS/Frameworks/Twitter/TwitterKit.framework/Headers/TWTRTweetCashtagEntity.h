@@ -10,11 +10,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * A Tweet entity which represents a Cashtag like '$twtr'
  */
-@interface TWTRTweetCashtagEntity : TWTRTweetEntity <NSCoding, TWTRJSONConvertible>
+@interface TWTRTweetCashtagEntity : TWTRTweetEntity<NSCoding, TWTRJSONConvertible>
 /**
- * The text represented by this entity. 
+ * The text represented by this entity.
  * @note This entity does not include the '$'.
  */
-@property (nonatomic, copy, readonly) NSString *text;
+@property(nonatomic, copy, readonly) NSString *text;
 @end
 NS_ASSUME_NONNULL_END

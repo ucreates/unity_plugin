@@ -14,13 +14,11 @@
  */
 @interface BFAppLinkTarget : NSObject
 /*! Creates a BFAppLinkTarget with the given app site and target URL. */
-+ (instancetype)appLinkTargetWithURL:(NSURL *)url
-                          appStoreId:(NSString *)appStoreId
-                             appName:(NSString *)appName;
++ (instancetype)appLinkTargetWithURL:(NSURL *)url appStoreId:(NSString *)appStoreId appName:(NSString *)appName;
 /*! The URL prefix for this app link target */
-@property (nonatomic, strong, readonly) NSURL *URL;
+@property(nonatomic, strong, readonly) NSURL *URL;
 /*! The app ID for the app store */
-@property (nonatomic, copy, readonly) NSString *appStoreId;
+@property(nonatomic, copy, readonly) NSString *appStoreId;
 /*! The name of the app */
-@property (nonatomic, copy, readonly) NSString *appName;
+@property(nonatomic, copy, readonly) NSString *appName;
 @end

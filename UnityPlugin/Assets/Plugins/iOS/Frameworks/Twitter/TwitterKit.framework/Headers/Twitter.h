@@ -9,7 +9,6 @@
 @class TWTRSessionStore;
 NS_ASSUME_NONNULL_BEGIN
 typedef NS_OPTIONS(NSInteger, TWTRLoginMethod) {
-    
     /**
      * Attempts to log the user in with the system accounts.
      * This log in method will only grant limited application permissions to
@@ -18,7 +17,6 @@ typedef NS_OPTIONS(NSInteger, TWTRLoginMethod) {
      * and configure your application correctly.
      */
     TWTRLoginMethodSystemAccounts = 1 << 0,
-    
     /**
      * Presents a web view that allows the user to log in. Will use
      * either UIWebView or SFSafariViewController depending on iOS
@@ -26,25 +24,23 @@ typedef NS_OPTIONS(NSInteger, TWTRLoginMethod) {
      * redirects.
      *
      * This method will allow the developer to request more application
-     * permissions. To learn more about configuring your application to 
-     * have higher levels of permissions. 
+     * permissions. To learn more about configuring your application to
+     * have higher levels of permissions.
      * Visit https://dev.twitter.com/oauth/overview/application-permission-model for
      * more information about Twitter's application permission model.
      */
-    TWTRLoginMethodWebBased       = 1 << 1,
+    TWTRLoginMethodWebBased = 1 << 1,
     /**
      *  Presents a web view that doesn't use any cached sessions
      *  from Safari. Allows the developer to provide multi-user
      *  functionality with several Twitter accounts.
      */
     TWTRLoginMethodWebBasedForceLogin = 1 << 2,
-    
     /**
-     * Picks the first available log in method. The order in which 
+     * Picks the first available log in method. The order in which
      * methods are checked is TWTRLoginMethodSystemAccounts -> TWTRLoginMethodWebBased.
      */
-    TWTRLoginMethodAll            = TWTRLoginMethodSystemAccounts | TWTRLoginMethodWebBased
-};
+    TWTRLoginMethodAll = TWTRLoginMethodSystemAccounts | TWTRLoginMethodWebBased};
 /**
  *  The central class of the Twitter Kit.
  *  @note This class can only be used from the main thread.
@@ -82,16 +78,16 @@ typedef NS_OPTIONS(NSInteger, TWTRLoginMethod) {
 /**
  *  The current version of this kit.
  */
-@property (nonatomic, copy, readonly) NSString *version;
+@property(nonatomic, copy, readonly) NSString *version;
 /**
  *  Authentication configuration details. Encapsulates the `consumerKey` and `consumerSecret` credentials required to authenticate a Twitter application.
  */
-@property (nonatomic, readonly) TWTRAuthConfig *authConfig;
+@property(nonatomic, readonly) TWTRAuthConfig *authConfig;
 /**
  *  Session store exposing methods to fetch and manage active sessions. Applications that need to manage
  *  multiple users should use the session store to authenticate and log out users.
  */
-@property (nonatomic, readonly) TWTRSessionStore *sessionStore;
+@property(nonatomic, readonly) TWTRSessionStore *sessionStore;
 /**
  *  Triggers user authentication with Twitter.
  *
@@ -134,10 +130,10 @@ typedef NS_OPTIONS(NSInteger, TWTRLoginMethod) {
  */
 - (void)logInWithViewController:(nullable UIViewController *)viewController methods:(TWTRLoginMethod)methods completion:(TWTRLogInCompletion)completion;
 /**
- *  Finish the `SFSafariViewController` authentication loop. This method should 
+ *  Finish the `SFSafariViewController` authentication loop. This method should
  *  be called from application:openURL:options inside the application delegate.
  *
- *  This method will verify an authentication token sent by the Twitter API to 
+ *  This method will verify an authentication token sent by the Twitter API to
  *  finish the web-based authentication flow.
  *
  *  @param application  The `UIApplication` instance received as a parameter.

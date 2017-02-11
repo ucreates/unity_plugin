@@ -22,17 +22,17 @@
 /**
   A model for video content to be shared.
  */
-@interface FBSDKShareVideoContent : NSObject <FBSDKSharingContent>
+@interface FBSDKShareVideoContent : NSObject<FBSDKSharingContent>
 /**
   The photo that represents the video.
  - Returns: The photo
  */
-@property (nonatomic, copy) FBSDKSharePhoto *previewPhoto;
+@property(nonatomic, copy) FBSDKSharePhoto *previewPhoto;
 /**
   The video to be shared.
  - Returns: The video
  */
-@property (nonatomic, copy) FBSDKShareVideo *video;
+@property(nonatomic, copy) FBSDKShareVideo *video;
 /**
   Compares the receiver to another video content.
  - Parameter content: The other content

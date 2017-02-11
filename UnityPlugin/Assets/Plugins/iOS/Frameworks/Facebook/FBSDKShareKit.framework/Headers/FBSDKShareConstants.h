@@ -26,23 +26,21 @@ FBSDK_EXTERN NSString *const FBSDKShareErrorDomain;
  NS_ENUM(NSInteger, FBSDKShareErrorCode)
   Error codes for FBSDKShareErrorDomain.
  */
-typedef NS_ENUM(NSInteger, FBSDKShareErrorCode)
-{
-  /**
-    Reserved.
-   */
-  FBSDKShareReservedErrorCode = 200,
-  /**
-    The error code for errors from uploading open graph objects.
-   */
-  FBSDKShareOpenGraphErrorCode,
-  /**
-    The error code for when a sharing dialog is not available.
- Use the canShare methods to check for this case before calling show.
-   */
-  FBSDKShareDialogNotAvailableErrorCode,
-  /**
-   @The error code for unknown errors.
-   */
-  FBSDKShareUnknownErrorCode,
-};
+typedef NS_ENUM(NSInteger, FBSDKShareErrorCode) {
+    /**
+      Reserved.
+     */
+    FBSDKShareReservedErrorCode = 200,
+    /**
+      The error code for errors from uploading open graph objects.
+     */
+    FBSDKShareOpenGraphErrorCode,
+    /**
+      The error code for when a sharing dialog is not available.
+   Use the canShare methods to check for this case before calling show.
+     */
+    FBSDKShareDialogNotAvailableErrorCode,
+    /**
+     @The error code for unknown errors.
+     */
+    FBSDKShareUnknownErrorCode, };

@@ -62,33 +62,33 @@ FBSDK_EXTERN NSString *const FBSDKProfileChangeNewKey;
 /**
   The user id
  */
-@property (nonatomic, copy, readonly) NSString *userID;
+@property(nonatomic, copy, readonly) NSString *userID;
 /**
   The user's first name
  */
-@property (nonatomic, copy, readonly) NSString *firstName;
+@property(nonatomic, copy, readonly) NSString *firstName;
 /**
   The user's middle name
  */
-@property (nonatomic, copy, readonly) NSString *middleName;
+@property(nonatomic, copy, readonly) NSString *middleName;
 /**
   The user's last name
  */
-@property (nonatomic, copy, readonly) NSString *lastName;
+@property(nonatomic, copy, readonly) NSString *lastName;
 /**
   The user's complete name
  */
-@property (nonatomic, copy, readonly) NSString *name;
+@property(nonatomic, copy, readonly) NSString *name;
 /**
   A URL to the user's profile.
  Consider using Bolts and `FBSDKAppLinkResolver` to resolve this
  to an app link to link directly to the user's profile in the Facebook app.
  */
-@property (nonatomic, readonly) NSURL *linkURL;
+@property(nonatomic, readonly) NSURL *linkURL;
 /**
   The last time the profile data was fetched.
  */
-@property (nonatomic, readonly) NSDate *refreshDate;
+@property(nonatomic, readonly) NSDate *refreshDate;
 /**
   Gets the current FBSDKProfile instance.
  */
@@ -115,7 +115,7 @@ FBSDK_EXTERN NSString *const FBSDKProfileChangeNewKey;
  If the profile is already loaded, this method will call the completion block synchronously, otherwise it
  will begin a graph request to update `currentProfile` and then call the completion block when finished.
  */
-+ (void)loadCurrentProfileWithCompletion:(void(^)(FBSDKProfile *profile, NSError *error))completion;
++ (void)loadCurrentProfileWithCompletion:(void (^)(FBSDKProfile *profile, NSError *error))completion;
 /**
   A convenience method for returning a complete `NSURL` for retrieving the user's profile image.
  - Parameter mode: The picture mode
@@ -129,8 +129,7 @@ FBSDK_EXTERN NSString *const FBSDKProfileChangeNewKey;
  - Parameter mode: The picture mode
  - Parameter size: The height and width. This will be rounded to integer precision.
  */
-- (NSString *)imagePathForPictureMode:(FBSDKProfilePictureMode)mode size:(CGSize)size
-__attribute__ ((deprecated("use imageURLForPictureMode:size: instead")));
+- (NSString *)imagePathForPictureMode:(FBSDKProfilePictureMode)mode size:(CGSize)size __attribute__((deprecated("use imageURLForPictureMode:size: instead")));
 /**
   Returns YES if the profile is equivalent to the receiver.
  - Parameter profile: the profile to compare to.

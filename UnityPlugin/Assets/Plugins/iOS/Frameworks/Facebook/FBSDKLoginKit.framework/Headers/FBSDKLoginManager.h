@@ -33,15 +33,13 @@ typedef void (^FBSDKLoginManagerRequestTokenHandler)(FBSDKLoginManagerLoginResul
  publication ceiling for the application. This enumerated value allows the application to select which
  audience to ask the user to grant publish permission for.
  */
-typedef NS_ENUM(NSUInteger, FBSDKDefaultAudience)
-{
-  /** Indicates that the user's friends are able to see posts made by the application */
-  FBSDKDefaultAudienceFriends = 0,
-  /** Indicates that only the user is able to see posts made by the application */
-  FBSDKDefaultAudienceOnlyMe,
-  /** Indicates that all Facebook users are able to see posts made by the application */
-  FBSDKDefaultAudienceEveryone,
-};
+typedef NS_ENUM(NSUInteger, FBSDKDefaultAudience) {
+    /** Indicates that the user's friends are able to see posts made by the application */
+    FBSDKDefaultAudienceFriends = 0,
+    /** Indicates that only the user is able to see posts made by the application */
+    FBSDKDefaultAudienceOnlyMe,
+    /** Indicates that all Facebook users are able to see posts made by the application */
+    FBSDKDefaultAudienceEveryone, };
 /**
  FBSDKLoginBehavior enum
   Passed to the \c FBSDKLoginManager to indicate how Facebook Login should be attempted.
@@ -54,31 +52,29 @@ typedef NS_ENUM(NSUInteger, FBSDKDefaultAudience)
  The \c FBSDKLoginBehavior enum specifies which log-in methods may be used. The SDK
   will determine the best behavior based on the current device (such as iOS version).
  */
-typedef NS_ENUM(NSUInteger, FBSDKLoginBehavior)
-{
-  /**
-    This is the default behavior, and indicates logging in through the native
-   Facebook app may be used. The SDK may still use Safari instead.
-   */
-  FBSDKLoginBehaviorNative = 0,
-  /**
-    Attempts log in through the Safari or SFSafariViewController, if available.
-   */
-  FBSDKLoginBehaviorBrowser,
-  /**
-    Attempts log in through the Facebook account currently signed in through
-   the device Settings.
-   @note If the account is not available to the app (either not configured by user or
-   as determined by the SDK) this behavior falls back to \c FBSDKLoginBehaviorNative.
-   */
-  FBSDKLoginBehaviorSystemAccount,
-  /**
-    Attempts log in through a modal \c UIWebView pop up
-   @note This behavior is only available to certain types of apps. Please check the Facebook
-   Platform Policy to verify your app meets the restrictions.
-   */
-  FBSDKLoginBehaviorWeb,
-};
+typedef NS_ENUM(NSUInteger, FBSDKLoginBehavior) {
+    /**
+      This is the default behavior, and indicates logging in through the native
+     Facebook app may be used. The SDK may still use Safari instead.
+     */
+    FBSDKLoginBehaviorNative = 0,
+    /**
+      Attempts log in through the Safari or SFSafariViewController, if available.
+     */
+    FBSDKLoginBehaviorBrowser,
+    /**
+      Attempts log in through the Facebook account currently signed in through
+     the device Settings.
+     @note If the account is not available to the app (either not configured by user or
+     as determined by the SDK) this behavior falls back to \c FBSDKLoginBehaviorNative.
+     */
+    FBSDKLoginBehaviorSystemAccount,
+    /**
+      Attempts log in through a modal \c UIWebView pop up
+     @note This behavior is only available to certain types of apps. Please check the Facebook
+     Platform Policy to verify your app meets the restrictions.
+     */
+    FBSDKLoginBehaviorWeb, };
 /**
   `FBSDKLoginManager` provides methods for logging the user in and out.
  `FBSDKLoginManager` works directly with `[FBSDKAccessToken currentAccessToken]` and
@@ -93,21 +89,19 @@ typedef NS_ENUM(NSUInteger, FBSDKLoginBehavior)
   the default audience.
  you should set this if you intend to ask for publish permissions.
  */
-@property (assign, nonatomic) FBSDKDefaultAudience defaultAudience;
+@property(assign, nonatomic) FBSDKDefaultAudience defaultAudience;
 /**
   the login behavior
  */
-@property (assign, nonatomic) FBSDKLoginBehavior loginBehavior;
+@property(assign, nonatomic) FBSDKLoginBehavior loginBehavior;
 /**
 - Warning:use logInWithReadPermissions:fromViewController:handler: instead
  */
-- (void)logInWithReadPermissions:(NSArray *)permissions handler:(FBSDKLoginManagerRequestTokenHandler)handler
-__attribute__ ((deprecated("use logInWithReadPermissions:fromViewController:handler: instead")));
+- (void)logInWithReadPermissions:(NSArray *)permissions handler:(FBSDKLoginManagerRequestTokenHandler)handler __attribute__((deprecated("use logInWithReadPermissions:fromViewController:handler: instead")));
 /**
 - Warning:use logInWithPublishPermissions:fromViewController:handler: instead
  */
-- (void)logInWithPublishPermissions:(NSArray *)permissions handler:(FBSDKLoginManagerRequestTokenHandler)handler
-__attribute__ ((deprecated("use logInWithPublishPermissions:fromViewController:handler: instead")));
+- (void)logInWithPublishPermissions:(NSArray *)permissions handler:(FBSDKLoginManagerRequestTokenHandler)handler __attribute__((deprecated("use logInWithPublishPermissions:fromViewController:handler: instead")));
 /**
   Logs the user in or authorizes additional permissions.
  - Parameter permissions: the optional array of permissions. Note this is converted to NSSet and is only
@@ -124,9 +118,7 @@ __attribute__ ((deprecated("use logInWithPublishPermissions:fromViewController:h
  You can only do one login call at a time. Calling a login method before the completion handler is called
  on a previous login will return an error.
  */
-- (void)logInWithReadPermissions:(NSArray *)permissions
-              fromViewController:(UIViewController *)fromViewController
-                         handler:(FBSDKLoginManagerRequestTokenHandler)handler;
+- (void)logInWithReadPermissions:(NSArray *)permissions fromViewController:(UIViewController *)fromViewController handler:(FBSDKLoginManagerRequestTokenHandler)handler;
 /**
   Logs the user in or authorizes additional permissions.
  - Parameter permissions: the optional array of permissions. Note this is converted to NSSet and is only
@@ -143,9 +135,7 @@ __attribute__ ((deprecated("use logInWithPublishPermissions:fromViewController:h
  You can only do one login call at a time. Calling a login method before the completion handler is called
  on a previous login will return an error.
  */
-- (void)logInWithPublishPermissions:(NSArray *)permissions
-                 fromViewController:(UIViewController *)fromViewController
-                            handler:(FBSDKLoginManagerRequestTokenHandler)handler;
+- (void)logInWithPublishPermissions:(NSArray *)permissions fromViewController:(UIViewController *)fromViewController handler:(FBSDKLoginManagerRequestTokenHandler)handler;
 /**
   Logs the user out
  This calls [FBSDKAccessToken setCurrentAccessToken:nil] and [FBSDKProfile setCurrentProfile:nil].

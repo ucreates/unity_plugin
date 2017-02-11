@@ -22,9 +22,9 @@
 - See:FBSDKSendButton
 - See:FBSDKShareButton
  */
-@protocol FBSDKSharingButton <NSObject>
+@protocol FBSDKSharingButton<NSObject>
 /**
   The content to be shared.
  */
-@property (nonatomic, copy) id<FBSDKSharingContent> shareContent;
+@property(nonatomic, copy) id<FBSDKSharingContent> shareContent;
 @end

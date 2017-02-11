@@ -31,15 +31,13 @@
  is nil if there was an error.
  - Parameter error:           The `NSError` representing any error that occurred.
  */
-typedef void (^FBSDKGraphRequestHandler)(FBSDKGraphRequestConnection *connection,
-                                         id result,
-                                         NSError *error);
+typedef void (^FBSDKGraphRequestHandler)(FBSDKGraphRequestConnection *connection, id result, NSError *error);
 /**
  @protocol
   The `FBSDKGraphRequestConnectionDelegate` protocol defines the methods used to receive network
  activity progress information from a <FBSDKGraphRequestConnection>.
  */
-@protocol FBSDKGraphRequestConnectionDelegate <NSObject>
+@protocol FBSDKGraphRequestConnectionDelegate<NSObject>
 @optional
 /**
  @method
@@ -72,8 +70,7 @@ typedef void (^FBSDKGraphRequestHandler)(FBSDKGraphRequestConnection *connection
  in some circumstances. Consult the `NSError` for the <FBSDKGraphRequest> for reliable
  failure information.
  */
-- (void)requestConnection:(FBSDKGraphRequestConnection *)connection
-         didFailWithError:(NSError *)error;
+- (void)requestConnection:(FBSDKGraphRequestConnection *)connection didFailWithError:(NSError *)error;
 /**
  @method
   Tells the delegate how much data has been sent and is planned to send to the remote host
@@ -84,10 +81,7 @@ typedef void (^FBSDKGraphRequestHandler)(FBSDKGraphRequestConnection *connection
  - Parameter totalBytesWritten:         The total number of bytes sent to the remote host
  - Parameter totalBytesExpectedToWrite: The total number of bytes expected to send to the remote host
  */
-- (void)requestConnection:(FBSDKGraphRequestConnection *)connection
-          didSendBodyData:(NSInteger)bytesWritten
-        totalBytesWritten:(NSInteger)totalBytesWritten
-totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
+- (void)requestConnection:(FBSDKGraphRequestConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
 @end
 /**
   The `FBSDKGraphRequestConnection` represents a single connection to Facebook to service a request.
@@ -99,11 +93,11 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
 /**
   The delegate object that receives updates.
  */
-@property (nonatomic, weak) id<FBSDKGraphRequestConnectionDelegate> delegate;
+@property(nonatomic, weak) id<FBSDKGraphRequestConnectionDelegate> delegate;
 /**
   Gets or sets the timeout interval to wait for a response before giving up.
  */
-@property (nonatomic) NSTimeInterval timeout;
+@property(nonatomic) NSTimeInterval timeout;
 /**
   The raw response that was returned from the server.  (readonly)
  This property can be used to inspect HTTP headers that were returned from
@@ -111,7 +105,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
  The property is nil until the request completes.  If there was a response
  then this property will be non-nil during the FBSDKGraphRequestHandler callback.
  */
-@property (nonatomic, retain, readonly) NSHTTPURLResponse *URLResponse;
+@property(nonatomic, retain, readonly) NSHTTPURLResponse *URLResponse;
 /**
  @methodgroup Class methods
  */
@@ -132,8 +126,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
  The completion handler is retained until the block is called upon the
  completion or cancellation of the connection.
  */
-- (void)addRequest:(FBSDKGraphRequest *)request
- completionHandler:(FBSDKGraphRequestHandler)handler;
+- (void)addRequest:(FBSDKGraphRequest *)request completionHandler:(FBSDKGraphRequestHandler)handler;
 /**
  @method
   This method adds an <FBSDKGraphRequest> object to this connection.
@@ -148,9 +141,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
  completion or cancellation of the connection. This request can be named
  to allow for using the request's response in a subsequent request.
  */
-- (void)addRequest:(FBSDKGraphRequest *)request
- completionHandler:(FBSDKGraphRequestHandler)handler
-    batchEntryName:(NSString *)name;
+- (void)addRequest:(FBSDKGraphRequest *)request completionHandler:(FBSDKGraphRequestHandler)handler batchEntryName:(NSString *)name;
 /**
  @method
   This method adds an <FBSDKGraphRequest> object to this connection.
@@ -163,9 +154,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
  completion or cancellation of the connection. This request can be named
  to allow for using the request's response in a subsequent request.
  */
-- (void)addRequest:(FBSDKGraphRequest *)request
- completionHandler:(FBSDKGraphRequestHandler)handler
-   batchParameters:(NSDictionary *)batchParameters;
+- (void)addRequest:(FBSDKGraphRequest *)request completionHandler:(FBSDKGraphRequestHandler)handler batchParameters:(NSDictionary *)batchParameters;
 /**
  @methodgroup Instance methods
  */

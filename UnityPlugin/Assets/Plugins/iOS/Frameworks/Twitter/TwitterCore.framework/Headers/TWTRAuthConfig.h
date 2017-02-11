@@ -13,11 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The consumer key of the Twitter application.
  */
-@property (nonatomic, copy, readonly) NSString *consumerKey;
+@property(nonatomic, copy, readonly) NSString *consumerKey;
 /**
  *  The consumer secret of the Twitter application.
  */
-@property (nonatomic, copy, readonly) NSString *consumerSecret;
+@property(nonatomic, copy, readonly) NSString *consumerSecret;
 /**
  *  Returns an `TWTRAuthConfig` object initialized by copying the values from the consumer key and consumer secret.
  *

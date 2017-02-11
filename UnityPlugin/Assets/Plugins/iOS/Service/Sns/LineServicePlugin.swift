@@ -9,7 +9,7 @@
 //======================================================================
 import Foundation
 import UIKit
-class LineServicePlugin: NSObject {
+open class LineServicePlugin: NSObject {
     fileprivate let lineAdapter: LineAdapter = LineAdapter.default()!
     @objc
     open func logIn(lineViewController: LineViewControllerPlugin) -> Void {

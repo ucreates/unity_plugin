@@ -21,7 +21,7 @@
   Extension protocol for NSMutableCopying that adds the mutableCopy method, which is implemented on NSObject.
  NSObject<NSCopying, NSMutableCopying> implicitly conforms to this protocol.
  */
-@protocol FBSDKMutableCopying <FBSDKCopying, NSMutableCopying>
+@protocol FBSDKMutableCopying<FBSDKCopying, NSMutableCopying>
 /**
   Implemented by NSObject as a convenience to mutableCopyWithZone:.
  - Returns: A mutable copy of the receiver.

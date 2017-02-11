@@ -55,33 +55,33 @@ FBSDK_EXTERN NSString *const FBSDKAccessTokenChangeNewKey;
 /**
   Returns the app ID.
  */
-@property (readonly, copy, nonatomic) NSString *appID;
+@property(readonly, copy, nonatomic) NSString *appID;
 /**
   Returns the known declined permissions.
  */
-@property (readonly, copy, nonatomic) NSSet *declinedPermissions;
+@property(readonly, copy, nonatomic) NSSet *declinedPermissions;
 /**
   Returns the expiration date.
  */
-@property (readonly, copy, nonatomic) NSDate *expirationDate;
+@property(readonly, copy, nonatomic) NSDate *expirationDate;
 /**
   Returns the known granted permissions.
  */
-@property (readonly, copy, nonatomic) NSSet *permissions;
+@property(readonly, copy, nonatomic) NSSet *permissions;
 /**
   Returns the date the token was last refreshed.
 */
-@property (readonly, copy, nonatomic) NSDate *refreshDate;
+@property(readonly, copy, nonatomic) NSDate *refreshDate;
 /**
   Returns the opaque token string.
  */
-@property (readonly, copy, nonatomic) NSString *tokenString;
+@property(readonly, copy, nonatomic) NSString *tokenString;
 /**
   Returns the user ID.
  */
-@property (readonly, copy, nonatomic) NSString *userID;
+@property(readonly, copy, nonatomic) NSString *userID;
 - (instancetype)init NS_UNAVAILABLE;
-+ (instancetype)new NS_UNAVAILABLE;
++ (instancetype) new NS_UNAVAILABLE;
 /**
   Initializes a new instance.
  - Parameter tokenString: the opaque token string.
@@ -103,8 +103,7 @@ FBSDK_EXTERN NSString *const FBSDKAccessTokenChangeNewKey;
                               appID:(NSString *)appID
                              userID:(NSString *)userID
                      expirationDate:(NSDate *)expirationDate
-                        refreshDate:(NSDate *)refreshDate
-NS_DESIGNATED_INITIALIZER;
+                        refreshDate:(NSDate *)refreshDate NS_DESIGNATED_INITIALIZER;
 /**
   Convenience getter to determine if a permission has been granted
  - Parameter permission:  The permission to check.

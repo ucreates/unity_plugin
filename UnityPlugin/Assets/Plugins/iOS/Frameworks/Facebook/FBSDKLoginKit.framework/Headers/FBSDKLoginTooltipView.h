@@ -30,17 +30,17 @@
  */
 @interface FBSDKLoginTooltipView : FBSDKTooltipView
 /**  the delegate */
-@property (nonatomic, weak) id<FBSDKLoginTooltipViewDelegate> delegate;
+@property(nonatomic, weak) id<FBSDKLoginTooltipViewDelegate> delegate;
 /**  if set to YES, the view will always be displayed and the delegate's
   `loginTooltipView:shouldAppear:` will NOT be called. */
-@property (nonatomic, assign) BOOL forceDisplay;
+@property(nonatomic, assign) BOOL forceDisplay;
 @end
 /**
  @protocol
   The `FBSDKLoginTooltipViewDelegate` protocol defines the methods used to receive event
  notifications from `FBSDKLoginTooltipView` objects.
  */
-@protocol FBSDKLoginTooltipViewDelegate <NSObject>
+@protocol FBSDKLoginTooltipViewDelegate<NSObject>
 @optional
 /**
   Asks the delegate if the tooltip view should appear

@@ -5,9 +5,9 @@
 //
 #import <Foundation/Foundation.h>
 NS_ASSUME_NONNULL_BEGIN
-FOUNDATION_EXPORT NSString * const TWTROAuthEchoRequestURLStringKey;
-FOUNDATION_EXPORT NSString * const TWTROAuthEchoAuthorizationHeaderKey;
-@protocol TWTRCoreOAuthSigning <NSObject>
+FOUNDATION_EXPORT NSString *const TWTROAuthEchoRequestURLStringKey;
+FOUNDATION_EXPORT NSString *const TWTROAuthEchoAuthorizationHeaderKey;
+@protocol TWTRCoreOAuthSigning<NSObject>
 /**
  *  @name OAuth Echo
  */
@@ -23,7 +23,8 @@ FOUNDATION_EXPORT NSString * const TWTROAuthEchoAuthorizationHeaderKey;
  *  @param parameters   Request parameters.
  *  @param error        Error in the `TWTRErrorDomain` domain. The code will be `TWTRErrorCodeInvalidURL` if the `URLString`'s host is not api.twitter.com
  *
- *  @return `nil` if there's an error or a missing required parameter, or a dictionary with the fully formed request URL under `TWTROAuthEchoRequestURLStringKey` (`NSString`), and the `Authorization` header in `TWTROAuthEchoAuthorizationHeaderKey` (`NSString`), to be used to sign the request.
+ *  @return `nil` if there's an error or a missing required parameter, or a dictionary with the fully formed request URL under `TWTROAuthEchoRequestURLStringKey` (`NSString`), and the `Authorization` header in `TWTROAuthEchoAuthorizationHeaderKey`
+ *(`NSString`), to be used to sign the request.
  *
  *  @see More information about OAuth Echo: https://dev.twitter.com/oauth/echo
  */

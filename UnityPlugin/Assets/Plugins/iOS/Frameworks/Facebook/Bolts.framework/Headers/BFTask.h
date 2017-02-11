@@ -20,11 +20,9 @@ extern NSString *const BFTaskErrorDomain;
 extern NSInteger const kBFMultipleErrorsError;
 /*!
  An exception that is thrown if there was multiple exceptions on <BFTask taskForCompletionOfAllTasks:>.
- 
  @deprecated `BFTask` exception handling is deprecated and will be removed in a future release.
  */
-extern NSString *const BFTaskMultipleExceptionsException
-__attribute__((deprecated("`BFTask` exception handling is deprecated and will be removed in a future release.")));
+extern NSString *const BFTaskMultipleExceptionsException __attribute__((deprecated("`BFTask` exception handling is deprecated and will be removed in a future release.")));
 /*!
  An error userInfo key used if there were multiple errors on <BFTask taskForCompletionOfAllTasks:>.
  Value type is `NSArray<NSError *> *`.
@@ -33,11 +31,9 @@ extern NSString *const BFTaskMultipleErrorsUserInfoKey;
 /*!
  An error userInfo key used if there were multiple exceptions on <BFTask taskForCompletionOfAllTasks:>.
  Value type is `NSArray<NSException *> *`.
- 
  @deprecated `BFTask` exception handling is deprecated and will be removed in a future release.
  */
-extern NSString *const BFTaskMultipleExceptionsUserInfoKey
-__attribute__((deprecated("`BFTask` exception handling is deprecated and will be removed in a future release.")));
+extern NSString *const BFTaskMultipleExceptionsUserInfoKey __attribute__((deprecated("`BFTask` exception handling is deprecated and will be removed in a future release.")));
 @class BFExecutor;
 @class BFTask;
 /*!
@@ -63,11 +59,9 @@ typedef __nullable id(^BFContinuationBlock)(BFTask<ResultType> *t);
 /*!
  Creates a task that is already completed with the given exception.
  @param exception The exception for the task.
- 
  @deprecated `BFTask` exception handling is deprecated and will be removed in a future release.
  */
-+ (instancetype)taskWithException:(NSException *)exception
-__attribute__((deprecated("`BFTask` exception handling is deprecated and will be removed in a future release.")));
++ (instancetype)taskWithException:(NSException *)exception __attribute__((deprecated("`BFTask` exception handling is deprecated and will be removed in a future release.")));
 /*!
  Creates a task that is already cancelled.
  */
@@ -87,7 +81,7 @@ __attribute__((deprecated("`BFTask` exception handling is deprecated and will be
 + (instancetype)taskForCompletionOfAllTasksWithResults:(nullable NSArray<BFTask *> *)tasks;
 /*!
  Returns a task that will be completed once there is at least one successful task.
- The first task to successuly complete will set the result, all other tasks results are 
+ The first task to successuly complete will set the result, all other tasks results are
  ignored.
  @param tasks An `NSArray` of the tasks to use as an input.
  */
@@ -120,29 +114,28 @@ __attribute__((deprecated("`BFTask` exception handling is deprecated and will be
 /*!
  The result of a successful task.
  */
-@property (nullable, nonatomic, strong, readonly) ResultType result;
+@property(nullable, nonatomic, strong, readonly) ResultType result;
 /*!
  The error of a failed task.
  */
-@property (nullable, nonatomic, strong, readonly) NSError *error;
+@property(nullable, nonatomic, strong, readonly) NSError *error;
 /*!
  The exception of a failed task.
  @deprecated `BFTask` exception handling is deprecated and will be removed in a future release.
  */
-@property (nullable, nonatomic, strong, readonly) NSException *exception
-__attribute__((deprecated("`BFTask` exception handling is deprecated and will be removed in a future release.")));
+@property(nullable, nonatomic, strong, readonly) NSException *exception __attribute__((deprecated("`BFTask` exception handling is deprecated and will be removed in a future release.")));
 /*!
  Whether this task has been cancelled.
  */
-@property (nonatomic, assign, readonly, getter=isCancelled) BOOL cancelled;
+@property(nonatomic, assign, readonly, getter=isCancelled) BOOL cancelled;
 /*!
  Whether this task has completed due to an error or exception.
  */
-@property (nonatomic, assign, readonly, getter=isFaulted) BOOL faulted;
+@property(nonatomic, assign, readonly, getter=isFaulted) BOOL faulted;
 /*!
  Whether this task has completed.
  */
-@property (nonatomic, assign, readonly, getter=isCompleted) BOOL completed;
+@property(nonatomic, assign, readonly, getter=isCompleted) BOOL completed;
 /*!
  Enqueues the given block to be run once this task is complete.
  This method uses a default execution strategy. The block will be
@@ -188,9 +181,7 @@ __attribute__((deprecated("`BFTask` exception handling is deprecated and will be
  If block returns a BFTask, then the task returned from
  his method will not be completed until that task is completed.
  */
-- (BFTask *)continueWithExecutor:(BFExecutor *)executor
-                           block:(BFContinuationBlock)block
-               cancellationToken:(nullable BFCancellationToken *)cancellationToken;
+- (BFTask *)continueWithExecutor:(BFExecutor *)executor block:(BFContinuationBlock)block cancellationToken:(nullable BFCancellationToken *)cancellationToken;
 /*!
  Identical to continueWithBlock:, except that the block is only run
  if this task did not produce a cancellation, error, or exception.
@@ -240,9 +231,7 @@ __attribute__((deprecated("`BFTask` exception handling is deprecated and will be
  If block returns a BFTask, then the task returned from
  this method will not be completed until that task is completed.
  */
-- (BFTask *)continueWithExecutor:(BFExecutor *)executor
-                    successBlock:(BFContinuationBlock)block
-               cancellationToken:(nullable BFCancellationToken *)cancellationToken;
+- (BFTask *)continueWithExecutor:(BFExecutor *)executor successBlock:(BFContinuationBlock)block cancellationToken:(nullable BFCancellationToken *)cancellationToken;
 /*!
  Waits until this operation is completed.
  This method is inefficient and consumes a thread resource while

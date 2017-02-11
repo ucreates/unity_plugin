@@ -4,7 +4,7 @@ the project is iOS / Android plugin for [Unity](https://unity3d.com).
 ## Description
 the project is develoed by Unity(5.4.3f1),Xcode(8.1),Android Studio(2.2.2),
 
-Fabric(iOS:2.6.1/Android:2.2.0),Facebook(iOS:4.18/Android:4.18),LINE(iOS:3.2.1/Android:3.1.21)
+Fabric(iOS:2.8.0/Android:2.3.1),Facebook(iOS:4.18/Android:4.18),LINE(iOS:3.2.1/Android:3.1.21)
 
 iOS plugin supported iOS10.0 Later.
 

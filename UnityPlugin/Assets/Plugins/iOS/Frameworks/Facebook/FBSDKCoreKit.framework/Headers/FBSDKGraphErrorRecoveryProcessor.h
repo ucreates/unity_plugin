@@ -64,14 +64,14 @@
 /**
   Gets the delegate. Note this is a strong reference, and is nil'ed out after recovery is complete.
  */
-@property (nonatomic, strong, readonly) id<FBSDKGraphErrorRecoveryProcessorDelegate>delegate;
+@property(nonatomic, strong, readonly) id<FBSDKGraphErrorRecoveryProcessorDelegate> delegate;
 /**
   Attempts to process the error, return YES if the error can be processed.
  - Parameter error: the error to process.
  - Parameter request: the related request that may be reissued.
  - Parameter delegate: the delegate that will be retained until recovery is complete.
  */
-- (BOOL)processError:(NSError *)error request:(FBSDKGraphRequest *)request delegate:(id<FBSDKGraphErrorRecoveryProcessorDelegate>) delegate;
+- (BOOL)processError:(NSError *)error request:(FBSDKGraphRequest *)request delegate:(id<FBSDKGraphErrorRecoveryProcessorDelegate>)delegate;
 /**
   The callback for FBSDKErrorRecoveryAttempting
  - Parameter didRecover: if the recovery succeeded

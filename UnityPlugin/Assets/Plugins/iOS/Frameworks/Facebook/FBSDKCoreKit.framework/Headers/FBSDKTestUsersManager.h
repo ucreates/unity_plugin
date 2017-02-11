@@ -20,11 +20,11 @@
 /**
   Callback block for returning an array of FBSDKAccessToken instances (and possibly `NSNull` instances); or an error.
  */
-typedef void (^FBSDKTestUsersManagerRetrieveTestAccountTokensHandler)(NSArray *tokens, NSError *error) ;
+typedef void (^FBSDKTestUsersManagerRetrieveTestAccountTokensHandler)(NSArray *tokens, NSError *error);
 /**
   Callback block for removing a test user.
  */
-typedef void (^FBSDKTestUsersManagerRemoveTestAccountHandler)(NSError *error) ;
+typedef void (^FBSDKTestUsersManagerRemoveTestAccountHandler)(NSError *error);
 /**
   Provides methods for managing test accounts for testing Facebook integration.
  Facebook allows developers to create test accounts for testing their applications'
@@ -56,16 +56,13 @@ typedef void (^FBSDKTestUsersManagerRemoveTestAccountHandler)(NSError *error) ;
  `arrayOfPermissionsArrays` so that the most number of permissions come first to minimize creation of new
  test accounts.
  */
-- (void)requestTestAccountTokensWithArraysOfPermissions:(NSArray *)arraysOfPermissions
-                                       createIfNotFound:(BOOL)createIfNotFound
-                                      completionHandler:(FBSDKTestUsersManagerRetrieveTestAccountTokensHandler)handler;
+- (void)requestTestAccountTokensWithArraysOfPermissions:(NSArray *)arraysOfPermissions createIfNotFound:(BOOL)createIfNotFound completionHandler:(FBSDKTestUsersManagerRetrieveTestAccountTokensHandler)handler;
 /**
   add a test account with the specified permissions
  - Parameter permissions: the set of permissions, e.g., [NSSet setWithObjects:@"email", @"user_friends"]
  - Parameter handler: the callback handler
  */
-- (void)addTestAccountWithPermissions:(NSSet *)permissions
-                    completionHandler:(FBSDKTestUsersManagerRetrieveTestAccountTokensHandler)handler;
+- (void)addTestAccountWithPermissions:(NSSet *)permissions completionHandler:(FBSDKTestUsersManagerRetrieveTestAccountTokensHandler)handler;
 /**
   remove a test account for the given user id
  - Parameter userId: the user id

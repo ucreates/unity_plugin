@@ -18,8 +18,7 @@ typedef NS_ENUM(NSInteger, BFAppLinkNavigationType) {
     /*! Indicates that the navigation succeeded by opening the URL in the browser */
     BFAppLinkNavigationTypeBrowser,
     /*! Indicates that the navigation succeeded by opening the URL in an app on the device */
-    BFAppLinkNavigationTypeApp
-};
+    BFAppLinkNavigationTypeApp};
 @protocol BFAppLinkResolving;
 @class BFTask;
 /*!
@@ -34,19 +33,17 @@ typedef NS_ENUM(NSInteger, BFAppLinkNavigationType) {
  data that should be passed along with the request, such as advertiser or affiliate IDs or
  other such metadata relevant on this device.
  */
-@property (nonatomic, copy, readonly) NSDictionary *extras;
+@property(nonatomic, copy, readonly) NSDictionary *extras;
 /*!
  The al_applink_data for the AppLinkNavigation. This will generally contain data common to
  navigation attempts such as back-links, user agents, and other information that may be used
  in routing and handling an App Link request.
  */
-@property (nonatomic, copy, readonly) NSDictionary *appLinkData;
+@property(nonatomic, copy, readonly) NSDictionary *appLinkData;
 /*! The AppLink to navigate to */
-@property (nonatomic, strong, readonly) BFAppLink *appLink;
+@property(nonatomic, strong, readonly) BFAppLink *appLink;
 /*! Creates an AppLinkNavigation with the given link, extras, and App Link data */
-+ (instancetype)navigationWithAppLink:(BFAppLink *)appLink
-                               extras:(NSDictionary *)extras
-                          appLinkData:(NSDictionary *)appLinkData;
++ (instancetype)navigationWithAppLink:(BFAppLink *)appLink extras:(NSDictionary *)extras appLinkData:(NSDictionary *)appLinkData;
 /*!
  Creates an NSDictionary with the correct format for iOS callback URLs,
  to be used as 'appLinkData' argument in the call to navigationWithAppLink:extras:appLinkData:

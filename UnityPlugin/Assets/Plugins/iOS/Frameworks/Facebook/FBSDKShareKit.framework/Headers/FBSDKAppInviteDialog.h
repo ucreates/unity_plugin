@@ -29,27 +29,24 @@
  - Parameter content: The content for the app invite.
  - Parameter delegate: The receiver's delegate.
 */
-+ (instancetype)showFromViewController:(UIViewController *)viewController
-                           withContent:(FBSDKAppInviteContent *)content
-                              delegate:(id<FBSDKAppInviteDialogDelegate>)delegate;
++ (instancetype)showFromViewController:(UIViewController *)viewController withContent:(FBSDKAppInviteContent *)content delegate:(id<FBSDKAppInviteDialogDelegate>)delegate;
 /**
 - Warning:use showFromViewController:withContent:delegate: instead
  */
-+ (instancetype)showWithContent:(FBSDKAppInviteContent *)content delegate:(id<FBSDKAppInviteDialogDelegate>)delegate
-__attribute__ ((deprecated("use showFromViewController:withContent:delegate: instead")));
++ (instancetype)showWithContent:(FBSDKAppInviteContent *)content delegate:(id<FBSDKAppInviteDialogDelegate>)delegate __attribute__((deprecated("use showFromViewController:withContent:delegate: instead")));
 /**
   A UIViewController to present the dialog from.
  If not specified, the top most view controller will be automatically determined as best as possible.
  */
-@property (nonatomic, weak) UIViewController *fromViewController;
+@property(nonatomic, weak) UIViewController *fromViewController;
 /**
   The receiver's delegate or nil if it doesn't have a delegate.
  */
-@property (nonatomic, weak) id<FBSDKAppInviteDialogDelegate> delegate;
+@property(nonatomic, weak) id<FBSDKAppInviteDialogDelegate> delegate;
 /**
   The content for app invite.
  */
-@property (nonatomic, copy) FBSDKAppInviteContent *content;
+@property(nonatomic, copy) FBSDKAppInviteContent *content;
 /**
   A Boolean value that indicates whether the receiver can initiate an app invite.
  May return NO if the appropriate Facebook app is not installed and is required or an access token is
@@ -77,7 +74,7 @@ __attribute__ ((deprecated("use showFromViewController:withContent:delegate: ins
  receive the information.  For example, if the person is not signed into the containing app, the shower may not be able
  to distinguish between completion of an app invite and cancellation.
  */
-@protocol FBSDKAppInviteDialogDelegate <NSObject>
+@protocol FBSDKAppInviteDialogDelegate<NSObject>
 /**
   Sent to the delegate when the app invite completes without error.
  - Parameter appInviteDialog: The FBSDKAppInviteDialog that completed.
