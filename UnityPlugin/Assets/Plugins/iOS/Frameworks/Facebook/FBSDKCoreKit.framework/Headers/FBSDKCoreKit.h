@@ -40,5 +40,5 @@
 #import <FBSDKCoreKit/FBSDKDeviceButton.h>
 #import <FBSDKCoreKit/FBSDKDeviceViewControllerBase.h>
 #endif
-#define FBSDK_VERSION_STRING @"4.18.0"
+#define FBSDK_VERSION_STRING @"4.19.0"
 #define FBSDK_TARGET_PLATFORM_VERSION @"v2.8"
