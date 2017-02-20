@@ -53,7 +53,7 @@ open class TwitterViewControllerPlugin: UIViewController, TWTRComposerViewContro
                 let device: UIDevice = UIDevice.current
                 let idiom: UIUserInterfaceIdiom = device.userInterfaceIdiom
                 let bundle: Bundle = Bundle.main
-                //set your ios app bundle identifier. whish is getting from Bundle.bundleIdentifier property. Sets the Apple App Store id for the promoted iPad app shown on iOS displays.
+                //set your ios app bundle identifier. which is getting from Bundle.bundleIdentifier property. Sets the Apple App Store id for the promoted iPad app shown on iOS displays.
                 let bundleId: String? = bundle.bundleIdentifier
                 var iPhoneAppId: String? = nil
                 var iPadAppId: String? = nil

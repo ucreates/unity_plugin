@@ -33,7 +33,7 @@ public class TwitterActivityPlugin extends Activity {
     private static final String HASHTAG = "#hashtags by unity twitter plugin";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent intent = getIntent();
+        Intent intent = this.getIntent();
         final Activity activity = this;
         final String post = intent.getStringExtra("post");
         final String imageDataPath = intent.getStringExtra("imageDataPath");
@@ -70,7 +70,7 @@ public class TwitterActivityPlugin extends Activity {
                 @Override
                 public void success(Result<Void> result) {
                     TwitterSession activeSession = service.getActiveSession();
-                    //set your android app packageName. whish is getting from Activity.getPackageName method. The package must correspond to a published app on Google Play for Card Tweets to link correctly.
+                    //set your android app packageName. which is getting from Activity.getPackageName method. The package must correspond to a published app on Google Play for Card Tweets to link correctly.
                     String packageName = activity.getPackageName();
                     Card card = new Card.AppCardBuilder(activity)
                     .imageUri(imageFileUri)
