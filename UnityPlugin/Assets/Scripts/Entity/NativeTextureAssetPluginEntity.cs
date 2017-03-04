@@ -25,6 +25,8 @@ public class NativeTextureAssetPluginEntity {
         get;
         set;
     }
+    public NativeTextureAssetPluginEntity(string fileName, bool enableAlphaChannel) : this(fileName, 0, 0, enableAlphaChannel) {
+    }
     public NativeTextureAssetPluginEntity(string fileName, int width, int height, bool enableAlphaChannel) {
         this.fileName = fileName;
         this.width = width;
@@ -37,5 +39,15 @@ public class NativeTextureAssetPluginEntity {
             this.heightRatio = (float)height / (float)width;
         }
         this.enableAlphaChannel = enableAlphaChannel;
+    }
+    public void Reset() {
+        this.widthRatio = 1.0f;
+        this.heightRatio = 1.0f;
+        if (width > height) {
+            this.widthRatio = (float)width / (float)height;
+        } else if (height > width) {
+            this.heightRatio = (float)height / (float)width;
+        }
+        return;
     }
 }

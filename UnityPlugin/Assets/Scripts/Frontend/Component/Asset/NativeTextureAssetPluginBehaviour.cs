@@ -27,6 +27,10 @@ public class NativeTextureAssetPluginBehaviour : MonoBehaviour {
         entityList.Add(new NativeTextureAssetPluginEntity("native_square_02.raw", 256, 256, true));
         entityList.Add(new NativeTextureAssetPluginEntity("native_rectangle_01.raw", 512, 256, false));
         entityList.Add(new NativeTextureAssetPluginEntity("native_rectangle_02.raw", 512, 256, true));
+        entityList.Add(new NativeTextureAssetPluginEntity("native_square_01.jpg", false));
+        entityList.Add(new NativeTextureAssetPluginEntity("native_square_02.jpg", false));
+        entityList.Add(new NativeTextureAssetPluginEntity("native_rectangle_01.jpg", false));
+        entityList.Add(new NativeTextureAssetPluginEntity("native_rectangle_02.jpg", false));
         int index = UnityEngine.Random.Range(0, entityList.Count);
         NativeTextureAssetPluginEntity entity = entityList[index];
         string path = Path.Combine(Application.streamingAssetsPath, entity.fileName);
@@ -44,6 +48,9 @@ public class NativeTextureAssetPluginBehaviour : MonoBehaviour {
         }
         //load donwloaded texture by native texture plugin.
         this.nativeTextureAssetPlugin.Load(path, entity.width, entity.height, entity.enableAlphaChannel, this.gameObject);
+        entity.width = this.nativeTextureAssetPlugin.width;
+        entity.height = this.nativeTextureAssetPlugin.height;
+        entity.Reset();
         this.gameObject.transform.localScale = new Vector3(NativeTextureAssetPluginBehaviour.UNIT_SCALE * entity.widthRatio, NativeTextureAssetPluginBehaviour.UNIT_SCALE * entity.heightRatio, NativeTextureAssetPluginBehaviour.UNIT_SCALE);
     }
     // Update is called once per frame

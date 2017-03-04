@@ -61,6 +61,14 @@ public class NativeTextureAssetPlugin : BasePlugin {
     [DllImport("UnityNativePlugin")]
 #endif
     private static extern bool EnableTextureByNativeTextureAssetPlugin(int instanceId);
+    public int width {
+        get;
+        set;
+    }
+    public int height {
+        get;
+        set;
+    }
     private int instanceId {
         get;
         set;
@@ -79,14 +87,14 @@ public class NativeTextureAssetPlugin : BasePlugin {
             }
             this.instanceId = renderGameObject.GetInstanceID();
             LoadTextureByNativeTextureAssetPlugin(this.instanceId, textureAssetPath, width, height, useAlphaChannel);
-            int textureWidth = GetTextureWidthByNativeTextureAssetPlugin(this.instanceId);
-            int textureHeight = GetTextureHeightByNativeTextureAssetPlugin(this.instanceId);
+            this.width = GetTextureWidthByNativeTextureAssetPlugin(this.instanceId);
+            this.height = GetTextureHeightByNativeTextureAssetPlugin(this.instanceId);
             bool enableAlphaChannel = EnableAlphaChannelByNativeTextureAssetPlugin(this.instanceId);
             TextureFormat format = TextureFormat.RGB24;
             if (false != enableAlphaChannel) {
                 format = TextureFormat.ARGB32;
             }
-            Texture2D texture = new Texture2D(textureWidth, textureHeight, format, false);
+            Texture2D texture = new Texture2D(this.width, this.height, format, false);
             texture.filterMode = FilterMode.Point;
             texture.Apply();
             renderer.material.mainTexture = texture;

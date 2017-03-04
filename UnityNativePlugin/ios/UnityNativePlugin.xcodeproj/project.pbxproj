@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81237B5A1E6250BF009C100F /* JpegNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81237B581E6250BF009C100F /* JpegNativeTextureAssetPlugin.cpp */; };
 		81566E461E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81566E441E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp */; };
 		8165C0161E386097000B9214 /* NativeTextureAssetCollectionPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8165C0141E386097000B9214 /* NativeTextureAssetCollectionPlugin.cpp */; };
 		81A658211E443324006B2100 /* TextureAssetValidatorPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81A6581F1E443324006B2100 /* TextureAssetValidatorPlugin.cpp */; };
@@ -36,6 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		81237B581E6250BF009C100F /* JpegNativeTextureAssetPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JpegNativeTextureAssetPlugin.cpp; sourceTree = "<group>"; };
+		81237B591E6250BF009C100F /* JpegNativeTextureAssetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JpegNativeTextureAssetPlugin.h; sourceTree = "<group>"; };
 		81566E2B1E3ED0CA00CB2A4B /* libyuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libyuv.a; path = ../lib/ios/libyuv.a; sourceTree = "<group>"; };
 		81566E441E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YuvNativeTextureAssetPlugin.cpp; sourceTree = "<group>"; };
 		81566E451E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuvNativeTextureAssetPlugin.h; sourceTree = "<group>"; };
@@ -246,6 +249,8 @@
 				81BF05ED1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.h */,
 				81566E441E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp */,
 				81566E451E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.h */,
+				81237B581E6250BF009C100F /* JpegNativeTextureAssetPlugin.cpp */,
+				81237B591E6250BF009C100F /* JpegNativeTextureAssetPlugin.h */,
 			);
 			path = render;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 				81BF05EE1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.cpp in Sources */,
 				8165C0161E386097000B9214 /* NativeTextureAssetCollectionPlugin.cpp in Sources */,
 				81F271F51E36E8E300B85998 /* RawNativeTextureAssetPlugin.cpp in Sources */,
+				81237B5A1E6250BF009C100F /* JpegNativeTextureAssetPlugin.cpp in Sources */,
 				81566E461E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp in Sources */,
 				81D468CE1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp in Sources */,
 				81D468AA1E35AEE5001BBDB1 /* UnityNativePlugin.cpp in Sources */,
@@ -446,6 +452,8 @@
 					"-all_load",
 					"-l",
 					libyuv,
+					"-l",
+					libjpeg,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -465,6 +473,8 @@
 					"-all_load",
 					"-l",
 					libyuv,
+					"-l",
+					libjpeg,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -10,11 +10,14 @@
 #include "NativeTextureAssetFactoryPlugin.h"
 #include "RawNativeTextureAssetPlugin.h"
 #include "YuvNativeTextureAssetPlugin.h"
+#include "JpegNativeTextureAssetPlugin.h"
 #include "ExtensionPlugin.h"
 BaseNativeTextureAssetPlugin* NativeTextureAssetFactoryPlugin::factoryMethod(const char* textureAssetPath) {
     BaseNativeTextureAssetPlugin* textureAsset = NULL;
     if (false != ExtensionPlugin::hasExtension(textureAssetPath, ".raw")) {
         textureAsset = new RawNativeTextureAssetPlugin();
+    } else if (false != ExtensionPlugin::hasExtension(textureAssetPath, ".jpg")) {
+        textureAsset = new JpegNativeTextureAssetPlugin();
     }
     return textureAsset;
 }
@@ -26,6 +29,9 @@ BaseNativeTextureAssetPlugin* NativeTextureAssetFactoryPlugin::factoryMethod(con
             break;
         case YuvNativeTextureAssetPlugin::TEXTURE_TYPE:
             textureAsset = new YuvNativeTextureAssetPlugin();
+            break;
+        case JpegNativeTextureAssetPlugin::TEXTURE_TYPE:
+            textureAsset = new JpegNativeTextureAssetPlugin();
             break;
         default:
             break;
