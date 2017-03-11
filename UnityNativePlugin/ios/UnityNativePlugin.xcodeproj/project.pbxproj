@@ -10,6 +10,10 @@
 		81237B5A1E6250BF009C100F /* JpegNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81237B581E6250BF009C100F /* JpegNativeTextureAssetPlugin.cpp */; };
 		81566E461E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81566E441E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp */; };
 		8165C0161E386097000B9214 /* NativeTextureAssetCollectionPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8165C0141E386097000B9214 /* NativeTextureAssetCollectionPlugin.cpp */; };
+		817B4A931E6BA9690074220D /* PngNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 817B4A911E6BA9690074220D /* PngNativeTextureAssetPlugin.cpp */; };
+		817B4A9C1E6BBD630074220D /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 817B4A991E6BBD630074220D /* libpng.a */; };
+		817B4A9D1E6BBD630074220D /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 817B4A9A1E6BBD630074220D /* libjpeg.a */; };
+		817B4A9E1E6BBD630074220D /* libyuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 817B4A9B1E6BBD630074220D /* libyuv.a */; };
 		81A658211E443324006B2100 /* TextureAssetValidatorPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81A6581F1E443324006B2100 /* TextureAssetValidatorPlugin.cpp */; };
 		81A658281E445FDB006B2100 /* BGRAPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81A658241E445FDB006B2100 /* BGRAPlugin.cpp */; };
 		81A658291E445FDB006B2100 /* LogPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81A658261E445FDB006B2100 /* LogPlugin.cpp */; };
@@ -39,11 +43,15 @@
 /* Begin PBXFileReference section */
 		81237B581E6250BF009C100F /* JpegNativeTextureAssetPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JpegNativeTextureAssetPlugin.cpp; sourceTree = "<group>"; };
 		81237B591E6250BF009C100F /* JpegNativeTextureAssetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JpegNativeTextureAssetPlugin.h; sourceTree = "<group>"; };
-		81566E2B1E3ED0CA00CB2A4B /* libyuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libyuv.a; path = ../lib/ios/libyuv.a; sourceTree = "<group>"; };
 		81566E441E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YuvNativeTextureAssetPlugin.cpp; sourceTree = "<group>"; };
 		81566E451E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuvNativeTextureAssetPlugin.h; sourceTree = "<group>"; };
 		8165C0141E386097000B9214 /* NativeTextureAssetCollectionPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeTextureAssetCollectionPlugin.cpp; sourceTree = "<group>"; };
 		8165C0151E386097000B9214 /* NativeTextureAssetCollectionPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTextureAssetCollectionPlugin.h; sourceTree = "<group>"; };
+		817B4A911E6BA9690074220D /* PngNativeTextureAssetPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PngNativeTextureAssetPlugin.cpp; sourceTree = "<group>"; };
+		817B4A921E6BA9690074220D /* PngNativeTextureAssetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PngNativeTextureAssetPlugin.h; sourceTree = "<group>"; };
+		817B4A991E6BBD630074220D /* libpng.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng.a; path = ../lib/ios/libpng.a; sourceTree = "<group>"; };
+		817B4A9A1E6BBD630074220D /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjpeg.a; path = ../lib/ios/libjpeg.a; sourceTree = "<group>"; };
+		817B4A9B1E6BBD630074220D /* libyuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libyuv.a; path = ../lib/ios/libyuv.a; sourceTree = "<group>"; };
 		81A6581F1E443324006B2100 /* TextureAssetValidatorPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureAssetValidatorPlugin.cpp; sourceTree = "<group>"; };
 		81A658201E443324006B2100 /* TextureAssetValidatorPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureAssetValidatorPlugin.h; sourceTree = "<group>"; };
 		81A658241E445FDB006B2100 /* BGRAPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BGRAPlugin.cpp; sourceTree = "<group>"; };
@@ -79,6 +87,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				817B4A9C1E6BBD630074220D /* libpng.a in Frameworks */,
+				817B4A9D1E6BBD630074220D /* libjpeg.a in Frameworks */,
+				817B4A9E1E6BBD630074220D /* libyuv.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +162,9 @@
 		81D468821E35AB40001BBDB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				81566E2B1E3ED0CA00CB2A4B /* libyuv.a */,
+				817B4A991E6BBD630074220D /* libpng.a */,
+				817B4A9A1E6BBD630074220D /* libjpeg.a */,
+				817B4A9B1E6BBD630074220D /* libyuv.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -251,6 +264,8 @@
 				81566E451E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.h */,
 				81237B581E6250BF009C100F /* JpegNativeTextureAssetPlugin.cpp */,
 				81237B591E6250BF009C100F /* JpegNativeTextureAssetPlugin.h */,
+				817B4A911E6BA9690074220D /* PngNativeTextureAssetPlugin.cpp */,
+				817B4A921E6BA9690074220D /* PngNativeTextureAssetPlugin.h */,
 			);
 			path = render;
 			sourceTree = "<group>";
@@ -343,6 +358,7 @@
 				81566E461E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp in Sources */,
 				81D468CE1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp in Sources */,
 				81D468AA1E35AEE5001BBDB1 /* UnityNativePlugin.cpp in Sources */,
+				817B4A931E6BA9690074220D /* PngNativeTextureAssetPlugin.cpp in Sources */,
 				81A658291E445FDB006B2100 /* LogPlugin.cpp in Sources */,
 				81A658211E443324006B2100 /* TextureAssetValidatorPlugin.cpp in Sources */,
 				81D468D41E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp in Sources */,
@@ -450,10 +466,10 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
-					"-l",
-					libyuv,
-					"-l",
-					libjpeg,
+					"-llibyuv",
+					"-llibjpeg",
+					"-llibpng",
+					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -471,10 +487,10 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
-					"-l",
-					libyuv,
-					"-l",
-					libjpeg,
+					"-llibyuv",
+					"-llibjpeg",
+					"-llibpng",
+					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

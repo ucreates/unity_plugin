@@ -38,6 +38,7 @@ public class BuildPostProcess {
             foreach (string framework in frameworkList) {
                 project.AddFrameworkToProject(targetGUID, framework, false);
             }
+            project.AddBuildProperty(targetGUID, "OTHER_LDFLAGS", "-lz");
             foreach (int builderId in builderIdList) {
                 BaseEditorBuilder builder = EditorBuilderFactory.FactoryMethod(builderId);
                 builder.project = project;

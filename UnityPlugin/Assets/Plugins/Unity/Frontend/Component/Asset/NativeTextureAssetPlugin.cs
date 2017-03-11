@@ -10,6 +10,7 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using System.IO;
 using System.Runtime.InteropServices;
 namespace UnityPlugin.Frontend.Component.Asset {
 public class NativeTextureAssetPlugin : BasePlugin {
@@ -76,7 +77,7 @@ public class NativeTextureAssetPlugin : BasePlugin {
     public NativeTextureAssetPlugin() {
         this.instanceId = 0;
     }
-    public void Load(string textureAssetPath, int width, int height, bool useAlphaChannel, GameObject renderGameObject) {
+    public void Load(string textureAssetPath, int width, int height, bool useAlphaChannel, GameObject renderGameObject, Shader shader = null) {
         if (RuntimePlatform.IPhonePlayer == Application.platform || RuntimePlatform.Android == Application.platform) {
             if (null == renderGameObject) {
                 return;
@@ -94,10 +95,21 @@ public class NativeTextureAssetPlugin : BasePlugin {
             if (false != enableAlphaChannel) {
                 format = TextureFormat.ARGB32;
             }
+            string extension = Path.GetExtension(textureAssetPath);
             Texture2D texture = new Texture2D(this.width, this.height, format, false);
             texture.filterMode = FilterMode.Point;
             texture.Apply();
-            renderer.material.mainTexture = texture;
+            if (false != extension.Equals(".png")) {
+                if (null == shader) {
+                    this.Destroy();
+                    return;
+                }
+                Material material = new Material(shader);
+                material.mainTexture = texture;
+                renderer.material = material;
+            } else {
+                renderer.material.mainTexture = texture;
+            }
             renderer.material.mainTextureScale = new Vector2(-1f, 1f);
             IntPtr texturePtr = texture.GetNativeTexturePtr();
             SetTextureIdToNativeTextureAssetPlugin(this.instanceId, texturePtr);

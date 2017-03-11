@@ -31,6 +31,10 @@ public class NativeTextureAssetPluginBehaviour : MonoBehaviour {
         entityList.Add(new NativeTextureAssetPluginEntity("native_square_02.jpg", false));
         entityList.Add(new NativeTextureAssetPluginEntity("native_rectangle_01.jpg", false));
         entityList.Add(new NativeTextureAssetPluginEntity("native_rectangle_02.jpg", false));
+        entityList.Add(new NativeTextureAssetPluginEntity("native_square_01.png", true));
+        entityList.Add(new NativeTextureAssetPluginEntity("native_square_02.png", true));
+        entityList.Add(new NativeTextureAssetPluginEntity("native_rectangle_01.png", true));
+        entityList.Add(new NativeTextureAssetPluginEntity("native_rectangle_02.png", true));
         int index = UnityEngine.Random.Range(0, entityList.Count);
         NativeTextureAssetPluginEntity entity = entityList[index];
         string path = Path.Combine(Application.streamingAssetsPath, entity.fileName);
@@ -46,8 +50,10 @@ public class NativeTextureAssetPluginBehaviour : MonoBehaviour {
         if (false == File.Exists(path)) {
             File.WriteAllBytes(path, data);
         }
+        //if you use png with alpha channel. then you must use tranpsarent support shader.
+        Shader shader = Shader.Find("Unlit/Transparent Cutout");
         //load donwloaded texture by native texture plugin.
-        this.nativeTextureAssetPlugin.Load(path, entity.width, entity.height, entity.enableAlphaChannel, this.gameObject);
+        this.nativeTextureAssetPlugin.Load(path, entity.width, entity.height, entity.enableAlphaChannel, this.gameObject, shader);
         entity.width = this.nativeTextureAssetPlugin.width;
         entity.height = this.nativeTextureAssetPlugin.height;
         entity.Reset();
