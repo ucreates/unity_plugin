@@ -8,7 +8,7 @@ Fabric(iOS:2.8.0/Android:2.3.1),Facebook(iOS:4.19/Android:4.19),LINE(iOS:3.2.2/A
 
 iOS plugin supported iOS10.0 Later.
 
-Android plugin supported Android 4.0.3(ICE_CREAM_SANDWICH_MR1/API Level 15) Later.
+Android plugin supported Android 4.3(JELLY_BEAN_MR2/API Level 18) Later.
 
 ## Usage
 ***Notes on use for Unity***

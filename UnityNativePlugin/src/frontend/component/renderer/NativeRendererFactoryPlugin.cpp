@@ -9,11 +9,15 @@
 //======================================================================
 #include "NativeRendererFactoryPlugin.h"
 #include "OpenGLES2NativeRendererPlugin.h"
+#include "OpenGLES3NativeRendererPlugin.h"
 BaseNativeRendererPlugin* NativeRendererFactoryPlugin::factoryMethod(UnityGfxRenderer remdererType) {
     BaseNativeRendererPlugin* renderer = NULL;
     switch (remdererType) {
         case kUnityGfxRendererOpenGLES20:
             renderer = new OpenGLES2NativeRendererPlugin();
+            break;
+        case kUnityGfxRendererOpenGLES30:
+            renderer = new OpenGLES3NativeRendererPlugin();
             break;
         default:
             break;

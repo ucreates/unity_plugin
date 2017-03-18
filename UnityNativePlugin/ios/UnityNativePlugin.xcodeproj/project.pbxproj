@@ -24,6 +24,7 @@
 		81D468CE1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D468CC1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp */; };
 		81D468D11E35D54F001BBDB1 /* BaseNativeRendererPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D468CF1E35D54F001BBDB1 /* BaseNativeRendererPlugin.cpp */; };
 		81D468D41E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D468D21E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp */; };
+		81F2653D1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F2653B1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.cpp */; };
 		81F271F11E36E40500B85998 /* BaseNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F271EF1E36E40500B85998 /* BaseNativeTextureAssetPlugin.cpp */; };
 		81F271F51E36E8E300B85998 /* RawNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F271F31E36E8E300B85998 /* RawNativeTextureAssetPlugin.cpp */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,8 @@
 		81D468D01E35D54F001BBDB1 /* BaseNativeRendererPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNativeRendererPlugin.h; sourceTree = "<group>"; };
 		81D468D21E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeRendererFactoryPlugin.cpp; sourceTree = "<group>"; };
 		81D468D31E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeRendererFactoryPlugin.h; sourceTree = "<group>"; };
+		81F2653B1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenGLES3NativeRendererPlugin.cpp; sourceTree = "<group>"; };
+		81F2653C1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLES3NativeRendererPlugin.h; sourceTree = "<group>"; };
 		81F271EF1E36E40500B85998 /* BaseNativeTextureAssetPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseNativeTextureAssetPlugin.cpp; sourceTree = "<group>"; };
 		81F271F01E36E40500B85998 /* BaseNativeTextureAssetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNativeTextureAssetPlugin.h; sourceTree = "<group>"; };
 		81F271F21E36E84800B85998 /* PlatformBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformBase.h; sourceTree = "<group>"; };
@@ -237,6 +240,8 @@
 				81D468D01E35D54F001BBDB1 /* BaseNativeRendererPlugin.h */,
 				81D468D21E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp */,
 				81D468D31E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.h */,
+				81F2653B1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.cpp */,
+				81F2653C1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.h */,
 			);
 			path = renderer;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				81F271F51E36E8E300B85998 /* RawNativeTextureAssetPlugin.cpp in Sources */,
 				81237B5A1E6250BF009C100F /* JpegNativeTextureAssetPlugin.cpp in Sources */,
 				81566E461E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp in Sources */,
+				81F2653D1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.cpp in Sources */,
 				81D468CE1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp in Sources */,
 				81D468AA1E35AEE5001BBDB1 /* UnityNativePlugin.cpp in Sources */,
 				817B4A931E6BA9690074220D /* PngNativeTextureAssetPlugin.cpp in Sources */,

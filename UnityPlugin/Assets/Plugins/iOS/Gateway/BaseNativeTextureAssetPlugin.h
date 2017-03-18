@@ -14,8 +14,15 @@
 #include <OpenGLES/ES2/gl.h>
 #endif
 #if UNITY_ANDROID
-#include <GLES2/gl2.h>
 #include <jni.h>
+#include <android/api-level.h>
+#if __ANDROID_API__ >= 18
+#include <GLES3/gl3.h>
+#elif __ANDROID_API__ >= 8
+#include <GLES2/gl2.h>
+#else
+#include <GLES/gl.h>
+#endif
 #endif
 class BaseNativeTextureAssetPlugin {
    public:
