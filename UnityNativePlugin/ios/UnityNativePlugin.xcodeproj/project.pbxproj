@@ -18,12 +18,14 @@
 		81A658281E445FDB006B2100 /* BGRAPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81A658241E445FDB006B2100 /* BGRAPlugin.cpp */; };
 		81A658291E445FDB006B2100 /* LogPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81A658261E445FDB006B2100 /* LogPlugin.cpp */; };
 		81A956291E39E00800BA050B /* TagPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81A956271E39E00800BA050B /* TagPlugin.cpp */; };
+		81B0E0291E7D2BA60056336A /* MetalNativeRendererPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81B0E0281E7D2BA60056336A /* MetalNativeRendererPlugin.mm */; };
 		81BF05EB1E39A6C4009FF041 /* ExtensionPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81BF05E91E39A6C4009FF041 /* ExtensionPlugin.cpp */; };
 		81BF05EE1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81BF05EC1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.cpp */; };
 		81D468AA1E35AEE5001BBDB1 /* UnityNativePlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D468A71E35AEE5001BBDB1 /* UnityNativePlugin.cpp */; };
 		81D468CE1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D468CC1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp */; };
 		81D468D11E35D54F001BBDB1 /* BaseNativeRendererPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D468CF1E35D54F001BBDB1 /* BaseNativeRendererPlugin.cpp */; };
 		81D468D41E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D468D21E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp */; };
+		81E2E2DB1E7E42F5006E26EC /* MetalNativeRendererPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81E2E2DA1E7E42F5006E26EC /* MetalNativeRendererPlugin.cpp */; };
 		81F2653D1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F2653B1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.cpp */; };
 		81F271F11E36E40500B85998 /* BaseNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F271EF1E36E40500B85998 /* BaseNativeTextureAssetPlugin.cpp */; };
 		81F271F51E36E8E300B85998 /* RawNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F271F31E36E8E300B85998 /* RawNativeTextureAssetPlugin.cpp */; };
@@ -61,6 +63,9 @@
 		81A658271E445FDB006B2100 /* LogPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogPlugin.h; sourceTree = "<group>"; };
 		81A956271E39E00800BA050B /* TagPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TagPlugin.cpp; sourceTree = "<group>"; };
 		81A956281E39E00800BA050B /* TagPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagPlugin.h; sourceTree = "<group>"; };
+		81B0E0271E7D2AF10056336A /* IUnityGraphicsMetal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUnityGraphicsMetal.h; sourceTree = "<group>"; };
+		81B0E0281E7D2BA60056336A /* MetalNativeRendererPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MetalNativeRendererPlugin.mm; sourceTree = "<group>"; };
+		81B0E02A1E7D2BFD0056336A /* MetalNativeRendererPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetalNativeRendererPlugin.h; sourceTree = "<group>"; };
 		81BF05E91E39A6C4009FF041 /* ExtensionPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExtensionPlugin.cpp; sourceTree = "<group>"; };
 		81BF05EA1E39A6C4009FF041 /* ExtensionPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionPlugin.h; sourceTree = "<group>"; };
 		81BF05EC1E39A9A7009FF041 /* NativeTextureAssetFactoryPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeTextureAssetFactoryPlugin.cpp; sourceTree = "<group>"; };
@@ -76,6 +81,7 @@
 		81D468D01E35D54F001BBDB1 /* BaseNativeRendererPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNativeRendererPlugin.h; sourceTree = "<group>"; };
 		81D468D21E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeRendererFactoryPlugin.cpp; sourceTree = "<group>"; };
 		81D468D31E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeRendererFactoryPlugin.h; sourceTree = "<group>"; };
+		81E2E2DA1E7E42F5006E26EC /* MetalNativeRendererPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetalNativeRendererPlugin.cpp; sourceTree = "<group>"; };
 		81F2653B1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenGLES3NativeRendererPlugin.cpp; sourceTree = "<group>"; };
 		81F2653C1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLES3NativeRendererPlugin.h; sourceTree = "<group>"; };
 		81F271EF1E36E40500B85998 /* BaseNativeTextureAssetPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseNativeTextureAssetPlugin.cpp; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 		81D468B11E35B241001BBDB1 /* unity */ = {
 			isa = PBXGroup;
 			children = (
+				81B0E0271E7D2AF10056336A /* IUnityGraphicsMetal.h */,
 				81D468B21E35B241001BBDB1 /* IUnityGraphics.h */,
 				81D468BC1E35B241001BBDB1 /* IUnityInterface.h */,
 			);
@@ -242,6 +249,9 @@
 				81D468D31E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.h */,
 				81F2653B1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.cpp */,
 				81F2653C1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.h */,
+				81B0E0281E7D2BA60056336A /* MetalNativeRendererPlugin.mm */,
+				81B0E02A1E7D2BFD0056336A /* MetalNativeRendererPlugin.h */,
+				81E2E2DA1E7E42F5006E26EC /* MetalNativeRendererPlugin.cpp */,
 			);
 			path = renderer;
 			sourceTree = "<group>";
@@ -364,7 +374,9 @@
 				81F2653D1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.cpp in Sources */,
 				81D468CE1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp in Sources */,
 				81D468AA1E35AEE5001BBDB1 /* UnityNativePlugin.cpp in Sources */,
+				81E2E2DB1E7E42F5006E26EC /* MetalNativeRendererPlugin.cpp in Sources */,
 				817B4A931E6BA9690074220D /* PngNativeTextureAssetPlugin.cpp in Sources */,
+				81B0E0291E7D2BA60056336A /* MetalNativeRendererPlugin.mm in Sources */,
 				81A658291E445FDB006B2100 /* LogPlugin.cpp in Sources */,
 				81A658211E443324006B2100 /* TextureAssetValidatorPlugin.cpp in Sources */,
 				81D468D41E35DAC2001BBDB1 /* NativeRendererFactoryPlugin.cpp in Sources */,

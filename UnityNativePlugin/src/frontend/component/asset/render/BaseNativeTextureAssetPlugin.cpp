@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include "BaseNativeTextureAssetPlugin.h"
 BaseNativeTextureAssetPlugin::BaseNativeTextureAssetPlugin() {
-    this->textureId = 0;
+    this->texturePtr = NULL;
     this->data = NULL;
     this->width = 0;
     this->height = 0;
@@ -32,15 +32,16 @@ BaseNativeTextureAssetPlugin::~BaseNativeTextureAssetPlugin() {
     }
 #endif
 }
-GLuint BaseNativeTextureAssetPlugin::getTextureId() { return this->textureId; }
+void* BaseNativeTextureAssetPlugin::getTexturePtr() { return this->texturePtr; }
+GLuint BaseNativeTextureAssetPlugin::getTextureId() { return (GLuint)(size_t) this->texturePtr; }
 bool BaseNativeTextureAssetPlugin::load(const char* textureAssetPath, int textureWidth, int textureHeight, bool useAlphaChannel) { return true; }
 unsigned char* BaseNativeTextureAssetPlugin::getData() { return this->data; }
 int BaseNativeTextureAssetPlugin::getWidth() { return this->width; }
 int BaseNativeTextureAssetPlugin::getHeight() { return this->height; }
 bool BaseNativeTextureAssetPlugin::enableAlphaChannel() { return this->alphaChannel; }
 bool BaseNativeTextureAssetPlugin::isDestroy() { return this->enableDestroy; }
-void BaseNativeTextureAssetPlugin::setTextureId(GLuint unityTextureId) {
-    this->textureId = unityTextureId;
+void BaseNativeTextureAssetPlugin::setTexturePtr(void* unityTexturePtr) {
+    this->texturePtr = unityTexturePtr;
     return;
 }
 void BaseNativeTextureAssetPlugin::setData(unsigned char* textureData) {
@@ -54,6 +55,10 @@ void BaseNativeTextureAssetPlugin::setSize(int textureWidth, int textureHeight) 
 }
 void BaseNativeTextureAssetPlugin::setEnableAlphaChannel(bool useAlphaChannel) {
     this->alphaChannel = useAlphaChannel;
+    return;
+}
+void BaseNativeTextureAssetPlugin::setUnityGfxRenderer(UnityGfxRenderer rendererType) {
+    this->unityGfxRenderer = rendererType;
     return;
 }
 void BaseNativeTextureAssetPlugin::destroy() {

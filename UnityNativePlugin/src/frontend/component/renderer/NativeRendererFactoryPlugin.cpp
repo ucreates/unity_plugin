@@ -10,6 +10,7 @@
 #include "NativeRendererFactoryPlugin.h"
 #include "OpenGLES2NativeRendererPlugin.h"
 #include "OpenGLES3NativeRendererPlugin.h"
+#include "MetalNativeRendererPlugin.h"
 BaseNativeRendererPlugin* NativeRendererFactoryPlugin::factoryMethod(UnityGfxRenderer remdererType) {
     BaseNativeRendererPlugin* renderer = NULL;
     switch (remdererType) {
@@ -18,6 +19,9 @@ BaseNativeRendererPlugin* NativeRendererFactoryPlugin::factoryMethod(UnityGfxRen
             break;
         case kUnityGfxRendererOpenGLES30:
             renderer = new OpenGLES3NativeRendererPlugin();
+            break;
+        case kUnityGfxRendererMetal:
+            renderer = new MetalNativeRendererPlugin();
             break;
         default:
             break;

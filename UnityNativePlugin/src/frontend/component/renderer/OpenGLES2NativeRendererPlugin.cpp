@@ -11,6 +11,11 @@
 #include "TextureAssetValidatorPlugin.h"
 OpenGLES2NativeRendererPlugin::OpenGLES2NativeRendererPlugin() {}
 OpenGLES2NativeRendererPlugin::~OpenGLES2NativeRendererPlugin() {}
+void OpenGLES2NativeRendererPlugin::render(void* texturePtr, int width, int height, unsigned char* data, bool useAlphaChannel) {
+    GLuint textureId = (GLuint)(size_t)texturePtr;
+    this->render(textureId, width, height, data, useAlphaChannel);
+    return;
+}
 void OpenGLES2NativeRendererPlugin::render(unsigned int textureId, int width, int height, unsigned char* data, bool useAlphaChannel) {
     GLenum format = GL_RGB;
     if (false != useAlphaChannel) {

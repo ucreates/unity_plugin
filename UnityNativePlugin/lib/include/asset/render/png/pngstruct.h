@@ -189,10 +189,10 @@ struct png_struct_def {
     png_uint_32 row_number; /* current row in interlace pass */
     png_uint_32 chunk_name; /* PNG_CHUNK() id of current chunk */
     png_bytep prev_row;     /* buffer to save previous (unfiltered) row.
-             * While reading this is a pointer into
-             * big_prev_row; while writing it is separately
-             * allocated if needed.
-             */
+* While reading this is a pointer into
+* big_prev_row; while writing it is separately
+* allocated if needed.
+*/
     png_bytep row_buf; /* buffer to save current (unfiltered) row.
                         * While reading, this is a pointer into
                         * big_row_buf; while writing it is separately
@@ -324,7 +324,7 @@ struct png_struct_def {
     int unknown_default;         /* As PNG_HANDLE_* */
     unsigned int num_chunk_list; /* Number of entries in the list */
     png_bytep chunk_list;        /* List of png_byte[5]; the textual chunk name
-      * followed by a PNG_HANDLE_* byte */
+* followed by a PNG_HANDLE_* byte */
 #endif
 /* New members added in libpng-1.0.3 */
 #ifdef PNG_READ_RGB_TO_GRAY_SUPPORTED

@@ -28,6 +28,7 @@ class OpenGLES2NativeRendererPlugin : public BaseNativeRendererPlugin {
    public:
     OpenGLES2NativeRendererPlugin();
     virtual ~OpenGLES2NativeRendererPlugin();
+    void render(void* texturePtr, int width, int height, unsigned char* data, bool useAlphaChannel) override;
     void render(unsigned int textureId, int width, int height, unsigned char* data, bool useAlphaChannel) override;
     void render(BaseNativeTextureAssetPlugin* textureAsset) override;
 };

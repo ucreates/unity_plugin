@@ -9,12 +9,14 @@
 //======================================================================
 #ifndef BaseNativeRendererPlugin_h
 #define BaseNativeRendererPlugin_h
+#include "IUnityInterface.h"
 #include "BaseNativeTextureAssetPlugin.h"
 class BaseNativeRendererPlugin {
    public:
     BaseNativeRendererPlugin();
     virtual ~BaseNativeRendererPlugin();
     virtual void render(unsigned int textureId, int width, int height, unsigned char* data, bool useAlphaChannel);
+    virtual void render(void* texturePtr, int width, int height, unsigned char* data, bool useAlphaChannel);
     virtual void render(BaseNativeTextureAssetPlugin* textureAsset);
 };
 #endif /* BaseNativeRendererPlugin_h */

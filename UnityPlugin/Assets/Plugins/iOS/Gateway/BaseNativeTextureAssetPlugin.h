@@ -10,6 +10,7 @@
 #ifndef BaseNativeTextureAssetPlugin_h
 #define BaseNativeTextureAssetPlugin_h
 #include "PlatformBase.h"
+#include "IUnityGraphics.h"
 #if UNITY_IPHONE
 #include <OpenGLES/ES2/gl.h>
 #endif
@@ -32,16 +33,18 @@ class BaseNativeTextureAssetPlugin {
     virtual ~BaseNativeTextureAssetPlugin();
     virtual bool load(const char* textureAssetPath, int textureWidth, int textureHeight, bool useAlphaChannel);
     void destroy();
+    void* getTexturePtr();
     GLuint getTextureId();
     unsigned char* getData();
     int getWidth();
     int getHeight();
     bool enableAlphaChannel();
     bool isDestroy();
-    void setTextureId(GLuint unityTextureId);
+    void setTexturePtr(void* unityTexturePtr);
     void setData(unsigned char* textureData);
     void setSize(int textureWidth, int textureHeight);
     void setEnableAlphaChannel(bool useAlphaChannel);
+    void setUnityGfxRenderer(UnityGfxRenderer rendererType);
 #if UNITY_IPHONE
     virtual bool load(const unsigned char* textureData, int textureWidth, int textureHeight, bool useAlphaChannel);
 #endif
@@ -49,12 +52,13 @@ class BaseNativeTextureAssetPlugin {
     virtual bool load(JNIEnv* env, jobject selfObject, const jbyteArray textureData, jint bufferSize, jint textureWidth, jint textureHeight, bool useAlphaChannel);
 #endif
    protected:
-    GLuint textureId;
+    void* texturePtr;
     unsigned char* data;
     int width;
     int height;
     bool alphaChannel;
     bool enableDestroy;
+    UnityGfxRenderer unityGfxRenderer;
 #if UNITY_ANDROID
     unsigned char* jniData;
 #endif

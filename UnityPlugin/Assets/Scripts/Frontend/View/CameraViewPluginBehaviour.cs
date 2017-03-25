@@ -99,13 +99,6 @@ public class CameraViewPluginBehaviour : MonoBehaviour {
     }
     public void OnHideCallback(string parameter) {
         this.nativeRendererPlugin.Destroy();
-        UnityEngine.Renderer[] rendererList = new UnityEngine.Renderer[2];
-        rendererList[0] = this.captureGameObject.GetComponent<UnityEngine.Renderer>();
-        rendererList[1] = this.GetComponent<UnityEngine.Renderer>();
-        for (int i = 0; i < rendererList.Length; i++) {
-            UnityEngine.Renderer renderer = rendererList[i];
-            UnityEngine.Object.DestroyImmediate(renderer.material.mainTexture);
-        }
         //you should write scene transition process by UnityEngine.SceneManagement.SceneManager
         return;
     }

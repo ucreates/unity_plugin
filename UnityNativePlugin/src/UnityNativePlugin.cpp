@@ -74,7 +74,9 @@ void UNITY_INTERFACE_EXPORT LoadTextureByNativeTextureAssetPlugin(int instanceId
     if (NULL != textureAsset) {
         return;
     }
+    UnityGfxRenderer rendererType = graphics->GetRenderer();
     textureAsset = NativeTextureAssetFactoryPlugin::factoryMethod(textureAssetPath);
+    textureAsset->setUnityGfxRenderer(rendererType);
     textureAsset->load(textureAssetPath, width, height, useAlphaChannel);
     collection->add(instanceId, textureAsset);
     return;
@@ -118,8 +120,7 @@ void UNITY_INTERFACE_EXPORT SetTextureIdToNativeTextureAssetPlugin(int instanceI
     if (NULL == textureAsset) {
         return;
     }
-    GLuint textureId = (GLuint)(size_t)unityNativeTexturePtr;
-    textureAsset->setTextureId(textureId);
+    textureAsset->setTexturePtr(unityNativeTexturePtr);
     return;
 }
 bool UNITY_INTERFACE_EXPORT EnableTextureByNativeTextureAssetPlugin(int instanceId) {
@@ -134,7 +135,9 @@ void UNITY_INTERFACE_EXPORT CreatePreviewFrameNativeCameraTextureAssetPlugin() {
     if (NULL != cameraNativeTextureAsset) {
         return;
     }
+    UnityGfxRenderer rendererType = graphics->GetRenderer();
     cameraNativeTextureAsset = NativeTextureAssetFactoryPlugin::factoryMethod(YuvNativeTextureAssetPlugin::TEXTURE_TYPE);
+    cameraNativeTextureAsset->setUnityGfxRenderer(rendererType);
     return;
 }
 void UNITY_INTERFACE_EXPORT DestroyPreviewFrameNativeCameraTextureAssetPlugin() {
@@ -152,9 +155,10 @@ void UNITY_INTERFACE_EXPORT SetTextureIdToNativeCameraTextureAssetPlugin(int ins
     if (NULL != textureAsset) {
         return;
     }
+    UnityGfxRenderer rendererType = graphics->GetRenderer();
     textureAsset = NativeTextureAssetFactoryPlugin::factoryMethod(YuvNativeTextureAssetPlugin::TEXTURE_TYPE);
-    GLuint textureId = (GLuint)(size_t)unityNativeTexturePtr;
-    textureAsset->setTextureId(textureId);
+    textureAsset->setTexturePtr(unityNativeTexturePtr);
+    textureAsset->setUnityGfxRenderer(rendererType);
     collection->add(instanceId, textureAsset);
     return;
 }
@@ -193,8 +197,8 @@ void UNITY_INTERFACE_EXPORT RenderCameraPreviewFrameByNativeRendererPlugin(int e
     std::map<int, BaseNativeTextureAssetPlugin*>* textureAssetMap = collection->getCollection();
     for (std::map<int, BaseNativeTextureAssetPlugin*>::iterator it = textureAssetMap->begin(); it != textureAssetMap->end();) {
         BaseNativeTextureAssetPlugin* textureAsset = it->second;
-        GLuint textureId = textureAsset->getTextureId();
-        nativeRenderer->render(textureId, cameraCaptureWidth, cameraCaptureHeight, cameraCaptureData, true);
+        void* texturePtr = textureAsset->getTexturePtr();
+        nativeRenderer->render(texturePtr, cameraCaptureWidth, cameraCaptureHeight, cameraCaptureData, true);
         ++it;
     }
     return;

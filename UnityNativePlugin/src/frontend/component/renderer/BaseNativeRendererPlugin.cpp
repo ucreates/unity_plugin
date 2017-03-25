@@ -11,4 +11,5 @@
 BaseNativeRendererPlugin::BaseNativeRendererPlugin() {}
 BaseNativeRendererPlugin::~BaseNativeRendererPlugin() {}
 void BaseNativeRendererPlugin::render(unsigned int textureId, int width, int height, unsigned char* data, bool useAlphaChannel) { return; }
+void BaseNativeRendererPlugin::render(void* texturePtr, int width, int height, unsigned char* data, bool useAlphaChannel) { return; }
 void BaseNativeRendererPlugin::render(BaseNativeTextureAssetPlugin* textureAsset) { return; }
