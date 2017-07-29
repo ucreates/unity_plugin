@@ -32,6 +32,11 @@
     [super applicationWillEnterForeground:application];
     return;
 }
+#if __IPHONE_OS_VERSION_MAX_ALLOWED <= __IPHONE_10_0
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    return;
+}
+#endif
 - (void)shouldAttachRenderDelegate {
     UnityRegisterRenderingPluginV5(&UnityPluginLoad, &UnityPluginUnload);
     return;

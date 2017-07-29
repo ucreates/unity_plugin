@@ -143,6 +143,18 @@ extern "C" bool getSwitchPreferencePlugin(char* keyName) {
     NSString* requestKeyName = [NSString stringWithCString:keyName encoding:NSUTF8StringEncoding];
     return [PreferencePlugin getSwitchPreference:requestKeyName];
 }
+extern "C" void registerLocalNotifier() {
+    LocalNotifierPlugin* localNotifierPlugin = [LocalNotifierPlugin getInstance];
+    [localNotifierPlugin register];
+    return;
+}
+extern "C" void localNotify(char* title, char* body, double timeInterval) {
+    NSString* unityTitle = [NSString stringWithCString:title encoding:NSUTF8StringEncoding];
+    NSString* unityBody = [NSString stringWithCString:body encoding:NSUTF8StringEncoding];
+    LocalNotifierPlugin* localNotifierPlugin = [LocalNotifierPlugin getInstance];
+    [localNotifierPlugin noitfyWithTitle:unityTitle body:unityBody interval:timeInterval];
+    return;
+}
 void setPreviewFrameCameraViewPlugin(unsigned char* imageData, int width, int height) {
     SetPreviewFrameToNativeCameraTextureAssetPlugin(imageData, width, height);
     return;
