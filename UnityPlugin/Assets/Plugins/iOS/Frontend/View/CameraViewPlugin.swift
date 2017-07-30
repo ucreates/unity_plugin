@@ -106,7 +106,7 @@ open class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
                 videoConnection?.videoOrientation = AVCaptureVideoOrientation.portrait
             }
             self.session.commitConfiguration()
-            NotifierPlugin.notify(gameObjectName, methodName: onShowCallbackName, parameter: CameraViewPlugin.CAPTURE_SIZE)
+            UnityNotifierPlugin.notify(gameObjectName, methodName: onShowCallbackName, parameter: CameraViewPlugin.CAPTURE_SIZE)
             self.created = true
             self.show()
             return
@@ -165,7 +165,7 @@ open class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         self.output = nil
         self.camera = nil
         self.created = false
-        NotifierPlugin.notify(self.callbackGameObjectName, methodName: self.hideCallbackName, parameter: CameraViewPlugin.COMPLETE_DESTROY_MESSAGE)
+        UnityNotifierPlugin.notify(self.callbackGameObjectName, methodName: self.hideCallbackName, parameter: CameraViewPlugin.COMPLETE_DESTROY_MESSAGE)
         return
     }
     open func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) -> Void {

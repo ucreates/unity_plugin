@@ -2630,7 +2630,7 @@
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/ActivityFactory.java" />
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/ActivityPlugin.java" />
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/system/preference/PreferencePlugin.java" />
-        <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/notify/NotifierPlugin.java" />
+        <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/notify/UnityNotifierPlugin.java" />
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/view/WebViewPlugin.java" />
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/view/IndicatorViewPlugin.java" />
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/system/scene/TransitionPlugin.java" />
@@ -3536,7 +3536,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plugin/src/main/java/com/frontend/notify/NotifierPlugin.java">
+    <entry file="file://$PROJECT_DIR$/plugin/src/main/java/com/frontend/notify/UnityNotifierPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />

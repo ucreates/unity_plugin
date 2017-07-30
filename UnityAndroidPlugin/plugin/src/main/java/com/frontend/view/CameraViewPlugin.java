@@ -22,7 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.frontend.activity.ActivityPlugin;
-import com.frontend.notify.NotifierPlugin;
+import com.frontend.notify.UnityNotifierPlugin;
 import com.gateway.UnityAndroidPlugin;
 import java.io.IOException;
 import java.util.List;
@@ -98,7 +98,7 @@ public class CameraViewPlugin {
                             camera.setPreviewCallbackWithBuffer(previewCallBack);
                             camera.setPreviewDisplay(holder);
                             String parameter = String.valueOf(previewWidth) + "x" + String.valueOf(previewHeight);
-                            NotifierPlugin.notify(gameObjectName, onShowCallbackName, parameter);
+                            UnityNotifierPlugin.notify(gameObjectName, onShowCallbackName, parameter);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -116,7 +116,7 @@ public class CameraViewPlugin {
                         camera = null;
                         holder.removeCallback(callback);
                         this.surfaceCreated = false;
-                        NotifierPlugin.notify(callbackGameObjectName, hideCallbackName, CameraViewPlugin.COMPLETE_DESTROY_MESSAGE);
+                        UnityNotifierPlugin.notify(callbackGameObjectName, hideCallbackName, CameraViewPlugin.COMPLETE_DESTROY_MESSAGE);
                         return;
                     }
                     @TargetApi(Build.VERSION_CODES.FROYO)

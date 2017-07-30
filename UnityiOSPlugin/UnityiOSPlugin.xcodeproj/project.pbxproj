@@ -20,7 +20,7 @@
 		8126D0C01E48507A00C50269 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8126D0261E48507A00C50269 /* Fabric.framework */; };
 		8126D0C11E48507A00C50269 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8126D0281E48507A00C50269 /* TwitterCore.framework */; };
 		8126D0C21E48507A00C50269 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8126D02A1E48507A00C50269 /* TwitterKit.framework */; };
-		8126D0C31E48507A00C50269 /* NotifierPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0301E48507A00C50269 /* NotifierPlugin.swift */; };
+		8126D0C31E48507A00C50269 /* UnityNotifierPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0301E48507A00C50269 /* UnityNotifierPlugin.swift */; };
 		8126D0C41E48507A00C50269 /* AlertViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0341E48507A00C50269 /* AlertViewPlugin.swift */; };
 		8126D0C51E48507A00C50269 /* CameraViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0361E48507A00C50269 /* CameraViewPlugin.swift */; };
 		8126D0C61E48507A00C50269 /* IndicatorViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0381E48507A00C50269 /* IndicatorViewPlugin.swift */; };
@@ -94,8 +94,8 @@
 		8126D02B1E48507A00C50269 /* TwitterKit.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwitterKit.framework.meta; sourceTree = "<group>"; };
 		8126D02C1E48507A00C50269 /* Twitter.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Twitter.meta; sourceTree = "<group>"; };
 		8126D02D1E48507A00C50269 /* Frameworks.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Frameworks.meta; sourceTree = "<group>"; };
-		8126D0301E48507A00C50269 /* NotifierPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifierPlugin.swift; sourceTree = "<group>"; };
-		8126D0311E48507A00C50269 /* NotifierPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NotifierPlugin.swift.meta; sourceTree = "<group>"; };
+		8126D0301E48507A00C50269 /* UnityNotifierPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnityNotifierPlugin.swift; sourceTree = "<group>"; };
+		8126D0311E48507A00C50269 /* UnityNotifierPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityNotifierPlugin.swift.meta; sourceTree = "<group>"; };
 		8126D0321E48507A00C50269 /* Notify.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notify.meta; sourceTree = "<group>"; };
 		8126D0341E48507A00C50269 /* AlertViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewPlugin.swift; sourceTree = "<group>"; };
 		8126D0351E48507A00C50269 /* AlertViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AlertViewPlugin.swift.meta; sourceTree = "<group>"; };
@@ -404,8 +404,8 @@
 		8126D02F1E48507A00C50269 /* Notify */ = {
 			isa = PBXGroup;
 			children = (
-				8126D0301E48507A00C50269 /* NotifierPlugin.swift */,
-				8126D0311E48507A00C50269 /* NotifierPlugin.swift.meta */,
+				8126D0301E48507A00C50269 /* UnityNotifierPlugin.swift */,
+				8126D0311E48507A00C50269 /* UnityNotifierPlugin.swift.meta */,
 			);
 			path = Notify;
 			sourceTree = "<group>";
@@ -644,7 +644,7 @@
 				8126D0C71E48507A00C50269 /* ReviewViewPlugin.swift in Sources */,
 				8126D0C91E48507A00C50269 /* PaymentViewControllerPlugin.swift in Sources */,
 				8126D0CA1E48507A00C50269 /* PreferenceViewControllerPlugin.swift in Sources */,
-				8126D0C31E48507A00C50269 /* NotifierPlugin.swift in Sources */,
+				8126D0C31E48507A00C50269 /* UnityNotifierPlugin.swift in Sources */,
 				8126D0CD1E48507A00C50269 /* TwitterViewControllerPlugin.swift in Sources */,
 				8126D0D41E48507A00C50269 /* LineServicePlugin.swift in Sources */,
 				8126D0D31E48507A00C50269 /* FacebookServicePlugin.swift in Sources */,
