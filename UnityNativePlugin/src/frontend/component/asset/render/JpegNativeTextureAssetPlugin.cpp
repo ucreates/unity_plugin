@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <string>
 #include "jpeglib.h"
+#include "BuildPlugin.h"
 #include "JpegNativeTextureAssetPlugin.h"
 JpegNativeTextureAssetPlugin::JpegNativeTextureAssetPlugin() {}
 JpegNativeTextureAssetPlugin::~JpegNativeTextureAssetPlugin() {}
@@ -151,7 +152,11 @@ bool JpegNativeTextureAssetPlugin::load(const char* textureAssetPath, int textur
     jpeg_error_mgr jerr;
     decompressInfo.err = jpeg_std_error(&jerr);
     decompressInfo.err->output_message = callback;
-    jpeg_CreateDecompress(&decompressInfo, JpegNativeTextureAssetPlugin::LIBJPEG_VERSION, JpegNativeTextureAssetPlugin::DUMMY_DECOMPRESS_STRUCT_SIZE);
+    if (BuildPlugin::M <= BuildPlugin::getVersion()) {
+        jpeg_create_decompress(&decompressInfo);
+    } else {
+        jpeg_CreateDecompress(&decompressInfo, JpegNativeTextureAssetPlugin::LIBJPEG_VERSION, JpegNativeTextureAssetPlugin::DUMMY_DECOMPRESS_STRUCT_SIZE);
+    }
     jpeg_stdio_src(&decompressInfo, fp);
     int ret = jpeg_read_header(&decompressInfo, TRUE);
     if (JPEG_HEADER_OK != ret) {
@@ -159,9 +164,16 @@ bool JpegNativeTextureAssetPlugin::load(const char* textureAssetPath, int textur
         return false;
     }
     jpeg_start_decompress(&decompressInfo);
-    if (3 != decompressInfo.out_color_space) {
-        fclose(fp);
-        return false;
+    if (BuildPlugin::M <= BuildPlugin::getVersion()) {
+        if (JCS_RGB != decompressInfo.out_color_space) {
+            fclose(fp);
+            return false;
+        }
+    } else {
+        if (3 != decompressInfo.out_color_space) {
+            fclose(fp);
+            return false;
+        }
     }
     int bufferSize = this->width * this->height * BaseNativeTextureAssetPlugin::RGB_SIZE_PER_PIXEL;
     int stride = sizeof(char) * this->width * BaseNativeTextureAssetPlugin::RGB_SIZE_PER_PIXEL;

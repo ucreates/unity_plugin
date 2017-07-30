@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		81237B5A1E6250BF009C100F /* JpegNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81237B581E6250BF009C100F /* JpegNativeTextureAssetPlugin.cpp */; };
+		813D5CD01F2CA957006952CE /* BuildPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 813D5CCE1F2CA957006952CE /* BuildPlugin.cpp */; };
 		81566E461E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81566E441E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp */; };
 		8165C0161E386097000B9214 /* NativeTextureAssetCollectionPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8165C0141E386097000B9214 /* NativeTextureAssetCollectionPlugin.cpp */; };
 		817B4A931E6BA9690074220D /* PngNativeTextureAssetPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 817B4A911E6BA9690074220D /* PngNativeTextureAssetPlugin.cpp */; };
@@ -46,6 +47,8 @@
 /* Begin PBXFileReference section */
 		81237B581E6250BF009C100F /* JpegNativeTextureAssetPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JpegNativeTextureAssetPlugin.cpp; sourceTree = "<group>"; };
 		81237B591E6250BF009C100F /* JpegNativeTextureAssetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JpegNativeTextureAssetPlugin.h; sourceTree = "<group>"; };
+		813D5CCE1F2CA957006952CE /* BuildPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildPlugin.cpp; sourceTree = "<group>"; };
+		813D5CCF1F2CA957006952CE /* BuildPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildPlugin.h; sourceTree = "<group>"; };
 		81566E441E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YuvNativeTextureAssetPlugin.cpp; sourceTree = "<group>"; };
 		81566E451E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuvNativeTextureAssetPlugin.h; sourceTree = "<group>"; };
 		8165C0141E386097000B9214 /* NativeTextureAssetCollectionPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeTextureAssetCollectionPlugin.cpp; sourceTree = "<group>"; };
@@ -105,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		813D5CCD1F2CA957006952CE /* android */ = {
+			isa = PBXGroup;
+			children = (
+				813D5CCE1F2CA957006952CE /* BuildPlugin.cpp */,
+				813D5CCF1F2CA957006952CE /* BuildPlugin.h */,
+			);
+			path = android;
+			sourceTree = "<group>";
+		};
 		81A6581E1E443303006B2100 /* validator */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +217,7 @@
 		81D468B01E35B241001BBDB1 /* platform */ = {
 			isa = PBXGroup;
 			children = (
+				813D5CCD1F2CA957006952CE /* android */,
 				81F271F21E36E84800B85998 /* PlatformBase.h */,
 				81D468B11E35B241001BBDB1 /* unity */,
 			);
@@ -372,6 +385,7 @@
 				81237B5A1E6250BF009C100F /* JpegNativeTextureAssetPlugin.cpp in Sources */,
 				81566E461E3ED24500CB2A4B /* YuvNativeTextureAssetPlugin.cpp in Sources */,
 				81F2653D1E74CF990039E19C /* OpenGLES3NativeRendererPlugin.cpp in Sources */,
+				813D5CD01F2CA957006952CE /* BuildPlugin.cpp in Sources */,
 				81D468CE1E35D3A8001BBDB1 /* OpenGLES2NativeRendererPlugin.cpp in Sources */,
 				81D468AA1E35AEE5001BBDB1 /* UnityNativePlugin.cpp in Sources */,
 				81E2E2DB1E7E42F5006E26EC /* MetalNativeRendererPlugin.cpp in Sources */,
