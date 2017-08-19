@@ -24,6 +24,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Frontend/Notify/LocalNotifierPluginViewer.unity
   - enabled: 1
+    path: Assets/Scenes/Frontend/Notify/RemoteNotifierPluginViewer.unity
+  - enabled: 1
     path: Assets/Scenes/Frontend/View/AlertViewPluginViewer.unity
   - enabled: 1
     path: Assets/Scenes/Frontend/View/CameraViewPluginViewer.unity

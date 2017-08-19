@@ -22,6 +22,11 @@
     }
     return [UnityiOSPluginAppDelegate application:application didFinishLaunchingWithOptions:launchOptions];
 }
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [UnityiOSPluginAppDelegate reset];
+    [super applicationDidBecomeActive:application];
+    return;
+}
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
     return [UnityiOSPluginAppDelegate application:app url:url options:options];
 }
@@ -37,6 +42,29 @@
     return;
 }
 #endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED <= __IPHONE_10_0
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    return;
+}
+#endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED <= __IPHONE_10_0
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    return;
+}
+#endif
+#if __IPHONE_OS_VERSION_MAX_ALLOWED <= __IPHONE_10_0
+- (void) application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    return;
+}
+#endif
+- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSString* devToken = [DeviceTokenPlugin toStringWithDeviceToken:deviceToken];
+    NSLog(@"deviceToken::%@", devToken);
+    return;
+}
+- (void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    return;
+}
 - (void)shouldAttachRenderDelegate {
     UnityRegisterRenderingPluginV5(&UnityPluginLoad, &UnityPluginUnload);
     return;

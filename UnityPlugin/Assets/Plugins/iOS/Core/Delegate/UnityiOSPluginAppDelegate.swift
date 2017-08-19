@@ -27,4 +27,12 @@ open class UnityiOSPluginAppDelegate: NSObject {
     open class func application(_ application: UIApplication, url: URL) -> Bool {
         return LineAdapter.handleOpen(url)
     }
+    @objc
+    open class func reset() -> Void {
+        let notifiers: [BaseNotifierPlugin] = [RemoteNotifierPlugin.getInstance()]
+        for notifier in notifiers {
+            notifier.reset()
+        }
+        return
+    }
 }

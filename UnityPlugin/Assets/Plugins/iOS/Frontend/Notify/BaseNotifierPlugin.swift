@@ -8,6 +8,7 @@
 // We hope the tips and helpful in developing.
 // ======================================================================
 import Foundation
+import UIKit
 open class BaseNotifierPlugin: NSObject {
     var enable: Bool = false
     @objc
@@ -20,6 +21,11 @@ open class BaseNotifierPlugin: NSObject {
     }
     @objc    
     open func noitfy(userInfo: [AnyHashable: Any]) -> Void {
+        return
+    }
+    open func reset() -> Void {
+        let app: UIApplication = UIApplication.shared
+        app.applicationIconBadgeNumber = 0
         return
     }
 }

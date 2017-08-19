@@ -62,6 +62,8 @@ you may confirm some sample behaviours. which exists in following folder.
  - Architectures→Build Architecture Only:Debug/Release→Yes
 
  - Architectures→Supported Platform:iphoneos→iOS
+ 
+ - Capabilities→Push Notifications:OFF→ON
 
 8.iOS build with Unity.
 
@@ -103,4 +105,10 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - replacement:https://github.com/ucreates/unity_plugin/blob/master/UnityPlugin/Assets/Plugins/Unity/Core/Configure/PaymentConfigurePlugin.cs
 
-6.Android build with Unity.
+6.please rewrite the replacement section of the following file to the Your GCM Sender Id. you can create and confirm License Key by Firebase Developer Console web site.
+
+- Firebase Developer Console:https://console.firebase.google.com/
+
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/UnityPlugin/Assets/Plugins/Unity/Core/Configure/Notify/RemoteNotifierConfigurePlugin.cs
+
+7.Android build with Unity.

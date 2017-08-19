@@ -43,6 +43,9 @@ dependencies {
     compile(name:'bolts-tasks-1.4.0', ext:'jar')
     compile(name:'converter-gson-2.1.0', ext:'jar')
     compile(name:'gson-2.8.0', ext:'jar')
+    compile(name:'google-services-9.0.0', ext:'aar')
+    compile(name:'play-services-gcm-9.0.0', ext:'aar')
+    compile(name:'play-services-iid-9.0.0', ext:'aar')
     compile(name:'okhttp-3.4.2', ext:'jar')
     compile(name:'okio-1.11.0', ext:'jar')
     compile(name:'picasso-2.5.2', ext:'jar')
@@ -52,6 +55,7 @@ dependencies {
 repositories{
     flatDir{
         dirs 'libs/unity'
+        dirs 'libs/google'
         dirs 'libs/android'
         dirs 'libs/facebook'
         dirs 'libs/line'
@@ -85,6 +89,9 @@ task plugin(type: Sync) {
         include '**/*.jar'
     }
     from  ('./libs/line/libs/')
+    from  ('./libs/google/') {
+        include '**/*.aar'
+    }
     from  ('./libs/android/') {
         include '**/*.aar'
     }

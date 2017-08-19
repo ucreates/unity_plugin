@@ -138,6 +138,11 @@
                 <option name="name" value="prepareComAndroidSupportSupportVectorDrawable2340Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare :play-services-gcm-9.0.0:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="preparePlayServicesGcm900Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="generateReleaseAssets" />
               </ExternalTaskPojo>
@@ -251,6 +256,11 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileDebugAndroidTestShaders" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare :google-services-9.0.0:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareGoogleServices900Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -476,6 +486,11 @@
                 <option name="description" value="Uninstall all applications." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="uninstallAll" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare :play-services-iid-9.0.0:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="preparePlayServicesIid900Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare :tweet-composer-2.3.1:" />
@@ -1543,6 +1558,11 @@
                 <option name="name" value="prepareComAndroidSupportSupportVectorDrawable2340Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare :play-services-gcm-9.0.0:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/plugin" />
+                <option name="name" value="preparePlayServicesGcm900Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/plugin" />
                 <option name="name" value="generateReleaseAssets" />
               </ExternalTaskPojo>
@@ -1647,6 +1667,11 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/plugin" />
                 <option name="name" value="compileDebugAndroidTestShaders" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare :google-services-9.0.0:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/plugin" />
+                <option name="name" value="prepareGoogleServices900Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/plugin" />
@@ -1854,6 +1879,11 @@
                 <option name="description" value="Installs and runs the tests for debug on connected devices." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/plugin" />
                 <option name="name" value="connectedDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare :play-services-iid-9.0.0:" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/plugin" />
+                <option name="name" value="preparePlayServicesIid900Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Uninstall all applications." />
@@ -2184,7 +2214,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="5979450874000" />
+        <entry key="$PROJECT_DIR$" value="6006008122000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2620,9 +2650,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/ui/view/ReviewModalDialog.java" />
-        <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/ui/view/ReviewViewPlugin.java" />
-        <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/ui/view/ReviewViewPlugin.java" />
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/ActivityPlugin.java" />
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/notify/NotifyPlugin.java" />
         <option value="$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/ui/view/WebViewPlugin.java" />
@@ -2664,19 +2691,22 @@
         <option value="$PROJECT_DIR$/plugin/src/main/java/com/frontend/activity/PaymentActivityPlugin.java" />
         <option value="$PROJECT_DIR$/plugin/src/main/java/com/gateway/UnityAndroidPlugin.java" />
         <option value="$PROJECT_DIR$/plugin/src/main/java/com/frontend/view/CameraViewPlugin.java" />
-        <option value="$PROJECT_DIR$/plugin/build.gradle" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/plugin/src/main/java/com/frontend/activity/sns/TwitterActivityPlugin.java" />
         <option value="$PROJECT_DIR$/plugin/src/main/java/com/frontend/notify/BaseNotifier.java" />
         <option value="$PROJECT_DIR$/plugin/src/main/java/com/frontend/notify/LocalNotifier.java" />
         <option value="$PROJECT_DIR$/plugin/src/main/java/com/frontend/notify/LocalNotifierPlugin.java" />
         <option value="$PROJECT_DIR$/plugin/src/main/java/com/frontend/notify/BaseNotifierPlugin.java" />
+        <option value="$PROJECT_DIR$/plugin/src/main/java/com/frontend/notify/RemoteNotifierPlugin.java" />
+        <option value="$PROJECT_DIR$/plugin/src/main/java/com/frontend/receiver/notify/RemoteNotifierBroadcastReceiverPlugin.java" />
+        <option value="$PROJECT_DIR$/plugin/src/main/java/com/service/notify/RemoteNotifierIntentServicePlugin.java" />
+        <option value="$PROJECT_DIR$/plugin/build.gradle" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1512" />
-    <option name="y" value="25" />
+    <option name="x" value="1561" />
+    <option name="y" value="94" />
     <option name="width" value="1594" />
     <option name="height" value="849" />
   </component>
@@ -2705,8 +2735,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
@@ -2808,6 +2836,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3226,7 +3256,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1512" y="25" width="1594" height="849" extended-state="0" />
+    <frame x="1561" y="94" width="1594" height="849" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3240,15 +3270,15 @@
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925257" sideWeight="0.51123595" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294509" sideWeight="0.497543" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37830687" sideWeight="0.3898196" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37830687" sideWeight="0.38788658" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833022" sideWeight="0.4974227" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.56572163" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.55541235" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.43427834" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.44458762" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32280928" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925257" sideWeight="0.48876405" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.48876405" order="4" side_tool="false" content_ui="tabs" />
@@ -3320,9 +3350,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/service/sns/TwitterServicePlugin.java" />
-    <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/frontend/activity/ActivityFactoryPlugin.java" />
-    <entry file="file://$PROJECT_DIR$/unityandroidplugin/src/main/java/com/service/sns/FacebookServicePlugin.java" />
     <entry file="jar://$PROJECT_DIR$/unityandroidplugin/libs/line/line-android-sdk-3.1.21.jar!/jp/line/android/sdk/LineSdkContextManager.class" />
     <entry file="jar://$PROJECT_DIR$/unityandroidplugin/libs/line/line-android-sdk-3.1.21.jar!/jp/line/android/sdk/a/a/a.class" />
     <entry file="jar://$PROJECT_DIR$/unityandroidplugin/libs/line/line-android-sdk-3.1.21.jar!/jp/line/android/sdk/api/ApiClient.class" />
@@ -3511,13 +3538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plugin/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-751">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugin/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3540,7 +3560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3548,7 +3567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="33" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3556,9 +3574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#806#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3566,10 +3581,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#4669#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin/src/main/java/com/service/notify/RemoteNotifierIntentServicePlugin.java" />
+    <entry file="file://$PROJECT_DIR$/plugin/src/main/java/com/frontend/receiver/notify/RemoteNotifierBroadcastReceiverPlugin.java" />
+    <entry file="file://$PROJECT_DIR$/plugin/src/main/java/com/frontend/notify/RemoteNotifierPlugin.java" />
+    <entry file="file://$PROJECT_DIR$/plugin/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="68" column="6" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
