@@ -51,7 +51,11 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - replacement:https://github.com/ucreates/unity_plugin/blob/master/UnityPlugin/Assets/Plugins/Unity/Core/Configure/Sns/LineConfigurePlugin.cs
 
-7.please configure player and build setting for UnityNativePlugin in the Unity project and published Xcode project.
+7.please download GoogleService-Info.plist from your Firebase project. and place following folder.
+
+- place directory: UnityPlugin/Assets/Plugins/iOS/
+
+8.please configure player and build setting for UnityNativePlugin in the Unity project and published Xcode project.
 
 - Unity
 
@@ -111,4 +115,8 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - replacement:https://github.com/ucreates/unity_plugin/blob/master/UnityPlugin/Assets/Plugins/Unity/Core/Configure/Notify/RemoteNotifierConfigurePlugin.cs
 
-7.Android build with Unity.
+7.please download google-services.json from your Firebase project. and place following folder and rebuild UnityAndroidProject.
+
+place directory: UnityAndroidPlugin/plugin/google-services.json
+
+8.Android build with Unity.

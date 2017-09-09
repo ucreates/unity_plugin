@@ -153,6 +153,11 @@ extern "C" void registerRemoteNotifier() {
     [remoteNotifierPlugin register];
     return;
 }
+extern "C" void registerFCMNotifier() {
+    FCMNotifierPlugin* fcmNotifierPlugin = [FCMNotifierPlugin getInstance];
+    [fcmNotifierPlugin register];
+    return;
+}
 extern "C" void localNotify(char* title, char* body, double timeInterval) {
     NSString* unityTitle = [NSString stringWithCString:title encoding:NSUTF8StringEncoding];
     NSString* unityBody = [NSString stringWithCString:body encoding:NSUTF8StringEncoding];

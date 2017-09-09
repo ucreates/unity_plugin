@@ -39,6 +39,16 @@
         </receiver>
         <provider android:authorities="com.facebook.app.FacebookContentProviderFACEBOOK_APP_ID" android:name="com.facebook.FacebookContentProvider" android:exported="true" />
         <service android:name="com.service.notify.RemoteNotifierIntentServicePlugin" />
+        <service android:name="com.service.notify.FCMNotifierTokenServicePlugin">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.service.notify.FCMNotifierMessageServicePlugin">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
         <meta-data android:name="io.fabric.ApiKey" android:value="FABRIC_API_KEY" />
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="FACEBOOK_APP_ID" />
         <meta-data android:name="jp.line.sdk.ChannelId" android:value="LINE_CHANNEL_ID" />

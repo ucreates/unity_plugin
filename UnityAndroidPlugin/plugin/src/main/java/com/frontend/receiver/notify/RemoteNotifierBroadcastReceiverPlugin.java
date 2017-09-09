@@ -14,12 +14,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.WakefulBroadcastReceiver;
 import com.frontend.notify.BaseNotifierPlugin;
+import com.frontend.notify.FCMNotifierPlugin;
 import com.frontend.notify.RemoteNotifierPlugin;
 import com.service.notify.RemoteNotifierIntentServicePlugin;
 public class RemoteNotifierBroadcastReceiverPlugin extends WakefulBroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        BaseNotifierPlugin[] notifiers = {RemoteNotifierPlugin.getInstance()};
+        BaseNotifierPlugin[] notifiers = {RemoteNotifierPlugin.getInstance(), FCMNotifierPlugin.getInstance()};
         for (int i = 0; i < notifiers.length; i++) {
             BaseNotifierPlugin notifier = notifiers[i];
             notifier.register(context, intent);

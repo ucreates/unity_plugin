@@ -14,6 +14,8 @@ public class BuildPostProcess {
             FacebookEditorBuilder.BUILDER_ID,
             LineEditorBuilder.BUILDER_ID,
             WebViewEditorBuilder.BUILDER_ID,
+            FirebaseEditorBuilder.BUILDER_ID,
+            GoogleEditorBuilder.BUILDER_ID,
         };
         if (buildTarget == BuildTarget.iOS) {
             PBXProject project = new PBXProject();
@@ -24,12 +26,18 @@ public class BuildPostProcess {
             string destCliRootPath = buildPath;
             string fromFrameworkRootPath = Path.Combine(System.Environment.CurrentDirectory, @"Assets/Plugins/iOS/Frameworks");
             string destFrameworkRootPath = "Frameworks/Plugins/iOS/Frameworks";
+            string destFrameworkRootAbsolutePath = Path.Combine(buildPath, destFrameworkRootPath);
+            string fromiOSPluginRootPath = Path.Combine(System.Environment.CurrentDirectory, @"Assets/Plugins/iOS");
+            string destiOSProjectRootPath = buildPath;
             Dictionary<string, string> pathDictionary = new Dictionary<string, string>();
             pathDictionary.Add("build", buildPath);
             pathDictionary.Add("fromCliRoot", fromCliRootPath);
             pathDictionary.Add("destCliRoot", destCliRootPath);
             pathDictionary.Add("fromFrameworkRoot", fromFrameworkRootPath);
             pathDictionary.Add("destFrameworkRoot", destFrameworkRootPath);
+            pathDictionary.Add("destFrameworkRootAbsolute", destFrameworkRootAbsolutePath);
+            pathDictionary.Add("fromiOSPluginRoot", fromiOSPluginRootPath);
+            pathDictionary.Add("destiOSProjectRoot", destiOSProjectRootPath);
             project.ReadFromFile(projectPath);
             plist.ReadFromFile(plistPath);
             string targetName = PBXProject.GetUnityTargetName();
@@ -39,6 +47,7 @@ public class BuildPostProcess {
                 project.AddFrameworkToProject(targetGUID, framework, false);
             }
             project.AddBuildProperty(targetGUID, "OTHER_LDFLAGS", "-lz");
+            project.AddBuildProperty(targetGUID, "OTHER_LDFLAGS", "-ObjC");
             foreach (int builderId in builderIdList) {
                 BaseEditorBuilder builder = EditorBuilderFactory.FactoryMethod(builderId);
                 builder.project = project;

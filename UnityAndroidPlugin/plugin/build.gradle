@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.google.gms.google-services'
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 android {
@@ -6,7 +7,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 18
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -46,6 +47,10 @@ dependencies {
     compile(name:'google-services-9.0.0', ext:'aar')
     compile(name:'play-services-gcm-9.0.0', ext:'aar')
     compile(name:'play-services-iid-9.0.0', ext:'aar')
+    compile(name:'play-services-base-9.0.0', ext:'aar')
+    compile(name:'firebase-common-9.0.0', ext:'aar')
+    compile(name:'firebase-iid-9.0.0', ext:'aar')
+    compile(name:'firebase-messaging-9.0.0', ext:'aar')
     compile(name:'okhttp-3.4.2', ext:'jar')
     compile(name:'okio-1.11.0', ext:'jar')
     compile(name:'picasso-2.5.2', ext:'jar')
@@ -103,6 +108,7 @@ task plugin(type: Sync) {
 task manifest(type: Copy) {
     from  ('./resource/') {
         include '**/*.xml'
+        include '**/*.json'
     }
     into '../../UnityPlugin/Assets/Plugins/Android/'
 }
