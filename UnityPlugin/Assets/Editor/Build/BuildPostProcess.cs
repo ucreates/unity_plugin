@@ -42,7 +42,7 @@ public class BuildPostProcess {
             plist.ReadFromFile(plistPath);
             string targetName = PBXProject.GetUnityTargetName();
             string targetGUID = project.TargetGuidByName(targetName);
-            string[] frameworkList = new string[] {"StoreKit.framework", "UserNotifications.framework"};
+            string[] frameworkList = new string[] {"StoreKit.framework", "UserNotifications.framework", "SafariServices.framework", "SystemConfiguration.framework", "AddressBook.framework"};
             foreach (string framework in frameworkList) {
                 project.AddFrameworkToProject(targetGUID, framework, false);
             }

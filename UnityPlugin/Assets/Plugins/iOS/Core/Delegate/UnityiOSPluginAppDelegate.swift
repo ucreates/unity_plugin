@@ -9,6 +9,7 @@
 //======================================================================
 import CoreData
 import FBSDKCoreKit
+import GoogleSignIn
 import UIKit
 open class UnityiOSPluginAppDelegate: NSObject {
     @objc
@@ -19,8 +20,12 @@ open class UnityiOSPluginAppDelegate: NSObject {
     }
     @objc
     open class func application(_ app: UIApplication, url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+        let source: String? = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
+        let annotaion: Any = options[UIApplicationOpenURLOptionsKey.annotation] as Any
         FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         LineAdapter.handleOpen(url)
+        let singIn: GIDSignIn = GIDSignIn.sharedInstance()
+        singIn.handle(url, sourceApplication: source, annotation: annotaion)
         return true
     }
     @objc

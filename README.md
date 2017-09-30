@@ -55,7 +55,13 @@ you may confirm some sample behaviours. which exists in following folder.
 
 - place directory: UnityPlugin/Assets/Plugins/iOS/
 
-8.please configure player and build setting for UnityNativePlugin in the Unity project and published Xcode project.
+8.please rewrite the replacement section of the following file to the Google OAUTH2.0 client id. you can confirm Google OAUTH2.0 client id by Google official developer console.
+
+- Google(OAUTH2.0):https://console.developers.google.com/apis/credentials
+
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/UnityPlugin/Assets/Plugins/Unity/Core/Configure/Platform/GoogleConfigurePlugin.cs
+
+9.please configure player and build setting for UnityNativePlugin in the Unity project and published Xcode project.
 
 - Unity
 
@@ -119,4 +125,10 @@ you may confirm some sample behaviours. which exists in following folder.
 
 place directory: UnityAndroidPlugin/plugin/google-services.json
 
-8.Android build with Unity.
+8.please rewrite the replacement section of the following file to the Google OAUTH2.0 client id. you can confirm Google OAUTH2.0 client id by Google official developer console.
+
+- Google(OAUTH2.0):https://console.developers.google.com/apis/credentials
+
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/UnityPlugin/Assets/Plugins/Unity/Core/Configure/Platform/GoogleConfigurePlugin.cs
+
+9.Android build with Unity.

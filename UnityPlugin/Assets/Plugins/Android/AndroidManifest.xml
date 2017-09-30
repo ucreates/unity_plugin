@@ -24,6 +24,7 @@
         <activity android:name="jp.line.android.sdk.activity.WebLoginActivity" android:exported="false" android:configChanges="keyboard|orientation" android:screenOrientation="sensor"/>
         <activity android:name="com.frontend.activity.sns.FacebookActivityPlugin" android:theme="@android:style/Theme.Translucent" />
         <activity android:name="com.frontend.activity.PaymentActivityPlugin" android:theme="@android:style/Theme.Translucent" />
+        <activity android:name="com.frontend.activity.platform.GoogleActivityPlugin" android:theme="@style/Theme.AppCompat.Translucent" />
         <receiver android:name="com.frontend.receiver.sns.TwitterBroadcastReceiverPlugin" android:exported="false">
             <intent-filter>
                 <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_SUCCESS"/>

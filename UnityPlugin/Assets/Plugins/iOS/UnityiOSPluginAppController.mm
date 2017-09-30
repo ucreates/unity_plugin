@@ -30,9 +30,11 @@
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
     return [UnityiOSPluginAppDelegate application:app url:url options:options];
 }
+#if __IPHONE_OS_VERSION_MAX_ALLOWED <= __IPHONE_10_0
 - (BOOL)application:(UIApplication *)app handleOpenURL:(NSURL *)url {
     return [UnityiOSPluginAppDelegate application:app url:url];
 }
+#endif
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     [super applicationWillEnterForeground:application];
     return;

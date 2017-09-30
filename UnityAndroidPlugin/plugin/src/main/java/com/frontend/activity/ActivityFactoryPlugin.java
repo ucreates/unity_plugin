@@ -10,6 +10,7 @@
 package com.frontend.activity;
 import android.app.Activity;
 import com.frontend.activity.PaymentActivityPlugin;
+import com.frontend.activity.platform.GoogleActivityPlugin;
 import com.frontend.activity.sns.FacebookActivityPlugin;
 import com.frontend.activity.sns.LineActivityPlugin;
 import com.frontend.activity.sns.TwitterActivityPlugin;
@@ -31,6 +32,9 @@ public class ActivityFactoryPlugin {
             break;
         case PaymentActivityPlugin.ACTIVITY_ID:
             activity = new PaymentActivityPlugin();
+            break;
+        case GoogleActivityPlugin.ACTIVITY_ID:
+            activity = new GoogleActivityPlugin();
             break;
         default:
             break;

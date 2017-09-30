@@ -1,0 +1,4 @@
+module GoogleSignIn {
+  header "SignIn.h"
+  export *
+}

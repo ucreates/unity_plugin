@@ -13,6 +13,7 @@ import android.content.Intent;
 import com.frontend.activity.ActivityPlugin;
 import com.frontend.activity.ActivityFactoryPlugin;
 import com.frontend.activity.PaymentActivityPlugin;
+import com.frontend.activity.platform.GoogleActivityPlugin;
 import com.frontend.activity.sns.TwitterActivityPlugin;
 import com.frontend.activity.sns.FacebookActivityPlugin;
 import com.frontend.activity.sns.LineActivityPlugin;
@@ -93,6 +94,22 @@ public class TransitionPlugin {
                 intent.putExtra("skuId", skuId);
                 intent.putExtra("skuType", skuType);
                 intent.putExtra("userId", userId);
+                fromActivity.startActivity(intent);
+                return;
+            }
+        };
+        fromActivity.runOnUiThread(runnable);
+        return;
+    }
+    public static void transitionGoogle(final String clientId, final int authorizeType) {
+        final Activity fromActivity = ActivityPlugin.getInstance();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                Activity toActivity = ActivityFactoryPlugin.factoryMethod(GoogleActivityPlugin.ACTIVITY_ID);
+                Intent intent = new Intent(fromActivity, toActivity.getClass());
+                intent.putExtra("clientId", clientId);
+                intent.putExtra("authorizeType", authorizeType);
                 fromActivity.startActivity(intent);
                 return;
             }
