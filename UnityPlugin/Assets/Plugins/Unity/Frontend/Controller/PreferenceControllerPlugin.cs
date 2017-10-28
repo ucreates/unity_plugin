@@ -31,11 +31,6 @@ public sealed class PreferenceControllerPlugin : BasePlugin {
             if (null != this.androidPlugin) {
                 this.androidPlugin.CallStatic("transition", this.id);
             }
-        } else {
-#if UNITY_STANDALONE
-            UnityManagedPlugin.Frontend.Controller.PreferenceControllerPlugin managedPlugin = new UnityManagedPlugin.Frontend.Controller.PreferenceControllerPlugin();
-            managedPlugin.Transition();
-#endif
         }
     }
 }

@@ -20,10 +20,6 @@ public sealed class AlertViewPlugin : BasePlugin {
         } else if (RuntimePlatform.Android == Application.platform) {
             this.androidPlugin = new AndroidJavaObject("com.frontend.view.AlertViewPlugin");
             this.androidPlugin.CallStatic("show", message);
-        } else {
-#if UNITY_STANDALONE
-            UnityManagedPlugin.Frontend.View.AlertViewPlugin.Show(message);
-#endif
         }
         return;
     }

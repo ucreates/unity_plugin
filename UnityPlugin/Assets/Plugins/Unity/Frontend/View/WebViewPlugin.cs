@@ -29,11 +29,6 @@ public sealed class WebViewPlugin : BasePlugin {
                 this.androidPlugin.Call("create", requestUrl, (int)left, (int)top, (int)right, (int)bottom);
                 this.androidPlugin.Call("show");
             }
-        } else {
-#if UNITY_STANDALONE
-            UnityManagedPlugin.Frontend.View.WebViewPlugin managedPlugin = new UnityManagedPlugin.Frontend.View.WebViewPlugin();
-            managedPlugin.Show(requestUrl);
-#endif
         }
     }
     public void Hide() {

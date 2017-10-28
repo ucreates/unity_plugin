@@ -8,6 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PluginLauncher.unity
   - enabled: 1
+    path: Assets/Scenes/Core/IO/ArchivePluginViewer.unity
+  - enabled: 1
     path: Assets/Scenes/Core/IO/PathPluginViewer.unity
   - enabled: 1
     path: Assets/Scenes/Frontend/Controller/PaymentControllerPluginViewer.unity

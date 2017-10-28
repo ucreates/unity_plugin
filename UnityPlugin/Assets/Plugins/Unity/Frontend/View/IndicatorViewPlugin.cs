@@ -28,11 +28,6 @@ public sealed class IndicatorViewPlugin : BasePlugin {
             if (null != this.androidPlugin) {
                 this.androidPlugin.Call("show");
             }
-        } else {
-#if UNITY_STANDALONE
-            UnityManagedPlugin.Frontend.View.IndicatorViewPlugin managedPlugin = new UnityManagedPlugin.Frontend.View.IndicatorViewPlugin();
-            managedPlugin.Show();
-#endif
         }
     }
     public void Hide() {

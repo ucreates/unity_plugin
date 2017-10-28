@@ -713,6 +713,8 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: GoogleControllerPlugin
       m_Image: {fileID: 0}
+    - m_Text: ArchivePlugin
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

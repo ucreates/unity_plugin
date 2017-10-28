@@ -7,8 +7,9 @@
     <OutputType>Library</OutputType>
     <RootNamespace>UnityManagedPlugin</RootNamespace>
     <AssemblyName>UnityManagedPlugin</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <BaseDirectory>..\UnityPlugin\Assets\Plugins\Managed</BaseDirectory>
+    <UseMSBuildEngine>False</UseMSBuildEngine>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,25 +30,14 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Classes\Frontend\View\IndicatorViewPlugin.cs">
-      <Link>Classes\Frontend\View\IndicatorViewPlugin.cs</Link>
-    </Compile>
-    <Compile Include="Classes\Frontend\View\ReviewViewPlugin.cs">
-      <Link>Classes\Frontend\View\ReviewViewPlugin.cs</Link>
-    </Compile>
-    <Compile Include="Classes\Frontend\View\WebViewPlugin.cs">
-      <Link>Classes\Frontend\View\WebViewPlugin.cs</Link>
-    </Compile>
-    <Compile Include="Classes\Frontend\Controller\PreferenceControllerPlugin.cs">
-      <Link>Classes\Frontend\Controller\PreferenceControllerPlugin.cs</Link>
-    </Compile>
-    <Compile Include="Classes\Frontend\View\AlertViewPlugin.cs">
-      <Link>Classes\Frontend\View\AlertViewPlugin.cs</Link>
+    <Compile Include="Classes\Core\IO\ArchivePlugin.cs">
+      <Link>Classes\Core\IO\ArchivePlugin.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Classes\" />
+    <Folder Include="..\UnityPlugin\Assets\Plugins\Managed\Classes\Core\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -57,6 +47,9 @@
     <Reference Include="UnityEditor">
       <HintPath>bin\UnityEditor.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>bin\Ionic.Zip.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
