@@ -8,8 +8,8 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 #import <Foundation/Foundation.h>
-#import <UnityPlugin-Swift.h>
 #import "UnityiOSPlugin.h"
+#import <UnityPlugin-Swift.h>
 #import "UnityNativePlugin.h"
 static WebViewPlugin* webViewPlugin;
 static IndicatorViewPlugin* activityIndicatorViewPlugin;

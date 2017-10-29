@@ -9,6 +9,7 @@
 //======================================================================
 #import "UnityAppController.h"
 #import "UnityNativePlugin.h"
+#import "UnityiOSPlugin.h"
 #import <UnityPlugin-Swift.h>
 @interface UnityiOSPluginAppController : UnityAppController
 @end
