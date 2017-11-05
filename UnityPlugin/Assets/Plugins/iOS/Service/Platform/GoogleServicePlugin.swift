@@ -22,12 +22,18 @@ open class GoogleServicePlugin: NSObject {
     @objc
     open func logIn() -> Void {
         let signIn: GIDSignIn = GIDSignIn.sharedInstance()
+        if (nil != signIn.currentUser) {
+            return
+        }
         signIn.signIn()
         return
     }
     @objc
     open func silentlyLogIn() -> Void {
         let signIn: GIDSignIn = GIDSignIn.sharedInstance()
+        if (nil == signIn.currentUser) {
+            return
+        }
         signIn.signInSilently()
         return
     }
@@ -35,6 +41,7 @@ open class GoogleServicePlugin: NSObject {
     open func logOut() -> Void {
         let signIn: GIDSignIn = GIDSignIn.sharedInstance()
         signIn.signOut()
+        signIn.disconnect()
         return
     }
     @objc
@@ -47,6 +54,7 @@ open class GoogleServicePlugin: NSObject {
     open func send(user: GIDGoogleUser) -> Void {
         let idToken = user.authentication.idToken
         print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + idToken!)
+        NSLog("%@,idToken::%@", TagPlugin.UNITY_PLUGIN_IDENTIFIER, idToken!)
         return
     }
     @objc

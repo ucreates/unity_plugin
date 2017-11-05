@@ -12,19 +12,35 @@ import UIKit
 import GoogleSignIn
 open class GoogleViewControllerPlugin: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     open static let VIEWCONTROLLER_ID: Int = 7
+    private static let LOGIN: Int = 0
+    private static let LOGOUT: Int = 1
+    private static let REVOKEACCESS: Int = 2
+    fileprivate var service: GoogleServicePlugin!
     fileprivate var clientId: String!
-    @objc
+    fileprivate var mode: Int = 0
     override open func viewDidLoad() -> Void {
         super.viewDidLoad()
-        let service: GoogleServicePlugin = GoogleServicePlugin()
-        service.buildApiClient(clientId: self.clientId, viewController: self)
-        service.revokeAccess()
-        service.logIn()
+        self.service = GoogleServicePlugin()
+        self.service.buildApiClient(clientId: self.clientId, viewController: self)
+        if (GoogleViewControllerPlugin.LOGIN == self.mode) {
+            self.service.logIn()
+        }
+        return
+    }
+    override open func viewDidAppear(_ animated: Bool) {
+        if (GoogleViewControllerPlugin.LOGIN == self.mode) {
+            self.service.silentlyLogIn()
+        } else if (GoogleViewControllerPlugin.LOGOUT == self.mode) {
+            self.service.logOut()
+        } else if (GoogleViewControllerPlugin.REVOKEACCESS == self.mode) {
+            self.service.revokeAccess()
+        }
         return
     }
     public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
-            print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + error.localizedDescription)
+            NSLog("%@,error::%@", TagPlugin.UNITY_PLUGIN_IDENTIFIER, error.localizedDescription)
+            self.dismiss(animated: true, completion: nil)
             return
         }
         let service: GoogleServicePlugin = GoogleServicePlugin()
@@ -34,8 +50,9 @@ open class GoogleViewControllerPlugin: UIViewController, GIDSignInDelegate, GIDS
     }
     public func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
-            print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + error.localizedDescription)
+            NSLog("%@,error::%@", TagPlugin.UNITY_PLUGIN_IDENTIFIER, error.localizedDescription)
         }
+        self.dismiss(animated: true, completion: nil)
         return
     }
     public func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
@@ -47,9 +64,13 @@ open class GoogleViewControllerPlugin: UIViewController, GIDSignInDelegate, GIDS
         self.dismiss(animated: true, completion: nil)
         return
     }
+    public func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+        return
+    }
     @objc
-    open func setParameter(clientId: String) -> Void {
+    open func setParameter(clientId: String, mode: Int) -> Void {
         self.clientId = clientId
+        self.mode = mode
         return
     }
 }

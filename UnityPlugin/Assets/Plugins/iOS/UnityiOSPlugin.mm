@@ -142,7 +142,7 @@ extern "C" void transitionPaymentViewControllerPlugin(char* paymentUserId, char*
 extern "C" void transitionGoogleViewControllerPlugin(char* clientId, int mode) {
     NSString* unityClientId = [NSString stringWithCString:clientId encoding:NSUTF8StringEncoding];
     GoogleViewControllerPlugin* viewController = (GoogleViewControllerPlugin*)[ViewControllerFactoryPlugin factoryMethod:[GoogleViewControllerPlugin VIEWCONTROLLER_ID]];
-    [viewController setParameterWithClientId:unityClientId];
+    [viewController setParameterWithClientId:unityClientId mode:mode];
     UIViewController* fromViewController = [ViewControllerPlugin getInstance];
     [fromViewController presentViewController:viewController animated:true completion:nil];
     return;

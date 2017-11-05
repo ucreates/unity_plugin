@@ -9,9 +9,11 @@
 //======================================================================
 package com.service.platform;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import com.core.identifier.TagPlugin;
+import com.frontend.activity.platform.GoogleActivityPlugin;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -23,10 +25,8 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 public class GoogleServicePlugin {
     private GoogleApiClient apiClient;
-    private boolean enable;
-    public GoogleServicePlugin() {
-        this.enable = false;
-    }
+    private FragmentActivity activity;
+    public GoogleServicePlugin() {}
     public void buildApiClient(String oauthClientId, FragmentActivity activity) {
         Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, oauthClientId);
         GoogleApiClient.OnConnectionFailedListener callback = new GoogleApiClient.OnConnectionFailedListener() {
@@ -46,68 +46,110 @@ public class GoogleServicePlugin {
                          .enableAutoManage(activity, callback)
                          .addApi(Auth.GOOGLE_SIGN_IN_API, options)
                          .build();
-        this.enable = true;
+        this.activity = activity;
         return;
     }
-    public Intent logIn() {
-        if (false == this.enable) {
-            return null;
-        }
-        return Auth.GoogleSignInApi.getSignInIntent(this.apiClient);
-    }
-    public void silentLogIn() {
-        if (false == this.enable) {
-            return;
-        }
-        ResultCallback<GoogleSignInResult> callback = new ResultCallback<GoogleSignInResult>() {
+    public void logIn() {
+        GoogleApiClient.ConnectionCallbacks callback = new GoogleApiClient.ConnectionCallbacks() {
             @Override
-            public void onResult(GoogleSignInResult result) {
-                Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, result.getStatus().toString());
+            public void onConnected(Bundle bundle) {
+                Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(apiClient);
+                activity.startActivityForResult(signInIntent, GoogleActivityPlugin.SIGNIN_REQUEST);
+                return;
+            }
+            @Override
+            public void onConnectionSuspended(int i) {
+                Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, "google api client connection is suspended");
                 return;
             }
         };
-        OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(this.apiClient);
-        if (false == opr.isDone()) {
-            opr.setResultCallback(callback);
-            return;
-        }
-        GoogleSignInResult signInResult = opr.get();
-        if (false == signInResult.isSuccess()) {
-            return;
-        }
-        this.send(signInResult);
+        this.apiClient.connect();
+        this.apiClient.registerConnectionCallbacks(callback);
+        return;
+    }
+    public void silentLogIn() {
+        GoogleApiClient.ConnectionCallbacks callback = new GoogleApiClient.ConnectionCallbacks() {
+            @Override
+            public void onConnected(Bundle bundle) {
+                ResultCallback<GoogleSignInResult> callback = new ResultCallback<GoogleSignInResult>() {
+                    @Override
+                    public void onResult(GoogleSignInResult result) {
+                        Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, result.getStatus().toString());
+                        return;
+                    }
+                };
+                OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(apiClient);
+                if (false == opr.isDone()) {
+                    opr.setResultCallback(callback);
+                    return;
+                }
+                GoogleSignInResult signInResult = opr.get();
+                send(signInResult);
+                return;
+            }
+            @Override
+            public void onConnectionSuspended(int i) {
+                Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, "google api client connection is suspended");
+                return;
+            }
+        };
+        this.apiClient.connect();
+        this.apiClient.registerConnectionCallbacks(callback);
         return;
     }
     public void logOut() {
-        if (false == this.enable) {
-            return;
-        }
-        ResultCallback<Status> callback = new ResultCallback<Status>() {
+        GoogleApiClient.ConnectionCallbacks callback = new GoogleApiClient.ConnectionCallbacks() {
             @Override
-            public void onResult(Status status) {
-                Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, status.toString());
+            public void onConnected(Bundle bundle) {
+                ResultCallback<Status> callback = new ResultCallback<Status>() {
+                    @Override
+                    public void onResult(Status status) {
+                        String logOutStatus = status.toString();
+                        Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, logOutStatus);
+                        activity.finish();
+                        return;
+                    }
+                };
+                Auth.GoogleSignInApi
+                .signOut(apiClient)
+                .setResultCallback(callback);
+                return;
+            }
+            @Override
+            public void onConnectionSuspended(int i) {
+                Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, "google api client connection is suspended");
                 return;
             }
         };
-        Auth.GoogleSignInApi
-        .signOut(this.apiClient)
-        .setResultCallback(callback);
+        this.apiClient.connect();
+        this.apiClient.registerConnectionCallbacks(callback);
         return;
     }
     public void revokeAccess() {
-        if (false == this.enable) {
-            return;
-        }
-        ResultCallback<Status> callback = new ResultCallback<Status>() {
+        GoogleApiClient.ConnectionCallbacks callback = new GoogleApiClient.ConnectionCallbacks() {
             @Override
-            public void onResult(Status status) {
-                Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, status.toString());
+            public void onConnected(Bundle bundle) {
+                ResultCallback<Status> callback = new ResultCallback<Status>() {
+                    @Override
+                    public void onResult(Status status) {
+                        Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, status.toString());
+                        activity.finish();
+                        return;
+                    }
+                };
+                Auth.GoogleSignInApi
+                .revokeAccess(apiClient)
+                .setResultCallback(callback);
+                return;
+            }
+            @Override
+            public void onConnectionSuspended(int i) {
+                Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, "google api client connection is suspended");
                 return;
             }
         };
-        Auth.GoogleSignInApi
-        .revokeAccess(this.apiClient)
-        .setResultCallback(callback);
+        this.apiClient.connect();
+        this.apiClient.registerConnectionCallbacks(callback);
         return;
     }
     public void send(Intent data) {
@@ -116,13 +158,13 @@ public class GoogleServicePlugin {
         return;
     }
     public void send(GoogleSignInResult signInResult) {
-        if (false == this.enable || false == signInResult.isSuccess()) {
-            Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, "logIn is faild::" + signInResult.getStatus().toString());
+        if (false == signInResult.isSuccess()) {
+            Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, String.format("logIn is faild::%s", signInResult.getStatus().toString()));
             return;
         }
         GoogleSignInAccount acct = signInResult.getSignInAccount();
         String idToken = acct.getIdToken();
-        Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, "idToken::" + idToken);
+        Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, String.format("idToken::%s", idToken));
         return;
     }
 }
