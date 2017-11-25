@@ -96,6 +96,17 @@ extern "C" void dumpPathPlugin() {
     [pathPlugin dump];
     return;
 }
+extern "C" int getVersionPlugin() {
+    return [VersionPlugin getVersion];
+}
+extern "C" char* getVersionNamePlugin() {
+    NSString* versionName = [VersionPlugin getVersionName];
+    const char* lpszVersionName = [versionName UTF8String];
+    unsigned long size = strlen(lpszVersionName) + 1;
+    char* unityVersionName = (char*)malloc(size);
+    strcpy(unityVersionName, lpszVersionName);
+    return unityVersionName;
+}
 extern "C" void showAlertViewPlugin(char* message) {
     NSString* encodedMessage = [NSString stringWithCString:message encoding:NSUTF8StringEncoding];
     [AlertViewPlugin show:encodedMessage];
