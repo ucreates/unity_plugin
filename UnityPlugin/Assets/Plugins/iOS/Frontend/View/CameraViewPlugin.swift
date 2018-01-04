@@ -30,7 +30,7 @@ open class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         }
         self.callbackGameObjectName = gameObjectName
         self.hideCallbackName = onHideCallbackName
-        func callback (granted: Bool) -> Void {
+        func callback(granted: Bool) -> Void {
             if (false == granted) {
                 return
             }
@@ -82,7 +82,7 @@ open class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
             }
             let capture: AVCaptureInput!
             do {
-                capture = try AVCaptureDeviceInput.init(device: self.camera) as AVCaptureInput
+                capture = try AVCaptureDeviceInput(device: self.camera) as AVCaptureInput
                 self.session.addInput(capture)
                 self.session.addOutput(self.output)
             } catch {
@@ -172,7 +172,7 @@ open class CameraViewPlugin: NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         if (nil == sampleBuffer || false == self.created) {
             return
         }
-        let dispatcher: () -> () = {
+        let dispatcher: () -> Void = {
             autoreleasepool {
                 let buffer: CVImageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
                 let lockFrag: CVPixelBufferLockFlags = CVPixelBufferLockFlags(rawValue: 0)

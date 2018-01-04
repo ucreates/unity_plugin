@@ -18,7 +18,7 @@ open class GoogleViewControllerPlugin: UIViewController, GIDSignInDelegate, GIDS
     fileprivate var service: GoogleServicePlugin!
     fileprivate var clientId: String!
     fileprivate var mode: Int = 0
-    override open func viewDidLoad() -> Void {
+    open override func viewDidLoad() -> Void {
         super.viewDidLoad()
         self.service = GoogleServicePlugin()
         self.service.buildApiClient(clientId: self.clientId, viewController: self)
@@ -27,7 +27,7 @@ open class GoogleViewControllerPlugin: UIViewController, GIDSignInDelegate, GIDS
         }
         return
     }
-    override open func viewDidAppear(_ animated: Bool) {
+    open override func viewDidAppear(_ animated: Bool) {
         if (GoogleViewControllerPlugin.LOGIN == self.mode) {
             self.service.silentlyLogIn()
         } else if (GoogleViewControllerPlugin.LOGOUT == self.mode) {

@@ -15,7 +15,7 @@ open class FacebookViewControllerPlugin: UIViewController, FBSDKSharingDelegate 
     open static let VIEWCONTROLLER_ID: Int = 4
     fileprivate var authorized: Bool = false
     fileprivate var imageData: Data!
-    override open func viewDidAppear(_ animated: Bool) -> Void {
+    open override func viewDidAppear(_ animated: Bool) -> Void {
         super.viewDidAppear(animated)
         if (false != self.authorized) {
             return
@@ -68,4 +68,3 @@ open class FacebookViewControllerPlugin: UIViewController, FBSDKSharingDelegate 
         return
     }
 }
-

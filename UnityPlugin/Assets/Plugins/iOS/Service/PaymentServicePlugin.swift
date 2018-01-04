@@ -78,10 +78,10 @@ open class PaymentServicePlugin: NSObject {
             request.httpMethod = "POST"
             request.httpBody = requestBodyData
             let session: URLSession = URLSession.shared
-            func callback (data: Data?, response: URLResponse?, error: Error?) -> Void {
+            func callback(data: Data?, response: URLResponse?, error: Error?) -> Void {
                 print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + userId)
                 print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + response.debugDescription)
-                //send your purchase data.
+                // send your purchase data.
                 return
             }
             let task: URLSessionDataTask = session.dataTask(with: request, completionHandler: callback)
@@ -146,4 +146,3 @@ open class PaymentServicePlugin: NSObject {
         return self.downloadAssetPath
     }
 }
-

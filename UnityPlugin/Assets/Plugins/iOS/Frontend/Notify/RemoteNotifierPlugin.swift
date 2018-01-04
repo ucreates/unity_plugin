@@ -12,7 +12,7 @@ import UIKit
 import UserNotifications
 open class RemoteNotifierPlugin: BaseNotifierPlugin, UNUserNotificationCenterDelegate {
     fileprivate static var instance: RemoteNotifierPlugin?
-    fileprivate override init() { }
+    fileprivate override init() {}
     @objc
     open static func getInstance() -> RemoteNotifierPlugin! {
         if (nil == RemoteNotifierPlugin.instance) {
@@ -21,7 +21,7 @@ open class RemoteNotifierPlugin: BaseNotifierPlugin, UNUserNotificationCenterDel
         return RemoteNotifierPlugin.instance!
     }
     @objc
-    override open func register() -> Void {
+    open override func register() -> Void {
         if #available(iOS 10.0, *) {
             func callback(granted: Bool, error: Error?) -> Void {
                 if (nil != error) {

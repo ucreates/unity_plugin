@@ -13,7 +13,7 @@ open class DeviceTokenPlugin: NSObject {
     @objc
     open static func toString(deviceToken: Data) -> String {
         var ret: String = ""
-        for i in 0..<deviceToken.count {
+        for i in 0 ..< deviceToken.count {
             let arg: CVarArg = deviceToken[i] as CVarArg
             ret += String(format: "%02.2hhx", arg)
         }

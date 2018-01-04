@@ -14,7 +14,7 @@ open class PaymentViewControllerPlugin: UIViewController, SKProductsRequestDeleg
     fileprivate var userId: String!
     fileprivate var productId: String!
     fileprivate var service: PaymentServicePlugin!
-    override open func viewDidLoad() -> Void {
+    open override func viewDidLoad() -> Void {
         super.viewDidLoad()
         self.service = PaymentServicePlugin()
         let ret: Bool = service.request(prodctId: self.productId, paymentViewController: self)
@@ -64,4 +64,3 @@ open class PaymentViewControllerPlugin: UIViewController, SKProductsRequestDeleg
         return
     }
 }
-

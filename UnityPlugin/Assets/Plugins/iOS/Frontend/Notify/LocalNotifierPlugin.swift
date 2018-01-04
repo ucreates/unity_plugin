@@ -14,7 +14,7 @@ open class LocalNotifierPlugin: BaseNotifierPlugin, UNUserNotificationCenterDele
     fileprivate static let MIN_INTERVAL_SECOND: TimeInterval = 1
     fileprivate static let IDENTIFIER: String = "NOTIFICATION"
     fileprivate static var instance: LocalNotifierPlugin?
-    fileprivate override init() { }
+    fileprivate override init() {}
     @objc
     open static func getInstance() -> LocalNotifierPlugin! {
         if (nil == LocalNotifierPlugin.instance) {
@@ -23,7 +23,7 @@ open class LocalNotifierPlugin: BaseNotifierPlugin, UNUserNotificationCenterDele
         return LocalNotifierPlugin.instance!
     }
     @objc
-    override open func register() -> Void {
+    open override func register() -> Void {
         if #available(iOS 10.0, *) {
             func callback(granted: Bool, error: Error?) -> Void {
                 if (nil != error) {
@@ -44,7 +44,7 @@ open class LocalNotifierPlugin: BaseNotifierPlugin, UNUserNotificationCenterDele
         }
         return
     }
-    @objc    
+    @objc
     open override func noitfy(title: String, body: String, interval: TimeInterval) -> Void {
         if (false == self.enable) {
             print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + "LocalNotifierPlugin is not granted.")
@@ -59,8 +59,8 @@ open class LocalNotifierPlugin: BaseNotifierPlugin, UNUserNotificationCenterDele
             content.title = title
             content.body = body
             content.sound = UNNotificationSound.default()
-            let trigger: UNTimeIntervalNotificationTrigger = UNTimeIntervalNotificationTrigger.init(timeInterval: interval, repeats: false)
-            let request: UNNotificationRequest = UNNotificationRequest.init(identifier: LocalNotifierPlugin.IDENTIFIER, content: content, trigger: trigger)
+            let trigger: UNTimeIntervalNotificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
+            let request: UNNotificationRequest = UNNotificationRequest(identifier: LocalNotifierPlugin.IDENTIFIER, content: content, trigger: trigger)
             let center: UNUserNotificationCenter = UNUserNotificationCenter.current()
             center.add(request)
         } else {

@@ -14,14 +14,14 @@ import Firebase
 import FirebaseMessaging
 open class FCMNotifierPlugin: BaseNotifierPlugin, UNUserNotificationCenterDelegate, FIRMessagingDelegate {
     fileprivate static var instance: FCMNotifierPlugin?
-    fileprivate override init() { }
+    fileprivate override init() {}
     open static func getInstance() -> FCMNotifierPlugin! {
         if (nil == FCMNotifierPlugin.instance) {
             FCMNotifierPlugin.instance = FCMNotifierPlugin()
         }
         return FCMNotifierPlugin.instance!
     }
-    override open func register() -> Void {
+    open override func register() -> Void {
         FIRApp.configure()
         let messaging: FIRMessaging = FIRMessaging.messaging()
         let notificationCenter: NotificationCenter = NotificationCenter.default
@@ -73,7 +73,7 @@ open class FCMNotifierPlugin: BaseNotifierPlugin, UNUserNotificationCenterDelega
         print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + "fcmToken::" + fcmToken!)
         return
     }
-    public func applicationReceivedRemoteMessage (_ remoteMessage: FIRMessagingRemoteMessage) -> Void {
+    public func applicationReceivedRemoteMessage(_ remoteMessage: FIRMessagingRemoteMessage) -> Void {
         print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + remoteMessage.appData.debugDescription)
         return
     }

@@ -19,7 +19,7 @@ open class BaseNotifierPlugin: NSObject {
     open func noitfy(title: String, body: String, interval: TimeInterval) -> Void {
         return
     }
-    @objc    
+    @objc
     open func noitfy(userInfo: [AnyHashable: Any]) -> Void {
         return
     }

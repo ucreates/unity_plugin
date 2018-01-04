@@ -18,7 +18,7 @@ open class PreferenceViewControllerPlugin: UIViewController, UITableViewDataSour
     fileprivate static let SECTION_HEIGHT: CGFloat = UIScreen.main.bounds.height * 0.1
     fileprivate static let VIEW_CONTROLLER_NAME: String = "設定画面"
     fileprivate var tableView: UITableView!
-    override open func viewDidLoad() -> Void {
+    open override func viewDidLoad() -> Void {
         super.viewDidLoad()
         let backButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(PreferenceViewControllerPlugin.onClickReturnButton))
         let controller: UIViewController = ViewControllerPlugin.getInstance()
@@ -37,7 +37,7 @@ open class PreferenceViewControllerPlugin: UIViewController, UITableViewDataSour
         self.view.addSubview(self.tableView)
         return
     }
-    override open func viewWillAppear(_ animated: Bool) -> Void {
+    open override func viewWillAppear(_ animated: Bool) -> Void {
         self.navigationController?.view.backgroundColor = PreferenceViewControllerPlugin.PREFERENCE_COLOR
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationController?.setToolbarHidden(false, animated: false)

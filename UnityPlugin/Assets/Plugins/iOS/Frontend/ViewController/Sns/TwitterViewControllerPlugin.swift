@@ -18,7 +18,7 @@ open class TwitterViewControllerPlugin: UIViewController, TWTRComposerViewContro
     fileprivate var message: String!
     fileprivate var imageData: Data!
     @objc
-    override open func viewDidAppear(_ animated: Bool) -> Void {
+    open override func viewDidAppear(_ animated: Bool) -> Void {
         super.viewDidAppear(animated)
         if (false != self.authorized) {
             return
@@ -28,8 +28,8 @@ open class TwitterViewControllerPlugin: UIViewController, TWTRComposerViewContro
         Fabric.with(fabricKitList)
         let service: TwitterServicePlugin = TwitterServicePlugin()
         func callback() -> Void {
-            if (false == useTwitterCard) {
-                func callback (_ result: TWTRComposerResult?) -> Void {
+            if (false == self.useTwitterCard) {
+                func callback(_ result: TWTRComposerResult?) -> Void {
                     if (TWTRComposerResult.cancelled == result) {
                         service.logOut()
                     }
@@ -53,7 +53,7 @@ open class TwitterViewControllerPlugin: UIViewController, TWTRComposerViewContro
                 let device: UIDevice = UIDevice.current
                 let idiom: UIUserInterfaceIdiom = device.userInterfaceIdiom
                 let bundle: Bundle = Bundle.main
-                //set your ios app bundle identifier. which is getting from Bundle.bundleIdentifier property. Sets the Apple App Store id for the promoted iPad app shown on iOS displays.
+                // set your ios app bundle identifier. which is getting from Bundle.bundleIdentifier property. Sets the Apple App Store id for the promoted iPad app shown on iOS displays.
                 let bundleId: String? = bundle.bundleIdentifier
                 var iPhoneAppId: String? = nil
                 var iPadAppId: String? = nil
