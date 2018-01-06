@@ -8,9 +8,9 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 using UnityEngine;
+using System.Runtime.InteropServices;
 using System.IO;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 namespace UnityPlugin.Core.IO {
 public sealed class ArchivePlugin : BasePlugin {
     public List<string> contentsPathList {

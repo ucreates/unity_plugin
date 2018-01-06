@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
 using UnityPlugin;
 using UnityPlugin.Core.Environment;
+using UnityEngine.UI;
+using System.Collections;
 public class VersionPluginEventHandler : MonoBehaviour {
     private VersionPlugin plugin {
         get;

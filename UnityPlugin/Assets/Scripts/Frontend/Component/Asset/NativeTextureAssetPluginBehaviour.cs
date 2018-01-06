@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
+using UnityPlugin;
+using UnityPlugin.Frontend.Component.Renderer;
+using UnityPlugin.Frontend.Component.Asset;
 using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using UnityPlugin;
-using UnityPlugin.Frontend.Component.Asset;
-using UnityPlugin.Frontend.Component.Renderer;
 public class NativeTextureAssetPluginBehaviour : MonoBehaviour {
     private const float UNIT_SCALE = 1f;
     private NativeTextureAssetPlugin nativeTextureAssetPlugin {

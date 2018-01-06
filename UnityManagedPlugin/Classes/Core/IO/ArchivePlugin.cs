@@ -9,8 +9,8 @@
 //======================================================================
 using UnityEngine;
 using System;
-using System.Collections.Generic;
 using System.IO;
+using System.Collections.Generic;
 using Ionic.Zip;
 namespace UnityManagedPlugin.Core.IO {
 public class ArchivePlugin {

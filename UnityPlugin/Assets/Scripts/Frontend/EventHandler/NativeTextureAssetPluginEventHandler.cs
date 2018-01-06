@@ -7,11 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
+using UnityPlugin;
+using UnityPlugin.Frontend.View;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityPlugin;
-using UnityPlugin.Frontend.View;
 public class NativeTextureAssetPluginEventHandler : MonoBehaviour {
     private List<NativeTextureAssetPluginBehaviour> behaviourList {
         get;

@@ -9,8 +9,8 @@
 //======================================================================
 using UnityEngine;
 using System;
-using System.Collections;
 using System.Runtime.InteropServices;
+using System.Collections;
 using AOT;
 namespace UnityPlugin.Frontend.Component.Renderer {
 public class NativeRendererPlugin : BasePlugin {

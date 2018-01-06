@@ -7,13 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
+using UnityPlugin;
+using UnityPlugin.Frontend.View;
+using UnityPlugin.Frontend.Component.Renderer;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections;
-using UnityPlugin;
-using UnityPlugin.Frontend.View;
-using UnityPlugin.Frontend.Component.Renderer;
 public class CameraViewPluginBehaviour : MonoBehaviour {
     private const float ACCELERATION = 100f;
     private CameraViewPlugin cameraViewPlugin {

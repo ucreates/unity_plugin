@@ -9,8 +9,8 @@
 //======================================================================
 using UnityEngine;
 using System;
-using System.Collections;
 using System.Runtime.InteropServices;
+using System.Collections;
 namespace UnityPlugin.Core.Environment {
 public sealed class VersionPlugin : BasePlugin {
     [DllImport("__Internal")]

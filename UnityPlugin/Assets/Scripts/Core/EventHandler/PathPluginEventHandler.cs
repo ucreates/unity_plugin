@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityPlugin;
 using UnityPlugin.Core.IO;
+using System.Collections;
 public class PathPluginEventHandler : MonoBehaviour {
     private PathPlugin plugin {
         get;

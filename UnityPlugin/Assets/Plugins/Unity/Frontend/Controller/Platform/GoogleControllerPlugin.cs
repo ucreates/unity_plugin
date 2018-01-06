@@ -7,12 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-using UnityEngine;
 using UnityPlugin.Core.Configure.Platform;
+using UnityEngine;
 using System;
+using System.Runtime.InteropServices;
 using System.IO;
 using System.Collections;
-using System.Runtime.InteropServices;
 namespace UnityPlugin.Frontend.Controller.Platform {
 public sealed class GoogleControllerPlugin : BasePlugin {
     private const int LOGIN = 0;

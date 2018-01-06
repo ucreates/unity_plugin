@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-using UnityEditor.iOS.Xcode;
 using UnityPlugin.Core.Configure.Platform;
-using System.Collections;
-using System.Diagnostics;
+using UnityEditor.iOS.Xcode;
 using System.IO;
+using System.Diagnostics;
+using System.Collections;
 namespace Editor.Build {
 public class GoogleEditorBuilder : BaseEditorBuilder {
     public const int BUILDER_ID = 7;

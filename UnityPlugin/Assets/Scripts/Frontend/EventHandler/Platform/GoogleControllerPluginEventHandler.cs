@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityPlugin;
 using UnityPlugin.Frontend.Controller.Platform;
+using System.Collections;
 public class GoogleControllerPluginEventHandler : MonoBehaviour {
     private GoogleControllerPlugin plugin {
         get;

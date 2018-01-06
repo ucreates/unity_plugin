@@ -7,12 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-using UnityEngine;
-using UnityEngine.UI;
 using UnityPlugin;
 using UnityPlugin.Frontend.Controller.Sns;
-using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 using System.Runtime.InteropServices;
+using System.Collections;
 public class TwitterControllerPluginEventHandler : MonoBehaviour {
     private TwitterControllerPlugin plugin {
         get;

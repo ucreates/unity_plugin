@@ -7,12 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-using UnityEngine;
 using UnityPlugin;
 using UnityPlugin.Frontend.Controller;
 using UnityPlugin.Core.Preference;
-using System.Collections;
+using UnityEngine;
 using System.Runtime.InteropServices;
+using System.Collections;
 public class PreferenceControllerPluginEventHandler : MonoBehaviour {
     private PreferenceControllerPlugin preferenceControllerPlugin {
         get;

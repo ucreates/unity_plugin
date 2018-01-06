@@ -8,8 +8,8 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 using UnityEngine;
-using System.Collections;
 using System.Runtime.InteropServices;
+using System.Collections;
 namespace UnityPlugin.Frontend.Notify {
 public sealed class LocalNotifierPlugin : BasePlugin {
     [DllImport("__Internal")]

@@ -9,9 +9,9 @@
 //======================================================================
 using UnityEngine;
 using System;
-using System.Collections;
-using System.IO;
 using System.Runtime.InteropServices;
+using System.IO;
+using System.Collections;
 namespace UnityPlugin.Frontend.Component.Asset {
 public class NativeTextureAssetPlugin : BasePlugin {
 #if UNITY_IPHONE

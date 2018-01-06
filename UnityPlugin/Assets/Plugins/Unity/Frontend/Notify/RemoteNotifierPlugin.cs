@@ -7,10 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-using UnityEngine;
-using System.Collections;
-using System.Runtime.InteropServices;
 using UnityPlugin.Core.Configure.Notify;
+using UnityEngine;
+using System.Runtime.InteropServices;
+using System.Collections;
 namespace UnityPlugin.Frontend.Notify {
 public sealed class RemoteNotifierPlugin : BasePlugin {
     [DllImport("__Internal")]
