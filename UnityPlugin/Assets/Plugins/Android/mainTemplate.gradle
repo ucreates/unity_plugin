@@ -1,0 +1,110 @@
+apply plugin: 'com.android.application'
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.2'
+        classpath 'com.google.gms:google-services:4.0.0'
+    }
+}
+allprojects {
+   repositories {
+      flatDir {
+        dirs 'libs'
+      }
+      google()
+      mavenCentral()
+      jcenter()
+   }
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:animated-vector-drawable:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:customtabs:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-media-compat:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.google.android.gms:play-services-iid:15.0.1'
+    implementation 'com.google.android.gms:play-services-base:15.0.1'
+    implementation 'com.google.android.gms:play-services-auth:15.0.1'
+    implementation 'com.google.android.gms:play-services-gcm:15.0.1'
+    implementation 'com.google.firebase:firebase-core:16.0.0'
+    implementation 'com.google.firebase:firebase-messaging:17.1.0'
+    implementation 'com.facebook.android:facebook-android-sdk:4.19.0'
+    implementation('com.twitter.sdk.android:twitter:3.0.0@aar') {
+        transitive = true
+    }
+    implementation 'com.linecorp:linesdk:5.0.1'
+    implementation project(':unity-android-resources')
+}
+android {
+    def pluginRoot='/path/to/unity_plugin/UnityAndroidPlugin/plugin/src/main/'
+    def keystorePath='/path/to/your_keystore.keystore'
+    def keystoreStorePassword='your_kestore_password'
+    def keystoreKeyPassword='your_kestorekey_password'
+    def keystoreAlias='your_alias'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 28
+        applicationId 'com.ucreates.unityplugin'
+        versionCode 3
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    lintOptions {
+        abortOnError false
+    }
+    aaptOptions {
+        noCompress '.unity3d', '.ress', '.resource', '.obb','archive.zip','native_rectangle_01.jpg','native_rectangle_01.png','native_rectangle_01.raw','native_rectangle_02.jpg','native_rectangle_02.png','native_rectangle_02.raw','native_square_01.jpg','native_square_01.png','native_square_01.raw','native_square_02.jpg','native_square_02.png','native_square_02.raw'
+    }
+    signingConfigs {
+        release {
+            storeFile file(keystorePath)
+            storePassword keystoreStorePassword
+            keyAlias keystoreAlias
+            keyPassword keystoreKeyPassword
+        }
+    }
+    buildTypes {
+          debug {
+             minifyEnabled false
+             useProguard false
+             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+              jniDebuggable true
+          }
+          release {
+             minifyEnabled false
+             useProguard false
+              proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+              signingConfig signingConfigs.release
+          }
+    }
+    //プラグインプロジェクトのソースコードとAIDLリンク
+    sourceSets {
+        debug {
+            aidl.srcDirs = [pluginRoot + 'aidl']
+            java.srcDirs = [pluginRoot + 'java']
+            res.srcDirs = [pluginRoot + 'res']
+        }
+        release {
+            aidl.srcDirs = [pluginRoot + 'aidl']
+            java.srcDirs = [pluginRoot + 'java']
+            res.srcDirs = [pluginRoot + 'res']
+        }
+    }
+}
+apply plugin: 'com.google.gms.google-services'

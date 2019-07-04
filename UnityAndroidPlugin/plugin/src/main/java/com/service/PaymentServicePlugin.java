@@ -167,7 +167,7 @@ public class PaymentServicePlugin {
                 String continueToken = null;
                 do {
                     try {
-                        Bundle ownedItems = serviceInterface.getPurchases(PaymentServicePlugin.INAPPBILLING_API_VERSION, packageName , skuType, continueToken);
+                        Bundle ownedItems = serviceInterface.getPurchases(PaymentServicePlugin.INAPPBILLING_API_VERSION, packageName, skuType, continueToken);
                         int response = PaymentServiceResponsePlugin.getResponse(ownedItems);
                         if (PaymentServiceResponsePlugin.RESULT_OK != response) {
                             return;

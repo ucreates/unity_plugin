@@ -20,9 +20,6 @@ public class EditorBuilderFactory {
         case WebViewEditorBuilder.BUILDER_ID:
             builder = new WebViewEditorBuilder();
             break;
-        case FirebaseEditorBuilder.BUILDER_ID:
-            builder = new FirebaseEditorBuilder();
-            break;
         case GoogleEditorBuilder.BUILDER_ID:
             builder = new GoogleEditorBuilder();
             break;

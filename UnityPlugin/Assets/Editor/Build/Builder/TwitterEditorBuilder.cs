@@ -16,17 +16,6 @@ public class TwitterEditorBuilder : BaseEditorBuilder {
         if (false == this.pathDictionary.ContainsKey("fromFrameworkRoot") || false == this.pathDictionary.ContainsKey("destFrameworkRoot")) {
             return;
         }
-        string fromFrameworkRootPath = this.pathDictionary["fromFrameworkRoot"];
-        string destFrameworkRootPath = this.pathDictionary["destFrameworkRoot"];
-        string[] innerBundlePathList = new string[] {
-            "Twitter/TwitterKit.framework/TwitterKitResources.bundle"
-        };
-        foreach (string innerBundlePath in innerBundlePathList) {
-            string fromPath = Path.Combine(fromFrameworkRootPath, innerBundlePath);
-            string destPath = Path.Combine(destFrameworkRootPath, innerBundlePath);
-            string bundleGUID = project.AddFile(fromPath, destPath, PBXSourceTree.Source);
-            project.AddFileToBuild(this.targetGUID, bundleGUID);
-        }
         PlistElementDict rootDict = plist.root;
         PlistElementDict fabricDict =  rootDict.CreateDict("Fabric");
         fabricDict.SetString("APIKey", TwitterConfigurePlugin.API_KEY);
@@ -52,7 +41,7 @@ public class TwitterEditorBuilder : BaseEditorBuilder {
         CommandEditorBuilder builder = new CommandEditorBuilder();
         builder.commandElementList.Add(destCliPath);
         builder.commandElementList.Add(projectPath);
-        builder.commandElementList.Add("./Frameworks/Plugins/iOS/Frameworks/Twitter/Fabric.framework/run");
+        builder.commandElementList.Add("${PODS_ROOT}/Fabric/iOS/Fabric.framework/run");
         builder.commandElementList.Add(TwitterConfigurePlugin.API_KEY);
         builder.commandElementList.Add(TwitterConfigurePlugin.BUILD_SEACRET);
         ProcessStartInfo info = new ProcessStartInfo();

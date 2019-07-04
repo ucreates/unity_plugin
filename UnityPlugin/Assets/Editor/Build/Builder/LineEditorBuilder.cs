@@ -17,21 +17,23 @@ public class LineEditorBuilder : BaseEditorBuilder {
         foreach (string framework in frameworks) {
             this.project.AddFrameworkToProject(this.targetGUID, framework, false);
         }
-        PlistElementDict lineAdapterConfigDict = rootDict.CreateDict("LineAdapterConfig");
+        PlistElementDict lineAdapterConfigDict = rootDict.CreateDict("LineSDKConfig");
         lineAdapterConfigDict.SetString("ChannelId", LineConfigurePlugin.CHANNEL_ID);
         return;
     }
     public override void BuildiOSURLSchemes(PlistElementArray bundleURLTypesArray) {
         PlistElementDict bundleURLSchemaDict = bundleURLTypesArray.AddDict();
         bundleURLSchemaDict.SetString("CFBundleTypeRole", "Editor");
-        bundleURLSchemaDict.SetString("CFBundleURLName", PlayerSettings.bundleIdentifier);
+        bundleURLSchemaDict.SetString("CFBundleURLName", PlayerSettings.applicationIdentifier);
         PlistElementArray bundleURLSchemaArray = bundleURLSchemaDict.CreateArray("CFBundleURLSchemes");
-        bundleURLSchemaArray.AddString("line3rdp." + PlayerSettings.bundleIdentifier);
+        string identifier = string.Format("line3rdp.{0}", PlayerSettings.applicationIdentifier);
+        bundleURLSchemaArray.AddString(identifier);
         return;
     }
     public override void BuildiOSApplicationQueriesSchemes(PlistElementArray querySchemesArray) {
-        querySchemesArray.AddString("lineauth");
-        querySchemesArray.AddString("line3rdp." + PlayerSettings.bundleIdentifier);
+        string identifier = string.Format("line3rdp.{0}", PlayerSettings.applicationIdentifier);
+        querySchemesArray.AddString("lineauth2");
+        querySchemesArray.AddString(identifier);
         return;
     }
     public override void BuildiOSNSAppTransportSecuritySchemes(PlistElementDict nsExeptionDomainsDict) {

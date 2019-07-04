@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '10.0'
+project 'Unity-iPhone.xcodeproj'
+target 'Unity-iPhone' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  use_frameworks!
+  # Fabric
+  pod 'Fabric'
+  pod 'TwitterKit', '~> 2.8.0'
+  pod 'TwitterCore', '~> 2.8.0'
+  # Facebook
+  pod 'FBSDKCoreKit', '~> 4.19.0'
+  pod 'FBSDKLoginKit', '~> 4.19.0'
+  pod 'FBSDKShareKit', '~> 4.19.0'
+  # Line
+  pod 'LineSDKSwift', '~> 5.0'
+  # Fairebase
+  pod 'Firebase/Core', '~> 3.17.0'
+  pod 'Firebase/Messaging', '~> 3.17.0'
+  # Google SignIn
+  pod 'GoogleSignIn'
+  # Pods for Unity-iPhone
+end

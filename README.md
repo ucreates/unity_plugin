@@ -2,13 +2,11 @@
 the project is iOS / Android plugin for [Unity](https://unity3d.com).
 
 ## Description
-the project is develoed by Unity(5.4.3f1),Xcode(8.1),Android Studio(2.2.2),
+the project is develoed by Unity(2018.4.0f1),Xcode(10.1),Android Studio(3.4.1),
 
-Fabric(iOS:2.8.0/Android:2.3.1),Facebook(iOS:4.19/Android:4.19),LINE(iOS:3.2.2/Android:3.1.21)
+iOS plugin supported iOS10.0 Later.Swift Version 4
 
-iOS plugin supported iOS10.0 Later.
-
-Android plugin supported Android 4.3(JELLY_BEAN_MR2/API Level 18) Later.
+Android plugin supported Android 6.0(Marshmallow/API Level 23) Later.
 
 ## Usage
 ***Notes on use for Unity***
@@ -75,9 +73,15 @@ you may confirm some sample behaviours. which exists in following folder.
  
  - Capabilities→Push Notifications:OFF→ON
 
-8.iOS build with Unity.
+8.iOS build with Unity. and published project.
 
-9.published project build with Xcode.
+9.install dependecies framework by CocoaPods
+```
+cd /path/to/published unity project dir/
+pod install
+```
+
+10.build with Xcode.
 
 ***Notes on use for Android***
 
@@ -131,4 +135,10 @@ place directory: UnityAndroidPlugin/plugin/google-services.json
 
 - replacement:https://github.com/ucreates/unity_plugin/blob/master/UnityPlugin/Assets/Plugins/Unity/Core/Configure/Platform/GoogleConfigurePlugin.cs
 
-9.Android build with Unity.
+9.please rewrite the replacement section of the following file to Keystore info
+
+- replacement:https://github.com/ucreates/unity_plugin/blob/master/UnityPlugin/Assets/Plugins/Android/mainTemplate.gradle
+
+10.Published Android Studio Project from Unity.
+
+11.Gradle Sync and Build apk by Android Studio.

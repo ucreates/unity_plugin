@@ -13,20 +13,19 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import com.core.identifier.TagPlugin;
 import com.service.sns.TwitterServicePlugin;
-import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.DefaultLogger;
+import com.twitter.sdk.android.core.Twitter;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.TwitterConfig;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterAuthClient;
-import com.twitter.sdk.android.tweetcomposer.Card;
 import com.twitter.sdk.android.tweetcomposer.ComposerActivity;
 import com.twitter.sdk.android.tweetcomposer.TweetComposer;
 import java.io.File;
-import io.fabric.sdk.android.Fabric;
 public class TwitterActivityPlugin extends Activity {
     public static final int ACTIVITY_ID = 3;
     private TwitterServicePlugin service;
@@ -43,8 +42,13 @@ public class TwitterActivityPlugin extends Activity {
         File imageFile = new File(imageDataPath);
         final Uri imageFileUri = Uri.fromFile(imageFile);
         this.service = new TwitterServicePlugin();
-        TwitterAuthConfig config = new TwitterAuthConfig(consumerKey, consumerSecret);
-        Fabric.with(this, new Twitter(config));
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(consumerKey, consumerSecret);
+        TwitterConfig config = new TwitterConfig.Builder(this)
+        .logger(new DefaultLogger(Log.DEBUG))
+        .twitterAuthConfig(authConfig)
+        .debug(true)
+        .build();
+        Twitter.initialize(config);
         Callback<Void> callback = null;
         if (false == useTwitterCard) {
             callback = new Callback<Void>() {
@@ -59,7 +63,7 @@ public class TwitterActivityPlugin extends Activity {
                 }
                 @Override
                 public void failure(TwitterException e) {
-                    Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, e.fillInStackTrace().toString());
+                    //Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, e.fillInStackTrace().toString());
                     service.logOut();
                     activity.finish();
                     return;
@@ -72,14 +76,9 @@ public class TwitterActivityPlugin extends Activity {
                     TwitterSession activeSession = service.getActiveSession();
                     //set your android app packageName. which is getting from Activity.getPackageName method. The package must correspond to a published app on Google Play for Card Tweets to link correctly.
                     String packageName = activity.getPackageName();
-                    Card card = new Card.AppCardBuilder(activity)
-                    .imageUri(imageFileUri)
-                    .googlePlayId(packageName)
-                    .build();
                     Intent intent = new ComposerActivity.Builder(activity)
                     .session(activeSession)
                     .hashtags(TwitterActivityPlugin.HASHTAG)
-                    .card(card)
                     .createIntent();
                     activity.startActivity(intent);
                     activity.finish();
@@ -87,7 +86,7 @@ public class TwitterActivityPlugin extends Activity {
                 }
                 @Override
                 public void failure(TwitterException e) {
-                    Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, e.fillInStackTrace().toString());
+                    //Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, e.fillInStackTrace().toString());
                     service.logOut();
                     activity.finish();
                     return;

@@ -15,14 +15,15 @@ public class FacebookEditorBuilder : BaseEditorBuilder {
         PlistElementDict rootDict = plist.root;
         rootDict.SetString("FacebookAppID", FacebookConfigurePlugin.APP_ID);
         rootDict.SetString("FacebookDisplayName", PlayerSettings.productName);
-        rootDict.SetString("NSPhotoLibraryUsageDescription", "Photo Access By Unity Facebook Plugin");
+        rootDict.SetString("NSPhotoLibraryUsageDescription", "Photo Access By Unity Facebook Plugin.");
         return;
     }
     public override void BuildiOSURLSchemes(PlistElementArray bundleURLTypesArray) {
         PlistElementDict bundleURLSchemaDict = bundleURLTypesArray.AddDict();
         bundleURLSchemaDict.SetString("CFBundleTypeRole", "Editor");
         PlistElementArray bundleURLSchemaArray = bundleURLSchemaDict.CreateArray("CFBundleURLSchemes");
-        bundleURLSchemaArray.AddString("fb" + FacebookConfigurePlugin.APP_ID);
+        string facebookAppId = string.Format("fb{0}", FacebookConfigurePlugin.APP_ID);
+        bundleURLSchemaArray.AddString(facebookAppId);
         return;
     }
     public override void BuildiOSApplicationQueriesSchemes(PlistElementArray querySchemesArray) {

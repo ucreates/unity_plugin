@@ -16,76 +16,79 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import com.core.identifier.TagPlugin;
 import com.frontend.view.AlertViewPlugin;
-import com.service.sns.LineServicePlugin;
+import com.linecorp.linesdk.LineApiResponseCode;
+import com.linecorp.linesdk.Scope;
+import com.linecorp.linesdk.auth.LineAuthenticationParams;
+import com.linecorp.linesdk.auth.LineLoginApi;
+import com.linecorp.linesdk.auth.LineLoginResult;
+import java.util.Arrays;
 import java.util.List;
-import jp.line.android.sdk.LineSdkContextManager;
-import jp.line.android.sdk.login.LineLoginFuture;
-import jp.line.android.sdk.login.LineLoginFutureListener;
 public class LineActivityPlugin extends Activity {
     public static final int ACTIVITY_ID = 5;
-    private boolean installedApp = true;
+    public static final int REQUEST_CODE = 1;
+    private String imageDataPath = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = this.getIntent();
-        final String imageDataPath = intent.getStringExtra("imageDataPath");
-        final Activity activity = this;
-        Context context = this.getApplicationContext();
-        LineSdkContextManager.initialize(context);
-        LineLoginFutureListener loginCallback = new LineLoginFutureListener() {
-            @Override
-            public void loginComplete(LineLoginFuture future) {
-                LineLoginFuture.ProgressOfLogin status = LineLoginFuture.ProgressOfLogin.SUCCESS;
-                if (null != future) {
-                    status = future.getProgress();
-                }
-                switch (status) {
-                case SUCCESS:
-                    boolean installed = false;
-                    PackageManager packageManager = activity.getPackageManager();
-                    List<ApplicationInfo> list = packageManager.getInstalledApplications(0);
-                    for (ApplicationInfo appInfo : list) {
-                        if (false != appInfo.packageName.endsWith("jp.naver.line.android")) {
-                            installed = true;
-                            break;
-                        }
-                    }
-                    if (false == installed) {
-                        installedApp = false;
-                        activity.finish();
-                        return;
-                    }
-                    Uri uri = Uri.parse("line://msg/image/" + imageDataPath);
-                    Intent intent = new Intent();
-                    intent.setAction(Intent.ACTION_VIEW);
-                    intent.setData(uri);
-                    activity.startActivity(intent);
-                    break;
-                case CANCELED:
-                    break;
-                default:
-                    break;
-                }
-                activity.finish();
-                return;
-            }
-        };
-        LineServicePlugin service = new LineServicePlugin();
-        if (false == service.isLoggedIn()) {
-            service.logIn(this, loginCallback);
-        } else {
-            loginCallback.loginComplete(null);
+        this.imageDataPath = intent.getStringExtra("imageDataPath");
+        try {
+            String packageName = getPackageName();
+            ApplicationInfo appInfo = this.getPackageManager().getApplicationInfo(packageName, PackageManager.GET_META_DATA);
+            final String channelId = appInfo.metaData.getString("jp.line.sdk.ChannelId");
+            List<Scope> scopeList = Arrays.asList(Scope.PROFILE);
+            LineAuthenticationParams params = new LineAuthenticationParams.Builder().scopes(scopeList).build();
+            Context context = this.getApplicationContext();
+            Intent loginIntent = LineLoginApi.getLoginIntent(context, channelId, params);
+            this.startActivityForResult(loginIntent, REQUEST_CODE);
+        } catch (Exception e) {
+            AlertViewPlugin.show(e.getLocalizedMessage());
+            this.finish();
         }
         return;
     }
     @Override
-    protected void onDestroy() {
-        if (false == this.installedApp) {
-            AlertViewPlugin.show("not installed LINE.");
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode != REQUEST_CODE) {
+            Log.e("ERROR", "Unsupported Request");
+            return;
         }
-        super.onDestroy();
+        LineLoginResult result = LineLoginApi.getLoginResultFromIntent(data);
+        LineApiResponseCode responseCode = result.getResponseCode();
+        switch (responseCode) {
+        case SUCCESS:
+            boolean installed = false;
+            PackageManager packageManager = this.getPackageManager();
+            List<ApplicationInfo> list = packageManager.getInstalledApplications(0);
+            for (ApplicationInfo appInfo : list) {
+                if (false != appInfo.packageName.endsWith("jp.naver.line.android")) {
+                    installed = true;
+                    break;
+                }
+            }
+            if (false == installed) {
+                AlertViewPlugin.show("LINE App is not installed.");
+                this.finish();
+                return;
+            }
+            String uriString = String.format("line://msg/image/%s", imageDataPath);
+            Uri uri = Uri.parse(uriString);
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setData(uri);
+            this.startActivity(intent);
+            break;
+        case CANCEL:
+            AlertViewPlugin.show("LINE Login Canceled by user.");
+            break;
+        default:
+            String errorMessage = String.format("Login FAILED! responseCode::%s, error::%s", responseCode.toString(), result.getErrorData().toString());
+            AlertViewPlugin.show(errorMessage);
+            break;
+        }
+        this.finish();
         return;
     }
 }

@@ -7,40 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8126D0B61E48507A00C50269 /* UnityiOSPluginAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0001E48507A00C50269 /* UnityiOSPluginAppDelegate.swift */; };
-		8126D0B71E48507A00C50269 /* TagPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0041E48507A00C50269 /* TagPlugin.swift */; };
-		8126D0B81E48507A00C50269 /* PathPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0081E48507A00C50269 /* PathPlugin.swift */; };
-		8126D0B91E48507A00C50269 /* PreferencePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D00C1E48507A00C50269 /* PreferencePlugin.swift */; };
-		8126D0BA1E48507A00C50269 /* TransitionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0101E48507A00C50269 /* TransitionPlugin.swift */; };
-		8126D0BB1E48507A00C50269 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8126D0161E48507A00C50269 /* Bolts.framework */; };
-		8126D0BC1E48507A00C50269 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8126D0181E48507A00C50269 /* FBSDKCoreKit.framework */; };
-		8126D0BD1E48507A00C50269 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8126D01A1E48507A00C50269 /* FBSDKLoginKit.framework */; };
-		8126D0BE1E48507A00C50269 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8126D01C1E48507A00C50269 /* FBSDKShareKit.framework */; };
-		8126D0BF1E48507A00C50269 /* LineAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8126D0201E48507A00C50269 /* LineAdapter.framework */; };
-		8126D0C01E48507A00C50269 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8126D0261E48507A00C50269 /* Fabric.framework */; };
-		8126D0C11E48507A00C50269 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8126D0281E48507A00C50269 /* TwitterCore.framework */; };
-		8126D0C21E48507A00C50269 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8126D02A1E48507A00C50269 /* TwitterKit.framework */; };
-		8126D0C31E48507A00C50269 /* UnityNotifierPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0301E48507A00C50269 /* UnityNotifierPlugin.swift */; };
-		8126D0C41E48507A00C50269 /* AlertViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0341E48507A00C50269 /* AlertViewPlugin.swift */; };
-		8126D0C51E48507A00C50269 /* CameraViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0361E48507A00C50269 /* CameraViewPlugin.swift */; };
-		8126D0C61E48507A00C50269 /* IndicatorViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0381E48507A00C50269 /* IndicatorViewPlugin.swift */; };
-		8126D0C71E48507A00C50269 /* ReviewViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D03A1E48507A00C50269 /* ReviewViewPlugin.swift */; };
-		8126D0C81E48507A00C50269 /* WebViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D03C1E48507A00C50269 /* WebViewPlugin.swift */; };
-		8126D0C91E48507A00C50269 /* PaymentViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0401E48507A00C50269 /* PaymentViewControllerPlugin.swift */; };
-		8126D0CA1E48507A00C50269 /* PreferenceViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0421E48507A00C50269 /* PreferenceViewControllerPlugin.swift */; };
-		8126D0CB1E48507A00C50269 /* FacebookViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0451E48507A00C50269 /* FacebookViewControllerPlugin.swift */; };
-		8126D0CC1E48507A00C50269 /* LineViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0471E48507A00C50269 /* LineViewControllerPlugin.swift */; };
-		8126D0CD1E48507A00C50269 /* TwitterViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0491E48507A00C50269 /* TwitterViewControllerPlugin.swift */; };
-		8126D0CE1E48507A00C50269 /* ViewControllerFactoryPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D04C1E48507A00C50269 /* ViewControllerFactoryPlugin.swift */; };
-		8126D0CF1E48507A00C50269 /* ViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D04E1E48507A00C50269 /* ViewControllerPlugin.swift */; };
-		8126D0D01E48507A00C50269 /* libUnityNativePlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8126D0A01E48507A00C50269 /* libUnityNativePlugin.a */; };
-		8126D0D11E48507A00C50269 /* libyuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8126D0A21E48507A00C50269 /* libyuv.a */; };
-		8126D0D21E48507A00C50269 /* PaymentServicePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0A51E48507A00C50269 /* PaymentServicePlugin.swift */; };
-		8126D0D31E48507A00C50269 /* FacebookServicePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0A81E48507A00C50269 /* FacebookServicePlugin.swift */; };
-		8126D0D41E48507A00C50269 /* LineServicePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0AA1E48507A00C50269 /* LineServicePlugin.swift */; };
-		8126D0D51E48507A00C50269 /* TwitterServicePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0AC1E48507A00C50269 /* TwitterServicePlugin.swift */; };
-		8126D0D61E48507A00C50269 /* UnityiOSPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0B21E48507A00C50269 /* UnityiOSPlugin.mm */; };
-		8126D0D71E48507A00C50269 /* UnityiOSPluginAppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8126D0B41E48507A00C50269 /* UnityiOSPluginAppController.mm */; };
+		81F63F7F22C5F06B00D2FBC3 /* DeviceTokenPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F1A22C5F06B00D2FBC3 /* DeviceTokenPlugin.swift */; };
+		81F63F8022C5F06B00D2FBC3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F2122C5F06B00D2FBC3 /* String.swift */; };
+		81F63F8122C5F06B00D2FBC3 /* PathPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F2522C5F06B00D2FBC3 /* PathPlugin.swift */; };
+		81F63F8222C5F06B00D2FBC3 /* UnityiOSPluginAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F2922C5F06B00D2FBC3 /* UnityiOSPluginAppDelegate.swift */; };
+		81F63F8322C5F06B00D2FBC3 /* PreferencePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F2D22C5F06B00D2FBC3 /* PreferencePlugin.swift */; };
+		81F63F8422C5F06B00D2FBC3 /* TagPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F3122C5F06B00D2FBC3 /* TagPlugin.swift */; };
+		81F63F8522C5F06B00D2FBC3 /* VersionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F3322C5F06B00D2FBC3 /* VersionPlugin.swift */; };
+		81F63F8622C5F06B00D2FBC3 /* TransitionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F3722C5F06B00D2FBC3 /* TransitionPlugin.swift */; };
+		81F63F8722C5F06B00D2FBC3 /* BaseNotifierPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F3B22C5F06B00D2FBC3 /* BaseNotifierPlugin.swift */; };
+		81F63F8822C5F06B00D2FBC3 /* FCMNotifierPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F3C22C5F06B00D2FBC3 /* FCMNotifierPlugin.swift */; };
+		81F63F8922C5F06B00D2FBC3 /* LocalNotifierPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F3D22C5F06B00D2FBC3 /* LocalNotifierPlugin.swift */; };
+		81F63F8A22C5F06B00D2FBC3 /* UnityNotifierPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F4022C5F06B00D2FBC3 /* UnityNotifierPlugin.swift */; };
+		81F63F8B22C5F06B00D2FBC3 /* RemoteNotifierPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F4322C5F06B00D2FBC3 /* RemoteNotifierPlugin.swift */; };
+		81F63F8C22C5F06B00D2FBC3 /* ReviewViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F4B22C5F06B00D2FBC3 /* ReviewViewPlugin.swift */; };
+		81F63F8D22C5F06B00D2FBC3 /* AlertViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F4C22C5F06B00D2FBC3 /* AlertViewPlugin.swift */; };
+		81F63F8E22C5F06B00D2FBC3 /* WebViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F4D22C5F06B00D2FBC3 /* WebViewPlugin.swift */; };
+		81F63F8F22C5F06B00D2FBC3 /* IndicatorViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F4F22C5F06B00D2FBC3 /* IndicatorViewPlugin.swift */; };
+		81F63F9022C5F06B00D2FBC3 /* CameraViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F5122C5F06B00D2FBC3 /* CameraViewPlugin.swift */; };
+		81F63F9122C5F06B00D2FBC3 /* LineViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F5822C5F06B00D2FBC3 /* LineViewControllerPlugin.swift */; };
+		81F63F9222C5F06B00D2FBC3 /* FacebookViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F5A22C5F06B00D2FBC3 /* FacebookViewControllerPlugin.swift */; };
+		81F63F9322C5F06B00D2FBC3 /* TwitterViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F5B22C5F06B00D2FBC3 /* TwitterViewControllerPlugin.swift */; };
+		81F63F9422C5F06B00D2FBC3 /* PreferenceViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F5C22C5F06B00D2FBC3 /* PreferenceViewControllerPlugin.swift */; };
+		81F63F9522C5F06B00D2FBC3 /* GoogleViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F6022C5F06B00D2FBC3 /* GoogleViewControllerPlugin.swift */; };
+		81F63F9622C5F06B00D2FBC3 /* ViewControllerFactoryPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F6222C5F06B00D2FBC3 /* ViewControllerFactoryPlugin.swift */; };
+		81F63F9722C5F06B00D2FBC3 /* ViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F6422C5F06B00D2FBC3 /* ViewControllerPlugin.swift */; };
+		81F63F9822C5F06B00D2FBC3 /* PaymentViewControllerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F6622C5F06B00D2FBC3 /* PaymentViewControllerPlugin.swift */; };
+		81F63F9922C5F06B00D2FBC3 /* UnityiOSPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F6922C5F06B00D2FBC3 /* UnityiOSPlugin.mm */; };
+		81F63F9A22C5F06B00D2FBC3 /* UnityiOSPluginAppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F6C22C5F06B00D2FBC3 /* UnityiOSPluginAppController.mm */; };
+		81F63F9B22C5F06B00D2FBC3 /* LineServicePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F7222C5F06B00D2FBC3 /* LineServicePlugin.swift */; };
+		81F63F9C22C5F06B00D2FBC3 /* TwitterServicePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F7422C5F06B00D2FBC3 /* TwitterServicePlugin.swift */; };
+		81F63F9D22C5F06B00D2FBC3 /* FacebookServicePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F7522C5F06B00D2FBC3 /* FacebookServicePlugin.swift */; };
+		81F63F9E22C5F06B00D2FBC3 /* GoogleServicePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F7A22C5F06B00D2FBC3 /* GoogleServicePlugin.swift */; };
+		81F63F9F22C5F06B00D2FBC3 /* PaymentServicePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63F7C22C5F06B00D2FBC3 /* PaymentServicePlugin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,173 +55,93 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8126D0001E48507A00C50269 /* UnityiOSPluginAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnityiOSPluginAppDelegate.swift; sourceTree = "<group>"; };
-		8126D0011E48507A00C50269 /* UnityiOSPluginAppDelegate.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityiOSPluginAppDelegate.swift.meta; sourceTree = "<group>"; };
-		8126D0021E48507A00C50269 /* Delegate.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Delegate.meta; sourceTree = "<group>"; };
-		8126D0041E48507A00C50269 /* TagPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagPlugin.swift; sourceTree = "<group>"; };
-		8126D0051E48507A00C50269 /* TagPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TagPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D0061E48507A00C50269 /* Identifier.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Identifier.meta; sourceTree = "<group>"; };
-		8126D0081E48507A00C50269 /* PathPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathPlugin.swift; sourceTree = "<group>"; };
-		8126D0091E48507A00C50269 /* PathPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PathPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D00A1E48507A00C50269 /* IO.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IO.meta; sourceTree = "<group>"; };
-		8126D00C1E48507A00C50269 /* PreferencePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencePlugin.swift; sourceTree = "<group>"; };
-		8126D00D1E48507A00C50269 /* PreferencePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PreferencePlugin.swift.meta; sourceTree = "<group>"; };
-		8126D00E1E48507A00C50269 /* Preference.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Preference.meta; sourceTree = "<group>"; };
-		8126D0101E48507A00C50269 /* TransitionPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPlugin.swift; sourceTree = "<group>"; };
-		8126D0111E48507A00C50269 /* TransitionPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TransitionPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D0121E48507A00C50269 /* Scene.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Scene.meta; sourceTree = "<group>"; };
-		8126D0131E48507A00C50269 /* Core.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Core.meta; sourceTree = "<group>"; };
-		8126D0161E48507A00C50269 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		8126D0171E48507A00C50269 /* Bolts.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bolts.framework.meta; sourceTree = "<group>"; };
-		8126D0181E48507A00C50269 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		8126D0191E48507A00C50269 /* FBSDKCoreKit.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FBSDKCoreKit.framework.meta; sourceTree = "<group>"; };
-		8126D01A1E48507A00C50269 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		8126D01B1E48507A00C50269 /* FBSDKLoginKit.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FBSDKLoginKit.framework.meta; sourceTree = "<group>"; };
-		8126D01C1E48507A00C50269 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
-		8126D01D1E48507A00C50269 /* FBSDKShareKit.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FBSDKShareKit.framework.meta; sourceTree = "<group>"; };
-		8126D01E1E48507A00C50269 /* Facebook.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Facebook.meta; sourceTree = "<group>"; };
-		8126D0201E48507A00C50269 /* LineAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LineAdapter.framework; sourceTree = "<group>"; };
-		8126D0211E48507A00C50269 /* LineAdapter.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LineAdapter.framework.meta; sourceTree = "<group>"; };
-		8126D0221E48507A00C50269 /* LineAdapterUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LineAdapterUI.bundle; sourceTree = "<group>"; };
-		8126D0231E48507A00C50269 /* LineAdapterUI.bundle.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LineAdapterUI.bundle.meta; sourceTree = "<group>"; };
-		8126D0241E48507A00C50269 /* Line.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Line.meta; sourceTree = "<group>"; };
-		8126D0261E48507A00C50269 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		8126D0271E48507A00C50269 /* Fabric.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fabric.framework.meta; sourceTree = "<group>"; };
-		8126D0281E48507A00C50269 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
-		8126D0291E48507A00C50269 /* TwitterCore.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwitterCore.framework.meta; sourceTree = "<group>"; };
-		8126D02A1E48507A00C50269 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
-		8126D02B1E48507A00C50269 /* TwitterKit.framework.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwitterKit.framework.meta; sourceTree = "<group>"; };
-		8126D02C1E48507A00C50269 /* Twitter.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Twitter.meta; sourceTree = "<group>"; };
-		8126D02D1E48507A00C50269 /* Frameworks.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Frameworks.meta; sourceTree = "<group>"; };
-		8126D0301E48507A00C50269 /* UnityNotifierPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnityNotifierPlugin.swift; sourceTree = "<group>"; };
-		8126D0311E48507A00C50269 /* UnityNotifierPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityNotifierPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D0321E48507A00C50269 /* Notify.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notify.meta; sourceTree = "<group>"; };
-		8126D0341E48507A00C50269 /* AlertViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewPlugin.swift; sourceTree = "<group>"; };
-		8126D0351E48507A00C50269 /* AlertViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AlertViewPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D0361E48507A00C50269 /* CameraViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewPlugin.swift; sourceTree = "<group>"; };
-		8126D0371E48507A00C50269 /* CameraViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CameraViewPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D0381E48507A00C50269 /* IndicatorViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorViewPlugin.swift; sourceTree = "<group>"; };
-		8126D0391E48507A00C50269 /* IndicatorViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IndicatorViewPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D03A1E48507A00C50269 /* ReviewViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewPlugin.swift; sourceTree = "<group>"; };
-		8126D03B1E48507A00C50269 /* ReviewViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReviewViewPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D03C1E48507A00C50269 /* WebViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewPlugin.swift; sourceTree = "<group>"; };
-		8126D03D1E48507A00C50269 /* WebViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D03E1E48507A00C50269 /* View.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = View.meta; sourceTree = "<group>"; };
-		8126D0401E48507A00C50269 /* PaymentViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewControllerPlugin.swift; sourceTree = "<group>"; };
-		8126D0411E48507A00C50269 /* PaymentViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PaymentViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D0421E48507A00C50269 /* PreferenceViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewControllerPlugin.swift; sourceTree = "<group>"; };
-		8126D0431E48507A00C50269 /* PreferenceViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PreferenceViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D0451E48507A00C50269 /* FacebookViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookViewControllerPlugin.swift; sourceTree = "<group>"; };
-		8126D0461E48507A00C50269 /* FacebookViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FacebookViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D0471E48507A00C50269 /* LineViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineViewControllerPlugin.swift; sourceTree = "<group>"; };
-		8126D0481E48507A00C50269 /* LineViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LineViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D0491E48507A00C50269 /* TwitterViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterViewControllerPlugin.swift; sourceTree = "<group>"; };
-		8126D04A1E48507A00C50269 /* TwitterViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwitterViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D04B1E48507A00C50269 /* Sns.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sns.meta; sourceTree = "<group>"; };
-		8126D04C1E48507A00C50269 /* ViewControllerFactoryPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactoryPlugin.swift; sourceTree = "<group>"; };
-		8126D04D1E48507A00C50269 /* ViewControllerFactoryPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewControllerFactoryPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D04E1E48507A00C50269 /* ViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPlugin.swift; sourceTree = "<group>"; };
-		8126D04F1E48507A00C50269 /* ViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
-		8126D0501E48507A00C50269 /* ViewController.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewController.meta; sourceTree = "<group>"; };
-		8126D0511E48507A00C50269 /* Frontend.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Frontend.meta; sourceTree = "<group>"; };
-		8126D0531E48507A00C50269 /* BaseNativeRendererPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNativeRendererPlugin.h; sourceTree = "<group>"; };
-		8126D0541E48507A00C50269 /* BaseNativeRendererPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BaseNativeRendererPlugin.h.meta; sourceTree = "<group>"; };
-		8126D0551E48507A00C50269 /* BaseNativeTextureAssetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNativeTextureAssetPlugin.h; sourceTree = "<group>"; };
-		8126D0561E48507A00C50269 /* BaseNativeTextureAssetPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BaseNativeTextureAssetPlugin.h.meta; sourceTree = "<group>"; };
-		8126D0571E48507A00C50269 /* basic_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = basic_types.h; sourceTree = "<group>"; };
-		8126D0581E48507A00C50269 /* basic_types.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = basic_types.h.meta; sourceTree = "<group>"; };
-		8126D0591E48507A00C50269 /* BGRAPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGRAPlugin.h; sourceTree = "<group>"; };
-		8126D05A1E48507A00C50269 /* BGRAPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BGRAPlugin.h.meta; sourceTree = "<group>"; };
-		8126D05B1E48507A00C50269 /* compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compare.h; sourceTree = "<group>"; };
-		8126D05C1E48507A00C50269 /* compare.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = compare.h.meta; sourceTree = "<group>"; };
-		8126D05D1E48507A00C50269 /* compare_row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compare_row.h; sourceTree = "<group>"; };
-		8126D05E1E48507A00C50269 /* compare_row.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = compare_row.h.meta; sourceTree = "<group>"; };
-		8126D05F1E48507A00C50269 /* convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert.h; sourceTree = "<group>"; };
-		8126D0601E48507A00C50269 /* convert.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = convert.h.meta; sourceTree = "<group>"; };
-		8126D0611E48507A00C50269 /* convert_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert_argb.h; sourceTree = "<group>"; };
-		8126D0621E48507A00C50269 /* convert_argb.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = convert_argb.h.meta; sourceTree = "<group>"; };
-		8126D0631E48507A00C50269 /* convert_from.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert_from.h; sourceTree = "<group>"; };
-		8126D0641E48507A00C50269 /* convert_from.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = convert_from.h.meta; sourceTree = "<group>"; };
-		8126D0651E48507A00C50269 /* convert_from_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert_from_argb.h; sourceTree = "<group>"; };
-		8126D0661E48507A00C50269 /* convert_from_argb.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = convert_from_argb.h.meta; sourceTree = "<group>"; };
-		8126D0671E48507A00C50269 /* cpu_id.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpu_id.h; sourceTree = "<group>"; };
-		8126D0681E48507A00C50269 /* cpu_id.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cpu_id.h.meta; sourceTree = "<group>"; };
-		8126D0691E48507A00C50269 /* ExtensionPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionPlugin.h; sourceTree = "<group>"; };
-		8126D06A1E48507A00C50269 /* ExtensionPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ExtensionPlugin.h.meta; sourceTree = "<group>"; };
-		8126D06B1E48507A00C50269 /* IUnityGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUnityGraphics.h; sourceTree = "<group>"; };
-		8126D06C1E48507A00C50269 /* IUnityGraphics.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IUnityGraphics.h.meta; sourceTree = "<group>"; };
-		8126D06D1E48507A00C50269 /* IUnityInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUnityInterface.h; sourceTree = "<group>"; };
-		8126D06E1E48507A00C50269 /* IUnityInterface.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IUnityInterface.h.meta; sourceTree = "<group>"; };
-		8126D06F1E48507A00C50269 /* libyuv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libyuv.h; sourceTree = "<group>"; };
-		8126D0701E48507A00C50269 /* libyuv.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libyuv.h.meta; sourceTree = "<group>"; };
-		8126D0711E48507A00C50269 /* LogPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogPlugin.h; sourceTree = "<group>"; };
-		8126D0721E48507A00C50269 /* LogPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LogPlugin.h.meta; sourceTree = "<group>"; };
-		8126D0731E48507A00C50269 /* macros_msa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macros_msa.h; sourceTree = "<group>"; };
-		8126D0741E48507A00C50269 /* macros_msa.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = macros_msa.h.meta; sourceTree = "<group>"; };
-		8126D0751E48507A00C50269 /* mjpeg_decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mjpeg_decoder.h; sourceTree = "<group>"; };
-		8126D0761E48507A00C50269 /* mjpeg_decoder.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mjpeg_decoder.h.meta; sourceTree = "<group>"; };
-		8126D0771E48507A00C50269 /* NativeRendererFactoryPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeRendererFactoryPlugin.h; sourceTree = "<group>"; };
-		8126D0781E48507A00C50269 /* NativeRendererFactoryPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NativeRendererFactoryPlugin.h.meta; sourceTree = "<group>"; };
-		8126D0791E48507A00C50269 /* NativeTextureAssetCollectionPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTextureAssetCollectionPlugin.h; sourceTree = "<group>"; };
-		8126D07A1E48507A00C50269 /* NativeTextureAssetCollectionPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NativeTextureAssetCollectionPlugin.h.meta; sourceTree = "<group>"; };
-		8126D07B1E48507A00C50269 /* NativeTextureAssetFactoryPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTextureAssetFactoryPlugin.h; sourceTree = "<group>"; };
-		8126D07C1E48507A00C50269 /* NativeTextureAssetFactoryPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NativeTextureAssetFactoryPlugin.h.meta; sourceTree = "<group>"; };
-		8126D07D1E48507A00C50269 /* OpenGLES2NativeRendererPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLES2NativeRendererPlugin.h; sourceTree = "<group>"; };
-		8126D07E1E48507A00C50269 /* OpenGLES2NativeRendererPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenGLES2NativeRendererPlugin.h.meta; sourceTree = "<group>"; };
-		8126D07F1E48507A00C50269 /* planar_functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = planar_functions.h; sourceTree = "<group>"; };
-		8126D0801E48507A00C50269 /* planar_functions.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = planar_functions.h.meta; sourceTree = "<group>"; };
-		8126D0811E48507A00C50269 /* PlatformBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformBase.h; sourceTree = "<group>"; };
-		8126D0821E48507A00C50269 /* PlatformBase.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlatformBase.h.meta; sourceTree = "<group>"; };
-		8126D0831E48507A00C50269 /* RawNativeTextureAssetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawNativeTextureAssetPlugin.h; sourceTree = "<group>"; };
-		8126D0841E48507A00C50269 /* RawNativeTextureAssetPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RawNativeTextureAssetPlugin.h.meta; sourceTree = "<group>"; };
-		8126D0851E48507A00C50269 /* rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rotate.h; sourceTree = "<group>"; };
-		8126D0861E48507A00C50269 /* rotate.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rotate.h.meta; sourceTree = "<group>"; };
-		8126D0871E48507A00C50269 /* rotate_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rotate_argb.h; sourceTree = "<group>"; };
-		8126D0881E48507A00C50269 /* rotate_argb.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rotate_argb.h.meta; sourceTree = "<group>"; };
-		8126D0891E48507A00C50269 /* rotate_row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rotate_row.h; sourceTree = "<group>"; };
-		8126D08A1E48507A00C50269 /* rotate_row.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rotate_row.h.meta; sourceTree = "<group>"; };
-		8126D08B1E48507A00C50269 /* row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = row.h; sourceTree = "<group>"; };
-		8126D08C1E48507A00C50269 /* row.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = row.h.meta; sourceTree = "<group>"; };
-		8126D08D1E48507A00C50269 /* scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scale.h; sourceTree = "<group>"; };
-		8126D08E1E48507A00C50269 /* scale.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scale.h.meta; sourceTree = "<group>"; };
-		8126D08F1E48507A00C50269 /* scale_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scale_argb.h; sourceTree = "<group>"; };
-		8126D0901E48507A00C50269 /* scale_argb.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scale_argb.h.meta; sourceTree = "<group>"; };
-		8126D0911E48507A00C50269 /* scale_row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scale_row.h; sourceTree = "<group>"; };
-		8126D0921E48507A00C50269 /* scale_row.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scale_row.h.meta; sourceTree = "<group>"; };
-		8126D0931E48507A00C50269 /* TagPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagPlugin.h; sourceTree = "<group>"; };
-		8126D0941E48507A00C50269 /* TagPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TagPlugin.h.meta; sourceTree = "<group>"; };
-		8126D0951E48507A00C50269 /* TextureAssetValidatorPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureAssetValidatorPlugin.h; sourceTree = "<group>"; };
-		8126D0961E48507A00C50269 /* TextureAssetValidatorPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextureAssetValidatorPlugin.h.meta; sourceTree = "<group>"; };
-		8126D0971E48507A00C50269 /* UnityNativePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityNativePlugin.h; sourceTree = "<group>"; };
-		8126D0981E48507A00C50269 /* UnityNativePlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityNativePlugin.h.meta; sourceTree = "<group>"; };
-		8126D0991E48507A00C50269 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
-		8126D09A1E48507A00C50269 /* version.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = version.h.meta; sourceTree = "<group>"; };
-		8126D09B1E48507A00C50269 /* video_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_common.h; sourceTree = "<group>"; };
-		8126D09C1E48507A00C50269 /* video_common.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = video_common.h.meta; sourceTree = "<group>"; };
-		8126D09D1E48507A00C50269 /* YuvNativeTextureAssetPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuvNativeTextureAssetPlugin.h; sourceTree = "<group>"; };
-		8126D09E1E48507A00C50269 /* YuvNativeTextureAssetPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = YuvNativeTextureAssetPlugin.h.meta; sourceTree = "<group>"; };
-		8126D09F1E48507A00C50269 /* Gateway.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gateway.meta; sourceTree = "<group>"; };
-		8126D0A01E48507A00C50269 /* libUnityNativePlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUnityNativePlugin.a; sourceTree = "<group>"; };
-		8126D0A11E48507A00C50269 /* libUnityNativePlugin.a.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libUnityNativePlugin.a.meta; sourceTree = "<group>"; };
-		8126D0A21E48507A00C50269 /* libyuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libyuv.a; sourceTree = "<group>"; };
-		8126D0A31E48507A00C50269 /* libyuv.a.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libyuv.a.meta; sourceTree = "<group>"; };
-		8126D0A51E48507A00C50269 /* PaymentServicePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentServicePlugin.swift; sourceTree = "<group>"; };
-		8126D0A61E48507A00C50269 /* PaymentServicePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PaymentServicePlugin.swift.meta; sourceTree = "<group>"; };
-		8126D0A81E48507A00C50269 /* FacebookServicePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookServicePlugin.swift; sourceTree = "<group>"; };
-		8126D0A91E48507A00C50269 /* FacebookServicePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FacebookServicePlugin.swift.meta; sourceTree = "<group>"; };
-		8126D0AA1E48507A00C50269 /* LineServicePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineServicePlugin.swift; sourceTree = "<group>"; };
-		8126D0AB1E48507A00C50269 /* LineServicePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LineServicePlugin.swift.meta; sourceTree = "<group>"; };
-		8126D0AC1E48507A00C50269 /* TwitterServicePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterServicePlugin.swift; sourceTree = "<group>"; };
-		8126D0AD1E48507A00C50269 /* TwitterServicePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwitterServicePlugin.swift.meta; sourceTree = "<group>"; };
-		8126D0AE1E48507A00C50269 /* Sns.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sns.meta; sourceTree = "<group>"; };
-		8126D0AF1E48507A00C50269 /* Service.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Service.meta; sourceTree = "<group>"; };
-		8126D0B01E48507A00C50269 /* UnityiOSPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityiOSPlugin.h; sourceTree = "<group>"; };
-		8126D0B11E48507A00C50269 /* UnityiOSPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityiOSPlugin.h.meta; sourceTree = "<group>"; };
-		8126D0B21E48507A00C50269 /* UnityiOSPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UnityiOSPlugin.mm; sourceTree = "<group>"; };
-		8126D0B31E48507A00C50269 /* UnityiOSPlugin.mm.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityiOSPlugin.mm.meta; sourceTree = "<group>"; };
-		8126D0B41E48507A00C50269 /* UnityiOSPluginAppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UnityiOSPluginAppController.mm; sourceTree = "<group>"; };
-		8126D0B51E48507A00C50269 /* UnityiOSPluginAppController.mm.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityiOSPluginAppController.mm.meta; sourceTree = "<group>"; };
 		81BEC3FB1E3632F400F66A52 /* libUnityiOSPlugin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUnityiOSPlugin.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		81F63F1722C5F06B00D2FBC3 /* UnityiOSPlugin.mm.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityiOSPlugin.mm.meta; sourceTree = "<group>"; };
+		81F63F1A22C5F06B00D2FBC3 /* DeviceTokenPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTokenPlugin.swift; sourceTree = "<group>"; };
+		81F63F1B22C5F06B00D2FBC3 /* DeviceTokenPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DeviceTokenPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F1C22C5F06B00D2FBC3 /* Identifier.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Identifier.meta; sourceTree = "<group>"; };
+		81F63F1D22C5F06B00D2FBC3 /* Preference.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Preference.meta; sourceTree = "<group>"; };
+		81F63F1E22C5F06B00D2FBC3 /* Extension.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Extension.meta; sourceTree = "<group>"; };
+		81F63F1F22C5F06B00D2FBC3 /* Environment.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Environment.meta; sourceTree = "<group>"; };
+		81F63F2122C5F06B00D2FBC3 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		81F63F2222C5F06B00D2FBC3 /* String.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = String.swift.meta; sourceTree = "<group>"; };
+		81F63F2322C5F06B00D2FBC3 /* IO.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IO.meta; sourceTree = "<group>"; };
+		81F63F2522C5F06B00D2FBC3 /* PathPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathPlugin.swift; sourceTree = "<group>"; };
+		81F63F2622C5F06B00D2FBC3 /* PathPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PathPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F2822C5F06B00D2FBC3 /* UnityiOSPluginAppDelegate.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityiOSPluginAppDelegate.swift.meta; sourceTree = "<group>"; };
+		81F63F2922C5F06B00D2FBC3 /* UnityiOSPluginAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnityiOSPluginAppDelegate.swift; sourceTree = "<group>"; };
+		81F63F2A22C5F06B00D2FBC3 /* Delegate.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Delegate.meta; sourceTree = "<group>"; };
+		81F63F2C22C5F06B00D2FBC3 /* PreferencePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PreferencePlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F2D22C5F06B00D2FBC3 /* PreferencePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencePlugin.swift; sourceTree = "<group>"; };
+		81F63F2E22C5F06B00D2FBC3 /* Scene.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Scene.meta; sourceTree = "<group>"; };
+		81F63F3022C5F06B00D2FBC3 /* TagPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TagPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F3122C5F06B00D2FBC3 /* TagPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagPlugin.swift; sourceTree = "<group>"; };
+		81F63F3322C5F06B00D2FBC3 /* VersionPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionPlugin.swift; sourceTree = "<group>"; };
+		81F63F3422C5F06B00D2FBC3 /* VersionPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VersionPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F3522C5F06B00D2FBC3 /* Token.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Token.meta; sourceTree = "<group>"; };
+		81F63F3722C5F06B00D2FBC3 /* TransitionPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPlugin.swift; sourceTree = "<group>"; };
+		81F63F3822C5F06B00D2FBC3 /* TransitionPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TransitionPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F3B22C5F06B00D2FBC3 /* BaseNotifierPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNotifierPlugin.swift; sourceTree = "<group>"; };
+		81F63F3C22C5F06B00D2FBC3 /* FCMNotifierPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCMNotifierPlugin.swift; sourceTree = "<group>"; };
+		81F63F3D22C5F06B00D2FBC3 /* LocalNotifierPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotifierPlugin.swift; sourceTree = "<group>"; };
+		81F63F3E22C5F06B00D2FBC3 /* BaseNotifierPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BaseNotifierPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F3F22C5F06B00D2FBC3 /* UnityNotifierPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityNotifierPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F4022C5F06B00D2FBC3 /* UnityNotifierPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnityNotifierPlugin.swift; sourceTree = "<group>"; };
+		81F63F4122C5F06B00D2FBC3 /* RemoteNotifierPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RemoteNotifierPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F4222C5F06B00D2FBC3 /* FCMNotifierPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FCMNotifierPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F4322C5F06B00D2FBC3 /* RemoteNotifierPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotifierPlugin.swift; sourceTree = "<group>"; };
+		81F63F4422C5F06B00D2FBC3 /* LocalNotifierPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocalNotifierPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F4522C5F06B00D2FBC3 /* Notify.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notify.meta; sourceTree = "<group>"; };
+		81F63F4622C5F06B00D2FBC3 /* ViewController.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewController.meta; sourceTree = "<group>"; };
+		81F63F4722C5F06B00D2FBC3 /* View.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = View.meta; sourceTree = "<group>"; };
+		81F63F4922C5F06B00D2FBC3 /* AlertViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AlertViewPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F4A22C5F06B00D2FBC3 /* WebViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F4B22C5F06B00D2FBC3 /* ReviewViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewPlugin.swift; sourceTree = "<group>"; };
+		81F63F4C22C5F06B00D2FBC3 /* AlertViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewPlugin.swift; sourceTree = "<group>"; };
+		81F63F4D22C5F06B00D2FBC3 /* WebViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewPlugin.swift; sourceTree = "<group>"; };
+		81F63F4E22C5F06B00D2FBC3 /* ReviewViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReviewViewPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F4F22C5F06B00D2FBC3 /* IndicatorViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorViewPlugin.swift; sourceTree = "<group>"; };
+		81F63F5022C5F06B00D2FBC3 /* CameraViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CameraViewPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F5122C5F06B00D2FBC3 /* CameraViewPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewPlugin.swift; sourceTree = "<group>"; };
+		81F63F5222C5F06B00D2FBC3 /* IndicatorViewPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IndicatorViewPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F5422C5F06B00D2FBC3 /* Sns.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sns.meta; sourceTree = "<group>"; };
+		81F63F5622C5F06B00D2FBC3 /* TwitterViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwitterViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F5722C5F06B00D2FBC3 /* FacebookViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FacebookViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F5822C5F06B00D2FBC3 /* LineViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81F63F5922C5F06B00D2FBC3 /* LineViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LineViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F5A22C5F06B00D2FBC3 /* FacebookViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81F63F5B22C5F06B00D2FBC3 /* TwitterViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81F63F5C22C5F06B00D2FBC3 /* PreferenceViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81F63F5D22C5F06B00D2FBC3 /* PaymentViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PaymentViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F5F22C5F06B00D2FBC3 /* GoogleViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoogleViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F6022C5F06B00D2FBC3 /* GoogleViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81F63F6122C5F06B00D2FBC3 /* ViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F6222C5F06B00D2FBC3 /* ViewControllerFactoryPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactoryPlugin.swift; sourceTree = "<group>"; };
+		81F63F6322C5F06B00D2FBC3 /* PreferenceViewControllerPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PreferenceViewControllerPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F6422C5F06B00D2FBC3 /* ViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81F63F6522C5F06B00D2FBC3 /* Platform.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Platform.meta; sourceTree = "<group>"; };
+		81F63F6622C5F06B00D2FBC3 /* PaymentViewControllerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewControllerPlugin.swift; sourceTree = "<group>"; };
+		81F63F6722C5F06B00D2FBC3 /* ViewControllerFactoryPlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewControllerFactoryPlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F6822C5F06B00D2FBC3 /* UnityiOSPluginAppController.mm.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityiOSPluginAppController.mm.meta; sourceTree = "<group>"; };
+		81F63F6922C5F06B00D2FBC3 /* UnityiOSPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UnityiOSPlugin.mm; sourceTree = "<group>"; };
+		81F63F6A22C5F06B00D2FBC3 /* Core.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Core.meta; sourceTree = "<group>"; };
+		81F63F6B22C5F06B00D2FBC3 /* UnityiOSPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityiOSPlugin.h; sourceTree = "<group>"; };
+		81F63F6C22C5F06B00D2FBC3 /* UnityiOSPluginAppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UnityiOSPluginAppController.mm; sourceTree = "<group>"; };
+		81F63F6D22C5F06B00D2FBC3 /* Service.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Service.meta; sourceTree = "<group>"; };
+		81F63F6E22C5F06B00D2FBC3 /* Frontend.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Frontend.meta; sourceTree = "<group>"; };
+		81F63F7022C5F06B00D2FBC3 /* Sns.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sns.meta; sourceTree = "<group>"; };
+		81F63F7222C5F06B00D2FBC3 /* LineServicePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineServicePlugin.swift; sourceTree = "<group>"; };
+		81F63F7322C5F06B00D2FBC3 /* LineServicePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LineServicePlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F7422C5F06B00D2FBC3 /* TwitterServicePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterServicePlugin.swift; sourceTree = "<group>"; };
+		81F63F7522C5F06B00D2FBC3 /* FacebookServicePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookServicePlugin.swift; sourceTree = "<group>"; };
+		81F63F7622C5F06B00D2FBC3 /* FacebookServicePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FacebookServicePlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F7722C5F06B00D2FBC3 /* TwitterServicePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwitterServicePlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F7922C5F06B00D2FBC3 /* GoogleServicePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoogleServicePlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F7A22C5F06B00D2FBC3 /* GoogleServicePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleServicePlugin.swift; sourceTree = "<group>"; };
+		81F63F7B22C5F06B00D2FBC3 /* Platform.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Platform.meta; sourceTree = "<group>"; };
+		81F63F7C22C5F06B00D2FBC3 /* PaymentServicePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentServicePlugin.swift; sourceTree = "<group>"; };
+		81F63F7D22C5F06B00D2FBC3 /* PaymentServicePlugin.swift.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PaymentServicePlugin.swift.meta; sourceTree = "<group>"; };
+		81F63F7E22C5F06B00D2FBC3 /* UnityiOSPlugin.h.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnityiOSPlugin.h.meta; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,344 +149,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8126D0BE1E48507A00C50269 /* FBSDKShareKit.framework in Frameworks */,
-				8126D0BB1E48507A00C50269 /* Bolts.framework in Frameworks */,
-				8126D0D11E48507A00C50269 /* libyuv.a in Frameworks */,
-				8126D0C11E48507A00C50269 /* TwitterCore.framework in Frameworks */,
-				8126D0D01E48507A00C50269 /* libUnityNativePlugin.a in Frameworks */,
-				8126D0C21E48507A00C50269 /* TwitterKit.framework in Frameworks */,
-				8126D0BC1E48507A00C50269 /* FBSDKCoreKit.framework in Frameworks */,
-				8126D0BD1E48507A00C50269 /* FBSDKLoginKit.framework in Frameworks */,
-				8126D0BF1E48507A00C50269 /* LineAdapter.framework in Frameworks */,
-				8126D0C01E48507A00C50269 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8126CFFD1E48507A00C50269 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				8126CFFE1E48507A00C50269 /* Core */,
-				8126D0131E48507A00C50269 /* Core.meta */,
-				8126D0141E48507A00C50269 /* Frameworks */,
-				8126D02D1E48507A00C50269 /* Frameworks.meta */,
-				8126D02E1E48507A00C50269 /* Frontend */,
-				8126D0511E48507A00C50269 /* Frontend.meta */,
-				8126D0521E48507A00C50269 /* Gateway */,
-				8126D09F1E48507A00C50269 /* Gateway.meta */,
-				8126D0A01E48507A00C50269 /* libUnityNativePlugin.a */,
-				8126D0A11E48507A00C50269 /* libUnityNativePlugin.a.meta */,
-				8126D0A21E48507A00C50269 /* libyuv.a */,
-				8126D0A31E48507A00C50269 /* libyuv.a.meta */,
-				8126D0A41E48507A00C50269 /* Service */,
-				8126D0AF1E48507A00C50269 /* Service.meta */,
-				8126D0B01E48507A00C50269 /* UnityiOSPlugin.h */,
-				8126D0B11E48507A00C50269 /* UnityiOSPlugin.h.meta */,
-				8126D0B21E48507A00C50269 /* UnityiOSPlugin.mm */,
-				8126D0B31E48507A00C50269 /* UnityiOSPlugin.mm.meta */,
-				8126D0B41E48507A00C50269 /* UnityiOSPluginAppController.mm */,
-				8126D0B51E48507A00C50269 /* UnityiOSPluginAppController.mm.meta */,
-			);
-			name = iOS;
-			path = ../UnityPlugin/Assets/Plugins/iOS;
-			sourceTree = "<group>";
-		};
-		8126CFFE1E48507A00C50269 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				8126CFFF1E48507A00C50269 /* Delegate */,
-				8126D0021E48507A00C50269 /* Delegate.meta */,
-				8126D0031E48507A00C50269 /* Identifier */,
-				8126D0061E48507A00C50269 /* Identifier.meta */,
-				8126D0071E48507A00C50269 /* IO */,
-				8126D00A1E48507A00C50269 /* IO.meta */,
-				8126D00B1E48507A00C50269 /* Preference */,
-				8126D00E1E48507A00C50269 /* Preference.meta */,
-				8126D00F1E48507A00C50269 /* Scene */,
-				8126D0121E48507A00C50269 /* Scene.meta */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		8126CFFF1E48507A00C50269 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0001E48507A00C50269 /* UnityiOSPluginAppDelegate.swift */,
-				8126D0011E48507A00C50269 /* UnityiOSPluginAppDelegate.swift.meta */,
-			);
-			path = Delegate;
-			sourceTree = "<group>";
-		};
-		8126D0031E48507A00C50269 /* Identifier */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0041E48507A00C50269 /* TagPlugin.swift */,
-				8126D0051E48507A00C50269 /* TagPlugin.swift.meta */,
-			);
-			path = Identifier;
-			sourceTree = "<group>";
-		};
-		8126D0071E48507A00C50269 /* IO */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0081E48507A00C50269 /* PathPlugin.swift */,
-				8126D0091E48507A00C50269 /* PathPlugin.swift.meta */,
-			);
-			path = IO;
-			sourceTree = "<group>";
-		};
-		8126D00B1E48507A00C50269 /* Preference */ = {
-			isa = PBXGroup;
-			children = (
-				8126D00C1E48507A00C50269 /* PreferencePlugin.swift */,
-				8126D00D1E48507A00C50269 /* PreferencePlugin.swift.meta */,
-			);
-			path = Preference;
-			sourceTree = "<group>";
-		};
-		8126D00F1E48507A00C50269 /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0101E48507A00C50269 /* TransitionPlugin.swift */,
-				8126D0111E48507A00C50269 /* TransitionPlugin.swift.meta */,
-			);
-			path = Scene;
-			sourceTree = "<group>";
-		};
-		8126D0141E48507A00C50269 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0151E48507A00C50269 /* Facebook */,
-				8126D01E1E48507A00C50269 /* Facebook.meta */,
-				8126D01F1E48507A00C50269 /* Line */,
-				8126D0241E48507A00C50269 /* Line.meta */,
-				8126D0251E48507A00C50269 /* Twitter */,
-				8126D02C1E48507A00C50269 /* Twitter.meta */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
-		8126D0151E48507A00C50269 /* Facebook */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0161E48507A00C50269 /* Bolts.framework */,
-				8126D0171E48507A00C50269 /* Bolts.framework.meta */,
-				8126D0181E48507A00C50269 /* FBSDKCoreKit.framework */,
-				8126D0191E48507A00C50269 /* FBSDKCoreKit.framework.meta */,
-				8126D01A1E48507A00C50269 /* FBSDKLoginKit.framework */,
-				8126D01B1E48507A00C50269 /* FBSDKLoginKit.framework.meta */,
-				8126D01C1E48507A00C50269 /* FBSDKShareKit.framework */,
-				8126D01D1E48507A00C50269 /* FBSDKShareKit.framework.meta */,
-			);
-			path = Facebook;
-			sourceTree = "<group>";
-		};
-		8126D01F1E48507A00C50269 /* Line */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0201E48507A00C50269 /* LineAdapter.framework */,
-				8126D0211E48507A00C50269 /* LineAdapter.framework.meta */,
-				8126D0221E48507A00C50269 /* LineAdapterUI.bundle */,
-				8126D0231E48507A00C50269 /* LineAdapterUI.bundle.meta */,
-			);
-			path = Line;
-			sourceTree = "<group>";
-		};
-		8126D0251E48507A00C50269 /* Twitter */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0261E48507A00C50269 /* Fabric.framework */,
-				8126D0271E48507A00C50269 /* Fabric.framework.meta */,
-				8126D0281E48507A00C50269 /* TwitterCore.framework */,
-				8126D0291E48507A00C50269 /* TwitterCore.framework.meta */,
-				8126D02A1E48507A00C50269 /* TwitterKit.framework */,
-				8126D02B1E48507A00C50269 /* TwitterKit.framework.meta */,
-			);
-			path = Twitter;
-			sourceTree = "<group>";
-		};
-		8126D02E1E48507A00C50269 /* Frontend */ = {
-			isa = PBXGroup;
-			children = (
-				8126D02F1E48507A00C50269 /* Notify */,
-				8126D0321E48507A00C50269 /* Notify.meta */,
-				8126D0331E48507A00C50269 /* View */,
-				8126D03E1E48507A00C50269 /* View.meta */,
-				8126D03F1E48507A00C50269 /* ViewController */,
-				8126D0501E48507A00C50269 /* ViewController.meta */,
-			);
-			path = Frontend;
-			sourceTree = "<group>";
-		};
-		8126D02F1E48507A00C50269 /* Notify */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0301E48507A00C50269 /* UnityNotifierPlugin.swift */,
-				8126D0311E48507A00C50269 /* UnityNotifierPlugin.swift.meta */,
-			);
-			path = Notify;
-			sourceTree = "<group>";
-		};
-		8126D0331E48507A00C50269 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0341E48507A00C50269 /* AlertViewPlugin.swift */,
-				8126D0351E48507A00C50269 /* AlertViewPlugin.swift.meta */,
-				8126D0361E48507A00C50269 /* CameraViewPlugin.swift */,
-				8126D0371E48507A00C50269 /* CameraViewPlugin.swift.meta */,
-				8126D0381E48507A00C50269 /* IndicatorViewPlugin.swift */,
-				8126D0391E48507A00C50269 /* IndicatorViewPlugin.swift.meta */,
-				8126D03A1E48507A00C50269 /* ReviewViewPlugin.swift */,
-				8126D03B1E48507A00C50269 /* ReviewViewPlugin.swift.meta */,
-				8126D03C1E48507A00C50269 /* WebViewPlugin.swift */,
-				8126D03D1E48507A00C50269 /* WebViewPlugin.swift.meta */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		8126D03F1E48507A00C50269 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0401E48507A00C50269 /* PaymentViewControllerPlugin.swift */,
-				8126D0411E48507A00C50269 /* PaymentViewControllerPlugin.swift.meta */,
-				8126D0421E48507A00C50269 /* PreferenceViewControllerPlugin.swift */,
-				8126D0431E48507A00C50269 /* PreferenceViewControllerPlugin.swift.meta */,
-				8126D0441E48507A00C50269 /* Sns */,
-				8126D04B1E48507A00C50269 /* Sns.meta */,
-				8126D04C1E48507A00C50269 /* ViewControllerFactoryPlugin.swift */,
-				8126D04D1E48507A00C50269 /* ViewControllerFactoryPlugin.swift.meta */,
-				8126D04E1E48507A00C50269 /* ViewControllerPlugin.swift */,
-				8126D04F1E48507A00C50269 /* ViewControllerPlugin.swift.meta */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		8126D0441E48507A00C50269 /* Sns */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0451E48507A00C50269 /* FacebookViewControllerPlugin.swift */,
-				8126D0461E48507A00C50269 /* FacebookViewControllerPlugin.swift.meta */,
-				8126D0471E48507A00C50269 /* LineViewControllerPlugin.swift */,
-				8126D0481E48507A00C50269 /* LineViewControllerPlugin.swift.meta */,
-				8126D0491E48507A00C50269 /* TwitterViewControllerPlugin.swift */,
-				8126D04A1E48507A00C50269 /* TwitterViewControllerPlugin.swift.meta */,
-			);
-			path = Sns;
-			sourceTree = "<group>";
-		};
-		8126D0521E48507A00C50269 /* Gateway */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0531E48507A00C50269 /* BaseNativeRendererPlugin.h */,
-				8126D0541E48507A00C50269 /* BaseNativeRendererPlugin.h.meta */,
-				8126D0551E48507A00C50269 /* BaseNativeTextureAssetPlugin.h */,
-				8126D0561E48507A00C50269 /* BaseNativeTextureAssetPlugin.h.meta */,
-				8126D0571E48507A00C50269 /* basic_types.h */,
-				8126D0581E48507A00C50269 /* basic_types.h.meta */,
-				8126D0591E48507A00C50269 /* BGRAPlugin.h */,
-				8126D05A1E48507A00C50269 /* BGRAPlugin.h.meta */,
-				8126D05B1E48507A00C50269 /* compare.h */,
-				8126D05C1E48507A00C50269 /* compare.h.meta */,
-				8126D05D1E48507A00C50269 /* compare_row.h */,
-				8126D05E1E48507A00C50269 /* compare_row.h.meta */,
-				8126D05F1E48507A00C50269 /* convert.h */,
-				8126D0601E48507A00C50269 /* convert.h.meta */,
-				8126D0611E48507A00C50269 /* convert_argb.h */,
-				8126D0621E48507A00C50269 /* convert_argb.h.meta */,
-				8126D0631E48507A00C50269 /* convert_from.h */,
-				8126D0641E48507A00C50269 /* convert_from.h.meta */,
-				8126D0651E48507A00C50269 /* convert_from_argb.h */,
-				8126D0661E48507A00C50269 /* convert_from_argb.h.meta */,
-				8126D0671E48507A00C50269 /* cpu_id.h */,
-				8126D0681E48507A00C50269 /* cpu_id.h.meta */,
-				8126D0691E48507A00C50269 /* ExtensionPlugin.h */,
-				8126D06A1E48507A00C50269 /* ExtensionPlugin.h.meta */,
-				8126D06B1E48507A00C50269 /* IUnityGraphics.h */,
-				8126D06C1E48507A00C50269 /* IUnityGraphics.h.meta */,
-				8126D06D1E48507A00C50269 /* IUnityInterface.h */,
-				8126D06E1E48507A00C50269 /* IUnityInterface.h.meta */,
-				8126D06F1E48507A00C50269 /* libyuv.h */,
-				8126D0701E48507A00C50269 /* libyuv.h.meta */,
-				8126D0711E48507A00C50269 /* LogPlugin.h */,
-				8126D0721E48507A00C50269 /* LogPlugin.h.meta */,
-				8126D0731E48507A00C50269 /* macros_msa.h */,
-				8126D0741E48507A00C50269 /* macros_msa.h.meta */,
-				8126D0751E48507A00C50269 /* mjpeg_decoder.h */,
-				8126D0761E48507A00C50269 /* mjpeg_decoder.h.meta */,
-				8126D0771E48507A00C50269 /* NativeRendererFactoryPlugin.h */,
-				8126D0781E48507A00C50269 /* NativeRendererFactoryPlugin.h.meta */,
-				8126D0791E48507A00C50269 /* NativeTextureAssetCollectionPlugin.h */,
-				8126D07A1E48507A00C50269 /* NativeTextureAssetCollectionPlugin.h.meta */,
-				8126D07B1E48507A00C50269 /* NativeTextureAssetFactoryPlugin.h */,
-				8126D07C1E48507A00C50269 /* NativeTextureAssetFactoryPlugin.h.meta */,
-				8126D07D1E48507A00C50269 /* OpenGLES2NativeRendererPlugin.h */,
-				8126D07E1E48507A00C50269 /* OpenGLES2NativeRendererPlugin.h.meta */,
-				8126D07F1E48507A00C50269 /* planar_functions.h */,
-				8126D0801E48507A00C50269 /* planar_functions.h.meta */,
-				8126D0811E48507A00C50269 /* PlatformBase.h */,
-				8126D0821E48507A00C50269 /* PlatformBase.h.meta */,
-				8126D0831E48507A00C50269 /* RawNativeTextureAssetPlugin.h */,
-				8126D0841E48507A00C50269 /* RawNativeTextureAssetPlugin.h.meta */,
-				8126D0851E48507A00C50269 /* rotate.h */,
-				8126D0861E48507A00C50269 /* rotate.h.meta */,
-				8126D0871E48507A00C50269 /* rotate_argb.h */,
-				8126D0881E48507A00C50269 /* rotate_argb.h.meta */,
-				8126D0891E48507A00C50269 /* rotate_row.h */,
-				8126D08A1E48507A00C50269 /* rotate_row.h.meta */,
-				8126D08B1E48507A00C50269 /* row.h */,
-				8126D08C1E48507A00C50269 /* row.h.meta */,
-				8126D08D1E48507A00C50269 /* scale.h */,
-				8126D08E1E48507A00C50269 /* scale.h.meta */,
-				8126D08F1E48507A00C50269 /* scale_argb.h */,
-				8126D0901E48507A00C50269 /* scale_argb.h.meta */,
-				8126D0911E48507A00C50269 /* scale_row.h */,
-				8126D0921E48507A00C50269 /* scale_row.h.meta */,
-				8126D0931E48507A00C50269 /* TagPlugin.h */,
-				8126D0941E48507A00C50269 /* TagPlugin.h.meta */,
-				8126D0951E48507A00C50269 /* TextureAssetValidatorPlugin.h */,
-				8126D0961E48507A00C50269 /* TextureAssetValidatorPlugin.h.meta */,
-				8126D0971E48507A00C50269 /* UnityNativePlugin.h */,
-				8126D0981E48507A00C50269 /* UnityNativePlugin.h.meta */,
-				8126D0991E48507A00C50269 /* version.h */,
-				8126D09A1E48507A00C50269 /* version.h.meta */,
-				8126D09B1E48507A00C50269 /* video_common.h */,
-				8126D09C1E48507A00C50269 /* video_common.h.meta */,
-				8126D09D1E48507A00C50269 /* YuvNativeTextureAssetPlugin.h */,
-				8126D09E1E48507A00C50269 /* YuvNativeTextureAssetPlugin.h.meta */,
-			);
-			path = Gateway;
-			sourceTree = "<group>";
-		};
-		8126D0A41E48507A00C50269 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0A51E48507A00C50269 /* PaymentServicePlugin.swift */,
-				8126D0A61E48507A00C50269 /* PaymentServicePlugin.swift.meta */,
-				8126D0A71E48507A00C50269 /* Sns */,
-				8126D0AE1E48507A00C50269 /* Sns.meta */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		8126D0A71E48507A00C50269 /* Sns */ = {
-			isa = PBXGroup;
-			children = (
-				8126D0A81E48507A00C50269 /* FacebookServicePlugin.swift */,
-				8126D0A91E48507A00C50269 /* FacebookServicePlugin.swift.meta */,
-				8126D0AA1E48507A00C50269 /* LineServicePlugin.swift */,
-				8126D0AB1E48507A00C50269 /* LineServicePlugin.swift.meta */,
-				8126D0AC1E48507A00C50269 /* TwitterServicePlugin.swift */,
-				8126D0AD1E48507A00C50269 /* TwitterServicePlugin.swift.meta */,
-			);
-			path = Sns;
-			sourceTree = "<group>";
-		};
 		81BEC3F21E3632F400F66A52 = {
 			isa = PBXGroup;
 			children = (
-				8126CFFD1E48507A00C50269 /* iOS */,
+				81F63F1622C5F06B00D2FBC3 /* src */,
 				81BEC3FC1E3632F400F66A52 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -578,6 +169,243 @@
 				81BEC3FB1E3632F400F66A52 /* libUnityiOSPlugin.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		81F63F1622C5F06B00D2FBC3 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F1722C5F06B00D2FBC3 /* UnityiOSPlugin.mm.meta */,
+				81F63F1822C5F06B00D2FBC3 /* Core */,
+				81F63F3922C5F06B00D2FBC3 /* Frontend */,
+				81F63F6822C5F06B00D2FBC3 /* UnityiOSPluginAppController.mm.meta */,
+				81F63F6922C5F06B00D2FBC3 /* UnityiOSPlugin.mm */,
+				81F63F6A22C5F06B00D2FBC3 /* Core.meta */,
+				81F63F6B22C5F06B00D2FBC3 /* UnityiOSPlugin.h */,
+				81F63F6C22C5F06B00D2FBC3 /* UnityiOSPluginAppController.mm */,
+				81F63F6D22C5F06B00D2FBC3 /* Service.meta */,
+				81F63F6E22C5F06B00D2FBC3 /* Frontend.meta */,
+				81F63F6F22C5F06B00D2FBC3 /* Service */,
+				81F63F7E22C5F06B00D2FBC3 /* UnityiOSPlugin.h.meta */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		81F63F1822C5F06B00D2FBC3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F1922C5F06B00D2FBC3 /* Token */,
+				81F63F1C22C5F06B00D2FBC3 /* Identifier.meta */,
+				81F63F1D22C5F06B00D2FBC3 /* Preference.meta */,
+				81F63F1E22C5F06B00D2FBC3 /* Extension.meta */,
+				81F63F1F22C5F06B00D2FBC3 /* Environment.meta */,
+				81F63F2022C5F06B00D2FBC3 /* Extension */,
+				81F63F2322C5F06B00D2FBC3 /* IO.meta */,
+				81F63F2422C5F06B00D2FBC3 /* IO */,
+				81F63F2722C5F06B00D2FBC3 /* Delegate */,
+				81F63F2A22C5F06B00D2FBC3 /* Delegate.meta */,
+				81F63F2B22C5F06B00D2FBC3 /* Preference */,
+				81F63F2E22C5F06B00D2FBC3 /* Scene.meta */,
+				81F63F2F22C5F06B00D2FBC3 /* Identifier */,
+				81F63F3222C5F06B00D2FBC3 /* Environment */,
+				81F63F3522C5F06B00D2FBC3 /* Token.meta */,
+				81F63F3622C5F06B00D2FBC3 /* Scene */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		81F63F1922C5F06B00D2FBC3 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F1A22C5F06B00D2FBC3 /* DeviceTokenPlugin.swift */,
+				81F63F1B22C5F06B00D2FBC3 /* DeviceTokenPlugin.swift.meta */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		81F63F2022C5F06B00D2FBC3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F2122C5F06B00D2FBC3 /* String.swift */,
+				81F63F2222C5F06B00D2FBC3 /* String.swift.meta */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		81F63F2422C5F06B00D2FBC3 /* IO */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F2522C5F06B00D2FBC3 /* PathPlugin.swift */,
+				81F63F2622C5F06B00D2FBC3 /* PathPlugin.swift.meta */,
+			);
+			path = IO;
+			sourceTree = "<group>";
+		};
+		81F63F2722C5F06B00D2FBC3 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F2822C5F06B00D2FBC3 /* UnityiOSPluginAppDelegate.swift.meta */,
+				81F63F2922C5F06B00D2FBC3 /* UnityiOSPluginAppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		81F63F2B22C5F06B00D2FBC3 /* Preference */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F2C22C5F06B00D2FBC3 /* PreferencePlugin.swift.meta */,
+				81F63F2D22C5F06B00D2FBC3 /* PreferencePlugin.swift */,
+			);
+			path = Preference;
+			sourceTree = "<group>";
+		};
+		81F63F2F22C5F06B00D2FBC3 /* Identifier */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F3022C5F06B00D2FBC3 /* TagPlugin.swift.meta */,
+				81F63F3122C5F06B00D2FBC3 /* TagPlugin.swift */,
+			);
+			path = Identifier;
+			sourceTree = "<group>";
+		};
+		81F63F3222C5F06B00D2FBC3 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F3322C5F06B00D2FBC3 /* VersionPlugin.swift */,
+				81F63F3422C5F06B00D2FBC3 /* VersionPlugin.swift.meta */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		81F63F3622C5F06B00D2FBC3 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F3722C5F06B00D2FBC3 /* TransitionPlugin.swift */,
+				81F63F3822C5F06B00D2FBC3 /* TransitionPlugin.swift.meta */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		81F63F3922C5F06B00D2FBC3 /* Frontend */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F3A22C5F06B00D2FBC3 /* Notify */,
+				81F63F4522C5F06B00D2FBC3 /* Notify.meta */,
+				81F63F4622C5F06B00D2FBC3 /* ViewController.meta */,
+				81F63F4722C5F06B00D2FBC3 /* View.meta */,
+				81F63F4822C5F06B00D2FBC3 /* View */,
+				81F63F5322C5F06B00D2FBC3 /* ViewController */,
+			);
+			path = Frontend;
+			sourceTree = "<group>";
+		};
+		81F63F3A22C5F06B00D2FBC3 /* Notify */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F3B22C5F06B00D2FBC3 /* BaseNotifierPlugin.swift */,
+				81F63F3C22C5F06B00D2FBC3 /* FCMNotifierPlugin.swift */,
+				81F63F3D22C5F06B00D2FBC3 /* LocalNotifierPlugin.swift */,
+				81F63F3E22C5F06B00D2FBC3 /* BaseNotifierPlugin.swift.meta */,
+				81F63F3F22C5F06B00D2FBC3 /* UnityNotifierPlugin.swift.meta */,
+				81F63F4022C5F06B00D2FBC3 /* UnityNotifierPlugin.swift */,
+				81F63F4122C5F06B00D2FBC3 /* RemoteNotifierPlugin.swift.meta */,
+				81F63F4222C5F06B00D2FBC3 /* FCMNotifierPlugin.swift.meta */,
+				81F63F4322C5F06B00D2FBC3 /* RemoteNotifierPlugin.swift */,
+				81F63F4422C5F06B00D2FBC3 /* LocalNotifierPlugin.swift.meta */,
+			);
+			path = Notify;
+			sourceTree = "<group>";
+		};
+		81F63F4822C5F06B00D2FBC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F4922C5F06B00D2FBC3 /* AlertViewPlugin.swift.meta */,
+				81F63F4A22C5F06B00D2FBC3 /* WebViewPlugin.swift.meta */,
+				81F63F4B22C5F06B00D2FBC3 /* ReviewViewPlugin.swift */,
+				81F63F4C22C5F06B00D2FBC3 /* AlertViewPlugin.swift */,
+				81F63F4D22C5F06B00D2FBC3 /* WebViewPlugin.swift */,
+				81F63F4E22C5F06B00D2FBC3 /* ReviewViewPlugin.swift.meta */,
+				81F63F4F22C5F06B00D2FBC3 /* IndicatorViewPlugin.swift */,
+				81F63F5022C5F06B00D2FBC3 /* CameraViewPlugin.swift.meta */,
+				81F63F5122C5F06B00D2FBC3 /* CameraViewPlugin.swift */,
+				81F63F5222C5F06B00D2FBC3 /* IndicatorViewPlugin.swift.meta */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		81F63F5322C5F06B00D2FBC3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F5422C5F06B00D2FBC3 /* Sns.meta */,
+				81F63F5522C5F06B00D2FBC3 /* Sns */,
+				81F63F5C22C5F06B00D2FBC3 /* PreferenceViewControllerPlugin.swift */,
+				81F63F5D22C5F06B00D2FBC3 /* PaymentViewControllerPlugin.swift.meta */,
+				81F63F5E22C5F06B00D2FBC3 /* Platform */,
+				81F63F6122C5F06B00D2FBC3 /* ViewControllerPlugin.swift.meta */,
+				81F63F6222C5F06B00D2FBC3 /* ViewControllerFactoryPlugin.swift */,
+				81F63F6322C5F06B00D2FBC3 /* PreferenceViewControllerPlugin.swift.meta */,
+				81F63F6422C5F06B00D2FBC3 /* ViewControllerPlugin.swift */,
+				81F63F6522C5F06B00D2FBC3 /* Platform.meta */,
+				81F63F6622C5F06B00D2FBC3 /* PaymentViewControllerPlugin.swift */,
+				81F63F6722C5F06B00D2FBC3 /* ViewControllerFactoryPlugin.swift.meta */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		81F63F5522C5F06B00D2FBC3 /* Sns */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F5622C5F06B00D2FBC3 /* TwitterViewControllerPlugin.swift.meta */,
+				81F63F5722C5F06B00D2FBC3 /* FacebookViewControllerPlugin.swift.meta */,
+				81F63F5822C5F06B00D2FBC3 /* LineViewControllerPlugin.swift */,
+				81F63F5922C5F06B00D2FBC3 /* LineViewControllerPlugin.swift.meta */,
+				81F63F5A22C5F06B00D2FBC3 /* FacebookViewControllerPlugin.swift */,
+				81F63F5B22C5F06B00D2FBC3 /* TwitterViewControllerPlugin.swift */,
+			);
+			path = Sns;
+			sourceTree = "<group>";
+		};
+		81F63F5E22C5F06B00D2FBC3 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F5F22C5F06B00D2FBC3 /* GoogleViewControllerPlugin.swift.meta */,
+				81F63F6022C5F06B00D2FBC3 /* GoogleViewControllerPlugin.swift */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		81F63F6F22C5F06B00D2FBC3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F7022C5F06B00D2FBC3 /* Sns.meta */,
+				81F63F7122C5F06B00D2FBC3 /* Sns */,
+				81F63F7822C5F06B00D2FBC3 /* Platform */,
+				81F63F7B22C5F06B00D2FBC3 /* Platform.meta */,
+				81F63F7C22C5F06B00D2FBC3 /* PaymentServicePlugin.swift */,
+				81F63F7D22C5F06B00D2FBC3 /* PaymentServicePlugin.swift.meta */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		81F63F7122C5F06B00D2FBC3 /* Sns */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F7222C5F06B00D2FBC3 /* LineServicePlugin.swift */,
+				81F63F7322C5F06B00D2FBC3 /* LineServicePlugin.swift.meta */,
+				81F63F7422C5F06B00D2FBC3 /* TwitterServicePlugin.swift */,
+				81F63F7522C5F06B00D2FBC3 /* FacebookServicePlugin.swift */,
+				81F63F7622C5F06B00D2FBC3 /* FacebookServicePlugin.swift.meta */,
+				81F63F7722C5F06B00D2FBC3 /* TwitterServicePlugin.swift.meta */,
+			);
+			path = Sns;
+			sourceTree = "<group>";
+		};
+		81F63F7822C5F06B00D2FBC3 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				81F63F7922C5F06B00D2FBC3 /* GoogleServicePlugin.swift.meta */,
+				81F63F7A22C5F06B00D2FBC3 /* GoogleServicePlugin.swift */,
+			);
+			path = Platform;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -638,30 +466,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8126D0B61E48507A00C50269 /* UnityiOSPluginAppDelegate.swift in Sources */,
-				8126D0C61E48507A00C50269 /* IndicatorViewPlugin.swift in Sources */,
-				8126D0B81E48507A00C50269 /* PathPlugin.swift in Sources */,
-				8126D0C71E48507A00C50269 /* ReviewViewPlugin.swift in Sources */,
-				8126D0C91E48507A00C50269 /* PaymentViewControllerPlugin.swift in Sources */,
-				8126D0CA1E48507A00C50269 /* PreferenceViewControllerPlugin.swift in Sources */,
-				8126D0C31E48507A00C50269 /* UnityNotifierPlugin.swift in Sources */,
-				8126D0CD1E48507A00C50269 /* TwitterViewControllerPlugin.swift in Sources */,
-				8126D0D41E48507A00C50269 /* LineServicePlugin.swift in Sources */,
-				8126D0D31E48507A00C50269 /* FacebookServicePlugin.swift in Sources */,
-				8126D0D51E48507A00C50269 /* TwitterServicePlugin.swift in Sources */,
-				8126D0D61E48507A00C50269 /* UnityiOSPlugin.mm in Sources */,
-				8126D0BA1E48507A00C50269 /* TransitionPlugin.swift in Sources */,
-				8126D0C51E48507A00C50269 /* CameraViewPlugin.swift in Sources */,
-				8126D0CB1E48507A00C50269 /* FacebookViewControllerPlugin.swift in Sources */,
-				8126D0CE1E48507A00C50269 /* ViewControllerFactoryPlugin.swift in Sources */,
-				8126D0D21E48507A00C50269 /* PaymentServicePlugin.swift in Sources */,
-				8126D0C81E48507A00C50269 /* WebViewPlugin.swift in Sources */,
-				8126D0CC1E48507A00C50269 /* LineViewControllerPlugin.swift in Sources */,
-				8126D0B71E48507A00C50269 /* TagPlugin.swift in Sources */,
-				8126D0CF1E48507A00C50269 /* ViewControllerPlugin.swift in Sources */,
-				8126D0C41E48507A00C50269 /* AlertViewPlugin.swift in Sources */,
-				8126D0D71E48507A00C50269 /* UnityiOSPluginAppController.mm in Sources */,
-				8126D0B91E48507A00C50269 /* PreferencePlugin.swift in Sources */,
+				81F63F9022C5F06B00D2FBC3 /* CameraViewPlugin.swift in Sources */,
+				81F63F9522C5F06B00D2FBC3 /* GoogleViewControllerPlugin.swift in Sources */,
+				81F63F8B22C5F06B00D2FBC3 /* RemoteNotifierPlugin.swift in Sources */,
+				81F63F8A22C5F06B00D2FBC3 /* UnityNotifierPlugin.swift in Sources */,
+				81F63F8522C5F06B00D2FBC3 /* VersionPlugin.swift in Sources */,
+				81F63F8C22C5F06B00D2FBC3 /* ReviewViewPlugin.swift in Sources */,
+				81F63F9B22C5F06B00D2FBC3 /* LineServicePlugin.swift in Sources */,
+				81F63F8D22C5F06B00D2FBC3 /* AlertViewPlugin.swift in Sources */,
+				81F63F8022C5F06B00D2FBC3 /* String.swift in Sources */,
+				81F63F9322C5F06B00D2FBC3 /* TwitterViewControllerPlugin.swift in Sources */,
+				81F63F8E22C5F06B00D2FBC3 /* WebViewPlugin.swift in Sources */,
+				81F63F8322C5F06B00D2FBC3 /* PreferencePlugin.swift in Sources */,
+				81F63F9C22C5F06B00D2FBC3 /* TwitterServicePlugin.swift in Sources */,
+				81F63F8622C5F06B00D2FBC3 /* TransitionPlugin.swift in Sources */,
+				81F63F8722C5F06B00D2FBC3 /* BaseNotifierPlugin.swift in Sources */,
+				81F63F8222C5F06B00D2FBC3 /* UnityiOSPluginAppDelegate.swift in Sources */,
+				81F63F9A22C5F06B00D2FBC3 /* UnityiOSPluginAppController.mm in Sources */,
+				81F63F9E22C5F06B00D2FBC3 /* GoogleServicePlugin.swift in Sources */,
+				81F63F9622C5F06B00D2FBC3 /* ViewControllerFactoryPlugin.swift in Sources */,
+				81F63F8F22C5F06B00D2FBC3 /* IndicatorViewPlugin.swift in Sources */,
+				81F63F9822C5F06B00D2FBC3 /* PaymentViewControllerPlugin.swift in Sources */,
+				81F63F9D22C5F06B00D2FBC3 /* FacebookServicePlugin.swift in Sources */,
+				81F63F8122C5F06B00D2FBC3 /* PathPlugin.swift in Sources */,
+				81F63F9F22C5F06B00D2FBC3 /* PaymentServicePlugin.swift in Sources */,
+				81F63F7F22C5F06B00D2FBC3 /* DeviceTokenPlugin.swift in Sources */,
+				81F63F8922C5F06B00D2FBC3 /* LocalNotifierPlugin.swift in Sources */,
+				81F63F8422C5F06B00D2FBC3 /* TagPlugin.swift in Sources */,
+				81F63F9922C5F06B00D2FBC3 /* UnityiOSPlugin.mm in Sources */,
+				81F63F9422C5F06B00D2FBC3 /* PreferenceViewControllerPlugin.swift in Sources */,
+				81F63F9222C5F06B00D2FBC3 /* FacebookViewControllerPlugin.swift in Sources */,
+				81F63F9122C5F06B00D2FBC3 /* LineViewControllerPlugin.swift in Sources */,
+				81F63F8822C5F06B00D2FBC3 /* FCMNotifierPlugin.swift in Sources */,
+				81F63F9722C5F06B00D2FBC3 /* ViewControllerPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

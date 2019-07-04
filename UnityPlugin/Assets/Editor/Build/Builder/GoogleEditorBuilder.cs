@@ -18,10 +18,6 @@ public class GoogleEditorBuilder : BaseEditorBuilder {
         string[] innerPlistPathList = new string[] {
             "GoogleService-Info.plist",
         };
-        string[] innerModuleFilePathList = new string[] {
-            "Google/SignIn/SignIn.h",
-            "Google/SignIn/module.modulemap",
-        };
         foreach (string innerFilePath in innerPlistPathList) {
             string fromPath = Path.Combine(fromiOSRootPath, innerFilePath);
             string destPath = Path.Combine(destiOSRootPath, innerFilePath);
@@ -32,15 +28,6 @@ public class GoogleEditorBuilder : BaseEditorBuilder {
             string bundleGUID = project.AddFile(destPath, innerFilePath, PBXSourceTree.Source);
             project.AddFileToBuild(this.targetGUID, bundleGUID);
         }
-        foreach (string innerFilePath in innerModuleFilePathList) {
-            string fromPath = Path.Combine(fromFrameworkRootPath, innerFilePath);
-            string destPath = Path.Combine(destFrameworkRootPath, innerFilePath);
-            if (false != File.Exists(destPath)) {
-                File.Delete(destPath);
-            }
-            File.Copy(fromPath, destPath);
-        }
-        project.AddBuildProperty(targetGUID, "SWIFT_INCLUDE_PATHS", "$(PROJECT_DIR)/Frameworks/Plugins/iOS/Frameworks/Google/SignIn");
         return;
     }
     public override void BuildiOSURLSchemes(PlistElementArray bundleURLTypesArray) {

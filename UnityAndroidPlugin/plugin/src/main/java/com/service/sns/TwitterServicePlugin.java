@@ -9,7 +9,7 @@
 //======================================================================
 package com.service.sns;
 import android.app.Activity;
-import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.TwitterCore;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.TwitterException;
@@ -24,7 +24,8 @@ public class TwitterServicePlugin {
         Callback<TwitterSession> logInCallback = new Callback<TwitterSession>() {
             @Override
             public void success(Result<TwitterSession> result) {
-                SessionManager<TwitterSession> sessionManager = Twitter.getSessionManager();
+                TwitterCore core = TwitterCore.getInstance();
+                SessionManager<TwitterSession> sessionManager = core.getSessionManager();
                 TwitterSession activeSession = sessionManager.getActiveSession();
                 if (null == activeSession) {
                     callback.failure(null);
@@ -47,7 +48,6 @@ public class TwitterServicePlugin {
         return;
     }
     public void logOut() {
-        Twitter.logOut();
         loggedIn = false;
         return;
     }
@@ -61,7 +61,8 @@ public class TwitterServicePlugin {
         return this.client;
     }
     public TwitterSession getActiveSession() {
-        SessionManager<TwitterSession> sessionManager = Twitter.getSessionManager();
+        TwitterCore core = TwitterCore.getInstance();
+        SessionManager<TwitterSession> sessionManager = core.getSessionManager();
         TwitterSession activeSession = sessionManager.getActiveSession();
         return activeSession;
     }
