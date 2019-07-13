@@ -12,34 +12,54 @@ import android.app.Activity;
 import android.graphics.Rect;
 import android.os.Build;
 import android.util.Log;
+import android.graphics.Point;
 import android.view.View;
 import android.view.Gravity;
 import android.view.ViewGroup;
+import android.view.Display;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import com.frontend.activity.ActivityPlugin;
 import com.core.identifier.TagPlugin;
+import com.frontend.notify.UnityNotifierPlugin;
 public class WebViewPlugin {
     private final static int TRANSPARENT_BACK_GROUND_COLOR = 0x00000000;
     private WebView view;
     private FrameLayout layout;
-    public void create(String requestUrl, int left, int top, int right, int bottom) {
+    public void create(String requestUrl, int left, int top, int right, int bottom, int baseWidth, int baseHeight) {
         final Activity activity = ActivityPlugin.getInstance();
         final String url = requestUrl;
-        final Rect margin = new Rect(left, top, right, bottom);
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display.getSize(point);
+        float leftMarginRate = (float)left / baseWidth;
+        float rightMarginRate = (float)right / baseWidth;
+        float topMarginRate = (float)top / baseHeight;
+        float bottomMarginRate = (float)bottom / baseHeight;
+        float leftMargin =  leftMarginRate * (float)point.x;
+        float rightMargin =  rightMarginRate * (float)point.x;
+        float topMargin =  topMarginRate * (float)point.y;
+        float bottomMargin =  bottomMarginRate * (float)point.y;
+        final Rect margin = new Rect((int)leftMargin, (int)topMargin, (int)rightMargin, (int)bottomMargin);
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 view = new WebView(activity);
+                WebSettings settings = view.getSettings();
+                settings.setJavaScriptEnabled(true);
                 view.setBackgroundColor(WebViewPlugin.TRANSPARENT_BACK_GROUND_COLOR);
                 if (Integer.parseInt(Build.VERSION.SDK) >= Build.VERSION_CODES.HONEYCOMB) {
                     view.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
                 }
                 WebViewClient client = new WebViewClient() {
                     @Override
+                    public void onPageFinished(WebView view, String url) {
+                        return;
+                    }
+                    @Override
                     public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                        Log.i(TagPlugin.UNITY_PLUGIN_IDENTIFIER, url);
                         return false;
                     }
                 };

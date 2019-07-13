@@ -26,7 +26,7 @@ public class ArchivePlugin {
     public List<string> Decompress(string archivePath) {
         List<string> ret = new List<string>();
         string rootDir = Path.GetDirectoryName(archivePath);
-        using(ZipFile zip = new ZipFile(archivePath)) {
+        using (ZipFile zip = new ZipFile(archivePath)) {
             foreach (ZipEntry entry in zip) {
                 entry.Extract(rootDir, ExtractExistingFileAction.OverwriteSilently);
                 bool breakable = false;

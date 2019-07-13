@@ -8,22 +8,31 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 import Foundation
-import UIKit
-open class WebViewPlugin: NSObject, UIWebViewDelegate {
-    var view: UIWebView!
+import WebKit
+open class WebViewPlugin: NSObject, WKUIDelegate, WKNavigationDelegate {
+    var view: WKWebView!
     @objc
-    open func create(_ url: String, left: CGFloat, top: CGFloat, right: CGFloat, bottom: CGFloat) -> Void {
+    open func create(_ url: String, left: CGFloat, top: CGFloat, right: CGFloat, bottom: CGFloat, baseWidth: CGFloat, baseHeight: CGFloat) -> Void {
         let req: URLRequest = URLRequest(url: URL(string: url)!)
         let controller: UIViewController = ViewControllerPlugin.getInstance()
-        let width: CGFloat = controller.view.frame.width - left - right
-        let height: CGFloat = controller.view.frame.height - top - bottom
-        self.view = UIWebView()
-        self.view.frame = CGRect(x: left, y: top, width: width, height: height)
-        self.view.scalesPageToFit = false
+        let leftMarginRate: CGFloat = left / baseWidth
+        let rightMarginRate: CGFloat = right / baseWidth
+        let topMarginRate: CGFloat = top / baseHeight
+        let bottomMarginRate: CGFloat = bottom / baseHeight
+        let leftMargin: CGFloat = UIScreen.main.bounds.size.width * leftMarginRate
+        let rightMargin: CGFloat = UIScreen.main.bounds.size.width * rightMarginRate
+        let topMargin: CGFloat = UIScreen.main.bounds.size.height * topMarginRate
+        let bottomMargin: CGFloat = UIScreen.main.bounds.size.height * bottomMarginRate
+        let width: CGFloat = UIScreen.main.bounds.size.width - leftMargin - rightMargin
+        let height: CGFloat = UIScreen.main.bounds.size.height - topMargin - bottomMargin
+        let frame: CGRect = CGRect(x: leftMargin, y: topMargin, width: width, height: height)
+        let webConfiguration: WKWebViewConfiguration = WKWebViewConfiguration()
+        self.view = WKWebView(frame: frame, configuration: webConfiguration)
         self.view.backgroundColor = UIColor.clear
         self.view.isOpaque = false
-        self.view.delegate = self
-        self.view.loadRequest(req)
+        self.view.uiDelegate = self
+        self.view.navigationDelegate = self
+        self.view.load(req)
         controller.view.addSubview(self.view)
         return
     }
@@ -53,8 +62,14 @@ open class WebViewPlugin: NSObject, UIWebViewDelegate {
         self.view.removeFromSuperview()
         return
     }
-    open func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        print(TagPlugin.UNITY_PLUGIN_IDENTIFIER + (request.url?.absoluteString)!)
-        return true
+    @available(iOS 8.0, *)
+    open func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        return
+    }
+    @available(iOS 8.0, *)
+    open func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void) {
+        decisionHandler(WKNavigationActionPolicy.allow)
+        return
     }
 }
+

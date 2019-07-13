@@ -19,13 +19,13 @@ extern "C" void showReviewViewPlugin(char* appStoreUrl) {
     [ReviewViewPlugin show:url];
     return;
 }
-extern "C" void showWebViewPlugin(char* url, float left, float top, float right, float bottom) {
+extern "C" void showWebViewPlugin(char* url, float left, float top, float right, float bottom, float baseWidth, float baseHeight) {
     if (nil != webViewPlugin) {
         return;
     }
     NSString* requestUrl = [NSString stringWithCString:url encoding:NSUTF8StringEncoding];
     webViewPlugin = [WebViewPlugin alloc];
-    [webViewPlugin create:requestUrl left:left top:top right:right bottom:bottom];
+    [webViewPlugin create:requestUrl left:left top:top right:right bottom:bottom baseWidth:baseWidth baseHeight:baseHeight];
     [webViewPlugin show];
     return;
 }

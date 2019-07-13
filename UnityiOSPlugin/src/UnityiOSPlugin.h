@@ -23,6 +23,7 @@
 #import <GoogleSignIn/GoogleSignIn.h>
 #import <LineSDK/LineSDK.h>
 #import <TwitterKit/TwitterKit.h>
+#import <WebKit/WebKit.h>
 typedef void (^cmplcbk)(void);
 UIViewController* UnityGetGLViewController();
 void UnitySendMessage(const char* obj, const char* method, const char* msg);
