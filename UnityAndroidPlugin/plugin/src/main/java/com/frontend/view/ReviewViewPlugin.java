@@ -15,25 +15,27 @@ import android.content.Intent;
 import android.net.Uri;
 import com.frontend.activity.ActivityPlugin;
 public class ReviewViewPlugin {
-    public static void show(String googlePlayUrl) {
+    public static void show(String googlePlayUrl, final String title, final String evalActionTitle, final String noActionTitle) {
         final Activity activity = ActivityPlugin.getInstance();
         final Uri googlePlayUri = Uri.parse(googlePlayUrl);
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                final String[] items = {"このアプリを評価する", "いいえ、まだ結構です",};
-                new AlertDialog.Builder(activity)
-                .setTitle("Review")
-                .setItems(items, new DialogInterface.OnClickListener() {
+                DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if (0 == which) {
                             Intent googlePlayIntent = new Intent(Intent.ACTION_VIEW);
                             googlePlayIntent.setData(googlePlayUri);
                             activity.startActivity(googlePlayIntent);
+                            return;
                         }
                     }
-                })
+                };
+                final String[] items = {evalActionTitle, noActionTitle,};
+                new AlertDialog.Builder(activity)
+                .setTitle(title)
+                .setItems(items, listener)
                 .show();
                 return;
             }

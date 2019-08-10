@@ -16,11 +16,11 @@ public class ReviewViewPluginBehaviour : MonoBehaviour {
     void Start() {
         ReviewViewPlugin plugin = PluginFactory.GetPlugin<ReviewViewPlugin>();
         if (RuntimePlatform.IPhonePlayer == Application.platform) {
-            plugin.Show("https://itunes.apple.com/jp/app/flappy-bird-original-version/id1086354043?mt=8");
+            plugin.Show("https://itunes.apple.com/jp/app/flappy-bird-original-version/id1086354043?mt=8", "Unityプラグインを評価しましよう", "はい" , "いいえ");
         } else if (RuntimePlatform.Android == Application.platform) {
-            plugin.Show("market://details?id=com.trifingger.flyhappybird");
+            plugin.Show("market://details?id=com.trifingger.flyhappybird", "Unityプラグインを評価しましよう", "はい" , "いいえ");
         } else {
-            plugin.Show("https://itunes.apple.com/jp/app/flappy-bird-original-version/id1086354043?mt=8");
+            plugin.Show("https://itunes.apple.com/jp/app/flappy-bird-original-version/id1086354043?mt=8", "Unityプラグインを評価しましよう", "はい" , "いいえ");
         }
     }
 }

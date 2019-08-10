@@ -14,9 +14,12 @@
 static WebViewPlugin* webViewPlugin;
 static IndicatorViewPlugin* activityIndicatorViewPlugin;
 static CameraViewPlugin* cameraViewPlugin;
-extern "C" void showReviewViewPlugin(char* appStoreUrl) {
-    NSString* url = [NSString stringWithCString:appStoreUrl encoding:NSUTF8StringEncoding];
-    [ReviewViewPlugin show:url];
+extern "C" void showReviewViewPlugin(char* appStoreUrl, char* title, char* evalActionTitle, char* noActionTitle) {
+    NSString* unityAppStoreUrl = [NSString stringWithCString:appStoreUrl encoding:NSUTF8StringEncoding];
+    NSString* unityTitle = [NSString stringWithCString:title encoding:NSUTF8StringEncoding];
+    NSString* unityEvalActionTitle = [NSString stringWithCString:evalActionTitle encoding:NSUTF8StringEncoding];
+    NSString* unityNoActionTitle = [NSString stringWithCString:noActionTitle encoding:NSUTF8StringEncoding];
+    [ReviewViewPlugin show:unityAppStoreUrl title:unityTitle evalActionTitle:unityEvalActionTitle noActionTitle:unityNoActionTitle];
     return;
 }
 extern "C" void showWebViewPlugin(char* url, float left, float top, float right, float bottom, float baseWidth, float baseHeight) {

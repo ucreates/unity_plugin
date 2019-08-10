@@ -13,13 +13,13 @@ using System.Collections;
 namespace UnityPlugin.Frontend.View {
 public sealed class ReviewViewPlugin : BasePlugin {
     [DllImport("__Internal")]
-    private static extern void showReviewViewPlugin(string storeUrl);
-    public void Show(string storeUrl) {
+    private static extern void showReviewViewPlugin(string storeUrl, string title, string evalActionTitle, string noActionTitle);
+    public void Show(string storeUrl, string title, string evalActionTitle, string noActionTitle) {
         if (RuntimePlatform.IPhonePlayer == Application.platform) {
-            showReviewViewPlugin(storeUrl);
+            showReviewViewPlugin(storeUrl, title, evalActionTitle, noActionTitle);
         } else if (RuntimePlatform.Android == Application.platform) {
             this.androidPlugin = new AndroidJavaObject("com.frontend.view.ReviewViewPlugin");
-            this.androidPlugin.CallStatic("show", storeUrl);
+            this.androidPlugin.CallStatic("show", storeUrl, title, evalActionTitle, noActionTitle);
         }
     }
 }
